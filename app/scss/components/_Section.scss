@@ -1,10 +1,7 @@
-$section-color: #ffe3e9;
+$section-color: #f1f1f1;
 $p-section-color: #111111;
 
-@import '../helpers/Animation_Mixins.scss';
-
 .Section {
-  @include css-fadein(3s);
   background-color: $section-color;
   margin: 0;
   width: 100%;
@@ -18,7 +15,7 @@ $p-section-color: #111111;
   }
 
   p {
-    font-family: Muli, Futura, Helvetica, sans-serif;
+    font-family: 'Montserrat', Futura, Helvetica, sans-serif;
     color: #9a8383;
     font-weight: 100;
     width: 25%;

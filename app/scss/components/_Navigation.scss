@@ -1,45 +1,77 @@
-@import '../helpers/Transform_Mixins.scss';
-
 $nav-button-color: #e09090;
 
 .navButton {
   @include css-transition(all, 0.5s, ease-in-out);
   border: none;
-  margin: 5em;
-  width: 12em;
-  border-radius: 100%;
-  width: 2em;
-  height: 2em;
-  margin-top: em;
-  display: flex;
-  justify-content: center;
-  outline: none;
-  background: transparent;
-  border: 2px solid $nav-button-color;
+    margin: 20px 50px;
+    width: 12em;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    background: transparent;
+    border: 2px solid $nav-button-color;
+
+    @media all and (max-width: 1000px) {
+      margin: 20px 20px;
+    }
 
   p {
   color: #9a9aa2;
   padding: 1em;
   font-weight: 200;
+  text-align: center;
+
+    @media all and (max-width: 1000px) {
+      position: absolute;
+      color: #9a9aa2;
+      margin: 0;
+      margin-left: 15vw;
+      left:0;
+      padding: 0;
+    }
+
   }
+
+
 }
 
 .navButton:hover {
   @include css-transition(all, 0.5s, ease-in-out);
   border: 2px solid $nav-button-color;
+  border-radius: 10%;
   background: $nav-button-color;
   cursor: pointer;
+
+  > p {
+    @include css-transition(all, 0.5s, ease-in-out);
+  }
 }
 
-.navButton:hover > p {
-  @include css-transition(all, 0.5s, ease-in-out);
-}
+
+
 
 
 
 
 .smooth-scroll {
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 20vh;
+  background: #f1f1f1;
+  z-index: 9999;
+
+  @media all and (max-width: 1000px) {
+    display: block;
+    z-index: 0;
+    margin-top: 17vh;
+    height: 100vh;
+    background: transparent;
+  }
 }

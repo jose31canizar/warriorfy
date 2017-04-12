@@ -1,0 +1,44 @@
+$menu-bar-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
+$menu-bar-text-color: #d0d0d6;
+$h3-text-color: #746c88;
+$h4-text-color: #ead4d8;
+$p-font-size: 1em;
+$li-color: #a56666;
+$li-hover-color: #b5ae9e;
+$mobile-p-font-size: 6.5vw;
+
+@import './helpers/Transform_Mixins.scss';
+
+.MenuBar {
+    @include css-transition(all, 0.5s, ease-in);
+    width: 0vw;
+    background: #424252;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+
+    @media all and (max-width: 1000px) {
+    }
+
+    @media all and(max-width: 800px) {
+      width: 70vw;
+    }
+
+    li {
+      font-family: $menu-bar-font-stack;
+      margin: 1em;
+      list-style-type: none;
+      cursor: pointer;
+    }
+
+    li:hover {
+      @include css-transition(all, 0.1s, ease-in-out);
+      color: $li-hover-color;
+    }
+
+    @media all and (max-width: 1000px) {
+
+    }
+
+
+}
