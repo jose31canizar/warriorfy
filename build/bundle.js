@@ -54,15 +54,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(163);
+	var _reactDom = __webpack_require__(175);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _main = __webpack_require__(164);
+	var _main = __webpack_require__(176);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _global = __webpack_require__(173);
+	var _global = __webpack_require__(185);
 
 	var _global2 = _interopRequireDefault(_global);
 
@@ -88,17 +88,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Section = __webpack_require__(159);
+	var _MainContainer = __webpack_require__(159);
 
-	var _Section2 = _interopRequireDefault(_Section);
+	var _MainContainer2 = _interopRequireDefault(_MainContainer);
 
-	var _SectionContainer = __webpack_require__(160);
-
-	var _SectionContainer2 = _interopRequireDefault(_SectionContainer);
-
-	var _sections = __webpack_require__(161);
+	var _sections = __webpack_require__(172);
 
 	var _sections2 = _interopRequireDefault(_sections);
+
+	var _NavBar = __webpack_require__(173);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -108,7 +108,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SmoothScroll = __webpack_require__(162);
+	var SmoothScroll = __webpack_require__(174);
 
 	var App = function (_Component) {
 	  _inherits(App, _Component);
@@ -122,12 +122,24 @@
 	    var sections = Array.apply(null, { length: N }).map(Number.call, Number);
 	    _this.state = {
 	      sections: sections,
-	      data: 'loading...'
+	      data: 'loading...',
+	      open: false
 	    };
+	    _this.togglePanel = _this.togglePanel.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(App, [{
+	    key: 'togglePanel',
+	    value: function togglePanel() {
+	      this.setState(function (prevState, props) {
+	        return {
+	          open: !prevState.open
+	        };
+	      });
+	      console.log('changed');
+	    }
+	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.setState({
@@ -137,45 +149,13 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-
 	      var self = this;
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
-	        _react2.default.createElement(
-	          SmoothScroll,
-	          { sections: this.state.sections.map(function (v, i) {
-	              return self.state.data[i].title;
-	            }) },
-	          this.state.sections.map(function (v, i) {
-	            return _react2.default.createElement(
-	              'p',
-	              { key: i },
-	              self.state.data[i].title
-	            );
-	          })
-	        ),
-	        _react2.default.createElement(
-	          _SectionContainer2.default,
-	          null,
-	          this.state.sections.map(function (v, i) {
-	            return _react2.default.createElement(
-	              _Section2.default,
-	              { id: self.state.data[i].title, key: i },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                self.state.data[i].title
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                self.state.data[i].text
-	              )
-	            );
-	          })
-	        )
+	        { className: 'wrapper' },
+	        _react2.default.createElement(_NavBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open }),
+	        _react2.default.createElement(_MainContainer2.default, { data: this.state.data, sections: this.state.sections, togglePanel: this.togglePanel, open: this.state.open })
 	      );
 	    }
 	  }]);
@@ -19876,48 +19856,62 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _SectionContainer = __webpack_require__(160);
+
+	var _SectionContainer2 = _interopRequireDefault(_SectionContainer);
+
+	var _SectionFactory = __webpack_require__(161);
+
+	var _SectionFactory2 = _interopRequireDefault(_SectionFactory);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Section = function (_Component) {
-	  _inherits(Section, _Component);
-
-	  function Section() {
-	    _classCallCheck(this, Section);
-
-	    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).apply(this, arguments));
-	  }
-
-	  _createClass(Section, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'Section', id: this.props.id },
-	        this.props.children
-	      );
+	var MainContainer = _react2.default.createClass({
+	  displayName: 'MainContainer',
+	  getInitialState: function getInitialState() {
+	    return {
+	      style: 'slideMenuBarButton',
+	      menuBarState: ''
+	    };
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	    if (newProps.open) {
+	      this.state.style += ' clicked';
+	      this.state.menuBarState = 'MainContainer menuBarOpen';
+	    } else {
+	      this.state.style = 'slideMenuBarButton';
+	      this.state.menuBarState = 'MainContainer menuBarClose';
 	    }
-	  }]);
+	  },
+	  render: function render() {
+	    var self = this;
 
-	  return Section;
-	}(_react.Component);
+	    return _react2.default.createElement(
+	      'div',
+	      { className: this.state.menuBarState },
+	      _react2.default.createElement(
+	        'button',
+	        { className: this.state.style, onMouseDown: this.props.togglePanel },
+	        _react2.default.createElement('div', { id: 'topBar' }),
+	        _react2.default.createElement('div', { id: 'middleBar' }),
+	        _react2.default.createElement('div', { id: 'bottomBar' })
+	      ),
+	      _react2.default.createElement(
+	        _SectionContainer2.default,
+	        null,
+	        this.props.sections.map(function (v, i) {
+	          return _react2.default.createElement(_SectionFactory2.default, { id: self.props.data[i].title, key: i, title: self.props.data[i].title, text: self.props.data[i].text });
+	        })
+	      )
+	    );
+	  }
+	});
 
-	exports.default = Section;
+	module.exports = MainContainer;
 
 /***/ },
 /* 160 */
@@ -19970,6 +19964,438 @@
 
 /***/ },
 /* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Warriorfy = __webpack_require__(162);
+
+	var _Warriorfy2 = _interopRequireDefault(_Warriorfy);
+
+	var _MissionStatement = __webpack_require__(163);
+
+	var _MissionStatement2 = _interopRequireDefault(_MissionStatement);
+
+	var _Opportunity = __webpack_require__(164);
+
+	var _Opportunity2 = _interopRequireDefault(_Opportunity);
+
+	var _Team = __webpack_require__(165);
+
+	var _Team2 = _interopRequireDefault(_Team);
+
+	var _MarketValidation = __webpack_require__(166);
+
+	var _MarketValidation2 = _interopRequireDefault(_MarketValidation);
+
+	var _Product = __webpack_require__(167);
+
+	var _Product2 = _interopRequireDefault(_Product);
+
+	var _BusinessModel = __webpack_require__(168);
+
+	var _BusinessModel2 = _interopRequireDefault(_BusinessModel);
+
+	var _CustomerAdoption = __webpack_require__(169);
+
+	var _CustomerAdoption2 = _interopRequireDefault(_CustomerAdoption);
+
+	var _Competition = __webpack_require__(170);
+
+	var _Competition2 = _interopRequireDefault(_Competition);
+
+	var _Investment = __webpack_require__(171);
+
+	var _Investment2 = _interopRequireDefault(_Investment);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SectionFactory = function (_Component) {
+	  _inherits(SectionFactory, _Component);
+
+	  function SectionFactory() {
+	    _classCallCheck(this, SectionFactory);
+
+	    return _possibleConstructorReturn(this, (SectionFactory.__proto__ || Object.getPrototypeOf(SectionFactory)).apply(this, arguments));
+	  }
+
+	  _createClass(SectionFactory, [{
+	    key: 'render',
+	    value: function render() {
+	      var section = '';
+	      if (this.props.title == 'Warriorfy') {
+	        section = _react2.default.createElement(_Warriorfy2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Mission Statement') {
+	        section = _react2.default.createElement(_MissionStatement2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Opportunity') {
+	        section = _react2.default.createElement(_Opportunity2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Team') {
+	        section = _react2.default.createElement(_Team2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Market Validation') {
+	        section = _react2.default.createElement(_MarketValidation2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Product') {
+	        section = _react2.default.createElement(_Product2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Business Model') {
+	        section = _react2.default.createElement(_BusinessModel2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Customer Adoption') {
+	        section = _react2.default.createElement(_CustomerAdoption2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Competition') {
+	        section = _react2.default.createElement(_Competition2.default, { title: this.props.title });
+	      } else if (this.props.title == 'Investment') {
+	        section = _react2.default.createElement(_Investment2.default, { title: this.props.title });
+	      } else {}
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'Section', id: this.props.id },
+	        section
+	      );
+	    }
+	  }]);
+
+	  return SectionFactory;
+	}(_react.Component);
+
+	exports.default = SectionFactory;
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Warriorfy = _react2.default.createClass({
+	  displayName: 'Warriorfy',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'Warriorfy' },
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'images' },
+	        _react2.default.createElement('div', { className: 'logo' }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'background_image' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'foreground_image' },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              this.props.title
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Live your dreams.'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'StartContainer' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'Start' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              'Start'
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Warriorfy;
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MissionStatement = _react2.default.createClass({
+	  displayName: 'MissionStatement',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = MissionStatement;
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Opportunity = _react2.default.createClass({
+	  displayName: 'Opportunity',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Opportunity;
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Team = _react2.default.createClass({
+	  displayName: 'Team',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Team;
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MarketValidation = _react2.default.createClass({
+	  displayName: 'MarketValidation',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = MarketValidation;
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Product = _react2.default.createClass({
+	  displayName: 'Product',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Product;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var BusinessModel = _react2.default.createClass({
+	  displayName: 'BusinessModel',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = BusinessModel;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var CustomerAdoption = _react2.default.createClass({
+	  displayName: 'CustomerAdoption',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = CustomerAdoption;
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Competition = _react2.default.createClass({
+	  displayName: 'Competition',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Competition;
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Investment = _react2.default.createClass({
+	  displayName: 'Investment',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        this.props.title
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Investment;
+
+/***/ },
+/* 172 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -19978,33 +20404,135 @@
 			"text": "Warriorfy is a platform connecting podcasters to wellness-seekers."
 		},
 		{
-			"title": "Vision",
+			"title": "Mission Statement",
 			"text": "We foresee a platform briding the gap between experts and those trying to find wellness resources."
 		},
 		{
-			"title": "Product",
+			"title": "Opportunity",
 			"text": "What we're creating doesnt exist yet."
 		},
 		{
-			"title": "Business Model",
+			"title": "Team",
+			"text": "What we're creating doesnt exist yet."
+		},
+		{
+			"title": "Market Validation",
 			"text": "This is the plan."
 		},
 		{
-			"title": "Market Opportunity",
+			"title": "Product",
 			"text": "There's a large community of podcast listeners out there."
 		},
 		{
-			"title": "Market Advantage",
+			"title": "Business Model",
 			"text": "What we're creating is a community of warriors, those fighting to know more about themselves."
 		},
 		{
-			"title": "The Investment",
+			"title": "Customer Adoption",
+			"text": "Money well spent."
+		},
+		{
+			"title": "Competition",
+			"text": "Money well spent."
+		},
+		{
+			"title": "Investment",
 			"text": "Money well spent."
 		}
 	];
 
 /***/ },
-/* 162 */
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SmoothScroll = __webpack_require__(174);
+
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NavBar = function (_React$Component) {
+	  _inherits(NavBar, _React$Component);
+
+	  function NavBar(props) {
+	    _classCallCheck(this, NavBar);
+
+	    var _this = _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
+
+	    _this.state = {
+	      NavBarStyle: 'NavBar'
+	    };
+	    return _this;
+	  }
+
+	  _createClass(NavBar, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(props) {
+	      if (!props.open) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: prevState.NavBarStyle + ' NavBarHidden'
+	          };
+	        });
+	      } else {
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: 'NavBar'
+	          };
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var self = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.state.NavBarStyle },
+	        _react2.default.createElement(
+	          _SmoothScroll2.default,
+	          { sections: this.props.sections.map(function (v, i) {
+	              return self.props.data[i].title;
+	            }) },
+	          this.props.sections.map(function (v, i) {
+	            return _react2.default.createElement(
+	              'p',
+	              { key: i },
+	              self.props.data[i].title
+	            );
+	          })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return NavBar;
+	}(_react2.default.Component);
+
+	exports.default = NavBar;
+
+/***/ },
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20095,7 +20623,7 @@
 	module.exports = SmoothScroll;
 
 /***/ },
-/* 163 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20104,16 +20632,16 @@
 
 
 /***/ },
-/* 164 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(165);
+	var content = __webpack_require__(177);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(171)(content, {});
+	var update = __webpack_require__(183)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -20130,21 +20658,21 @@
 	}
 
 /***/ },
-/* 165 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(166)(true);
+	exports = module.exports = __webpack_require__(178)(true);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: #f1f1f1;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .Section h1 {\n    text-align: center; }\n  .Section p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 25%;\n    text-align: left; }\n\n.navButton {\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 50px;\n  width: 12em;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090; }\n  .navButton p {\n    color: #9a9aa2;\n    padding: 1em;\n    font-weight: 200;\n    text-align: center; }\n\n.navButton:hover {\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  .navButton:hover > p {\n    -webkit-transition: all 0.2s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n\n.smooth-scroll {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 20vh;\n  background: #f1f1f1; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: #f1f1f1;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s; }\n  body h1 {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body p {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #111111;\n    font-weight: 100; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Navigation.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/main.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,0BANqB;EAOrB,UAAS;EACT,YAAW;EACX,cAAa;EACb,cAAa;EACb,8BAA6B;EAC7B,oBAAmB,EAapB;EApBD;IAUI,mBAAkB,EACnB;EAXH;IAcI,yDAAwD;IACxD,eAAc;IACd,iBAAgB;IAChB,WAAU;IACV,iBAAgB,EACjB;;ACpBH;ECYE,yCAA0C;EAC1C,wCDZ8C;ECa9C,uCDb8C;ECc9C,sCDd8C;ECe9C,mCDf8C;EAC9C,aAAY;EACV,kBAAiB;EACjB,YAAW;EACX,oBAAmB;EACnB,YAAW;EACX,aAAY;EACZ,cAAa;EACb,wBAAuB;EACvB,cAAa;EACb,wBAAuB;EACvB,0BAdsB,EAsBzB;EApBD;IAeE,eAAc;IACd,aAAY;IACZ,iBAAgB;IAChB,mBAAkB,EACjB;;AAGH;ECVE,yCAA0C;EAC1C,wCDU8C;ECT9C,uCDS8C;ECR9C,sCDQ8C;ECP9C,mCDO8C;EAC9C,0BA1BwB;EA2BxB,mBAAkB;EAClB,oBA5BwB;EA6BxB,gBAAe,EAKhB;EAVD;ICVE,yCAA0C;IAC1C,wCDiBgD;IChBhD,uCDgBgD;ICfhD,sCDegD;ICdhD,mCDcgD,EAC/C;;AASH;EACE,cAAa;EACb,wBAAuB;EACvB,wBAAuB;EACvB,gBAAe;EACf,OAAM;EACN,YAAW;EACX,aAAY;EACZ,oBAAmB,EACpB;;AE3CD;EACE,UAAS;EACT,WAAU;EACV,oBAXgB;EJDlB,6BIawB;EJbM,qCAAqC;EAChE,0BIYqB;EJZM,kBAAkB;EAC5C,yBIWoB;EJXM,uBAAuB;EAChD,wBIUmB;EJVM,kBAAkB;EACxC,qBISgB,EAevB;EAnBD;IAOI,yDAdoD;IAepD,eAjBc;IAkBd,mBAAkB;IAClB,iBAAgB,EACjB;EAXH;IAcI,yDApBsD;IAqBtD,eAzBa;IA0Bb,iBAAgB,EACjB","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$section-color: #f1f1f1;\n$p-section-color: #111111;\n\n@import '../helpers/Animation_Mixins.scss';\n\n.Section {\n  background-color: $section-color;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n\n  h1 {\n    text-align: center;\n  }\n\n  p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 25%;\n    text-align: left;\n  }\n}\n","@import '../helpers/Transform_Mixins.scss';\n\n$nav-button-color: #e09090;\n\n.navButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 50px;\n    width: 12em;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: transparent;\n    border: 2px solid $nav-button-color;\n\n  p {\n  color: #9a9aa2;\n  padding: 1em;\n  font-weight: 200;\n  text-align: center;\n  }\n}\n\n.navButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $nav-button-color;\n  border-radius: 10%;\n  background: $nav-button-color;\n  cursor: pointer;\n\n  > p {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n\n\n\n\n\n\n\n.smooth-scroll {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 20vh;\n  background: #f1f1f1;\n}\n","@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.2s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$p-color: #111111;\n$h1-color: #ca9191;\n$bg-color: #f1f1f1;\n$font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/Navigation.scss';\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $bg-color;\n  @include css-fadein(3s);\n\n  h1 {\n    font-family: $font-stack;\n    color: $h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  p {\n    font-family: $p-font-stack;\n    color: $p-color;\n    font-weight: 100;\n  }\n\n}\n"],"sourceRoot":""}]);
+	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: #f1f1f1;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .Section h1 {\n    text-align: center; }\n  .Section p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 100%;\n    text-align: center; }\n\n.navButton {\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 12em;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: flex;\n  justify-content: center;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090; }\n  @media all and (max-width: 1200px) {\n    .navButton {\n      margin: 20px 20px; } }\n  .navButton p {\n    color: #9a9aa2;\n    padding: 1em;\n    font-weight: 200;\n    text-align: center; }\n    @media all and (max-width: 1200px) {\n      .navButton p {\n        position: absolute;\n        color: #9a9aa2;\n        margin: 0;\n        margin-left: 3em;\n        left: 0;\n        padding: 0; } }\n\n.navButton:hover {\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  .navButton:hover > p {\n    -webkit-transition: all 0.2s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n\n.smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 18vh;\n  background: #f1f1f1;\n  z-index: 9999; }\n  @media all and (max-width: 1200px) {\n    .smooth-scroll {\n      display: block;\n      top: 0;\n      height: 100vh;\n      background: #656576; } }\n\n.slideMenuBarButton {\n  border: none;\n  color: #f7f5f5;\n  background: transparent;\n  outline: none;\n  -webkit-user-select: none;\n  /* Chrome all / Safari all */\n  -moz-user-select: none;\n  /* Firefox all */\n  -ms-user-select: none;\n  /* IE 10+ */\n  user-select: none;\n  margin: 20px 20px;\n  position: fixed;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media all and (max-width: 1200px) {\n    .slideMenuBarButton {\n      z-index: 9999; } }\n\n.slideMenuBarButton:hover > div {\n  -webkit-transition: transform 0.2s ease-in-out;\n  -moz-transition: transform, 0.7s, ease-in-out;\n  -ms-transition: transform, 0.7s, ease-in-out;\n  -o-transition: transform, 0.7s, ease-in-out;\n  transition: transform, 0.7s, ease-in-out;\n  /*background: #d6c4b9;*/ }\n\n.slideMenuBarButton div {\n  -webkit-transition: transform 0.2s ease-in-out;\n  -moz-transition: transform, 0.7s, ease-in-out;\n  -ms-transition: transform, 0.7s, ease-in-out;\n  -o-transition: transform, 0.7s, ease-in-out;\n  transition: transform, 0.7s, ease-in-out;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n\n.slideMenuBarButton:hover > #topBar {\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n\n.slideMenuBarButton:hover > #bottomBar {\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n\n.slideMenuBarButton:hover > #middleBar {\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n\n.clicked > #topBar {\n  -webkit-transition: transform 0.2s ease-in-out;\n  -moz-transition: transform, 0.7s, ease-in-out;\n  -ms-transition: transform, 0.7s, ease-in-out;\n  -o-transition: transform, 0.7s, ease-in-out;\n  transition: transform, 0.7s, ease-in-out;\n  -ms-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(0, 10px, 0) rotate(45deg);\n  transform: translate3D(0, 10px, 0) rotate(45deg); }\n\n.clicked > #bottomBar {\n  -webkit-transition: transform 0.2s ease-in-out;\n  -moz-transition: transform, 0.7s, ease-in-out;\n  -ms-transition: transform, 0.7s, ease-in-out;\n  -o-transition: transform, 0.7s, ease-in-out;\n  transition: transform, 0.7s, ease-in-out;\n  -ms-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  transform: translate3D(0, -10px, 0) rotate(-45deg); }\n\n.clicked > #middleBar {\n  -webkit-transition: transform 0.2s ease-in-out;\n  -moz-transition: transform, 0.7s, ease-in-out;\n  -ms-transition: transform, 0.7s, ease-in-out;\n  -o-transition: transform, 0.7s, ease-in-out;\n  transition: transform, 0.7s, ease-in-out;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  opacity: 0; }\n\n.MenuBar {\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in;\n  -ms-transition: all, 0.5s, ease-in;\n  -o-transition: all, 0.5s, ease-in;\n  transition: all, 0.5s, ease-in;\n  width: 0vw;\n  background: #424252;\n  height: 100vh;\n  top: 0;\n  position: fixed; }\n  .MenuBar li {\n    font-family: \"Open Sans\", Futura, Helvetica, sans-serif;\n    margin: 1em;\n    list-style-type: none;\n    cursor: pointer; }\n  .MenuBar li:hover {\n    -webkit-transition: all 0.2s ease-in-out;\n    -moz-transition: all, 0.1s, ease-in-out;\n    -ms-transition: all, 0.1s, ease-in-out;\n    -o-transition: all, 0.1s, ease-in-out;\n    transition: all, 0.1s, ease-in-out;\n    color: #b5ae9e; }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: all 0.2s ease-in-out;\n  -moz-transition: all, 0.25s, ease-in-cubic;\n  -ms-transition: all, 0.25s, ease-in-cubic;\n  -o-transition: all, 0.25s, ease-in-cubic;\n  transition: all, 0.25s, ease-in-cubic;\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999;\n      top: 0;\n      position: absolute; } }\n\n.menuBarOpen {\n  margin-left: 15vw; }\n  @media all and (max-width: 1200px) {\n    .menuBarOpen {\n      margin-left: 67vw; } }\n\n.menuBarClose {\n  margin-left: 0vw; }\n\n.NavBar {\n  position: relative;\n  top: 0;\n  height: 18vh;\n  left: 0;\n  background: transparent; }\n\n@media all and (max-width: 1200px) {\n  .NavBarHidden {\n    display: none; } }\n\n.Warriorfy .Start {\n  width: 350px;\n  height: 50px;\n  background-color: #faa187;\n  max-width: 50%;\n  border-radius: 8px; }\n\n.Warriorfy p {\n  color: white;\n  font-weight: 300; }\n\n.Warriorfy h1 {\n  color: white; }\n\n.Warriorfy .StartContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 50vh;\n  z-index: 99; }\n\n.Warriorfy .images {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.Warriorfy .background_image {\n  width: 70vw;\n  height: 33.33vh;\n  background-color: #6e6e91;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 800px) {\n    .Warriorfy .background_image {\n      width: 100vw;\n      left: 0vw; } }\n\n.Warriorfy .foreground_image {\n  width: 33.33vw;\n  height: 33.33vh;\n  top: 10vw;\n  background-color: #595968; }\n  @media all and (max-width: 800px) {\n    .Warriorfy .foreground_image {\n      max-width: 50vw; } }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: #f1f1f1;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body h1 {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body p {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #111111;\n    font-weight: 200; }\n  body .wrapper {\n    overflow-x: hidden;\n    -webkit-overflow-scrolling: touch; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Navigation.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Warriorfy.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/main.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC7BrB;EACE,0BAJqB;EAKrB,UAAS;EACT,YAAW;EACX,cAAa;EACb,cAAa;EACb,8BAA6B;EAC7B,oBAAmB,EAapB;EApBD;IAUI,mBAAkB,EACnB;EAXH;IAcI,yDAAwD;IACxD,eAAc;IACd,iBAAgB;IAChB,YAAW;IACX,mBAAkB,EACnB;;ACvBH;ECcE,yCAA0C;EAC1C,wCDd8C;ECe9C,uCDf8C;ECgB9C,sCDhB8C;ECiB9C,mCDjB8C;EAC9C,aAAY;EACV,kBAAiB;EACjB,YAAW;EACX,oBAAmB;EACnB,YAAW;EACX,aAAY;EACZ,cAAa;EACb,wBAAuB;EACvB,cAAa;EACb,wBAAuB;EACvB,0BAdsB,EAsCzB;EAtBG;IAdJ;MAeM,kBAAiB,EAqBtB,EAAA;EApCD;IAmBE,eAAc;IACd,aAAY;IACZ,iBAAgB;IAChB,mBAAkB,EAWjB;IATC;MAxBJ;QAyBM,mBAAkB;QAClB,eAAc;QACd,UAAS;QACT,iBAAgB;QAChB,QAAM;QACN,WAAU,EAGb,EAAA;;AAKH;ECxBE,yCAA0C;EAC1C,wCDwB8C;ECvB9C,uCDuB8C;ECtB9C,sCDsB8C;ECrB9C,mCDqB8C;EAC9C,0BA1CwB;EA2CxB,mBAAkB;EAClB,oBA5CwB;EA6CxB,gBAAe,EAKhB;EAVD;ICxBE,yCAA0C;IAC1C,wCD+BgD;IC9BhD,uCD8BgD;IC7BhD,sCD6BgD;IC5BhD,mCD4BgD,EAC/C;;AASH;EACE,cAAa;EACb,8BAA6B;EAC7B,wBAAuB;EACvB,gBAAe;EACf,OAAM;EACN,YAAW;EACX,aAAY;EACZ,oBAAmB;EACnB,cAAa,EAQd;EANC;IAXF;MAYI,eAAc;MACd,OAAM;MACN,cAAa;MACb,oBAAmB,EAEtB,EAAA;;AEnED;EACE,aAAY;EACZ,eAV2B;EAW3B,wBAAuB;EACvB,cAAa;ECXb,0BDY6B;ECZH,6BAA6B;EACvD,uBDW6B;ECXH,iBAAiB;EAC3C,sBDU6B;ECVH,YAAY;EACtC,kBDS6B;EAC7B,kBAAiB;EACjB,gBAAe;EACf,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;EAHC;IAbF;MAcI,cAAa,EAEhB,EAAA;;AAED;EDVE,+CAA0C;EAC1C,8CCd6B;EDe7B,6CCf6B;EDgB7B,4CChB6B;EDiB7B,yCCjB6B;EAyB7B,wBAAwB,EACzB;;AAED;EDfE,+CAA0C;EAC1C,8CCd6B;EDe7B,6CCf6B;EDgB7B,4CChB6B;EDiB7B,yCCjB6B;EA8B7B,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;;AAED;EACE,gEAAgE;EAChE,kEAAkE,EACnE;;AAED;EACE,gEAAgE;EAChE,kEAAkE,EAEnE;;AAED;EACE,8CAA8C;EAC9C,qCAAqC,EACtC;;AAED;EDvCE,+CAA0C;EAC1C,8CCd6B;EDe7B,6CCf6B;EDgB7B,4CChB6B;EDiB7B,yCCjB6B;EDqD7B,qDAA+C;EAAG,UAAU;EAC5D,sDAAgD;EAAG,YAAY;EAC/D,yDAAmD;EAAG,YAAY;EAClE,oDAA8C;EAC9C,iDAA2C,ECF5C;;AAED;ED5CE,+CAA0C;EAC1C,8CCd6B;EDe7B,6CCf6B;EDgB7B,4CChB6B;EDiB7B,yCCjB6B;ED6D7B,uDAA+C;EAAG,UAAU;EAC5D,wDAAgD;EAAG,YAAY;EAC/D,2DAAmD;EAAG,YAAY;EAClE,sDAA8C;EAC9C,mDAA2C,ECL5C;;AAED;EDjDE,+CAA0C;EAC1C,8CCd6B;EDe7B,6CCf6B;EDgB7B,4CChB6B;EDiB7B,yCCjB6B;EDsG7B,mCAAoC;EAAE,UAAU;EAChD,oCAAqC;EAAE,YAAY;EACnD,uCAAwC;EAAE,YAAY;EACtD,kCAAmC;EACnC,+BAAgC;ECzChC,WAAU,EACX;;AE1DD;EHKE,yCAA0C;EAC1C,oCGL4C;EHM5C,mCGN4C;EHO5C,kCGP4C;EHQ5C,+BGR4C;EAC1C,WAAU;EACV,oBAAmB;EACnB,cAAa;EACb,OAAM;EACN,gBAAe,EAsBlB;EA5BD;IAYM,wDAvB0D;IAwB1D,YAAW;IACX,sBAAqB;IACrB,gBAAe,EAChB;EAhBL;IHKE,yCAA0C;IAC1C,wCGakD;IHZlD,uCGYkD;IHXlD,sCGWkD;IHVlD,mCGUkD;IAC9C,eAzBkB,EA0BnB;;AC5BL;EACE,oBAJ4B;EJe5B,yCAA0C;EAC1C,2CIXiD;EJYjD,0CIZiD;EJajD,yCIbiD;EJcjD,sCIdiD;EACjD,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAQvC;EANC;IARF;MASI,cAAa;MACb,OAAM;MACN,mBAAkB,EAGrB,EAAA;;AAED;EACE,kBAAiB,EAIlB;EAHG;IAFJ;MAGI,kBAAiB,EAEpB,EAAA;;AAED;EACE,iBAAgB,EAIjB;;AChCD;EACE,mBAAkB;EAClB,OAAM;EACN,aAAY;EACZ,QAAO;EACP,wBAAuB,EACxB;;AAGC;EADF;IAEI,cAAa,EAEhB,EAAA;;ACTD;EAEI,aAAY;EACZ,aAAY;EACZ,0BAAyB;EACzB,eAAc;EACd,mBAAkB,EACnB;;AAPH;EAUI,aAAY;EACZ,iBAAgB,EACjB;;AAZH;EAeI,aAAY,EACb;;AAhBH;EAmBI,cAAa;EACb,wBAAuB;EACvB,oBAAmB;EACnB,iBAAgB;EAChB,YAAW,EACZ;;AAxBH;EA2BI,cAAa;EACb,wBAAuB;EACvB,oBAAmB,EACpB;;AA9BH;EAiCM,YAAW;EACX,gBAAe;EACf,0BAAyB;EACzB,mBAAkB;EAClB,cAAa;EACb,wBAAuB;EACvB,oBAAmB,EAMtB;EAJG;IAzCN;MA0CQ,aAAY;MACZ,UAAS,EAEd,EAAA;;AA7CH;EAgDM,eAAc;EACd,gBAAe;EACf,UAAS;EACT,0BAAyB,EAO5B;EAJG;IAtDN;MAwDQ,gBAAe,EAEpB,EAAA;;AC9BH;EACE,UAAS;EACT,WAAU;EACV,oBAhCgB;EVDlB,6BUkCwB;EVlCM,qCAAqC;EAChE,0BUiCqB;EVjCM,kBAAkB;EAC5C,yBUgCoB;EVhCM,uBAAuB;EAChD,wBU+BmB;EV/BM,kBAAkB;EACxC,qBU8BgB;EACtB,YAAW;EACX,mBAAiB,EAyBlB;EA/BD;IAWI,yDAvCoD;IAwCpD,eA1Cc;IA2Cd,mBAAkB;IAClB,iBAAgB,EACjB;EAfH;IAkBI,yDA7CsD;IA8CtD,eAlDa;IAmDb,iBAAgB,EACjB;EArBH;IAwBI,mBAAiB;IACjB,kCAAiC,EAClC","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","\n\n\n$section-color: #f1f1f1;\n$p-section-color: #111111;\n\n.Section {\n  background-color: $section-color;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n\n  h1 {\n    text-align: center;\n  }\n\n  p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 100%;\n    text-align: center;\n  }\n}\n","$nav-button-color: #e09090;\n\n.navButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: transparent;\n    border: 2px solid $nav-button-color;\n\n    @media all and (max-width: 1200px) {\n      margin: 20px 20px;\n    }\n\n  p {\n  color: #9a9aa2;\n  padding: 1em;\n  font-weight: 200;\n  text-align: center;\n\n    @media all and (max-width: 1200px) {\n      position: absolute;\n      color: #9a9aa2;\n      margin: 0;\n      margin-left: 3em;\n      left:0;\n      padding: 0;\n    }\n\n  }\n\n\n}\n\n.navButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $nav-button-color;\n  border-radius: 10%;\n  background: $nav-button-color;\n  cursor: pointer;\n\n  > p {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n\n\n\n\n\n\n\n.smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  height: 18vh;\n  background: #f1f1f1;\n  z-index: 9999;\n\n  @media all and (max-width: 1200px) {\n    display: block;\n    top: 0;\n    height: 100vh;\n    background: #656576;\n  }\n}\n","@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.2s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$menu-bar-icon-color: #f7f5f5;\n$transition-time: 0.7s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.slideMenuBarButton {\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  margin: 20px 20px;\n  position: fixed;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n}\n\n.slideMenuBarButton:hover > div {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  /*background: #d6c4b9;*/\n}\n\n.slideMenuBarButton div {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.slideMenuBarButton:hover > #topBar {\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.slideMenuBarButton:hover > #bottomBar {\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.slideMenuBarButton:hover > #middleBar {\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down(45deg, 10px);\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up(-45deg, -10px);\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  opacity: 0;\n}\n","@mixin css-user-select($n){\n  -webkit-user-select: $n;  /* Chrome all / Safari all */\n  -moz-user-select: $n;     /* Firefox all */\n  -ms-user-select: $n;      /* IE 10+ */\n  user-select: $n;\n}\n","$menu-bar-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$menu-bar-text-color: #d0d0d6;\n$h3-text-color: #746c88;\n$h4-text-color: #ead4d8;\n$p-font-size: 1em;\n$li-color: #a56666;\n$li-hover-color: #b5ae9e;\n$mobile-p-font-size: 6.5vw;\n\n@import './helpers/Transform_Mixins.scss';\n\n.MenuBar {\n    @include css-transition(all, 0.5s, ease-in);\n    width: 0vw;\n    background: #424252;\n    height: 100vh;\n    top: 0;\n    position: fixed;\n\n    @media all and (max-width: 1200px) {\n    }\n\n    li {\n      font-family: $menu-bar-font-stack;\n      margin: 1em;\n      list-style-type: none;\n      cursor: pointer;\n    }\n\n    li:hover {\n      @include css-transition(all, 0.1s, ease-in-out);\n      color: $li-hover-color;\n    }\n\n    @media all and (max-width: 1200px) {\n\n    }\n\n\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition(all, 0.25s, ease-in-cubic);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n    top: 0;\n    position: absolute;\n  }\n\n}\n\n.menuBarOpen {\n  margin-left: 15vw;\n    @media all and (max-width: 1200px) {\n    margin-left: 67vw;\n    }\n}\n\n.menuBarClose {\n  margin-left: 0vw;\n  @media all and (max-width: 1200px) {\n\n  }\n}\n",".NavBar {\n  position: relative;\n  top: 0;\n  height: 18vh;\n  left: 0;\n  background: transparent;\n}\n\n.NavBarHidden {\n  @media all and (max-width: 1200px) {\n    display: none;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n.Warriorfy {\n  .Start {\n    width: 350px;\n    height: 50px;\n    background-color: #faa187;\n    max-width: 50%;\n    border-radius: 8px;\n  }\n\n  p {\n    color: white;\n    font-weight: 300;\n  }\n\n  h1 {\n    color: white;\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 50vh;\n    z-index: 99;\n  }\n\n  .images {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .background_image {\n      width: 70vw;\n      height: 33.33vh;\n      background-color: #6e6e91;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: #595968;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$p-color: #111111;\n$h1-color: #ca9191;\n$bg-color: #f1f1f1;\n$font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/Navigation.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Warriorfy.scss';\n@import './components/sections/MissionStatement.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/MarketValidation.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/CustomerAdoption.scss';\n@import './components/sections/Investment.scss';\n\n\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n\n\n  h1 {\n    font-family: $font-stack;\n    color: $h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  p {\n    font-family: $p-font-stack;\n    color: $p-color;\n    font-weight: 200;\n  }\n\n  .wrapper {\n    overflow-x:hidden;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  @media all and (max-width: 1200px) {\n\n  }\n}\n"],"sourceRoot":""}]);
 
 	// exports
 
 
 /***/ },
-/* 166 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -20223,10 +20751,10 @@
 	  return '/*# ' + data + ' */';
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(167).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(179).Buffer))
 
 /***/ },
-/* 167 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -20239,9 +20767,9 @@
 
 	'use strict'
 
-	var base64 = __webpack_require__(168)
-	var ieee754 = __webpack_require__(169)
-	var isArray = __webpack_require__(170)
+	var base64 = __webpack_require__(180)
+	var ieee754 = __webpack_require__(181)
+	var isArray = __webpack_require__(182)
 
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -22022,7 +22550,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 168 */
+/* 180 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -22142,7 +22670,7 @@
 
 
 /***/ },
-/* 169 */
+/* 181 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -22232,7 +22760,7 @@
 
 
 /***/ },
-/* 170 */
+/* 182 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -22243,7 +22771,7 @@
 
 
 /***/ },
-/* 171 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -22280,7 +22808,7 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
-		fixUrls = __webpack_require__(172);
+		fixUrls = __webpack_require__(184);
 
 	module.exports = function(list, options) {
 		if(false) {
@@ -22539,7 +23067,7 @@
 
 
 /***/ },
-/* 172 */
+/* 184 */
 /***/ function(module, exports) {
 
 	
@@ -22634,16 +23162,16 @@
 
 
 /***/ },
-/* 173 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(174);
+	var content = __webpack_require__(186);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(171)(content, {});
+	var update = __webpack_require__(183)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22660,465 +23188,465 @@
 	}
 
 /***/ },
-/* 174 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(166)(undefined);
+	exports = module.exports = __webpack_require__(178)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(175) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(175) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(176) + ") format('woff2'), \n       url(" + __webpack_require__(177) + ") format('woff'), \n       url(" + __webpack_require__(178) + ") format('truetype'), \n       url(" + __webpack_require__(179) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(180) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(180) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(181) + ") format('woff2'), \n       url(" + __webpack_require__(182) + ") format('woff'), \n       url(" + __webpack_require__(183) + ") format('truetype'), \n       url(" + __webpack_require__(184) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(185) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(185) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(186) + ") format('woff2'), \n       url(" + __webpack_require__(187) + ") format('woff'), \n       url(" + __webpack_require__(188) + ") format('truetype'), \n       url(" + __webpack_require__(189) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(190) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(190) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(191) + ") format('woff2'), \n       url(" + __webpack_require__(192) + ") format('woff'), \n       url(" + __webpack_require__(193) + ") format('truetype'), \n       url(" + __webpack_require__(194) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(195) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(195) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(196) + ") format('woff2'), \n       url(" + __webpack_require__(197) + ") format('woff'), \n       url(" + __webpack_require__(198) + ") format('truetype'), \n       url(" + __webpack_require__(199) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(200) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(200) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(201) + ") format('woff2'), \n       url(" + __webpack_require__(202) + ") format('woff'), \n       url(" + __webpack_require__(203) + ") format('truetype'), \n       url(" + __webpack_require__(204) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(205) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(205) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(206) + ") format('woff2'), \n       url(" + __webpack_require__(207) + ") format('woff'), \n       url(" + __webpack_require__(208) + ") format('truetype'), \n       url(" + __webpack_require__(209) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(210) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(210) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(211) + ") format('woff2'), \n       url(" + __webpack_require__(212) + ") format('woff'), \n       url(" + __webpack_require__(213) + ") format('truetype'), \n       url(" + __webpack_require__(214) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(215) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(215) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(216) + ") format('woff2'), \n       url(" + __webpack_require__(217) + ") format('woff'), \n       url(" + __webpack_require__(218) + ") format('truetype'), \n       url(" + __webpack_require__(219) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(220) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(220) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(221) + ") format('woff2'), \n       url(" + __webpack_require__(222) + ") format('woff'), \n       url(" + __webpack_require__(223) + ") format('truetype'), \n       url(" + __webpack_require__(224) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(225) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(225) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(226) + ") format('woff2'), \n       url(" + __webpack_require__(227) + ") format('woff'), \n       url(" + __webpack_require__(228) + ") format('truetype'), \n       url(" + __webpack_require__(229) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(230) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(230) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(231) + ") format('woff2'), \n       url(" + __webpack_require__(232) + ") format('woff'), \n       url(" + __webpack_require__(233) + ") format('truetype'), \n       url(" + __webpack_require__(234) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(235) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(235) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(236) + ") format('woff2'), \n       url(" + __webpack_require__(237) + ") format('woff'), \n       url(" + __webpack_require__(238) + ") format('truetype'), \n       url(" + __webpack_require__(239) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(240) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(240) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(241) + ") format('woff2'), \n       url(" + __webpack_require__(242) + ") format('woff'), \n       url(" + __webpack_require__(243) + ") format('truetype'), \n       url(" + __webpack_require__(244) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(245) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(245) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(246) + ") format('woff2'), \n       url(" + __webpack_require__(247) + ") format('woff'), \n       url(" + __webpack_require__(248) + ") format('truetype'), \n       url(" + __webpack_require__(249) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(187) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(187) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(188) + ") format('woff2'), \n       url(" + __webpack_require__(189) + ") format('woff'), \n       url(" + __webpack_require__(190) + ") format('truetype'), \n       url(" + __webpack_require__(191) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(192) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(192) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(193) + ") format('woff2'), \n       url(" + __webpack_require__(194) + ") format('woff'), \n       url(" + __webpack_require__(195) + ") format('truetype'), \n       url(" + __webpack_require__(196) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(197) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(197) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(198) + ") format('woff2'), \n       url(" + __webpack_require__(199) + ") format('woff'), \n       url(" + __webpack_require__(200) + ") format('truetype'), \n       url(" + __webpack_require__(201) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(202) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(202) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(203) + ") format('woff2'), \n       url(" + __webpack_require__(204) + ") format('woff'), \n       url(" + __webpack_require__(205) + ") format('truetype'), \n       url(" + __webpack_require__(206) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(207) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(207) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(208) + ") format('woff2'), \n       url(" + __webpack_require__(209) + ") format('woff'), \n       url(" + __webpack_require__(210) + ") format('truetype'), \n       url(" + __webpack_require__(211) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(212) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(212) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(213) + ") format('woff2'), \n       url(" + __webpack_require__(214) + ") format('woff'), \n       url(" + __webpack_require__(215) + ") format('truetype'), \n       url(" + __webpack_require__(216) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(217) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(217) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(218) + ") format('woff2'), \n       url(" + __webpack_require__(219) + ") format('woff'), \n       url(" + __webpack_require__(220) + ") format('truetype'), \n       url(" + __webpack_require__(221) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(222) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(222) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(223) + ") format('woff2'), \n       url(" + __webpack_require__(224) + ") format('woff'), \n       url(" + __webpack_require__(225) + ") format('truetype'), \n       url(" + __webpack_require__(226) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(227) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(227) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(228) + ") format('woff2'), \n       url(" + __webpack_require__(229) + ") format('woff'), \n       url(" + __webpack_require__(230) + ") format('truetype'), \n       url(" + __webpack_require__(231) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(232) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(232) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(233) + ") format('woff2'), \n       url(" + __webpack_require__(234) + ") format('woff'), \n       url(" + __webpack_require__(235) + ") format('truetype'), \n       url(" + __webpack_require__(236) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(237) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(237) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(238) + ") format('woff2'), \n       url(" + __webpack_require__(239) + ") format('woff'), \n       url(" + __webpack_require__(240) + ") format('truetype'), \n       url(" + __webpack_require__(241) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(242) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(242) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(243) + ") format('woff2'), \n       url(" + __webpack_require__(244) + ") format('woff'), \n       url(" + __webpack_require__(245) + ") format('truetype'), \n       url(" + __webpack_require__(246) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(247) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(247) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(248) + ") format('woff2'), \n       url(" + __webpack_require__(249) + ") format('woff'), \n       url(" + __webpack_require__(250) + ") format('truetype'), \n       url(" + __webpack_require__(251) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(252) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(252) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(253) + ") format('woff2'), \n       url(" + __webpack_require__(254) + ") format('woff'), \n       url(" + __webpack_require__(255) + ") format('truetype'), \n       url(" + __webpack_require__(256) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(257) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(257) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(258) + ") format('woff2'), \n       url(" + __webpack_require__(259) + ") format('woff'), \n       url(" + __webpack_require__(260) + ") format('truetype'), \n       url(" + __webpack_require__(261) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 175 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.eot";
 
 /***/ },
-/* 176 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff2";
 
 /***/ },
-/* 177 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff";
 
 /***/ },
-/* 178 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.ttf";
 
 /***/ },
-/* 179 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.svg";
 
 /***/ },
-/* 180 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.eot";
 
 /***/ },
-/* 181 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff2";
 
 /***/ },
-/* 182 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff";
 
 /***/ },
-/* 183 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.ttf";
 
 /***/ },
-/* 184 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.svg";
 
 /***/ },
-/* 185 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.eot";
 
 /***/ },
-/* 186 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff2";
 
 /***/ },
-/* 187 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff";
 
 /***/ },
-/* 188 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.ttf";
 
 /***/ },
-/* 189 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.svg";
 
 /***/ },
-/* 190 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.eot";
 
 /***/ },
-/* 191 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff2";
 
 /***/ },
-/* 192 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff";
 
 /***/ },
-/* 193 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.ttf";
 
 /***/ },
-/* 194 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.svg";
 
 /***/ },
-/* 195 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.eot";
 
 /***/ },
-/* 196 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff2";
 
 /***/ },
-/* 197 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff";
 
 /***/ },
-/* 198 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.ttf";
 
 /***/ },
-/* 199 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.svg";
 
 /***/ },
-/* 200 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.eot";
 
 /***/ },
-/* 201 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff2";
 
 /***/ },
-/* 202 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff";
 
 /***/ },
-/* 203 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.ttf";
 
 /***/ },
-/* 204 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.svg";
 
 /***/ },
-/* 205 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.eot";
 
 /***/ },
-/* 206 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff2";
 
 /***/ },
-/* 207 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff";
 
 /***/ },
-/* 208 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.ttf";
 
 /***/ },
-/* 209 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.svg";
 
 /***/ },
-/* 210 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.eot";
 
 /***/ },
-/* 211 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff2";
 
 /***/ },
-/* 212 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff";
 
 /***/ },
-/* 213 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.ttf";
 
 /***/ },
-/* 214 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.svg";
 
 /***/ },
-/* 215 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.eot";
 
 /***/ },
-/* 216 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff2";
 
 /***/ },
-/* 217 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff";
 
 /***/ },
-/* 218 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.ttf";
 
 /***/ },
-/* 219 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.svg";
 
 /***/ },
-/* 220 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.eot";
 
 /***/ },
-/* 221 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff2";
 
 /***/ },
-/* 222 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff";
 
 /***/ },
-/* 223 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.ttf";
 
 /***/ },
-/* 224 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.svg";
 
 /***/ },
-/* 225 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.eot";
 
 /***/ },
-/* 226 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff2";
 
 /***/ },
-/* 227 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff";
 
 /***/ },
-/* 228 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.ttf";
 
 /***/ },
-/* 229 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.svg";
 
 /***/ },
-/* 230 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.eot";
 
 /***/ },
-/* 231 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff2";
 
 /***/ },
-/* 232 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff";
 
 /***/ },
-/* 233 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.ttf";
 
 /***/ },
-/* 234 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.svg";
 
 /***/ },
-/* 235 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.eot";
 
 /***/ },
-/* 236 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff2";
 
 /***/ },
-/* 237 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff";
 
 /***/ },
-/* 238 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.ttf";
 
 /***/ },
-/* 239 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.svg";
 
 /***/ },
-/* 240 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.eot";
 
 /***/ },
-/* 241 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff2";
 
 /***/ },
-/* 242 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff";
 
 /***/ },
-/* 243 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.ttf";
 
 /***/ },
-/* 244 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.svg";
 
 /***/ },
-/* 245 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.eot";
 
 /***/ },
-/* 246 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff2";
 
 /***/ },
-/* 247 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff";
 
 /***/ },
-/* 248 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.ttf";
 
 /***/ },
-/* 249 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.svg";

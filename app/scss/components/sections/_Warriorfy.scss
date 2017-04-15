@@ -1,0 +1,63 @@
+$section-color: #f1f1f1;
+$start-button-color: #faa187;
+
+.Warriorfy {
+  .Start {
+    width: 350px;
+    height: 50px;
+    background-color: #faa187;
+    max-width: 50%;
+    border-radius: 8px;
+  }
+
+  p {
+    color: white;
+    font-weight: 300;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  .StartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50vh;
+    z-index: 99;
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .background_image {
+      width: 70vw;
+      height: 33.33vh;
+      background-color: #6e6e91;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media all and (max-width: 800px) {
+        width: 100vw;
+        left: 0vw;
+      }
+  }
+
+  .foreground_image {
+      width: 33.33vw;
+      height: 33.33vh;
+      top: 10vw;
+      background-color: #595968;
+
+
+      @media all and (max-width: 800px) {
+
+        max-width: 50vw;
+      }
+  }
+}

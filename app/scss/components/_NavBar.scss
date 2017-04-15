@@ -1,0 +1,13 @@
+.NavBar {
+  position: relative;
+  top: 0;
+  height: 18vh;
+  left: 0;
+  background: transparent;
+}
+
+.NavBarHidden {
+  @media all and (max-width: 1200px) {
+    display: none;
+  }
+}

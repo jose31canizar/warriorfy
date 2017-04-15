@@ -12,9 +12,16 @@ $transition-easing: ease-in-out;
   background: transparent;
   outline: none;
   @include css-user-select(none);
-  margin: 20px 50px;
+  margin: 20px 20px;
   position: fixed;
   cursor: pointer;
+  top: 0;
+  z-index: -10;
+  display: block;
+
+  @media all and (max-width: 1200px) {
+    z-index: 9999;
+  }
 }
 
 .slideMenuBarButton:hover > div {

@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionContainer from './SectionContainer.jsx';
-import Section from './Section.jsx';
+import SectionFactory from './SectionFactory.jsx';
 
 var MainContainer = React.createClass({
   getInitialState() {
@@ -30,10 +30,8 @@ var MainContainer = React.createClass({
           </button>
           <SectionContainer>
             {this.props.sections.map((v, i) => (
-              <Section id={self.props.data[i].title} key={i}>
-              <h1>{self.props.data[i].title}</h1>
-              <p>{self.props.data[i].text}</p>
-              </Section>))}
+              <SectionFactory id={self.props.data[i].title} key={i} title={self.props.data[i].title} text={self.props.data[i].text}/>
+            ))}
           </SectionContainer>
         </div>
     )

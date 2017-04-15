@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import MainContainer from './components/MainContainer.jsx';
 import SectionsData from './data/sections.json';
 var SmoothScroll = require('./components/SmoothScroll.js');
-import MenuBar from './components/MenuBar.jsx';
 import NavBar from './components/NavBar.jsx';
 
 class App extends Component {
@@ -34,9 +33,8 @@ class App extends Component {
     var self = this;
 
     return (
-      <div>
-          <MenuBar/>
-          <NavBar data={this.state.data} sections={this.state.sections}/>
+      <div className={'wrapper'}>
+          <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open}/>
           <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>
       </div>);
   }

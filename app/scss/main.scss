@@ -15,12 +15,29 @@ $p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
 @import './components/MenuBarIcon.scss';
 @import './components/MenuBar.scss';
 @import './components/MainContainer.scss';
+@import './components/NavBar.scss';
+
+@import './components/sections/Warriorfy.scss';
+@import './components/sections/MissionStatement.scss';
+@import './components/sections/Opportunity.scss';
+@import './components/sections/Team.scss';
+@import './components/sections/MarketValidation.scss';
+@import './components/sections/Product.scss';
+@import './components/sections/BusinessModel.scss';
+@import './components/sections/CustomerAdoption.scss';
+@import './components/sections/Investment.scss';
+
+
 
 body {
   margin: 0;
   padding: 0;
   background: $bg-color;
   @include css-fadein(3s);
+  width: 100%;
+  overflow-x:hidden;
+
+
 
   h1 {
     font-family: $font-stack;
@@ -32,7 +49,15 @@ body {
   p {
     font-family: $p-font-stack;
     color: $p-color;
-    font-weight: 100;
+    font-weight: 200;
   }
 
+  .wrapper {
+    overflow-x:hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media all and (max-width: 1200px) {
+
+  }
 }

@@ -6,20 +6,28 @@ $live-stream-text-color: #a29393;
   background: $main-container-color;
   @include css-transition(all, 0.25s, ease-in-cubic);
   position: relative;
-  display: inline-block;
-  width: 100vw;
+  width: 100%;
+  overflow-x:hidden;
+  /*-webkit-overflow-scrolling: touch;*/
+
+  @media all and (max-width: 1200px) {
+    z-index: 9999;
+    top: 0;
+    position: absolute;
+  }
+
 }
 
 .menuBarOpen {
   margin-left: 15vw;
-  @media all and (max-width: 1000px) {
-  margin-left: 70vw;
-  }
+    @media all and (max-width: 1200px) {
+    margin-left: 67vw;
+    }
 }
 
 .menuBarClose {
   margin-left: 0vw;
-}
+  @media all and (max-width: 1200px) {
 
-@media all and (max-width: 1000px) {
+  }
 }
