@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import MainContainer from './components/MainContainer.jsx';
 import SectionsData from './data/sections.json';
 var SmoothScroll = require('./components/SmoothScroll.js');
-import NavBar from './components/NavBar.jsx';
+import MenuBar from './components/MenuBar.jsx';
+import MenuBarIcon from './components/MenuBarIcon.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -12,9 +13,11 @@ class App extends Component {
     this.state = {
       sections: sections,
       data: 'loading...',
-      open: false
+      open: false,
+      MenuBarIconStyle: 'MenuBarIcon'
     };
     this.togglePanel = this.togglePanel.bind(this);
+    this.closeMenuBar = this.closeMenuBar.bind(this);
   }
   togglePanel() {
     this.setState((prevState, props) => {
@@ -22,7 +25,11 @@ class App extends Component {
             open : !prevState.open
           }
         });
-        console.log('changed');
+  }
+  closeMenuBar() {
+    this.setState({
+      open: false
+    })
   }
   componentDidMount() {
     this.setState({
@@ -34,7 +41,8 @@ class App extends Component {
 
     return (
       <div className={'wrapper'}>
-          <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open}/>
+          <MenuBarIcon togglePanel={this.togglePanel} open={this.state.open}/>
+          <MenuBar data={this.state.data} sections={this.state.sections} open={this.state.open} closeMenuBar={this.closeMenuBar}/>
           <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>
       </div>);
   }

@@ -1,40 +1,83 @@
-$menu-bar-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
-$menu-bar-text-color: #d0d0d6;
-$h3-text-color: #746c88;
-$h4-text-color: #ead4d8;
-$p-font-size: 1em;
-$li-color: #a56666;
-$li-hover-color: #b5ae9e;
-$mobile-p-font-size: 6.5vw;
-
-@import './helpers/Transform_Mixins.scss';
+$transition-time: 0.2s;
+$transition-prop: transform;
+$transition-easing: ease-in-out;
+$bg-color: #7a6772;
+$menu-button-color: #e09090;
 
 .MenuBar {
-    @include css-transition(all, 0.5s, ease-in);
-    width: 0vw;
-    background: #424252;
-    height: 100vh;
-    top: 0;
+    @include css-transition(all, $transition-time, $transition-easing);
     position: fixed;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    width: 67vw;
+    background: $bg-color;
+
+
+    .smooth-scroll {
+      display: inline-grid;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 18vh;
+      background: transparent;
+      z-index: 9999;
+
+      @media all and (max-width: 1200px) {
+        z-index: -1;
+      }
+    }
+}
+
+.MenuBarHidden {
+  @media all and (min-width: 1200px) {
+  }
+}
+
+
+
+
+.menuButton {
+  @include css-transition(all, 0.5s, ease-in-out);
+  border: none;
+    margin: 20px 20px;
+    width: 60px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    outline: none;
+    background: transparent;
+    border: 2px solid $menu-button-color;
 
     @media all and (max-width: 1200px) {
     }
 
-    li {
-      font-family: $menu-bar-font-stack;
-      margin: 1em;
-      list-style-type: none;
-      cursor: pointer;
-    }
-
-    li:hover {
-      @include css-transition(all, 0.1s, ease-in-out);
-      color: $li-hover-color;
-    }
+  p {
+    color: #9a9aa2;
+    padding: 0px;
+    font-weight: 200;
+    margin: 0;
+    padding-left: 50px;
+    text-align: center;
+    white-space: nowrap;
 
     @media all and (max-width: 1200px) {
-
     }
 
+  }
 
+
+}
+
+.menuButton:hover {
+  @include css-transition(all, 0.5s, ease-in-out);
+  border: 2px solid $menu-button-color;
+  border-radius: 10%;
+  background: $menu-button-color;
+  cursor: pointer;
+
+  > p {
+    @include css-transition(all, 0.5s, ease-in-out);
+  }
 }

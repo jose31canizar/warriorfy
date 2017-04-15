@@ -79,7 +79,7 @@ var SmoothScroll = React.createClass({
         return (
             <div className="smooth-scroll">
                 {React.Children.map(this.props.children, (child, i) => (
-                    <div className={'navButton'} style={this.props.style} id={"goto" + this.props.sections[i]} onClick={this.handleSectionClick.bind(null, i)}>{child}</div>))}
+                    <div className={this.props.type} style={this.props.style} id={"goto" + this.props.sections[i]} onClick={this.handleSectionClick.bind(null, i)}>{child}</div>))}
             </div>
         );
     },
