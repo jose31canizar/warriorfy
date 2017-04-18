@@ -1,8 +1,13 @@
-$p-color: #111111;
-$h1-color: #ca9191;
+$global-p-color: #111111;
+$global-h1-color: #ca9191;
+$global-h2-color: #ca9191;
+$global-h3-color: #ca9191;
+$global-h4-color: #ca9191;
 $bg-color: #f1f1f1;
-$font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
-$p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$global-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$global-p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$global-box-width: 70vw;
+
 
 @import './helpers/Animation_Mixins.scss';
 @import './helpers/Transform_Mixins.scss';
@@ -36,18 +41,37 @@ body {
   width: 100%;
   overflow-x:hidden;
 
-
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   h1 {
-    font-family: $font-stack;
-    color: $h1-color;
+    font-family: $global-font-stack;
+    color: $global-h1-color;
     text-align: center;
     font-weight: 200;
   }
 
+  h3 {
+    font-family: $global-font-stack;
+    color: $global-h1-color;
+    text-align: center;
+    font-weight: 200;
+  }
+
+  .label {
+    z-index: 9999;
+    margin-top: -50vh;
+    background: #fff7f7;
+    padding: 10px 20px;
+    border-radius: 2px;
+  }
+
   p {
-    font-family: $p-font-stack;
-    color: $p-color;
+    font-family: $global-p-font-stack;
+    color: $global-p-color;
     font-weight: 200;
   }
 

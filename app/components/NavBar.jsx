@@ -29,10 +29,13 @@ class NavBar extends React.Component {
 
     return (
       <div className={this.state.NavBarStyle}>
-        <SmoothScroll type={'navButton'} sections={this.props.sections.map((v, i) => (self.props.data[i].title))}>
-          {this.props.sections.map((v, i) => (
-            <p key={i}>{self.props.data[i].title}</p>))}
-        </SmoothScroll>
+
+        {this.props.sections.map((v, i) => (
+            <SmoothScroll type={'navButton'} section={self.props.data[i].title}>
+              <p key={i}>{self.props.data[i].title}</p>
+            </SmoothScroll>
+        ))}
+
       </div>
     );
   }

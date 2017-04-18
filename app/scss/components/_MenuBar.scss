@@ -13,13 +13,23 @@ $menu-button-color: #e09090;
     width: 67vw;
     background: $bg-color;
 
+    p {
+        z-index: 999999;
+        color: white;
+        font-weight: 900px;
+        padding: 5vh;
+        margin-bottom: 5vh;
+        @include css-user-select(none);
+        cursor: pointer;
+    }
+
 
     .smooth-scroll {
-      display: inline-grid;
-      position: fixed;
+      display: block;
+      position: relative;
       top: 0;
       width: 100vw;
-      height: 18vh;
+      height: 5vh;
       background: transparent;
       z-index: 9999;
 

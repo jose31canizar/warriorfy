@@ -24,4 +24,18 @@ $p-section-color: #111111;
     width: 100%;
     text-align: center;
   }
+
+  .border {
+      position: absolute;
+      width: 50vw;
+      height: 2px;
+      border-radius: 1px;
+      background: #a8a4a4;
+      margin-top: 50vh;
+  }
+
+  .label {
+    font-family: $global-font-stack;
+    position: absolute;
+  }
 }

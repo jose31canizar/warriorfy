@@ -1,22 +1,32 @@
-$section-color: #f1f1f1;
+$section-color: #faa187;
 $start-button-color: #faa187;
+$bg-color: #ac9e9e;
+$fg-color: #f1f1f1;
+$text-color: #7c7878;
 
 .Warriorfy {
   .Start {
     width: 350px;
     height: 50px;
-    background-color: #faa187;
+    background-color: $section-color;
     max-width: 50%;
     border-radius: 8px;
   }
 
   p {
-    color: white;
+    color: $text-color;
     font-weight: 300;
+    @media all and(max-width: 450px) {
+    font-size: 0.75em;
+    }
   }
 
   h1 {
-    color: white;
+    color: $text-color;
+
+    @media all and(max-width: 450px) {
+    font-size: 0.75em;
+    }
   }
 
   .StartContainer {
@@ -27,16 +37,10 @@ $start-button-color: #faa187;
     z-index: 99;
   }
 
-  .images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .background_image {
-      width: 70vw;
+      width: $global-box-width;
       height: 33.33vh;
-      background-color: #6e6e91;
+      background-color: $bg-color;
       position: absolute;
       display: flex;
       justify-content: center;
@@ -52,7 +56,7 @@ $start-button-color: #faa187;
       width: 33.33vw;
       height: 33.33vh;
       top: 10vw;
-      background-color: #595968;
+      background-color: $fg-color;
 
 
       @media all and (max-width: 800px) {
