@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var BusinessModel = React.createClass({
+class BusinessModel extends Component {
   render() {
     return (
-        <div className={this.props.title.replace(/ /g,'')}>
-          <h1>{this.props.title}</h1>
-        </div>
+      <div>
+
+      </div>
     )
   }
-});
+};
 
-module.exports = BusinessModel;
+export default BusinessModel;

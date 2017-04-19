@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var Competition = React.createClass({
+class Competition extends Component {
   render() {
     return (
-        <div className={this.props.title.replace(/ /g,'')}>
-          <h1>{this.props.title}</h1>
-        </div>
+      <div>
+        <h2>These are our competitors.</h2>
+      </div>
     )
   }
-});
+};
 
-module.exports = Competition;
+export default Competition;

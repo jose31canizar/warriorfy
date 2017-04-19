@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var Product = React.createClass({
+class Product extends Component {
   render() {
     return (
-        <div className={this.props.title.replace(/ /g,'')}>
-          <h1>{this.props.title}</h1>
-        </div>
+      <div>
+
+      </div>
     )
   }
-});
+};
 
-module.exports = Product;
+export default Product;

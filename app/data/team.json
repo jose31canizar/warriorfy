@@ -1,0 +1,48 @@
+[
+  {
+      "name":"John",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Jackson",
+      "job_title":"CEO of Warriorfy",
+      "image":"04-Team-Savala"
+  },
+  {
+      "name":"Allie",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Elle",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Alicia",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Kate",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Ellie",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Lauren",
+      "job_title":"Assistant Director of Warriorfy",
+      "image":"04-Team-Schmitt"
+  }
+  ,
+  {
+      "name":"Alex",
+      "job_title":"Marketeer of Recovery Warriors",
+      "image":"04-Team-Schmitt"
+  }
+]

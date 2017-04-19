@@ -1,24 +1,62 @@
-$section-color: #faa187;
-$start-button-color: #faa187;
 $bg-color: #ac9e9e;
 $fg-color: #f1f1f1;
-$text-color: #7c7878;
 
-.Warriorfy {
-  .Start {
-    width: 350px;
-    height: 50px;
-    background-color: $section-color;
-    max-width: 50%;
-    border-radius: 8px;
+
+
+
+#Intro {
+
+  .text-block {
+  position: absolute;
+      top: 50vh;
+      left: 10vw;
+      display: block;
+
+      h1 {
+      color: white;
+      }
+
+      p {
+      color: grey;
+      }
+  }
+
+
+
+  .start {
+  width: 33.33vw;
+  background-color: #faa187;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  z-index: 99999;
+
+
+  }
+
+  #gotoMission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: #f1f1f1;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
   }
 
   p {
-    color: $text-color;
+    color: $global-p-color;
     font-weight: 300;
+    @include css-user-select(none);
+    cursor: pointer;
     @media all and(max-width: 450px) {
     font-size: 0.75em;
     }
+  }
+
+  .smooth-scroll {
+    z-index: 9999;
   }
 
   h1 {
@@ -33,14 +71,14 @@ $text-color: #7c7878;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50vh;
+    margin-top: 75vh;
     z-index: 99;
   }
 
   .background_image {
       width: $global-box-width;
       height: 33.33vh;
-      background-color: $bg-color;
+      background-color: $global-bg-color;
       position: absolute;
       display: flex;
       justify-content: center;

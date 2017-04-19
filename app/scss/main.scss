@@ -3,10 +3,12 @@ $global-h1-color: #ca9191;
 $global-h2-color: #ca9191;
 $global-h3-color: #ca9191;
 $global-h4-color: #ca9191;
-$bg-color: #f1f1f1;
-$global-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
-$global-p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$global-bg-color: #f1f1f1;
+$global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$global-p-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
 $global-box-width: 70vw;
+$section-color: #faa187;
+$start-button-color: #faa187;
 
 
 @import './helpers/Animation_Mixins.scss';
@@ -21,7 +23,7 @@ $global-box-width: 70vw;
 @import './components/MainContainer.scss';
 @import './components/NavBar.scss';
 
-@import './components/sections/Warriorfy.scss';
+@import './components/sections/Intro.scss';
 @import './components/sections/MissionStatement.scss';
 @import './components/sections/Opportunity.scss';
 @import './components/sections/Team.scss';
@@ -30,13 +32,14 @@ $global-box-width: 70vw;
 @import './components/sections/BusinessModel.scss';
 @import './components/sections/CustomerAdoption.scss';
 @import './components/sections/Investment.scss';
+@import './components/sections/Competition.scss';
 
 
 
 body {
   margin: 0;
   padding: 0;
-  background: $bg-color;
+  background: $global-bg-color;
   @include css-fadein(3s);
   width: 100%;
   overflow-x:hidden;
@@ -47,7 +50,21 @@ body {
     align-items: center;
   }
 
+  .intro-image {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 0;
+  }
+
   h1 {
+    font-family: $global-font-stack;
+    color: $global-h1-color;
+    text-align: center;
+    font-weight: 200;
+  }
+
+  h2 {
     font-family: $global-font-stack;
     color: $global-h1-color;
     text-align: center;
@@ -78,6 +95,47 @@ body {
   .wrapper {
     overflow-x:hidden;
 
+  }
+
+  .border-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  z-index: 99999;
+  }
+
+  .border {
+  position: relative;
+  width: 50vw;
+  height: 2px;
+  background: #d1a2a2;
+  }
+
+  .label {
+  font-family: "Montserrat", Futura, Helvetica, sans-serif;
+  position: absolute;
+  color: #aa8686;
+  cursor: default;
+  margin-top: 0vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  z-index: 999999;
+
+  }
+
+  .label-text {
+  background: white;
+  width: 100vw;
+  position: absolute;
+  margin-top: -20px;
+  text-align: center;
+  left: 0;
+  background: transparent;
   }
 
   @media all and (max-width: 1200px) {

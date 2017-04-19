@@ -1,6 +1,6 @@
-$height: 8vh;
+$height: 18vh;
 $text-color: #ac6e6e;
-$hover-color: #070505;
+$hover-color: #9d9dcd;
 
 .NavBar {
     top: 0;
@@ -9,6 +9,9 @@ $hover-color: #070505;
     left: 0;
     z-index: 9999;
     background: #f1f1f1;
+    position: fixed;
+    width: 100vw;
+
     @media all and (max-width: 1200px) {
       display: none;
     }
@@ -21,6 +24,7 @@ p {
     color: $text-color;
     text-align: center;
     @include css-transition(all, 0.5s, ease-in-out);
+    white-space: nowrap;
   }
 
   p:hover {

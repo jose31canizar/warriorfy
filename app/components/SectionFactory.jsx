@@ -14,45 +14,36 @@ var SmoothScroll = require('./SmoothScroll.js');
 class SectionFactory extends Component {
   render() {
     var section = '';
-      if(this.props.title == 'Mission Statement') {
+    if(this.props.data.title == 'Mission Statement') {
       section = <MissionStatement data={this.props.data}/>;
-    } else if(this.props.title == 'Opportunity') {
+    } else if(this.props.data.title == 'Opportunity') {
       section = <Opportunity data={this.props.data}/>;
-    } else if(this.props.title == 'Team') {
-      section = <Team title={this.props.title}/>;
-    } else if(this.props.title == 'Market Validation') {
+    } else if(this.props.data.title == 'Team') {
+      section = <Team data={this.props.data}/>;
+    } else if(this.props.data.title == 'Market Validation') {
       section = <MarketValidation data={this.props.data}/>;
-    } else if(this.props.title == 'Product') {
+    } else if(this.props.data.title == 'Product') {
       section = <Product data={this.props.data}/>;
-    } else if(this.props.title == 'Business Model') {
+    } else if(this.props.data.title == 'Business Model') {
       section = <BusinessModel data={this.props.data}/>;
-    } else if(this.props.title == 'Customer Adoption') {
+    } else if(this.props.data.title == 'Customer Adoption') {
       section = <CustomerAdoption data={this.props.data}/>;
-    } else if(this.props.title == 'Competition') {
+    } else if(this.props.data.title == 'Competition') {
       section = <Competition data={this.props.data}/>;
-    } else if(this.props.title == 'Investment') {
+    } else if(this.props.data.title == 'Investment') {
       section = <Investment data={this.props.data}/>;
     } else {
       section = <Investment data={this.props.data}/>;
     }
     return (
       <div className={'Section'} id={this.props.id}>
-        <div className={'border'}></div>
-          <div className={'Warriorfy'}>
+          <div>
             <div className={'container'}>
-              <div className={'label'}>{this.props.data.label}</div>
-              <div className={'logo'}></div>
               <div className={'background_image'}>
-              <div className={'foreground_image'}>
-                  <h1>{this.props.data.title}</h1>
-                  <p>Live your dreams.</p>
-                </div>
+                <h1>{this.props.data.title}</h1>
+                <p>Live your dreams.</p>
               </div>
-              <SmoothScroll className={'StartContainer'} section={this.props.section}>
-                <div className={'Start'}>
-                  <p>Start</p>
-                </div>
-              </SmoothScroll>
+              {section}
               </div>
           </div>
       </div>);

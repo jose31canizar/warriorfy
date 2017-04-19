@@ -1,6 +1,44 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
+$profile-pic-size: 50px;
 
-.Team {
+#Team {
 
+  .team-members {
+    position: absolute;
+    display: inline;
+    left: 0;
+  }
+
+  .team-member {
+    width: 40px;
+    display: block;
+  }
+
+  .profile-pic-container {
+    display: block;
+    width: $profile-pic-size;
+    height: $profile-pic-size;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-pic {
+  width: $profile-pic-size;
+  height: $profile-pic-size;
+  background: #d9cdcd;
+  border-radius: 50%;
+  }
+
+  p {
+    width: $profile-pic-size;
+    font-size: 10px;
+    text-align: center;
+  }
+
+  h2 {
+    width: $profile-pic-size;
+    font-size: 10px;
+    text-align: center;
+  }
 }

@@ -1,25 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
+import TeamData from '../../data/team.json';
 
-var Team = React.createClass({
+class Team extends Component {
   render() {
+    const N = TeamData.length;
+    const teamMembers = Array.apply(null, {length: N}).map(Number.call, Number);
+    console.log(TeamData);
     return (
-        <div className={this.props.title.replace(/ /g,'')}>
-          <div className={'images'}>
-            <div className={'label'}>Our Team</div>
-            <div className={'logo'}></div>
-            <div className={'background_image'}>
-            <div className={'foreground_image'}>
-                <h1>{this.props.title}</h1>
-                <p>Live your dreams.</p>
+        <div className={'team-members'}>
+          {TeamData.map((member, i) => (
+            <div className={'team-member'}>
+              <div className={'profile-pic-container'}>
+              <div className={'profile-pic'}>
               </div>
-            </div>
-              <div className={'Start'}>
-                <p>Start</p>
               </div>
+                <h2>
+                  {member.name}
+                </h2>
+                <p>
+                  {member.job_title}
+                </p>
+
             </div>
+          ))}
         </div>
     )
   }
-});
+};
 
-module.exports = Team;
+export default Team;

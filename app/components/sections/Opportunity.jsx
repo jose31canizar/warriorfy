@@ -1,15 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-var Opportunity = React.createClass({
+class Opportunity extends Component {
   render() {
     return (
-        <div className={this.props.title.replace(/ /g,'')}>
-          <h1>{this.props.title}</h1>
-          <div className={'OpportunityStatement'}>
-          </div>
-        </div>
+      <div>
+
+      </div>
     )
   }
-});
+};
 
-module.exports = Opportunity;
+export default Opportunity;

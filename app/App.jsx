@@ -4,6 +4,7 @@ import SectionsData from './data/sections.json';
 var SmoothScroll = require('./components/SmoothScroll.js');
 import MenuBar from './components/MenuBar.jsx';
 import MenuBarIcon from './components/MenuBarIcon.jsx';
+import NavBar from './components/NavBar.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class App extends Component {
       <div className={'wrapper'}>
           <MenuBarIcon togglePanel={this.togglePanel} open={this.state.open}/>
           <MenuBar data={this.state.data} sections={this.state.sections} open={this.state.open} closeMenuBar={this.closeMenuBar}/>
+          <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open}/>
           <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>
       </div>);
   }
