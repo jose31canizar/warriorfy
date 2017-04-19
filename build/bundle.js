@@ -54,15 +54,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(177);
+	var _reactDom = __webpack_require__(179);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _main = __webpack_require__(178);
+	var _main = __webpack_require__(180);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _global = __webpack_require__(187);
+	var _global = __webpack_require__(189);
 
 	var _global2 = _interopRequireDefault(_global);
 
@@ -92,17 +92,21 @@
 
 	var _MainContainer2 = _interopRequireDefault(_MainContainer);
 
-	var _sections = __webpack_require__(174);
+	var _sections = __webpack_require__(175);
 
 	var _sections2 = _interopRequireDefault(_sections);
 
-	var _MenuBar = __webpack_require__(175);
+	var _MenuBar = __webpack_require__(176);
 
 	var _MenuBar2 = _interopRequireDefault(_MenuBar);
 
-	var _MenuBarIcon = __webpack_require__(176);
+	var _MenuBarIcon = __webpack_require__(177);
 
 	var _MenuBarIcon2 = _interopRequireDefault(_MenuBarIcon);
+
+	var _NavBar = __webpack_require__(178);
+
+	var _NavBar2 = _interopRequireDefault(_NavBar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -112,7 +116,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SmoothScroll = __webpack_require__(171);
+	var SmoothScroll = __webpack_require__(172);
 
 	var App = function (_Component) {
 	  _inherits(App, _Component);
@@ -168,6 +172,7 @@
 	        { className: 'wrapper' },
 	        _react2.default.createElement(_MenuBarIcon2.default, { togglePanel: this.togglePanel, open: this.state.open }),
 	        _react2.default.createElement(_MenuBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open, closeMenuBar: this.closeMenuBar }),
+	        _react2.default.createElement(_NavBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open }),
 	        _react2.default.createElement(_MainContainer2.default, { data: this.state.data, sections: this.state.sections, togglePanel: this.togglePanel, open: this.state.open })
 	      );
 	    }
@@ -19887,13 +19892,9 @@
 
 	var _SectionFactory2 = _interopRequireDefault(_SectionFactory);
 
-	var _NavBar = __webpack_require__(172);
+	var _Intro = __webpack_require__(173);
 
-	var _NavBar2 = _interopRequireDefault(_NavBar);
-
-	var _Warriorfy = __webpack_require__(173);
-
-	var _Warriorfy2 = _interopRequireDefault(_Warriorfy);
+	var _Intro2 = _interopRequireDefault(_Intro);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19929,18 +19930,37 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      var self = this;
 
 	      return _react2.default.createElement(
 	        'div',
 	        { className: this.state.menuBarState },
-	        _react2.default.createElement(_NavBar2.default, { data: this.props.data, sections: this.props.sections, open: this.props.open }),
-	        _react2.default.createElement(_Warriorfy2.default, null),
+	        _react2.default.createElement(_Intro2.default, null),
 	        _react2.default.createElement(
 	          _SectionContainer2.default,
 	          null,
 	          this.props.sections.map(function (v, i) {
-	            return _react2.default.createElement(_SectionFactory2.default, { id: self.props.data[i].title, key: i, data: self.props.data[i] });
+	            return _react2.default.createElement(
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'border-container' },
+	                _react2.default.createElement('div', { className: 'border' })
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'label' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'label-text' },
+	                  _this2.props.data[i].label
+	                )
+	              ),
+	              _react2.default.createElement(_SectionFactory2.default, { id: self.props.data[i].title, key: i, data: self.props.data[i] })
+	            );
 	          })
 	        )
 	      );
@@ -19990,8 +20010,12 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'SectionContainer' },
-	        this.props.children
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'SectionContainer' },
+	          this.props.children
+	        )
 	      );
 	    }
 	  }]);
@@ -20029,27 +20053,27 @@
 
 	var _Team2 = _interopRequireDefault(_Team);
 
-	var _MarketValidation = __webpack_require__(165);
+	var _MarketValidation = __webpack_require__(166);
 
 	var _MarketValidation2 = _interopRequireDefault(_MarketValidation);
 
-	var _Product = __webpack_require__(166);
+	var _Product = __webpack_require__(167);
 
 	var _Product2 = _interopRequireDefault(_Product);
 
-	var _BusinessModel = __webpack_require__(167);
+	var _BusinessModel = __webpack_require__(168);
 
 	var _BusinessModel2 = _interopRequireDefault(_BusinessModel);
 
-	var _CustomerAdoption = __webpack_require__(168);
+	var _CustomerAdoption = __webpack_require__(169);
 
 	var _CustomerAdoption2 = _interopRequireDefault(_CustomerAdoption);
 
-	var _Competition = __webpack_require__(169);
+	var _Competition = __webpack_require__(170);
 
 	var _Competition2 = _interopRequireDefault(_Competition);
 
-	var _Investment = __webpack_require__(170);
+	var _Investment = __webpack_require__(171);
 
 	var _Investment2 = _interopRequireDefault(_Investment);
 
@@ -20061,7 +20085,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SmoothScroll = __webpack_require__(171);
+	var SmoothScroll = __webpack_require__(172);
 
 	var SectionFactory = function (_Component) {
 	  _inherits(SectionFactory, _Component);
@@ -20076,23 +20100,23 @@
 	    key: 'render',
 	    value: function render() {
 	      var section = '';
-	      if (this.props.title == 'Mission Statement') {
+	      if (this.props.data.title == 'Mission Statement') {
 	        section = _react2.default.createElement(_MissionStatement2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Opportunity') {
+	      } else if (this.props.data.title == 'Opportunity') {
 	        section = _react2.default.createElement(_Opportunity2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Team') {
-	        section = _react2.default.createElement(_Team2.default, { title: this.props.title });
-	      } else if (this.props.title == 'Market Validation') {
+	      } else if (this.props.data.title == 'Team') {
+	        section = _react2.default.createElement(_Team2.default, { data: this.props.data });
+	      } else if (this.props.data.title == 'Market Validation') {
 	        section = _react2.default.createElement(_MarketValidation2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Product') {
+	      } else if (this.props.data.title == 'Product') {
 	        section = _react2.default.createElement(_Product2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Business Model') {
+	      } else if (this.props.data.title == 'Business Model') {
 	        section = _react2.default.createElement(_BusinessModel2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Customer Adoption') {
+	      } else if (this.props.data.title == 'Customer Adoption') {
 	        section = _react2.default.createElement(_CustomerAdoption2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Competition') {
+	      } else if (this.props.data.title == 'Competition') {
 	        section = _react2.default.createElement(_Competition2.default, { data: this.props.data });
-	      } else if (this.props.title == 'Investment') {
+	      } else if (this.props.data.title == 'Investment') {
 	        section = _react2.default.createElement(_Investment2.default, { data: this.props.data });
 	      } else {
 	        section = _react2.default.createElement(_Investment2.default, { data: this.props.data });
@@ -20100,50 +20124,27 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'Section', id: this.props.id },
-	        _react2.default.createElement('div', { className: 'border' }),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'Warriorfy' },
+	          null,
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'container' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'label' },
-	              this.props.data.label
-	            ),
-	            _react2.default.createElement('div', { className: 'logo' }),
-	            _react2.default.createElement(
-	              'div',
 	              { className: 'background_image' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'foreground_image' },
-	                _react2.default.createElement(
-	                  'h1',
-	                  null,
-	                  this.props.data.title
-	                ),
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Live your dreams.'
-	                )
+	                'h1',
+	                null,
+	                this.props.data.title
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Live your dreams.'
 	              )
 	            ),
-	            _react2.default.createElement(
-	              SmoothScroll,
-	              { className: 'StartContainer', section: this.props.section },
-	              _react2.default.createElement(
-	                'div',
-	                { className: 'Start' },
-	                _react2.default.createElement(
-	                  'p',
-	                  null,
-	                  'Start'
-	                )
-	              )
-	            )
+	            section
 	          )
 	        )
 	      );
@@ -20161,33 +20162,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var MissionStatement = _react2.default.createClass({
-	  displayName: 'MissionStatement',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      ),
-	      _react2.default.createElement(
-	        'h3',
-	        null,
-	        'Our mission is to create a community of warriors.'
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = MissionStatement;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MissionStatement = function (_Component) {
+	  _inherits(MissionStatement, _Component);
+
+	  function MissionStatement() {
+	    _classCallCheck(this, MissionStatement);
+
+	    return _possibleConstructorReturn(this, (MissionStatement.__proto__ || Object.getPrototypeOf(MissionStatement)).apply(this, arguments));
+	  }
+
+	  _createClass(MissionStatement, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return MissionStatement;
+	}(_react.Component);
+
+	;
+
+	exports.default = MissionStatement;
 
 /***/ },
 /* 163 */
@@ -20195,29 +20209,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Opportunity = _react2.default.createClass({
-	  displayName: 'Opportunity',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      ),
-	      _react2.default.createElement('div', { className: 'OpportunityStatement' })
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = Opportunity;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Opportunity = function (_Component) {
+	  _inherits(Opportunity, _Component);
+
+	  function Opportunity() {
+	    _classCallCheck(this, Opportunity);
+
+	    return _possibleConstructorReturn(this, (Opportunity.__proto__ || Object.getPrototypeOf(Opportunity)).apply(this, arguments));
+	  }
+
+	  _createClass(Opportunity, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return Opportunity;
+	}(_react.Component);
+
+	;
+
+	exports.default = Opportunity;
 
 /***/ },
 /* 164 */
@@ -20225,89 +20256,129 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _team = __webpack_require__(165);
+
+	var _team2 = _interopRequireDefault(_team);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Team = _react2.default.createClass({
-	  displayName: 'Team',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Team = function (_Component) {
+	  _inherits(Team, _Component);
+
+	  function Team() {
+	    _classCallCheck(this, Team);
+
+	    return _possibleConstructorReturn(this, (Team.__proto__ || Object.getPrototypeOf(Team)).apply(this, arguments));
+	  }
+
+	  _createClass(Team, [{
+	    key: 'render',
+	    value: function render() {
+	      var N = _team2.default.length;
+	      var teamMembers = Array.apply(null, { length: N }).map(Number.call, Number);
+	      console.log(_team2.default);
+	      return _react2.default.createElement(
 	        'div',
-	        { className: 'images' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'label' },
-	          'Our Team'
-	        ),
-	        _react2.default.createElement('div', { className: 'logo' }),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'background_image' },
-	          _react2.default.createElement(
+	        { className: 'team-members' },
+	        _team2.default.map(function (member, i) {
+	          return _react2.default.createElement(
 	            'div',
-	            { className: 'foreground_image' },
+	            { className: 'team-member' },
 	            _react2.default.createElement(
-	              'h1',
+	              'div',
+	              { className: 'profile-pic-container' },
+	              _react2.default.createElement('div', { className: 'profile-pic' })
+	            ),
+	            _react2.default.createElement(
+	              'h2',
 	              null,
-	              this.props.title
+	              member.name
 	            ),
 	            _react2.default.createElement(
 	              'p',
 	              null,
-	              'Live your dreams.'
+	              member.job_title
 	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'Start' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Start'
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
+	          );
+	        })
+	      );
+	    }
+	  }]);
 
-	module.exports = Team;
+	  return Team;
+	}(_react.Component);
+
+	;
+
+	exports.default = Team;
 
 /***/ },
 /* 165 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var MarketValidation = _react2.default.createClass({
-	  displayName: 'MarketValidation',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
-
-	module.exports = MarketValidation;
+	module.exports = [
+		{
+			"name": "John",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Jackson",
+			"job_title": "CEO of Warriorfy",
+			"image": "04-Team-Savala"
+		},
+		{
+			"name": "Allie",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Elle",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Alicia",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Kate",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Ellie",
+			"job_title": "Co-Founder of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Lauren",
+			"job_title": "Assistant Director of Warriorfy",
+			"image": "04-Team-Schmitt"
+		},
+		{
+			"name": "Alex",
+			"job_title": "Marketeer of Recovery Warriors",
+			"image": "04-Team-Schmitt"
+		}
+	];
 
 /***/ },
 /* 166 */
@@ -20315,28 +20386,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Product = _react2.default.createClass({
-	  displayName: 'Product',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = Product;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MarketValidation = function (_Component) {
+	  _inherits(MarketValidation, _Component);
+
+	  function MarketValidation() {
+	    _classCallCheck(this, MarketValidation);
+
+	    return _possibleConstructorReturn(this, (MarketValidation.__proto__ || Object.getPrototypeOf(MarketValidation)).apply(this, arguments));
+	  }
+
+	  _createClass(MarketValidation, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return MarketValidation;
+	}(_react.Component);
+
+	;
+
+	exports.default = MarketValidation;
 
 /***/ },
 /* 167 */
@@ -20344,28 +20433,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var BusinessModel = _react2.default.createClass({
-	  displayName: 'BusinessModel',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = BusinessModel;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Product = function (_Component) {
+	  _inherits(Product, _Component);
+
+	  function Product() {
+	    _classCallCheck(this, Product);
+
+	    return _possibleConstructorReturn(this, (Product.__proto__ || Object.getPrototypeOf(Product)).apply(this, arguments));
+	  }
+
+	  _createClass(Product, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return Product;
+	}(_react.Component);
+
+	;
+
+	exports.default = Product;
 
 /***/ },
 /* 168 */
@@ -20373,28 +20480,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var CustomerAdoption = _react2.default.createClass({
-	  displayName: 'CustomerAdoption',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = CustomerAdoption;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var BusinessModel = function (_Component) {
+	  _inherits(BusinessModel, _Component);
+
+	  function BusinessModel() {
+	    _classCallCheck(this, BusinessModel);
+
+	    return _possibleConstructorReturn(this, (BusinessModel.__proto__ || Object.getPrototypeOf(BusinessModel)).apply(this, arguments));
+	  }
+
+	  _createClass(BusinessModel, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return BusinessModel;
+	}(_react.Component);
+
+	;
+
+	exports.default = BusinessModel;
 
 /***/ },
 /* 169 */
@@ -20402,28 +20527,46 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Competition = _react2.default.createClass({
-	  displayName: 'Competition',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = Competition;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CustomerAdoption = function (_Component) {
+	  _inherits(CustomerAdoption, _Component);
+
+	  function CustomerAdoption() {
+	    _classCallCheck(this, CustomerAdoption);
+
+	    return _possibleConstructorReturn(this, (CustomerAdoption.__proto__ || Object.getPrototypeOf(CustomerAdoption)).apply(this, arguments));
+	  }
+
+	  _createClass(CustomerAdoption, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return CustomerAdoption;
+	}(_react.Component);
+
+	;
+
+	exports.default = CustomerAdoption;
 
 /***/ },
 /* 170 */
@@ -20431,31 +20574,104 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Investment = _react2.default.createClass({
-	  displayName: 'Investment',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: this.props.title.replace(/ /g, '') },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        this.props.title
-	      )
-	    );
-	  }
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	module.exports = Investment;
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Competition = function (_Component) {
+	  _inherits(Competition, _Component);
+
+	  function Competition() {
+	    _classCallCheck(this, Competition);
+
+	    return _possibleConstructorReturn(this, (Competition.__proto__ || Object.getPrototypeOf(Competition)).apply(this, arguments));
+	  }
+
+	  _createClass(Competition, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'These are our competitors.'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Competition;
+	}(_react.Component);
+
+	;
+
+	exports.default = Competition;
 
 /***/ },
 /* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Investment = function (_Component) {
+	  _inherits(Investment, _Component);
+
+	  function Investment() {
+	    _classCallCheck(this, Investment);
+
+	    return _possibleConstructorReturn(this, (Investment.__proto__ || Object.getPrototypeOf(Investment)).apply(this, arguments));
+	  }
+
+	  _createClass(Investment, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement('div', null);
+	    }
+	  }]);
+
+	  return Investment;
+	}(_react.Component);
+
+	;
+
+	exports.default = Investment;
+
+/***/ },
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20546,7 +20762,7 @@
 	module.exports = SmoothScroll;
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20561,10 +20777,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SmoothScroll = __webpack_require__(171);
-
-	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20573,140 +20785,75 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var NavBar = function (_React$Component) {
-	  _inherits(NavBar, _React$Component);
+	var SmoothScroll = __webpack_require__(172);
 
-	  function NavBar(props) {
-	    _classCallCheck(this, NavBar);
+	var Intro = function (_Component) {
+	  _inherits(Intro, _Component);
 
-	    var _this = _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
+	  function Intro() {
+	    _classCallCheck(this, Intro);
 
-	    _this.state = {
-	      NavBarStyle: 'NavBar'
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (Intro.__proto__ || Object.getPrototypeOf(Intro)).apply(this, arguments));
 	  }
 
-	  _createClass(NavBar, [{
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(props) {
-	      if (!props.open) {
-	        this.setState(function (prevState, props) {
-	          return {
-	            NavBarStyle: prevState.NavBarStyle + ' NavBarHidden'
-	          };
-	        });
-	      } else {
-	        this.setState(function (prevState, props) {
-	          return {
-	            NavBarStyle: 'NavBar'
-	          };
-	        });
-	      }
-	    }
-	  }, {
+	  _createClass(Intro, [{
 	    key: 'render',
 	    value: function render() {
-
-	      var self = this;
-
 	      return _react2.default.createElement(
 	        'div',
-	        { className: this.state.NavBarStyle },
-	        this.props.sections.map(function (v, i) {
-	          return _react2.default.createElement(
-	            _SmoothScroll2.default,
-	            { type: 'navButton', section: self.props.data[i].title },
+	        { className: 'Section', id: 'Intro' },
+	        _react2.default.createElement('img', { className: 'intro-image', src: __webpack_require__(174) }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'text-block' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Warriorfy'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Learn for life.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          SmoothScroll,
+	          { className: 'StartContainer', section: 'Mission' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'start' },
 	            _react2.default.createElement(
 	              'p',
-	              { key: i },
-	              self.props.data[i].title
+	              null,
+	              'Start'
 	            )
-	          );
-	        })
+	          )
+	        )
 	      );
 	    }
 	  }]);
 
-	  return NavBar;
-	}(_react2.default.Component);
+	  return Intro;
+	}(_react.Component);
 
-	exports.default = NavBar;
+	;
 
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var SmoothScroll = __webpack_require__(171);
-
-	var Warriorfy = _react2.default.createClass({
-	  displayName: 'Warriorfy',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'Section', id: 'Warriorfy' },
-	      _react2.default.createElement('div', { className: 'border' }),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'Warriorfy' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'container' },
-	          _react2.default.createElement('div', { className: 'logo' }),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'background_image' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'foreground_image' },
-	              _react2.default.createElement(
-	                'h1',
-	                null,
-	                'Warriorfy'
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'A platform connecting podcasters to wellness-seekers.'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            SmoothScroll,
-	            { className: 'StartContainer', section: this.props.section },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'Start' },
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Start'
-	              )
-	            )
-	          )
-	        )
-	      )
-	    );
-	  }
-	});
-
-	module.exports = Warriorfy;
+	exports.default = Intro;
 
 /***/ },
 /* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "0596cda290b7a8b1089ea62c46f742ad.jpg";
+
+/***/ },
+/* 175 */
 /***/ function(module, exports) {
 
 	module.exports = [
 		{
-			"title": "Mission Statement",
+			"title": "Mission",
 			"label": "The Mission",
 			"text": "We foresee a platform briding the gap between experts and those trying to find wellness resources."
 		},
@@ -20721,7 +20868,7 @@
 			"text": "What we're creating doesnt exist yet."
 		},
 		{
-			"title": "Market Validation",
+			"title": "Market",
 			"label": "The Market",
 			"text": "This is the plan."
 		},
@@ -20736,7 +20883,7 @@
 			"text": "What we're creating is a community of warriors, those fighting to know more about themselves."
 		},
 		{
-			"title": "Customer Adoption",
+			"title": "Adoption",
 			"label": "Customer Adoption",
 			"text": "Money well spent."
 		},
@@ -20753,7 +20900,7 @@
 	];
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20768,7 +20915,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SmoothScroll = __webpack_require__(171);
+	var _SmoothScroll = __webpack_require__(172);
 
 	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
 
@@ -20842,7 +20989,7 @@
 	exports.default = MenuBar;
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20923,7 +21070,95 @@
 	exports.default = MenuBarIcon;
 
 /***/ },
-/* 177 */
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _SmoothScroll = __webpack_require__(172);
+
+	var _SmoothScroll2 = _interopRequireDefault(_SmoothScroll);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var NavBar = function (_React$Component) {
+	  _inherits(NavBar, _React$Component);
+
+	  function NavBar(props) {
+	    _classCallCheck(this, NavBar);
+
+	    var _this = _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
+
+	    _this.state = {
+	      NavBarStyle: 'NavBar'
+	    };
+	    return _this;
+	  }
+
+	  _createClass(NavBar, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(props) {
+	      if (!props.open) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: prevState.NavBarStyle + ' NavBarHidden'
+	          };
+	        });
+	      } else {
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: 'NavBar'
+	          };
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var self = this;
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.state.NavBarStyle },
+	        this.props.sections.map(function (v, i) {
+	          return _react2.default.createElement(
+	            _SmoothScroll2.default,
+	            { type: 'navButton', section: self.props.data[i].title },
+	            _react2.default.createElement(
+	              'p',
+	              { key: i },
+	              self.props.data[i].title
+	            )
+	          );
+	        })
+	      );
+	    }
+	  }]);
+
+	  return NavBar;
+	}(_react2.default.Component);
+
+	exports.default = NavBar;
+
+/***/ },
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20932,16 +21167,16 @@
 
 
 /***/ },
-/* 178 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(179);
+	var content = __webpack_require__(181);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(185)(content, {});
+	var update = __webpack_require__(187)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -20958,21 +21193,21 @@
 	}
 
 /***/ },
-/* 179 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(180)(true);
+	exports = module.exports = __webpack_require__(182)(true);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: #f1f1f1;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center; }\n  .Section h1 {\n    text-align: center; }\n  .Section p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 100%;\n    text-align: center; }\n  .Section .border {\n    position: absolute;\n    width: 50vw;\n    height: 2px;\n    border-radius: 1px;\n    background: #a8a4a4;\n    margin-top: 50vh; }\n  .Section .label {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    position: absolute; }\n\n.MenuBarIcon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  border: none;\n  color: #f7f5f5;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MenuBarIcon {\n      z-index: 99999; } }\n\n.MenuBarIcon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.1s, ease;\n  -ms-transition: all, 1.1s, ease;\n  -o-transition: all, 1.1s, ease;\n  transition: all, 1.1s, ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.5s, ease;\n  -ms-transition: all, 1.5s, ease;\n  -o-transition: all, 1.5s, ease;\n  transition: all, 1.5s, ease;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  transform: translate3D(28vw, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      transform: translate3D(75vw, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  transform: translate3D(28vw, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      transform: translate3D(75vw, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(28vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 0, 0);\n  -webkit-transform: translate3D(28vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(28vw, 0, 0);\n  transform: translate3D(28vw, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.2s, ease-in-out;\n  -ms-transition: all, 0.2s, ease-in-out;\n  -o-transition: all, 0.2s, ease-in-out;\n  transition: all, 0.2s, ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  width: 67vw;\n  background: #7a6772; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .MenuBar p {\n    z-index: 999999;\n    color: white;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n  .MenuBar .smooth-scroll {\n    display: block;\n    position: relative;\n    top: 0;\n    width: 100vw;\n    height: 5vh;\n    background: transparent;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .MenuBar .smooth-scroll {\n        z-index: -1; } }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton p {\n    color: #9a9aa2;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > p {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menuBarOpen {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menuBarOpen {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menuBarOpen {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.menuBarClose {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, linear;\n  -ms-transition: transform, 0.35s, linear;\n  -o-transition: transform, 0.35s, linear;\n  transition: transform, 0.35s, linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.NavBar {\n  top: 0;\n  height: 8vh;\n  display: flex;\n  left: 0;\n  z-index: 9999;\n  background: #f1f1f1; }\n  @media all and (max-width: 1200px) {\n    .NavBar {\n      display: none; } }\n  .NavBar p {\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: #ac6e6e;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .NavBar p:hover {\n    color: #070505; }\n  .NavBar .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    height: 8vh;\n    background: #f1f1f1;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .NavBar .smooth-scroll {\n        z-index: -1; } }\n  .NavBar .navButton {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: transparent;\n    border: 2px solid #e09090; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .NavBar .navButton {\n        margin: 20px 20px; } }\n  .NavBar .navButton:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: 2px solid #e09090;\n    border-radius: 10%;\n    background: #e09090;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .NavBar .navButton:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all, 0.5s, ease-in-out;\n      -ms-transition: all, 0.5s, ease-in-out;\n      -o-transition: all, 0.5s, ease-in-out;\n      transition: all, 0.5s, ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.Warriorfy .Start {\n  width: 350px;\n  height: 50px;\n  background-color: #faa187;\n  max-width: 50%;\n  border-radius: 8px; }\n\n.Warriorfy p {\n  color: #7c7878;\n  font-weight: 300; }\n  @media all and (max-width: 450px) {\n    .Warriorfy p {\n      font-size: 0.75em; } }\n\n.Warriorfy h1 {\n  color: #7c7878; }\n  @media all and (max-width: 450px) {\n    .Warriorfy h1 {\n      font-size: 0.75em; } }\n\n.Warriorfy .StartContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 50vh;\n  z-index: 99; }\n\n.Warriorfy .background_image {\n  width: 70vw;\n  height: 33.33vh;\n  background-color: #ac9e9e;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 800px) {\n    .Warriorfy .background_image {\n      width: 100vw;\n      left: 0vw; } }\n\n.Warriorfy .foreground_image {\n  width: 33.33vw;\n  height: 33.33vh;\n  top: 10vw;\n  background-color: #f1f1f1; }\n  @media all and (max-width: 800px) {\n    .Warriorfy .foreground_image {\n      max-width: 50vw; } }\n\n.MissionStatement h3 {\n  padding: 20vh; }\n\n.Opportunity .Header {\n  padding: 10vw;\n  background: #dedcdc;\n  width: 40vw;\n  margin-bottom: 5vw; }\n\n.Opportunity .OpportunityStatement {\n  padding: 10vw;\n  background: #dedcdc;\n  margin-bottom: 5vw; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: #ac9e9e;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body .container {\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  body h1 {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body h3 {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body .label {\n    z-index: 9999;\n    margin-top: -50vh;\n    background: #fff7f7;\n    padding: 10px 20px;\n    border-radius: 2px; }\n  body p {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    color: #111111;\n    font-weight: 200; }\n  body .wrapper {\n    overflow-x: hidden; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/main.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Warriorfy.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_MissionStatement.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Opportunity.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC7BrB;EACE,0BAJqB;EAKrB,UAAS;EACT,YAAW;EACX,cAAa;EACb,cAAa;EACb,8BAA6B;EAC7B,oBAAmB,EA2BpB;EAlCD;IAUI,mBAAkB,EACnB;EAXH;IAcI,yDAAwD;IACxD,eAAc;IACd,iBAAgB;IAChB,YAAW;IACX,mBAAkB,EACnB;EAnBH;IAsBM,mBAAkB;IAClB,YAAW;IACX,YAAW;IACX,mBAAkB;IAClB,oBAAmB;IACnB,iBAAgB,EACnB;EA5BH;IA+BI,yDC/B2D;IDgC3D,mBAAkB,EACnB;;AE5BH;ECOE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAUtB,aAAY;EACZ,eAd2B;EAe3B,wBAAuB;EACvB,cAAa;EEfb,4BFgB6B;EEhBF,gBAAgB;EAC3C,0BFe6B;EEfJ,YAAY;EACpC,yBFc4B;EEdJ,oBAAoB;EAC1C,uBFa0B;EEbJ,aAAa;EAClC,sBFYyB;EEZJ,4BAA4B;EAC7C,kBFWqB;EEXJ;gEACqC;EAC9D,yCAA0C;EFU1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;ECJC;IDbF;MCgBE,oDAAsD,EDCvD,EAAA;ECEC;IDnBF;MCsBE,oDAAsD,EDLvD,EAAA;ECQD;IDzBA;MC4BA,oDAAsD,EDXrD,EAAA;ECcD;ID/BA;MCmCA,oDAAsD,EDlBrD,EAAA;ECqBD;IDtCA;MC0CA,oDAAsD,EDzBrD,EAAA;EC4BD;ID7CA;MCiDA,oDAAsD,EDhCrD,EAAA;ECmCD;IDpDA;MCuDA,oDAAsD,EDtCrD,EAAA;EAHC;IAdF;MAeI,eAAc,EAEjB,EAAA;;AAED;ECZE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EA6BtB,oBAAmB,EACpB;ECTC;IDMF;MCHE,oDAAsD,EDMvD,EAAA;ECHC;IDAF;MCGE,oDAAsD,EDAvD,EAAA;ECGD;IDNA;MCSA,oDAAsD,EDNrD,EAAA;ECSD;IDZA;MCgBA,oDAAsD,EDbrD,EAAA;ECgBD;IDnBA;MCuBA,oDAAsD,EDpBrD,EAAA;ECuBD;ID1BA;MC8BA,oDAAsD,ED3BrD,EAAA;EC8BD;IDjCA;MCoCA,oDAAsD,EDjCrD,EAAA;;AAED;ECjBE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAkCtB,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;ECjBC;IDWF;MCRE,oDAAsD,EDcvD,EAAA;ECXC;IDKF;MCFE,oDAAsD,EDQvD,EAAA;ECLD;IDDA;MCIA,oDAAsD,EDErD,EAAA;ECCD;IDPA;MCWA,oDAAsD,EDLrD,EAAA;ECQD;IDdA;MCkBA,oDAAsD,EDZrD,EAAA;ECeD;IDrBA;MCyBA,oDAAsD,EDnBrD,EAAA;ECsBD;ID5BA;MC+BA,oDAAsD,EDzBrD,EAAA;;AAED;ECzBE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EA0CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECvBC;IDmBF;MChBE,oDAAsD,EDoBvD,EAAA;ECjBC;IDaF;MCVE,oDAAsD,EDcvD,EAAA;ECXD;IDOA;MCJA,oDAAsD,EDQrD,EAAA;ECLD;IDCA;MCGA,oDAAsD,EDCrD,EAAA;ECED;IDNA;MCUA,oDAAsD,EDNrD,EAAA;ECSD;IDbA;MCiBA,oDAAsD,EDbrD,EAAA;ECgBD;IDpBA;MCuBA,oDAAsD,EDnBrD,EAAA;;AAED;EC/BE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAgDtB,gEAAgE;EAChE,kEAAkE,EAEnE;EC9BC;IDyBF;MCtBE,oDAAsD,ED2BvD,EAAA;ECxBC;IDmBF;MChBE,oDAAsD,EDqBvD,EAAA;EClBD;IDaA;MCVA,oDAAsD,EDerD,EAAA;ECZD;IDOA;MCHA,oDAAsD,EDQrD,EAAA;ECLD;IDAA;MCIA,oDAAsD,EDCrD,EAAA;ECED;IDPA;MCWA,oDAAsD,EDNrD,EAAA;ECSD;IDdA;MCiBA,oDAAsD,EDZrD,EAAA;;AAED;ECtCE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAuDtB,8CAA8C;EAC9C,qCAAqC,EACtC;ECpCC;IDgCF;MC7BE,oDAAsD,EDiCvD,EAAA;EC9BC;ID0BF;MCvBE,oDAAsD,ED2BvD,EAAA;ECxBD;IDoBA;MCjBA,oDAAsD,EDqBrD,EAAA;EClBD;IDcA;MCVA,oDAAsD,EDcrD,EAAA;ECXD;IDOA;MCHA,oDAAsD,EDOrD,EAAA;ECJD;IDAA;MCIA,oDAAsD,EDArD,EAAA;ECGD;IDPA;MCUA,oDAAsD,EDNrD,EAAA;;AAED;EC5CE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EC8GtB,wDAAgD;EAAG,UAAU;EAC7D,yDAAiD;EAAG,YAAY;EAChE,4DAAoD;EAAG,YAAY;EACnE,uDAA+C;EAC/C,oDAA4C,EDjD7C;EC5CC;IDsCF;MCnCE,oDAAsD,EDyCvD,EAAA;ECtCC;IDgCF;MC7BE,oDAAsD,EDmCvD,EAAA;EChCD;ID0BA;MCvBA,oDAAsD,ED6BrD,EAAA;EC1BD;IDoBA;MChBA,oDAAsD,EDsBrD,EAAA;ECnBD;IDaA;MCTA,oDAAsD,EDerD,EAAA;ECZD;IDMA;MCFA,oDAAsD,EDQrD,EAAA;ECLD;IDDA;MCIA,oDAAsD,EDErD,EAAA;EAHC;IAHF;MCmDE,wDAAgD;MAAG,UAAU;MAC7D,yDAAiD;MAAG,YAAY;MAChE,4DAAoD;MAAG,YAAY;MACnE,uDAA+C;MAC/C,oDAA4C,EDjD7C,EAAA;;AAED;ECpDE,yCAA0C;EAC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E,oDAAsD,EE+CvD,EAAA;EF5CD;IEaA;MFVA,oDAAsD,EEyCrD,EAAA;EFtCD;IEOA;MFHA,oDAAsD,EEkCrD,EAAA;EF/BD;IEAA;MFIA,oDAAsD,EE2BrD,EAAA;EFxBD;IEPA;MFWA,oDAAsD,EEoBrD,EAAA;EFjBD;IEdA;MFiBA,oDAAsD,EEcrD,EAAA;EA/BD;IAiBI,eAAc;IACd,aAAY;IACZ,iBAAgB;IAChB,UAAS;IACT,mBAAkB;IAClB,mBAAkB;IAClB,oBAAmB,EAKpB;;AAKH;EFhEE,yCAA0C;EAC1C,wCEgE8C;EF/D9C,uCE+D8C;EF9D9C,sCE8D8C;EF7D9C,mCE6D8C;EAC9C,0BAhFyB;EAiFzB,mBAAkB;EAClB,oBAlFyB;EAmFzB,gBAAe,EAKhB;EFpEC;IE0DF;MFvDE,oDAAsD,EEiEvD,EAAA;EF9DC;IEoDF;MFjDE,oDAAsD,EE2DvD,EAAA;EFxDD;IE8CA;MF3CA,oDAAsD,EEqDrD,EAAA;EFlDD;IEwCA;MFpCA,oDAAsD,EE8CrD,EAAA;EF3CD;IEiCA;MF7BA,oDAAsD,EEuCrD,EAAA;EFpCD;IE0BA;MFtBA,oDAAsD,EEgCrD,EAAA;EF7BD;IEmBA;MFhBA,oDAAsD,EE0BrD,EAAA;EAVD;IFhEE,yCAA0C;IAC1C,wCEuEgD;IFtEhD,uCEsEgD;IFrEhD,sCEqEgD;IFpEhD,mCEoEgD,EAC/C;IFnED;ME0DF;QFvDE,oDAAsD,EEgErD,EAAA;IF7DD;MEoDF;QFjDE,oDAAsD,EE0DrD,EAAA;IFvDH;ME8CA;QF3CA,oDAAsD,EEoDnD,EAAA;IFjDH;MEwCA;QFpCA,oDAAsD,EE6CnD,EAAA;IF1CH;MEiCA;QF7BA,oDAAsD,EEsCnD,EAAA;IFnCH;ME0BA;QFtBA,oDAAsD,EE+BnD,EAAA;IF5BH;MEmBA;QFhBA,oDAAsD,EEyBnD,EAAA;;AClFH;EACE,oBAT4B;EHiB5B,+CAA0C;EAC1C,wEGd+C;EHe/C,uEGf+C;EHgB/C,sEGhB+C;EHiB/C,mEGjB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EHGC;IGfF;MHkBE,oDAAsD,EGNvD,EAAA;EHSC;IGrBF;MHwBE,oDAAsD,EGZvD,EAAA;EHeD;IG3BA;MH8BA,oDAAsD,EGlBrD,EAAA;EHqBD;IGjCA;MHqCA,oDAAsD,EGzBrD,EAAA;EH4BD;IGxCA;MH4CA,oDAAsD,EGhCrD,EAAA;EHmCD;IG/CA;MHmDA,oDAAsD,EGvCrD,EAAA;EH0CD;IGtDA;MHyDA,oDAAsD,EG7CrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EHLE,+CAA0C;EAC1C,wEGd+C;EHe/C,uEGf+C;EHgB/C,sEGhB+C;EHiB/C,mEGjB+C,EAoBhD;EHDC;IGDF;MHIE,oDAAsD,EGFvD,EAAA;EHKC;IGPF;MHUE,oDAAsD,EGRvD,EAAA;EHWD;IGbA;MHgBA,oDAAsD,EGdrD,EAAA;EHiBD;IGnBA;MHuBA,oDAAsD,EGrBrD,EAAA;EHwBD;IG1BA;MH8BA,oDAAsD,EG5BrD,EAAA;EH+BD;IGjCA;MHqCA,oDAAsD,EGnCrD,EAAA;EHsCD;IGxCA;MH2CA,oDAAsD,EGzCrD,EAAA;;AAED;EHTE,+CAA0C;EAC1C,wEGd+C;EHe/C,uEGf+C;EHgB/C,sEGhB+C;EHiB/C,mEGjB+C,EA8BhD;EHXC;IGGF;MHAE,oDAAsD,EGQvD,EAAA;EHLC;IGHF;MHME,oDAAsD,EGEvD,EAAA;EHCD;IGTA;MHYA,oDAAsD,EGJrD,EAAA;EHOD;IGfA;MHmBA,oDAAsD,EGXrD,EAAA;EHcD;IGtBA;MH0BA,oDAAsD,EGlBrD,EAAA;EHqBD;IG7BA;MHiCA,oDAAsD,EGzBrD,EAAA;EH4BD;IGpCA;MHuCA,oDAAsD,EG/BrD,EAAA;EANC;IAFF;MH6DE,uCAAoC;MAAE,UAAU;MAChD,wCAAqC;MACrC,2CAAwC;MAAE,YAAY;MACtD,sCAAmC;MACnC,mCAAgC,EGzDjC,EAAA;EAHG;IALJ;MH6DE,uCAAoC;MAAE,UAAU;MAChD,wCAAqC;MACrC,2CAAwC;MAAE,YAAY;MACtD,sCAAmC;MACnC,mCAAgC,EGzDjC,EAAA;;AAED;EHnBE,+CAA0C;EAC1C,0CGmBkE;EHlBlE,yCGkBkE;EHjBlE,wCGiBkE;EHhBlE,qCGgBkE;EHkDlE,sCAAoC;EAAE,UAAU;EAChD,uCAAqC;EACrC,0CAAwC;EAAE,YAAY;EACtD,qCAAmC;EACnC,kCAAgC,EGjDjC;EHnBC;IGaF;MHVE,oDAAsD,EGgBvD,EAAA;EHbC;IGOF;MHJE,oDAAsD,EGUvD,EAAA;EHPD;IGCA;MHEA,oDAAsD,EGIrD,EAAA;EHDD;IGLA;MHSA,oDAAsD,EGHrD,EAAA;EHMD;IGZA;MHgBA,oDAAsD,EGVrD,EAAA;EHaD;IGnBA;MHuBA,oDAAsD,EGjBrD,EAAA;EHoBD;IG1BA;MH6BA,oDAAsD,EGvBrD,EAAA;;ACvCD;EACI,OAAM;EACN,YANQ;EAOR,cAAa;EACb,QAAO;EACP,cAAa;EACb,oBAAmB,EAsEtB;EArEG;IAPJ;MAQM,cAAa,EAoElB,EAAA;EA5ED;IHHE,4BGe+B;IHfJ,gBAAgB;IAC3C,0BGc+B;IHdN,YAAY;IACpC,yBGa8B;IHbN,oBAAoB;IAC1C,uBGY4B;IHZN,aAAa;IAClC,sBGW2B;IHXN,4BAA4B;IAC7C,kBGUuB;IHVN;gEACqC;IAC9D,yCAA0C;IGSxC,gBAAe;IACf,aAAY;IACZ,iBAAgB;IAChB,eAnBgB;IAoBhB,mBAAkB;IJHpB,yCAA0C;IAC1C,wCIGgD;IJFhD,uCIEgD;IJDhD,sCICgD;IJAhD,mCIAgD,EAC/C;IJCD;MIpBF;QJuBE,oDAAsD,EIJrD,EAAA;IJOD;MI1BF;QJ6BE,oDAAsD,EIVrD,EAAA;IJaH;MIhCA;QJmCA,oDAAsD,EIhBnD,EAAA;IJmBH;MItCA;QJ0CA,oDAAsD,EIvBnD,EAAA;IJ0BH;MI7CA;QJiDA,oDAAsD,EI9BnD,EAAA;IJiCH;MIpDA;QJwDA,oDAAsD,EIrCnD,EAAA;IJwCH;MI3DA;QJ8DA,oDAAsD,EI3CnD,EAAA;EAnBH;IAsBI,eAxBiB,EAyBlB;EAvBH;IA2BE,cAAa;IACb,8BAA6B;IAC7B,wBAAuB;IACvB,mBAAkB;IAClB,OAAM;IACN,YAAW;IACX,YAAW;IACX,oBAAmB;IACnB,cAAa,EAKZ;IAHC;MArCJ;QAsCM,YAAW,EAEd,EAAA;EAxCH;IJcE,yCAA0C;IAC1C,wCI+BgD;IJ9BhD,uCI8BgD;IJ7BhD,sCI6BgD;IJ5BhD,mCI4BgD;IAC9C,aAAY;IACV,kBAAiB;IACjB,YAAW;IACX,oBAAmB;IACnB,YAAW;IACX,aAAY;IACZ,cAAa;IACb,wBAAuB;IACvB,cAAa;IACb,wBAAuB;IACvB,0BAdsB,EAmBzB;IJ1CD;MIpBF;QJuBE,oDAAsD,EIuCrD,EAAA;IJpCD;MI1BF;QJ6BE,oDAAsD,EIiCrD,EAAA;IJ9BH;MIhCA;QJmCA,oDAAsD,EI2BnD,EAAA;IJxBH;MItCA;QJ0CA,oDAAsD,EIoBnD,EAAA;IJjBH;MI7CA;QJiDA,oDAAsD,EIanD,EAAA;IJVH;MIpDA;QJwDA,oDAAsD,EIMnD,EAAA;IJHH;MI3DA;QJ8DA,oDAAsD,EIAnD,EAAA;IAHG;MA3DN;QA4DQ,kBAAiB,EAEtB,EAAA;EA9DH;IJcE,yCAA0C;IAC1C,wCIkDgD;IJjDhD,uCIiDgD;IJhDhD,sCIgDgD;IJ/ChD,mCI+CgD;IAC9C,0BAvBwB;IAwBxB,mBAAkB;IAClB,oBAzBwB;IA0BxB,gBAAe,EAKhB;IJtDD;MIpBF;QJuBE,oDAAsD,EImDrD,EAAA;IJhDD;MI1BF;QJ6BE,oDAAsD,EI6CrD,EAAA;IJ1CH;MIhCA;QJmCA,oDAAsD,EIuCnD,EAAA;IJpCH;MItCA;QJ0CA,oDAAsD,EIgCnD,EAAA;IJ7BH;MI7CA;QJiDA,oDAAsD,EIyBnD,EAAA;IJtBH;MIpDA;QJwDA,oDAAsD,EIkBnD,EAAA;IJfH;MI3DA;QJ8DA,oDAAsD,EIYnD,EAAA;IA1EH;MJcE,yCAA0C;MAC1C,wCIyDkD;MJxDlD,uCIwDkD;MJvDlD,sCIuDkD;MJtDlD,mCIsDkD,EAC/C;MJrDH;QIpBF;UJuBE,oDAAsD,EIkDnD,EAAA;MJ/CH;QI1BF;UJ6BE,oDAAsD,EI4CnD,EAAA;MJzCL;QIhCA;UJmCA,oDAAsD,EIsCjD,EAAA;MJnCL;QItCA;UJ0CA,oDAAsD,EI+BjD,EAAA;MJ5BL;QI7CA;UJiDA,oDAAsD,EIwBjD,EAAA;MJrBL;QIpDA;UJwDA,oDAAsD,EIiBjD,EAAA;MJdL;QI3DA;UJ8DA,oDAAsD,EIWjD,EAAA;;ACvEL;EAEI,aAAY;EACZ,aAAY;EACZ,0BAVmB;EAWnB,eAAc;EACd,mBAAkB,EACnB;;AAPH;EAUI,eAZgB;EAahB,iBAAgB,EAIjB;EAHC;IAZJ;MAaI,kBAAiB,EAElB,EAAA;;AAfH;EAkBI,eApBgB,EAyBjB;EAHC;IApBJ;MAqBI,kBAAiB,EAElB,EAAA;;AAvBH;EA0BI,cAAa;EACb,wBAAuB;EACvB,oBAAmB;EACnB,iBAAgB;EAChB,YAAW,EACZ;;AA/BH;EAkCM,YPhCiB;EOiCjB,gBAAe;EACf,0BAxCY;EAyCZ,mBAAkB;EAClB,cAAa;EACb,wBAAuB;EACvB,oBAAmB,EAMtB;EAJG;IA1CN;MA2CQ,aAAY;MACZ,UAAS,EAEd,EAAA;;AA9CH;EAiDM,eAAc;EACd,gBAAe;EACf,UAAS;EACT,0BAvDY,EA8Df;EAJG;IAvDN;MAyDQ,gBAAe,EAEpB,EAAA;;AC9DH;EAEI,cAAa,EACd;;ACFH;EAEI,cAAa;EACb,oBALkB;EAMlB,YAAW;EACX,mBAAkB,EACnB;;AANH;EASI,cAAa;EACb,oBAZkB;EAalB,mBAAkB,EACnB;;ATmBH;EACE,UAAS;EACT,WAAU;EACV,oBOpCgB;ETDlB,6BEsCwB;EFtCM,qCAAqC;EAChE,0BEqCqB;EFrCM,kBAAkB;EAC5C,yBEoCoB;EFpCM,uBAAuB;EAChD,wBEmCmB;EFnCM,kBAAkB;EACxC,qBEkCgB;EACtB,YAAW;EACX,mBAAiB,EA4ClB;EAlDD;IASI,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EAZH;IAeI,yDA5C2D;IA6C3D,eAlDqB;IAmDrB,mBAAkB;IAClB,iBAAgB,EACjB;EAnBH;IAsBI,yDAnD2D;IAoD3D,eAzDqB;IA0DrB,mBAAkB;IAClB,iBAAgB,EACjB;EA1BH;IA6BI,cAAa;IACb,kBAAiB;IACjB,oBAAmB;IACnB,mBAAkB;IAClB,mBAAkB,EACnB;EAlCH;IAqCI,yDAjE6D;IAkE7D,eAzEoB;IA0EpB,iBAAgB,EACjB;EAxCH;IA2CI,mBAAiB,EAElB","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","\n\n\n$section-color: #f1f1f1;\n$p-section-color: #111111;\n\n.Section {\n  background-color: $section-color;\n  margin: 0;\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n\n  h1 {\n    text-align: center;\n  }\n\n  p {\n    font-family: 'Montserrat', Futura, Helvetica, sans-serif;\n    color: #9a8383;\n    font-weight: 100;\n    width: 100%;\n    text-align: center;\n  }\n\n  .border {\n      position: absolute;\n      width: 50vw;\n      height: 2px;\n      border-radius: 1px;\n      background: #a8a4a4;\n      margin-top: 50vh;\n  }\n\n  .label {\n    font-family: $global-font-stack;\n    position: absolute;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #ca9191;\n$global-h2-color: #ca9191;\n$global-h3-color: #ca9191;\n$global-h4-color: #ca9191;\n$bg-color: #f1f1f1;\n$global-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$global-box-width: 70vw;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Warriorfy.scss';\n@import './components/sections/MissionStatement.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/MarketValidation.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/CustomerAdoption.scss';\n@import './components/sections/Investment.scss';\n\n\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  h1 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  h3 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  .label {\n    z-index: 9999;\n    margin-top: -50vh;\n    background: #fff7f7;\n    padding: 10px 20px;\n    border-radius: 2px;\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    color: $global-p-color;\n    font-weight: 200;\n  }\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$menu-bar-icon-color: #f7f5f5;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.MenuBarIcon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.MenuBarIcon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: #bca293;\n}\n\n.MenuBarIcon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.MenuBarIcon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.MenuBarIcon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.MenuBarIcon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x($right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #7a6772;\n$menu-button-color: #e09090;\n\n.MenuBar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    width: 67vw;\n    background: $bg-color;\n\n    p {\n        z-index: 999999;\n        color: white;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n    }\n\n\n    .smooth-scroll {\n      display: block;\n      position: relative;\n      top: 0;\n      width: 100vw;\n      height: 5vh;\n      background: transparent;\n      z-index: 9999;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n      }\n    }\n}\n\n.MenuBarHidden {\n  @media all and (min-width: 1200px) {\n  }\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  p {\n    color: #9a9aa2;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > p {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menuBarOpen {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menuBarClose {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 8vh;\n$text-color: #ac6e6e;\n$hover-color: #070505;\n\n.NavBar {\n    top: 0;\n    height: $height;\n    display: flex;\n    left: 0;\n    z-index: 9999;\n    background: #f1f1f1;\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\np {\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  height: 8vh;\n  background: #f1f1f1;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n  $nav-button-color: #e09090;\n\n  .navButton {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: 20px;\n      height: 20px;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: transparent;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .navButton:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.NavBarHidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$section-color: #faa187;\n$start-button-color: #faa187;\n$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n$text-color: #7c7878;\n\n.Warriorfy {\n  .Start {\n    width: 350px;\n    height: 50px;\n    background-color: $section-color;\n    max-width: 50%;\n    border-radius: 8px;\n  }\n\n  p {\n    color: $text-color;\n    font-weight: 300;\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 50vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n.MissionStatement {\n  h3 {\n    padding: 20vh;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$header-color: #dedcdc;\n\n.Opportunity {\n  .Header {\n    padding: 10vw;\n    background: $header-color;\n    width: 40vw;\n    margin-bottom: 5vw;\n  }\n\n  .OpportunityStatement {\n    padding: 10vw;\n    background: $header-color;\n    margin-bottom: 5vw;\n  }\n}\n"],"sourceRoot":""}]);
+	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: #f1f1f1;\n  margin: 0;\n  width: 100%;\n  height: 200vh;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  .Section h1 {\n    text-align: center;\n    z-index: 999;\n    color: white; }\n  .Section .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 75vh;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section p {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    z-index: 999;\n    color: white; }\n\n.MenuBarIcon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  border: none;\n  color: #f7f5f5;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MenuBarIcon {\n      z-index: 99999; } }\n\n.MenuBarIcon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.1s, ease;\n  -ms-transition: all, 1.1s, ease;\n  -o-transition: all, 1.1s, ease;\n  transition: all, 1.1s, ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.5s, ease;\n  -ms-transition: all, 1.5s, ease;\n  -o-transition: all, 1.5s, ease;\n  transition: all, 1.5s, ease;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBarIcon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBarIcon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  transform: translate3D(28vw, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      transform: translate3D(75vw, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  transform: translate3D(28vw, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      transform: translate3D(75vw, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(28vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 0, 0);\n  -webkit-transform: translate3D(28vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(28vw, 0, 0);\n  transform: translate3D(28vw, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MenuBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.2s, ease-in-out;\n  -ms-transition: all, 0.2s, ease-in-out;\n  -o-transition: all, 0.2s, ease-in-out;\n  transition: all, 0.2s, ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  width: 100vw;\n  background: #7a6772; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MenuBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .MenuBar p {\n    z-index: 999999;\n    color: white;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n  .MenuBar .smooth-scroll {\n    display: block;\n    position: relative;\n    top: 0;\n    width: 100vw;\n    height: 5vh;\n    background: transparent;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .MenuBar .smooth-scroll {\n        z-index: -1; } }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton p {\n    color: #9a9aa2;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > p {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menuBarOpen {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuBarOpen {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menuBarOpen {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menuBarOpen {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.menuBarClose {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, linear;\n  -ms-transition: transform, 0.35s, linear;\n  -o-transition: transform, 0.35s, linear;\n  transition: transform, 0.35s, linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuBarClose {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.NavBar {\n  top: 0;\n  height: 18vh;\n  display: flex;\n  left: 0;\n  z-index: 9999;\n  background: #f1f1f1;\n  position: fixed;\n  width: 100vw; }\n  @media all and (max-width: 1200px) {\n    .NavBar {\n      display: none; } }\n  .NavBar p {\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: #ac6e6e;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    white-space: nowrap; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar p {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .NavBar p:hover {\n    color: #9d9dcd; }\n  .NavBar .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    height: 8vh;\n    background: #f1f1f1;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .NavBar .smooth-scroll {\n        z-index: -1; } }\n  .NavBar .navButton {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: transparent;\n    border: 2px solid #e09090; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar .navButton {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .NavBar .navButton {\n        margin: 20px 20px; } }\n  .NavBar .navButton:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: 2px solid #e09090;\n    border-radius: 10%;\n    background: #e09090;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .NavBar .navButton:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .NavBar .navButton:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all, 0.5s, ease-in-out;\n      -ms-transition: all, 0.5s, ease-in-out;\n      -o-transition: all, 0.5s, ease-in-out;\n      transition: all, 0.5s, ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .NavBar .navButton:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Intro .text-block {\n  position: absolute;\n  top: 50vh;\n  left: 10vw;\n  display: block; }\n  #Intro .text-block h1 {\n    color: white; }\n  #Intro .text-block p {\n    color: grey; }\n\n#Intro .start {\n  width: 33.33vw;\n  background-color: #faa187;\n  border-radius: 8px;\n  position: relative;\n  cursor: pointer;\n  z-index: 99999; }\n\n#Intro #gotoMission {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Intro #gotoMission p {\n    color: #f1f1f1;\n    -webkit-tap-highlight-color: transparent; }\n\n#Intro p {\n  color: #111111;\n  font-weight: 300;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  cursor: pointer; }\n  @media all and (max-width: 450px) {\n    #Intro p {\n      font-size: 0.75em; } }\n\n#Intro .smooth-scroll {\n  z-index: 9999; }\n\n#Intro h1 {\n  color: #ac6e6e; }\n  @media all and (max-width: 450px) {\n    #Intro h1 {\n      font-size: 0.75em; } }\n\n#Intro .StartContainer {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 75vh;\n  z-index: 99; }\n\n#Intro .background_image {\n  width: 70vw;\n  height: 33.33vh;\n  background-color: #f1f1f1;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 800px) {\n    #Intro .background_image {\n      width: 100vw;\n      left: 0vw; } }\n\n#Intro .foreground_image {\n  width: 33.33vw;\n  height: 33.33vh;\n  top: 10vw;\n  background-color: #f1f1f1; }\n  @media all and (max-width: 800px) {\n    #Intro .foreground_image {\n      max-width: 50vw; } }\n\n#MissionStatement h3 {\n  padding: 20vh; }\n\n#Team .team-members {\n  position: absolute;\n  display: inline;\n  left: 0; }\n\n#Team .team-member {\n  width: 40px;\n  display: block; }\n\n#Team .profile-pic-container {\n  display: block;\n  width: 50px;\n  height: 50px;\n  justify-content: center;\n  align-items: center; }\n\n#Team .profile-pic {\n  width: 50px;\n  height: 50px;\n  background: #d9cdcd;\n  border-radius: 50%; }\n\n#Team p {\n  width: 50px;\n  font-size: 10px;\n  text-align: center; }\n\n#Team h2 {\n  width: 50px;\n  font-size: 10px;\n  text-align: center; }\n\n#Competition h2 {\n  position: absolute;\n  text-align: center;\n  left: 0;\n  width: 100vw;\n  margin-top: 50vh; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: #f1f1f1;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body .container {\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  body .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0; }\n  body h1 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body h2 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body h3 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 200; }\n  body .label {\n    z-index: 9999;\n    margin-top: -50vh;\n    background: #fff7f7;\n    padding: 10px 20px;\n    border-radius: 2px; }\n  body p {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #111111;\n    font-weight: 200; }\n  body .wrapper {\n    overflow-x: hidden; }\n  body .border-container {\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 99999; }\n  body .border {\n    position: relative;\n    width: 50vw;\n    height: 2px;\n    background: #d1a2a2; }\n  body .label {\n    font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n    position: absolute;\n    color: #aa8686;\n    cursor: default;\n    margin-top: 0vh;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 999999; }\n  body .label-text {\n    background: white;\n    width: 100vw;\n    position: absolute;\n    margin-top: -20px;\n    text-align: center;\n    left: 0;\n    background: transparent; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/main.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Intro.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_MissionStatement.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Team.scss","/Users/josecanizares/Desktop/warriorfyModel/app/scss/components/sections/_Competition.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,0BANqB;EAOrB,UAAS;EACT,YAAW;EACX,cAAa;EACb,cAAa;EACb,wBAAuB;EACvB,oBAAmB,EA2BpB;EAlCD;IAUI,mBAAkB;IAClB,aAAY;IACZ,aAAY,EACb;EAbH;IAgBE,aAAY;IACV,mBAAkB;IAClB,QAAO;IACP,UAAS;IACT,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EAvBH;IA0BI,qDCzBuD;ID0BvD,iBAAgB;IAChB,YAAW;IACX,mBAAkB;IEjCpB,4BFkC+B;IElCJ,gBAAgB;IAC3C,0BFiC+B;IEjCN,YAAY;IACpC,yBFgC8B;IEhCN,oBAAoB;IAC1C,uBF+B4B;IE/BN,aAAa;IAClC,sBF8B2B;IE9BN,4BAA4B;IAC7C,kBF6BuB;IE7BN;gEACqC;IAC9D,yCAA0C;IF4BxC,aAAY;IACZ,aAAY,EACb;;AG3BH;ECOE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAUtB,aAAY;EACZ,eAd2B;EAe3B,wBAAuB;EACvB,cAAa;EDfb,4BCgB6B;EDhBF,gBAAgB;EAC3C,0BCe6B;EDfJ,YAAY;EACpC,yBCc4B;EDdJ,oBAAoB;EAC1C,uBCa0B;EDbJ,aAAa;EAClC,sBCYyB;EDZJ,4BAA4B;EAC7C,kBCWqB;EDXJ;gEACqC;EAC9D,yCAA0C;ECU1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;ECJC;IDbF;MCgBE,oDAAsD,EDCvD,EAAA;ECEC;IDnBF;MCsBE,oDAAsD,EDLvD,EAAA;ECQD;IDzBA;MC4BA,oDAAsD,EDXrD,EAAA;ECcD;ID/BA;MCmCA,oDAAsD,EDlBrD,EAAA;ECqBD;IDtCA;MC0CA,oDAAsD,EDzBrD,EAAA;EC4BD;ID7CA;MCiDA,oDAAsD,EDhCrD,EAAA;ECmCD;IDpDA;MCuDA,oDAAsD,EDtCrD,EAAA;EAHC;IAdF;MAeI,eAAc,EAEjB,EAAA;;AAED;ECZE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EA6BtB,oBAAmB,EACpB;ECTC;IDMF;MCHE,oDAAsD,EDMvD,EAAA;ECHC;IDAF;MCGE,oDAAsD,EDAvD,EAAA;ECGD;IDNA;MCSA,oDAAsD,EDNrD,EAAA;ECSD;IDZA;MCgBA,oDAAsD,EDbrD,EAAA;ECgBD;IDnBA;MCuBA,oDAAsD,EDpBrD,EAAA;ECuBD;ID1BA;MC8BA,oDAAsD,ED3BrD,EAAA;EC8BD;IDjCA;MCoCA,oDAAsD,EDjCrD,EAAA;;AAED;ECjBE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAkCtB,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;ECjBC;IDWF;MCRE,oDAAsD,EDcvD,EAAA;ECXC;IDKF;MCFE,oDAAsD,EDQvD,EAAA;ECLD;IDDA;MCIA,oDAAsD,EDErD,EAAA;ECCD;IDPA;MCWA,oDAAsD,EDLrD,EAAA;ECQD;IDdA;MCkBA,oDAAsD,EDZrD,EAAA;ECeD;IDrBA;MCyBA,oDAAsD,EDnBrD,EAAA;ECsBD;ID5BA;MC+BA,oDAAsD,EDzBrD,EAAA;;AAED;ECzBE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EA0CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECvBC;IDmBF;MChBE,oDAAsD,EDoBvD,EAAA;ECjBC;IDaF;MCVE,oDAAsD,EDcvD,EAAA;ECXD;IDOA;MCJA,oDAAsD,EDQrD,EAAA;ECLD;IDCA;MCGA,oDAAsD,EDCrD,EAAA;ECED;IDNA;MCUA,oDAAsD,EDNrD,EAAA;ECSD;IDbA;MCiBA,oDAAsD,EDbrD,EAAA;ECgBD;IDpBA;MCuBA,oDAAsD,EDnBrD,EAAA;;AAED;EC/BE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAgDtB,gEAAgE;EAChE,kEAAkE,EAEnE;EC9BC;IDyBF;MCtBE,oDAAsD,ED2BvD,EAAA;ECxBC;IDmBF;MChBE,oDAAsD,EDqBvD,EAAA;EClBD;IDaA;MCVA,oDAAsD,EDerD,EAAA;ECZD;IDOA;MCHA,oDAAsD,EDQrD,EAAA;ECLD;IDAA;MCIA,oDAAsD,EDCrD,EAAA;ECED;IDPA;MCWA,oDAAsD,EDNrD,EAAA;ECSD;IDdA;MCiBA,oDAAsD,EDZrD,EAAA;;AAED;ECtCE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EAuDtB,8CAA8C;EAC9C,qCAAqC,EACtC;ECpCC;IDgCF;MC7BE,oDAAsD,EDiCvD,EAAA;EC9BC;ID0BF;MCvBE,oDAAsD,ED2BvD,EAAA;ECxBD;IDoBA;MCjBA,oDAAsD,EDqBrD,EAAA;EClBD;IDcA;MCVA,oDAAsD,EDcrD,EAAA;ECXD;IDOA;MCHA,oDAAsD,EDOrD,EAAA;ECJD;IDAA;MCIA,oDAAsD,EDArD,EAAA;ECGD;IDPA;MCUA,oDAAsD,EDNrD,EAAA;;AAED;EC5CE,yCAA0C;EAC1C,iCDhBsB;ECiBtB,gCDjBsB;ECkBtB,+BDlBsB;ECmBtB,4BDnBsB;EC8GtB,wDAAgD;EAAG,UAAU;EAC7D,yDAAiD;EAAG,YAAY;EAChE,4DAAoD;EAAG,YAAY;EACnE,uDAA+C;EAC/C,oDAA4C,EDjD7C;EC5CC;IDsCF;MCnCE,oDAAsD,EDyCvD,EAAA;ECtCC;IDgCF;MC7BE,oDAAsD,EDmCvD,EAAA;EChCD;ID0BA;MCvBA,oDAAsD,ED6BrD,EAAA;EC1BD;IDoBA;MChBA,oDAAsD,EDsBrD,EAAA;ECnBD;IDaA;MCTA,oDAAsD,EDerD,EAAA;ECZD;IDMA;MCFA,oDAAsD,EDQrD,EAAA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EAC9C,aAAY;EACV,kBAAiB;EACjB,YAAW;EACX,oBAAmB;EACnB,YAAW;EACX,aAAY;EACZ,eAAc;EACd,cAAa;EACb,wBAAuB;EACvB,0BAxDuB,EA4E1B;EDxDC;ICyBF;MDtBE,oDAAsD,ECqDvD,EAAA;EDlDC;ICmBF;MDhBE,oDAAsD,EC+CvD,EAAA;ED5CD;ICaA;MDVA,oDAAsD,ECyCrD,EAAA;EDtCD;ICOA;MDHA,oDAAsD,ECkCrD,EAAA;ED/BD;ICAA;MDIA,oDAAsD,EC2BrD,EAAA;EDxBD;ICPA;MDWA,oDAAsD,ECoBrD,EAAA;EDjBD;ICdA;MDiBA,oDAAsD,ECcrD,EAAA;EA/BD;IAiBI,eAAc;IACd,aAAY;IACZ,iBAAgB;IAChB,UAAS;IACT,mBAAkB;IAClB,mBAAkB;IAClB,oBAAmB,EAKpB;;AAKH;EDhEE,yCAA0C;EAC1C,wCCgE8C;ED/D9C,uCC+D8C;ED9D9C,sCC8D8C;ED7D9C,mCC6D8C;EAC9C,0BAhFyB;EAiFzB,mBAAkB;EAClB,oBAlFyB;EAmFzB,gBAAe,EAKhB;EDpEC;IC0DF;MDvDE,oDAAsD,ECiEvD,EAAA;ED9DC;ICoDF;MDjDE,oDAAsD,EC2DvD,EAAA;EDxDD;IC8CA;MD3CA,oDAAsD,ECqDrD,EAAA;EDlDD;ICwCA;MDpCA,oDAAsD,EC8CrD,EAAA;ED3CD;ICiCA;MD7BA,oDAAsD,ECuCrD,EAAA;EDpCD;IC0BA;MDtBA,oDAAsD,ECgCrD,EAAA;ED7BD;ICmBA;MDhBA,oDAAsD,EC0BrD,EAAA;EAVD;IDhEE,yCAA0C;IAC1C,wCCuEgD;IDtEhD,uCCsEgD;IDrEhD,sCCqEgD;IDpEhD,mCCoEgD,EAC/C;IDnED;MC0DF;QDvDE,oDAAsD,ECgErD,EAAA;ID7DD;MCoDF;QDjDE,oDAAsD,EC0DrD,EAAA;IDvDH;MC8CA;QD3CA,oDAAsD,ECoDnD,EAAA;IDjDH;MCwCA;QDpCA,oDAAsD,EC6CnD,EAAA;ID1CH;MCiCA;QD7BA,oDAAsD,ECsCnD,EAAA;IDnCH;MC0BA;QDtBA,oDAAsD,EC+BnD,EAAA;ID5BH;MCmBA;QDhBA,oDAAsD,ECyBnD,EAAA;;AClFH;EACE,oBAT4B;EFiB5B,+CAA0C;EAC1C,wEEd+C;EFe/C,uEEf+C;EFgB/C,sEEhB+C;EFiB/C,mEEjB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EFGC;IEfF;MFkBE,oDAAsD,EENvD,EAAA;EFSC;IErBF;MFwBE,oDAAsD,EEZvD,EAAA;EFeD;IE3BA;MF8BA,oDAAsD,EElBrD,EAAA;EFqBD;IEjCA;MFqCA,oDAAsD,EEzBrD,EAAA;EF4BD;IExCA;MF4CA,oDAAsD,EEhCrD,EAAA;EFmCD;IE/CA;MFmDA,oDAAsD,EEvCrD,EAAA;EF0CD;IEtDA;MFyDA,oDAAsD,EE7CrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EFLE,+CAA0C;EAC1C,wEEd+C;EFe/C,uEEf+C;EFgB/C,sEEhB+C;EFiB/C,mEEjB+C,EAoBhD;EFDC;IEDF;MFIE,oDAAsD,EEFvD,EAAA;EFKC;IEPF;MFUE,oDAAsD,EERvD,EAAA;EFWD;IEbA;MFgBA,oDAAsD,EEdrD,EAAA;EFiBD;IEnBA;MFuBA,oDAAsD,EErBrD,EAAA;EFwBD;IE1BA;MF8BA,oDAAsD,EE5BrD,EAAA;EF+BD;IEjCA;MFqCA,oDAAsD,EEnCrD,EAAA;EFsCD;IExCA;MF2CA,oDAAsD,EEzCrD,EAAA;;AAED;EFTE,+CAA0C;EAC1C,wEEd+C;EFe/C,uEEf+C;EFgB/C,sEEhB+C;EFiB/C,mEEjB+C,EA8BhD;EFXC;IEGF;MFAE,oDAAsD,EEQvD,EAAA;EFLC;IEHF;MFME,oDAAsD,EEEvD,EAAA;EFCD;IETA;MFYA,oDAAsD,EEJrD,EAAA;EFOD;IEfA;MFmBA,oDAAsD,EEXrD,EAAA;EFcD;IEtBA;MF0BA,oDAAsD,EElBrD,EAAA;EFqBD;IE7BA;MFiCA,oDAAsD,EEzBrD,EAAA;EF4BD;IEpCA;MFuCA,oDAAsD,EE/BrD,EAAA;EANC;IAFF;MF6DE,uCAAoC;MAAE,UAAU;MAChD,wCAAqC;MACrC,2CAAwC;MAAE,YAAY;MACtD,sCAAmC;MACnC,mCAAgC,EEzDjC,EAAA;EAHG;IALJ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","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$section-color: #f1f1f1;\n$p-section-color: #111111;\n$border-color: #ac9e9e;\n$label-color: #aa8686;\n\n.Section {\n  background-color: $section-color;\n  margin: 0;\n  width: 100%;\n  height: 200vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  h1 {\n    text-align: center;\n    z-index: 999;\n    color: white;\n  }\n\n  .smooth-scroll {\n  width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 75vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  p {\n    font-family: $global-font-stack;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    @include css-user-select(none);\n    z-index: 999;\n    color: white;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #ca9191;\n$global-h2-color: #ca9191;\n$global-h3-color: #ca9191;\n$global-h4-color: #ca9191;\n$global-bg-color: #f1f1f1;\n$global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-box-width: 70vw;\n$section-color: #faa187;\n$start-button-color: #faa187;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Intro.scss';\n@import './components/sections/MissionStatement.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/MarketValidation.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/CustomerAdoption.scss';\n@import './components/sections/Investment.scss';\n@import './components/sections/Competition.scss';\n\n\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $global-bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0;\n  }\n\n  h1 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  h2 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  h3 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: 200;\n  }\n\n  .label {\n    z-index: 9999;\n    margin-top: -50vh;\n    background: #fff7f7;\n    padding: 10px 20px;\n    border-radius: 2px;\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    color: $global-p-color;\n    font-weight: 200;\n  }\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  .border-container {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 99999;\n  }\n\n  .border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #d1a2a2;\n  }\n\n  .label {\n  font-family: \"Montserrat\", Futura, Helvetica, sans-serif;\n  position: absolute;\n  color: #aa8686;\n  cursor: default;\n  margin-top: 0vh;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 999999;\n\n  }\n\n  .label-text {\n  background: white;\n  width: 100vw;\n  position: absolute;\n  margin-top: -20px;\n  text-align: center;\n  left: 0;\n  background: transparent;\n  }\n\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$menu-bar-icon-color: #f7f5f5;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.MenuBarIcon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.MenuBarIcon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: #bca293;\n}\n\n.MenuBarIcon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.MenuBarIcon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.MenuBarIcon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.MenuBarIcon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x($right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #7a6772;\n$menu-button-color: #e09090;\n\n.MenuBar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    width: 100vw;\n    background: $bg-color;\n\n    p {\n        z-index: 999999;\n        color: white;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n    }\n\n\n    .smooth-scroll {\n      display: block;\n      position: relative;\n      top: 0;\n      width: 100vw;\n      height: 5vh;\n      background: transparent;\n      z-index: 9999;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n      }\n    }\n}\n\n.MenuBarHidden {\n  @media all and (min-width: 1200px) {\n  }\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  p {\n    color: #9a9aa2;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > p {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menuBarOpen {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menuBarClose {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 18vh;\n$text-color: #ac6e6e;\n$hover-color: #9d9dcd;\n\n.NavBar {\n    top: 0;\n    height: $height;\n    display: flex;\n    left: 0;\n    z-index: 9999;\n    background: #f1f1f1;\n    position: fixed;\n    width: 100vw;\n\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\np {\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n    white-space: nowrap;\n  }\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  height: 8vh;\n  background: #f1f1f1;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n  $nav-button-color: #e09090;\n\n  .navButton {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: 20px;\n      height: 20px;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: transparent;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .navButton:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.NavBarHidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n\n\n\n\n#Intro {\n\n  .text-block {\n  position: absolute;\n      top: 50vh;\n      left: 10vw;\n      display: block;\n\n      h1 {\n      color: white;\n      }\n\n      p {\n      color: grey;\n      }\n  }\n\n\n\n  .start {\n  width: 33.33vw;\n  background-color: #faa187;\n  border-radius: 8px;\n  position: relative;\n  cursor: pointer;\n  z-index: 99999;\n\n\n  }\n\n  #gotoMission {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    p {\n      color: #f1f1f1;\n      -webkit-tap-highlight-color: rgba(0,0,0,0);\n    }\n  }\n\n  p {\n    color: $global-p-color;\n    font-weight: 300;\n    @include css-user-select(none);\n    cursor: pointer;\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .smooth-scroll {\n    z-index: 9999;\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $global-bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n#MissionStatement {\n  h3 {\n    padding: 20vh;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$profile-pic-size: 50px;\n\n#Team {\n\n  .team-members {\n    position: absolute;\n    display: inline;\n    left: 0;\n  }\n\n  .team-member {\n    width: 40px;\n    display: block;\n  }\n\n  .profile-pic-container {\n    display: block;\n    width: $profile-pic-size;\n    height: $profile-pic-size;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .profile-pic {\n  width: $profile-pic-size;\n  height: $profile-pic-size;\n  background: #d9cdcd;\n  border-radius: 50%;\n  }\n\n  p {\n    width: $profile-pic-size;\n    font-size: 10px;\n    text-align: center;\n  }\n\n  h2 {\n    width: $profile-pic-size;\n    font-size: 10px;\n    text-align: center;\n  }\n}\n","$section-color: #f1f1f1;\n\n#Competition {\n\n  h2 {\n  position: absolute;\n  text-align: center;\n  left: 0;\n  width: 100vw;\n  margin-top: 50vh;\n  }\n\n}\n"],"sourceRoot":""}]);
 
 	// exports
 
 
 /***/ },
-/* 180 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -21051,10 +21286,10 @@
 	  return '/*# ' + data + ' */';
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(181).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(183).Buffer))
 
 /***/ },
-/* 181 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -21067,9 +21302,9 @@
 
 	'use strict'
 
-	var base64 = __webpack_require__(182)
-	var ieee754 = __webpack_require__(183)
-	var isArray = __webpack_require__(184)
+	var base64 = __webpack_require__(184)
+	var ieee754 = __webpack_require__(185)
+	var isArray = __webpack_require__(186)
 
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -22850,7 +23085,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 182 */
+/* 184 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -22970,7 +23205,7 @@
 
 
 /***/ },
-/* 183 */
+/* 185 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -23060,7 +23295,7 @@
 
 
 /***/ },
-/* 184 */
+/* 186 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -23071,7 +23306,7 @@
 
 
 /***/ },
-/* 185 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -23108,7 +23343,7 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
-		fixUrls = __webpack_require__(186);
+		fixUrls = __webpack_require__(188);
 
 	module.exports = function(list, options) {
 		if(false) {
@@ -23367,7 +23602,7 @@
 
 
 /***/ },
-/* 186 */
+/* 188 */
 /***/ function(module, exports) {
 
 	
@@ -23462,16 +23697,16 @@
 
 
 /***/ },
-/* 187 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(188);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(185)(content, {});
+	var update = __webpack_require__(187)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23488,465 +23723,465 @@
 	}
 
 /***/ },
-/* 188 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(180)(undefined);
+	exports = module.exports = __webpack_require__(182)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(189) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(189) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(190) + ") format('woff2'), \n       url(" + __webpack_require__(191) + ") format('woff'), \n       url(" + __webpack_require__(192) + ") format('truetype'), \n       url(" + __webpack_require__(193) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(194) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(194) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(195) + ") format('woff2'), \n       url(" + __webpack_require__(196) + ") format('woff'), \n       url(" + __webpack_require__(197) + ") format('truetype'), \n       url(" + __webpack_require__(198) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(199) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(199) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(200) + ") format('woff2'), \n       url(" + __webpack_require__(201) + ") format('woff'), \n       url(" + __webpack_require__(202) + ") format('truetype'), \n       url(" + __webpack_require__(203) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(204) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(204) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(205) + ") format('woff2'), \n       url(" + __webpack_require__(206) + ") format('woff'), \n       url(" + __webpack_require__(207) + ") format('truetype'), \n       url(" + __webpack_require__(208) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(209) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(209) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(210) + ") format('woff2'), \n       url(" + __webpack_require__(211) + ") format('woff'), \n       url(" + __webpack_require__(212) + ") format('truetype'), \n       url(" + __webpack_require__(213) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(214) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(214) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(215) + ") format('woff2'), \n       url(" + __webpack_require__(216) + ") format('woff'), \n       url(" + __webpack_require__(217) + ") format('truetype'), \n       url(" + __webpack_require__(218) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(219) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(219) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(220) + ") format('woff2'), \n       url(" + __webpack_require__(221) + ") format('woff'), \n       url(" + __webpack_require__(222) + ") format('truetype'), \n       url(" + __webpack_require__(223) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(224) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(224) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(225) + ") format('woff2'), \n       url(" + __webpack_require__(226) + ") format('woff'), \n       url(" + __webpack_require__(227) + ") format('truetype'), \n       url(" + __webpack_require__(228) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(229) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(229) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(230) + ") format('woff2'), \n       url(" + __webpack_require__(231) + ") format('woff'), \n       url(" + __webpack_require__(232) + ") format('truetype'), \n       url(" + __webpack_require__(233) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(234) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(234) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(235) + ") format('woff2'), \n       url(" + __webpack_require__(236) + ") format('woff'), \n       url(" + __webpack_require__(237) + ") format('truetype'), \n       url(" + __webpack_require__(238) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(239) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(239) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(240) + ") format('woff2'), \n       url(" + __webpack_require__(241) + ") format('woff'), \n       url(" + __webpack_require__(242) + ") format('truetype'), \n       url(" + __webpack_require__(243) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(244) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(244) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(245) + ") format('woff2'), \n       url(" + __webpack_require__(246) + ") format('woff'), \n       url(" + __webpack_require__(247) + ") format('truetype'), \n       url(" + __webpack_require__(248) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(249) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(249) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(250) + ") format('woff2'), \n       url(" + __webpack_require__(251) + ") format('woff'), \n       url(" + __webpack_require__(252) + ") format('truetype'), \n       url(" + __webpack_require__(253) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(254) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(254) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(255) + ") format('woff2'), \n       url(" + __webpack_require__(256) + ") format('woff'), \n       url(" + __webpack_require__(257) + ") format('truetype'), \n       url(" + __webpack_require__(258) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(259) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(259) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(260) + ") format('woff2'), \n       url(" + __webpack_require__(261) + ") format('woff'), \n       url(" + __webpack_require__(262) + ") format('truetype'), \n       url(" + __webpack_require__(263) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(191) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(191) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(192) + ") format('woff2'), \n       url(" + __webpack_require__(193) + ") format('woff'), \n       url(" + __webpack_require__(194) + ") format('truetype'), \n       url(" + __webpack_require__(195) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(196) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(196) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(197) + ") format('woff2'), \n       url(" + __webpack_require__(198) + ") format('woff'), \n       url(" + __webpack_require__(199) + ") format('truetype'), \n       url(" + __webpack_require__(200) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(201) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(201) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(202) + ") format('woff2'), \n       url(" + __webpack_require__(203) + ") format('woff'), \n       url(" + __webpack_require__(204) + ") format('truetype'), \n       url(" + __webpack_require__(205) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(206) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(206) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(207) + ") format('woff2'), \n       url(" + __webpack_require__(208) + ") format('woff'), \n       url(" + __webpack_require__(209) + ") format('truetype'), \n       url(" + __webpack_require__(210) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(211) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(211) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(212) + ") format('woff2'), \n       url(" + __webpack_require__(213) + ") format('woff'), \n       url(" + __webpack_require__(214) + ") format('truetype'), \n       url(" + __webpack_require__(215) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(216) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(216) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(217) + ") format('woff2'), \n       url(" + __webpack_require__(218) + ") format('woff'), \n       url(" + __webpack_require__(219) + ") format('truetype'), \n       url(" + __webpack_require__(220) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(221) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(221) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(222) + ") format('woff2'), \n       url(" + __webpack_require__(223) + ") format('woff'), \n       url(" + __webpack_require__(224) + ") format('truetype'), \n       url(" + __webpack_require__(225) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(226) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(226) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(227) + ") format('woff2'), \n       url(" + __webpack_require__(228) + ") format('woff'), \n       url(" + __webpack_require__(229) + ") format('truetype'), \n       url(" + __webpack_require__(230) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(231) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(231) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(232) + ") format('woff2'), \n       url(" + __webpack_require__(233) + ") format('woff'), \n       url(" + __webpack_require__(234) + ") format('truetype'), \n       url(" + __webpack_require__(235) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(236) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(236) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(237) + ") format('woff2'), \n       url(" + __webpack_require__(238) + ") format('woff'), \n       url(" + __webpack_require__(239) + ") format('truetype'), \n       url(" + __webpack_require__(240) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(241) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(241) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(242) + ") format('woff2'), \n       url(" + __webpack_require__(243) + ") format('woff'), \n       url(" + __webpack_require__(244) + ") format('truetype'), \n       url(" + __webpack_require__(245) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(246) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(246) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(247) + ") format('woff2'), \n       url(" + __webpack_require__(248) + ") format('woff'), \n       url(" + __webpack_require__(249) + ") format('truetype'), \n       url(" + __webpack_require__(250) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(251) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(251) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(252) + ") format('woff2'), \n       url(" + __webpack_require__(253) + ") format('woff'), \n       url(" + __webpack_require__(254) + ") format('truetype'), \n       url(" + __webpack_require__(255) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(256) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(256) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(257) + ") format('woff2'), \n       url(" + __webpack_require__(258) + ") format('woff'), \n       url(" + __webpack_require__(259) + ") format('truetype'), \n       url(" + __webpack_require__(260) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(261) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(261) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(262) + ") format('woff2'), \n       url(" + __webpack_require__(263) + ") format('woff'), \n       url(" + __webpack_require__(264) + ") format('truetype'), \n       url(" + __webpack_require__(265) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 189 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.eot";
 
 /***/ },
-/* 190 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff2";
 
 /***/ },
-/* 191 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff";
 
 /***/ },
-/* 192 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.ttf";
 
 /***/ },
-/* 193 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.svg";
 
 /***/ },
-/* 194 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.eot";
 
 /***/ },
-/* 195 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff2";
 
 /***/ },
-/* 196 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff";
 
 /***/ },
-/* 197 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.ttf";
 
 /***/ },
-/* 198 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.svg";
 
 /***/ },
-/* 199 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.eot";
 
 /***/ },
-/* 200 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff2";
 
 /***/ },
-/* 201 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff";
 
 /***/ },
-/* 202 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.ttf";
 
 /***/ },
-/* 203 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.svg";
 
 /***/ },
-/* 204 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.eot";
 
 /***/ },
-/* 205 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff2";
 
 /***/ },
-/* 206 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff";
 
 /***/ },
-/* 207 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.ttf";
 
 /***/ },
-/* 208 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.svg";
 
 /***/ },
-/* 209 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.eot";
 
 /***/ },
-/* 210 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff2";
 
 /***/ },
-/* 211 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff";
 
 /***/ },
-/* 212 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.ttf";
 
 /***/ },
-/* 213 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.svg";
 
 /***/ },
-/* 214 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.eot";
 
 /***/ },
-/* 215 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff2";
 
 /***/ },
-/* 216 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff";
 
 /***/ },
-/* 217 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.ttf";
 
 /***/ },
-/* 218 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.svg";
 
 /***/ },
-/* 219 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.eot";
 
 /***/ },
-/* 220 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff2";
 
 /***/ },
-/* 221 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff";
 
 /***/ },
-/* 222 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.ttf";
 
 /***/ },
-/* 223 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.svg";
 
 /***/ },
-/* 224 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.eot";
 
 /***/ },
-/* 225 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff2";
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff";
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.ttf";
 
 /***/ },
-/* 228 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.svg";
 
 /***/ },
-/* 229 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.eot";
 
 /***/ },
-/* 230 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff2";
 
 /***/ },
-/* 231 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff";
 
 /***/ },
-/* 232 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.ttf";
 
 /***/ },
-/* 233 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.svg";
 
 /***/ },
-/* 234 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.eot";
 
 /***/ },
-/* 235 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff2";
 
 /***/ },
-/* 236 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff";
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.ttf";
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.svg";
 
 /***/ },
-/* 239 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.eot";
 
 /***/ },
-/* 240 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff2";
 
 /***/ },
-/* 241 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff";
 
 /***/ },
-/* 242 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.ttf";
 
 /***/ },
-/* 243 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.svg";
 
 /***/ },
-/* 244 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.eot";
 
 /***/ },
-/* 245 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff2";
 
 /***/ },
-/* 246 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff";
 
 /***/ },
-/* 247 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.ttf";
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.svg";
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.eot";
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff2";
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff";
 
 /***/ },
-/* 252 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.ttf";
 
 /***/ },
-/* 253 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.svg";
 
 /***/ },
-/* 254 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.eot";
 
 /***/ },
-/* 255 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff2";
 
 /***/ },
-/* 256 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff";
 
 /***/ },
-/* 257 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.ttf";
 
 /***/ },
-/* 258 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.svg";
 
 /***/ },
-/* 259 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.eot";
 
 /***/ },
-/* 260 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff2";
 
 /***/ },
-/* 261 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff";
 
 /***/ },
-/* 262 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.ttf";
 
 /***/ },
-/* 263 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.svg";

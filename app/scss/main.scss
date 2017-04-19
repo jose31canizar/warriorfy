@@ -103,7 +103,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100vw;
-  z-index: 99999;
+  z-index: 9;
   }
 
   .border {
@@ -114,28 +114,28 @@ body {
   }
 
   .label {
-  font-family: "Montserrat", Futura, Helvetica, sans-serif;
+  font-family: $global-font-stack;
   position: absolute;
   color: #aa8686;
   cursor: default;
   margin-top: 0vh;
+
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  z-index: 999999;
+  z-index: 9999;
 
   }
 
   .label-text {
-  background: white;
-  width: 100vw;
-  position: absolute;
-  margin-top: -20px;
-  text-align: center;
-  left: 0;
-  background: transparent;
+    margin-top: -26px;
+    margin-left: -35px;
+    padding: 5px 15px;
+    text-align: center;
+    background: white;
+    z-index: 999999;
   }
 
   @media all and (max-width: 1200px) {
