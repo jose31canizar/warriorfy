@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SectionContainer from './SectionContainer.jsx';
 import SectionFactory from './SectionFactory.jsx';
+import Label from './Label.jsx';
 
 import Intro from './Intro.jsx';
 
@@ -27,15 +28,7 @@ class MainContainer extends Component {
           <SectionContainer>
             {this.props.sections.map((v, i) => (
               <div>
-              <div className={'border-container'}>
-                <div className={'border'}>
-                </div>
-              </div>
-              <div className={'label'}>
-                <div className={'label-text'}>
-                {this.props.data[i].label}
-                </div>
-              </div>
+              <Label label={this.props.data[i].label}/>
               <SectionFactory id={self.props.data[i].title} key={i} data={self.props.data[i]}/>
               </div>
             ))}

@@ -1,7 +1,8 @@
 $section-color: #f1f1f1;
-$p-section-color: #111111;
+$p-section-color: #7e6060;
 $border-color: #ac9e9e;
 $label-color: #aa8686;
+$h1-section-color: white;
 
 .Section {
   background-color: $section-color;
@@ -15,14 +16,23 @@ $label-color: #aa8686;
   h1 {
     text-align: center;
     z-index: 999;
-    color: white;
+    color: $h1-section-color;
+  }
+
+  .container-wrapper {
+    width: 100vw;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .smooth-scroll {
-  width: 100vw;
+    width: 100vw;
     position: absolute;
     left: 0;
-    top: 75vh;
+    top: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +45,6 @@ $label-color: #aa8686;
     text-align: center;
     @include css-user-select(none);
     z-index: 999;
-    color: white;
+    color: $p-section-color;
   }
 }

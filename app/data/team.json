@@ -1,48 +1,37 @@
 [
   {
-      "name":"John",
+      "name":"Kim",
       "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
+      "image":"04-Team-Advisor-Kim"
   },
   {
-      "name":"Jackson",
+      "name":"Montgomery",
       "job_title":"CEO of Warriorfy",
+      "image":"04-Team-Advisor-Montgomery"
+  },
+  {
+      "name":"Rollo",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Advisor-Rollo"
+  },
+  {
+      "name":"Natalie",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Natalie"
+  },
+  {
+      "name":"Jessica",
+      "job_title":"Co-Founder of Recovery Warriors",
+      "image":"04-Team-Raymond"
+  },
+  {
+      "name":"Savala",
+      "job_title":"Co-Founder of Recovery Warriors",
       "image":"04-Team-Savala"
   },
   {
-      "name":"Allie",
+      "name":"Schmitt",
       "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
-  },
-  {
-      "name":"Elle",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
-  },
-  {
-      "name":"Alicia",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
-  },
-  {
-      "name":"Kate",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
-  },
-  {
-      "name":"Ellie",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Schmitt"
-  },
-  {
-      "name":"Lauren",
-      "job_title":"Assistant Director of Warriorfy",
-      "image":"04-Team-Schmitt"
-  }
-  ,
-  {
-      "name":"Alex",
-      "job_title":"Marketeer of Recovery Warriors",
       "image":"04-Team-Schmitt"
   }
 ]

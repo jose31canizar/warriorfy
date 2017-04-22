@@ -1,5 +1,7 @@
 var React = require('react');
 
+var negativeOffset = 150;
+
 var smoothScroll = {
     timer: null,
 
@@ -63,7 +65,7 @@ var smoothScroll = {
                 }
             } else {
                 yScroll = settings.easing.outQuint(0, elapsed, offset, targetY, settings.duration);
-                window.scrollTo(0, yScroll);
+                window.scrollTo(0, yScroll - negativeOffset);
                 this.timer = setTimeout(step, 10);
             }
         }
@@ -79,12 +81,12 @@ var SmoothScroll = React.createClass({
         return (
             <div className="smooth-scroll">
                 {React.Children.map(this.props.children, (child, i) => (
-                    <div className={this.props.type} style={this.props.style} id={"goto" + this.props.section} onClick={this.handleSectionClick.bind(null, i)}>{child}</div>))}
+                    <div onMouseDown={this.props.onMouseDown} className={this.props.type} style={this.props.style} id={"goto" + this.props.section} onClick={this.handleSectionClick.bind(null, i)}>{child}</div>))}
             </div>
         );
     },
 
-    handleSectionClick: function (i) {
+    handleSectionClick: function(i) {
         smoothScroll.scrollTo(this.props.section);
     }
 });

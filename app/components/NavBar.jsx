@@ -5,20 +5,29 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      NavBarStyle: 'NavBar'
+      NavBarStyle: 'nav-bar-container',
+      selectedIndex: -1
     }
+
+    this.changeSelection = this.changeSelection.bind(this);
+  }
+  changeSelection(i) {
+    console.log('changed selection!' + i);
+    this.setState({
+      selectedIndex: i
+    });
   }
   componentWillReceiveProps(props) {
     if(!props.open) {
       this.setState((prevState, props) => {
         return {
-          NavBarStyle: prevState.NavBarStyle + ' NavBarHidden'
+          NavBarStyle: prevState.NavBarStyle + ' nav-bar-hidden'
         }
       });
     } else {
       this.setState((prevState, props) => {
         return {
-          NavBarStyle: 'NavBar'
+          NavBarStyle: 'nav-bar-container'
         }
       });
     }
@@ -27,15 +36,48 @@ class NavBar extends React.Component {
 
     var self = this;
 
+    var index = self.state.selectedIndex;
+
+
+    var navBarButtons = this.props.sections.map(function(v, i) {
+        if(self.state.selectedIndex == i) {
+          return (<SmoothScroll type={'nav-button selected'} onMouseDown={self.changeSelection.bind(null, i)} section={self.props.data[i].title}>
+            <p key={i}>{self.props.data[i].title}</p>
+          </SmoothScroll>);
+        } else {
+          return (<SmoothScroll type={'nav-button'} onMouseDown={self.changeSelection.bind(null, i)} section={self.props.data[i].title}>
+            <p key={i}>{self.props.data[i].title}</p>
+          </SmoothScroll>);
+        }
+      });
+
+
+      var introButton;
+      if(self.state.selectedIndex == -1) {
+        introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+          <p>Introduction</p>
+        </SmoothScroll>);
+      } else {
+        introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+          <p>Introduction</p>
+        </SmoothScroll>);
+      }
+
+      navBarButtons.push(introButton);
+
+
     return (
       <div className={this.state.NavBarStyle}>
+        <div className={'nav-bar'}>
+          <div className={'nav-bar-connector'}></div>
 
-        {this.props.sections.map((v, i) => (
-            <SmoothScroll type={'navButton'} section={self.props.data[i].title}>
-              <p key={i}>{self.props.data[i].title}</p>
+            <SmoothScroll type={'nav-button'} section={''}>
+              <a href={'http://warriorfy.com/'}>
+                <p>Warriorfy</p>
+              </a>
             </SmoothScroll>
-        ))}
-
+        {navBarButtons}
+        </div>
       </div>
     );
   }

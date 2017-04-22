@@ -5,7 +5,8 @@ $global-h3-color: #ca9191;
 $global-h4-color: #ca9191;
 $global-bg-color: #f1f1f1;
 $global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$global-p-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$global-p-font-stack: 'Minion Pro', Didot, serif;
 $global-box-width: 70vw;
 $section-color: #faa187;
 $start-button-color: #faa187;
@@ -24,13 +25,13 @@ $start-button-color: #faa187;
 @import './components/NavBar.scss';
 
 @import './components/sections/Intro.scss';
-@import './components/sections/MissionStatement.scss';
+@import './components/sections/Mission.scss';
 @import './components/sections/Opportunity.scss';
 @import './components/sections/Team.scss';
-@import './components/sections/MarketValidation.scss';
+@import './components/sections/Market.scss';
 @import './components/sections/Product.scss';
 @import './components/sections/BusinessModel.scss';
-@import './components/sections/CustomerAdoption.scss';
+@import './components/sections/Adoption.scss';
 @import './components/sections/Investment.scss';
 @import './components/sections/Competition.scss';
 
@@ -45,9 +46,10 @@ body {
   overflow-x:hidden;
 
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      margin-bottom: 100vh;
   }
 
   .intro-image {
@@ -87,7 +89,7 @@ body {
   }
 
   p {
-    font-family: $global-p-font-stack;
+    font-family: $global-label-font-stack;
     color: $global-p-color;
     font-weight: 200;
   }
@@ -136,6 +138,10 @@ body {
     text-align: center;
     background: white;
     z-index: 999999;
+  }
+
+  a {
+      text-decoration: none;
   }
 
   @media all and (max-width: 1200px) {

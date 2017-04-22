@@ -1,18 +1,74 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
-$profile-pic-size: 50px;
+$profile-pic-size: 100px;
+$p-team-text-color: #977171;
+$h2-team-text-color: #7e6579;
+$p-team-font-size: 15px;
+$h2-team-font-size: 20px;
+$mobile-width: 800px;
+
 
 #Team {
 
   .team-members {
-    position: absolute;
-    display: inline;
-    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media all and(max-width: $mobile-width) {
+    display: block;
+    max-width: 50vw;
+    }
   }
 
   .team-member {
-    width: 40px;
+
     display: block;
+    margin: 5vw;
+
+
+    @media all and(max-width: $mobile-width) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+
+
+  }
+
+  .team-members-top-row {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+
+    @media all and(max-width: $mobile-width) {
+    display: block;
+    max-width: 50vw;
+    }
+  }
+
+
+  .team-members-middle-row {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+
+    @media all and(max-width: $mobile-width) {
+    display: block;
+    max-width: 50vw;
+    }
+  }
+
+  .team-members-bottom-row {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+
+    @media all and(max-width: $mobile-width) {
+    display: block;
+    max-width: 50vw;
+    }
   }
 
   .profile-pic-container {
@@ -31,14 +87,16 @@ $profile-pic-size: 50px;
   }
 
   p {
-    width: $profile-pic-size;
-    font-size: 10px;
-    text-align: center;
+  width: $profile-pic-size;
+  font-size: $p-team-font-size;
+  text-align: center;
+  color: $p-team-text-color;
   }
 
   h2 {
     width: $profile-pic-size;
-    font-size: 10px;
+    font-size: $h2-team-font-size;
     text-align: center;
+    color: $h2-team-text-color;
   }
 }

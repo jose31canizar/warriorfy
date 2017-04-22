@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class CustomerAdoption extends Component {
+class Adoption extends Component {
   render() {
     return (
       <div>
@@ -10,4 +10,4 @@ class CustomerAdoption extends Component {
   }
 };
 
-export default CustomerAdoption;
+export default Adoption;

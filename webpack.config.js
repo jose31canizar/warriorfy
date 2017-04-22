@@ -37,7 +37,7 @@ module.exports = {
       loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap']
     },
     {
-      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
       loader: 'file-loader?name=app/assets/fonts/[name].[ext]'
     },
     {

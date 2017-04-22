@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import MainContainer from './components/MainContainer.jsx';
 import SectionsData from './data/sections.json';
-var SmoothScroll = require('./components/SmoothScroll.js');
 import MenuBar from './components/MenuBar.jsx';
 import MenuBarIcon from './components/MenuBarIcon.jsx';
 import NavBar from './components/NavBar.jsx';
