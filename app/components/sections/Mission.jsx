@@ -5,7 +5,7 @@ class Mission extends Component {
     return (
       <div>
         <div className={'mission'}>
-        <h2>Our vision is to bring more heart to healthcare by connecting humans with humans and the knowledge, motivation, and support they need to change their lives.</h2>
+        <h1>Our vision is to bring more heart to healthcare by connecting humans with humans and the knowledge, motivation, and support they need to change their lives.</h1>
         </div>
       </div>
     )

@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class Opportunity extends Component {
   render() {
     return (
-      <div>
+      <div className={'container'}>
         <div className={'header'}>
-          <h1>Ever person on the planet has dreams, aspirations and goals. Most are stifled by the gap between dreams and reality.</h1>
+          <h1>Every person on the planet has dreams, aspirations and goals. Most are stifled by the gap between dreams and reality.</h1>
         </div>
         <div className={'content'}>
           <div className={'problems'}>
@@ -47,12 +47,12 @@ class Opportunity extends Component {
           <div className={'overall'}>
             <div className={'problem'}>
               <div className={'problem-label'}>
-                <p>overall problem</p>
+                <h3>overall problem</h3>
               </div>
             </div>
             <div className={'solution'}>
               <div className={'solution-label'}>
-                <p>overall solution</p>
+                <h3>overall solution</h3>
               </div>
             </div>
           </div>

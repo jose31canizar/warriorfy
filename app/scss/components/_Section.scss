@@ -2,16 +2,15 @@ $section-color: #f1f1f1;
 $p-section-color: #7e6060;
 $border-color: #ac9e9e;
 $label-color: #aa8686;
-$h1-section-color: white;
+$h1-section-color: #5b4d4d;
 
 .Section {
   background-color: $section-color;
   margin: 0;
   width: 100%;
   height: 200vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
   h1 {
     text-align: center;

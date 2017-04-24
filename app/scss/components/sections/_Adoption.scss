@@ -1,6 +1,51 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
+$adoption-bg-color: white;
 
-#CustomerAdoption {
+#Adoption {
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 75vw;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100vw;
+    }
+  }
+
+  .adoption {
+    width: 75vw;
+    height: 50vh;
+    background: $adoption-bg-color;
+    display: flex;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100vw;
+    }
+
+    .launch {
+      width: 25%;
+      height: 100%;
+      background: #b99494;
+    }
+
+    .scale {
+      width: 25%;
+      height: 100%;
+      background: #927171;
+    }
+
+    .example {
+      width: 50%;
+      height: 100%;
+      background: #796464;
+    }
+  }
 
 }

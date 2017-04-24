@@ -35,6 +35,7 @@ $menu-button-color: #e09090;
 
       @media all and (max-width: 1200px) {
         z-index: -1;
+
       }
     }
 }
@@ -60,7 +61,12 @@ $menu-button-color: #e09090;
     background: transparent;
     border: 2px solid $menu-button-color;
 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
     @media all and (max-width: 1200px) {
+
     }
 
   p {

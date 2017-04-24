@@ -2,6 +2,9 @@ $height: 18vh;
 $text-color: #ac6e6e;
 $hover-color: #9d9dcd;
 $nav-button-color: #e09090;
+$nav-button-size: 35px;
+$padding-top: 3em;
+$p-font-size: 12px;
 
 .nav-bar-container {
     top: 0;
@@ -15,6 +18,18 @@ $nav-button-color: #e09090;
 
     .selected {
       background: $nav-button-color !important;
+    }
+
+    .nav-warriorfy {
+      background-image: url("../components/img/00-Logo.png") !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+    }
+
+    .nav-angel-list {
+    background-image: url("../components/img/angel_list.png") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
     }
 
     .nav-bar-connector {
@@ -45,8 +60,8 @@ p {
     text-align: center;
     @include css-transition(all, 0.5s, ease-in-out);
     white-space: nowrap;
-    font-size: 10px;
-    padding-top: 2em;
+    font-size: $p-font-size;
+    padding-top: $padding-top;
   }
 
   p:hover {
@@ -76,8 +91,8 @@ p {
       margin: 20px 20px;
       width: 12em;
       border-radius: 100%;
-      width: 20px;
-      height: 20px;
+      width: $nav-button-size;
+      height: $nav-button-size;
       display: flex;
       justify-content: center;
       outline: none;

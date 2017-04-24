@@ -2,12 +2,26 @@ $section-color: #f1f1f1;
 
 #Competition {
 
-  h2 {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  width: 100vw;
-  margin-top: 50vh;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 100vw;
+  }
+
+  .competition {
+    width: 75vw;
+    height: 50vh;
+    background: $model-color;
+    display: flex;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100vw;
+    }
   }
 
 }

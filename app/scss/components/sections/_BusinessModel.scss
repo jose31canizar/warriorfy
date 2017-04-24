@@ -1,6 +1,27 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
+$model-color: #835757;
 
-#BusinessModel {
+#Business\ Model {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
+  .header {
+  width: 100vw;
+  }
+
+  .model {
+    width: 75vw;
+    height: 50vh;
+    background: $model-color;
+    display: flex;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100vw;
+    }
+  }
 }

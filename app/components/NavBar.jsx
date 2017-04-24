@@ -38,8 +38,23 @@ class NavBar extends React.Component {
 
     var index = self.state.selectedIndex;
 
+    var navBarButtons = [];
 
-    var navBarButtons = this.props.sections.map(function(v, i) {
+    var introButton;
+    if(self.state.selectedIndex == -1) {
+      introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+        <p>Introduction</p>
+      </SmoothScroll>);
+    } else {
+      introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+        <p>Introduction</p>
+      </SmoothScroll>);
+    }
+
+    navBarButtons.push(introButton);
+
+
+    navBarButtons = navBarButtons.concat(this.props.sections.map(function(v, i) {
         if(self.state.selectedIndex == i) {
           return (<SmoothScroll type={'nav-button selected'} onMouseDown={self.changeSelection.bind(null, i)} section={self.props.data[i].title}>
             <p key={i}>{self.props.data[i].title}</p>
@@ -49,21 +64,10 @@ class NavBar extends React.Component {
             <p key={i}>{self.props.data[i].title}</p>
           </SmoothScroll>);
         }
-      });
+      }));
 
 
-      var introButton;
-      if(self.state.selectedIndex == -1) {
-        introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
-          <p>Introduction</p>
-        </SmoothScroll>);
-      } else {
-        introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
-          <p>Introduction</p>
-        </SmoothScroll>);
-      }
 
-      navBarButtons.push(introButton);
 
 
     return (
@@ -71,12 +75,19 @@ class NavBar extends React.Component {
         <div className={'nav-bar'}>
           <div className={'nav-bar-connector'}></div>
 
-            <SmoothScroll type={'nav-button'} section={''}>
+            <SmoothScroll type={'nav-button nav-warriorfy'} section={''}>
               <a href={'http://warriorfy.com/'}>
                 <p>Warriorfy</p>
               </a>
             </SmoothScroll>
-        {navBarButtons}
+
+            {navBarButtons}
+
+            <SmoothScroll type={'nav-button nav-angel-list'} section={''}>
+              <a href={'http://angel.co/warriorfy'}>
+                <p>Angel list</p>
+              </a>
+            </SmoothScroll>
         </div>
       </div>
     );

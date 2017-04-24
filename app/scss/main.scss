@@ -10,6 +10,7 @@ $global-p-font-stack: 'Minion Pro', Didot, serif;
 $global-box-width: 70vw;
 $section-color: #faa187;
 $start-button-color: #faa187;
+$global-font-weight: 300;
 
 
 @import './helpers/Animation_Mixins.scss';
@@ -34,8 +35,7 @@ $start-button-color: #faa187;
 @import './components/sections/Adoption.scss';
 @import './components/sections/Investment.scss';
 @import './components/sections/Competition.scss';
-
-
+@import './components/Label.scss';
 
 body {
   margin: 0;
@@ -49,7 +49,6 @@ body {
       width: 100vw;
       height: 100vh;
       left: 0;
-      margin-bottom: 100vh;
   }
 
   .intro-image {
@@ -63,29 +62,28 @@ body {
     font-family: $global-font-stack;
     color: $global-h1-color;
     text-align: center;
-    font-weight: 200;
+    font-weight: $global-font-weight;
   }
 
   h2 {
     font-family: $global-font-stack;
     color: $global-h1-color;
     text-align: center;
-    font-weight: 200;
+    font-weight: $global-font-weight;
   }
 
   h3 {
     font-family: $global-font-stack;
     color: $global-h1-color;
     text-align: center;
-    font-weight: 200;
+    font-weight: $global-font-weight;
   }
 
-  .label {
-    z-index: 9999;
-    margin-top: -50vh;
-    background: #fff7f7;
-    padding: 10px 20px;
-    border-radius: 2px;
+  h4 {
+    font-family: $global-font-stack;
+    color: $global-h1-color;
+    text-align: center;
+    font-weight: $global-font-weight;
   }
 
   p {
@@ -97,47 +95,6 @@ body {
   .wrapper {
     overflow-x:hidden;
 
-  }
-
-  .border-container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  z-index: 9;
-  }
-
-  .border {
-  position: relative;
-  width: 50vw;
-  height: 2px;
-  background: #d1a2a2;
-  }
-
-  .label {
-  font-family: $global-font-stack;
-  position: absolute;
-  color: #aa8686;
-  cursor: default;
-  margin-top: 0vh;
-
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  z-index: 9999;
-
-  }
-
-  .label-text {
-    margin-top: -26px;
-    margin-left: -35px;
-    padding: 5px 15px;
-    text-align: center;
-    background: white;
-    z-index: 999999;
   }
 
   a {

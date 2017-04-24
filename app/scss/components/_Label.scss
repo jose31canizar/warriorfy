@@ -1,0 +1,41 @@
+.border-container {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100vw;
+z-index: 9;
+}
+
+.border {
+position: relative;
+width: 50vw;
+height: 2px;
+background: #d1a2a2;
+}
+
+.label {
+  font-family: "Oswald", Futura, Helvetica, sans-serif;
+    position: absolute;
+    color: #aa8686;
+    cursor: default;
+    margin-top: 0vh;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    z-index: 9999;
+
+    padding: 10px 20px;
+border-radius: 2px;
+
+}
+
+.label-text {
+  margin-top: -29px;
+  margin-left: -35px;
+  padding: 5px 15px;
+  text-align: center;
+  background: white;
+  z-index: 999999;
+}

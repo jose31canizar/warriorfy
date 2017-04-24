@@ -3,8 +3,12 @@ import React, {Component} from 'react';
 class Competition extends Component {
   render() {
     return (
-      <div>
-        <h2>These are our competitors.</h2>
+      <div className='container'>
+        <div className='header'>
+          <h1>Competition</h1>
+        </div>
+        <div className='competition'>
+        </div>
       </div>
     )
   }

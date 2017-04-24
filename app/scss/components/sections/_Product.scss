@@ -1,5 +1,27 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
+$mobile-width: 1200px;
+$product-bg-color: #835757;
 
 #Product {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 100vw;
+  }
+
+  .product {
+    width: 75vw;
+    height: 75vh;
+    background: $product-bg-color;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100vw;
+    }
+  }
 }

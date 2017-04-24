@@ -1,37 +1,38 @@
 [
   {
-      "name":"Kim",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Advisor-Kim"
-  },
-  {
-      "name":"Montgomery",
-      "job_title":"CEO of Warriorfy",
-      "image":"04-Team-Advisor-Montgomery"
-  },
-  {
-      "name":"Rollo",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Advisor-Rollo"
-  },
-  {
-      "name":"Natalie",
-      "job_title":"Co-Founder of Recovery Warriors",
-      "image":"04-Team-Natalie"
-  },
-  {
       "name":"Jessica",
-      "job_title":"Co-Founder of Recovery Warriors",
+      "job_title":"Founder of Recovery Warriors",
       "image":"04-Team-Raymond"
   },
   {
+      "name":"Natalie",
+      "job_title":"Team member",
+      "image":"04-Team-Natalie"
+  },
+
+  {
       "name":"Savala",
-      "job_title":"Co-Founder of Recovery Warriors",
+      "job_title":"Team member",
       "image":"04-Team-Savala"
   },
   {
       "name":"Schmitt",
-      "job_title":"Co-Founder of Recovery Warriors",
+      "job_title":"Team member",
       "image":"04-Team-Schmitt"
+  },
+  {
+      "name":"Kim",
+      "job_title":"Advisor",
+      "image":"04-Team-Advisor-Kim"
+  },
+  {
+      "name":"Montgomery",
+      "job_title":"Advisor",
+      "image":"04-Team-Advisor-Montgomery"
+  },
+  {
+      "name":"Rollo",
+      "job_title":"Advisor",
+      "image":"04-Team-Advisor-Rollo"
   }
 ]
