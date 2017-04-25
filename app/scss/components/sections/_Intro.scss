@@ -6,25 +6,35 @@ $fg-color: #f1f1f1;
 
 #Intro {
 
-  .text-block {
-  position: absolute;
-      top: 50vh;
-      left: 10vw;
-      display: block;
+  height: 70vw;
+
+
+  .block {
+    position: relative;
+    width: 33.33vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 33vw;
 
       h1 {
       color: white;
+      font-size: 4vw;
+      margin: 0;
       }
 
       p {
       color: grey;
+      font-size: 4vw;
+      margin: 0;
       }
   }
 
 
 
   .start {
-  width: 33.33vw;
+  width: 25vw;
   background-color: #faa187;
   border-radius: 8px;
   position: relative;
@@ -35,9 +45,6 @@ $fg-color: #f1f1f1;
   }
 
   #gotoMission {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     p {
       color: #f1f1f1;
@@ -56,8 +63,8 @@ $fg-color: #f1f1f1;
   }
 
   .smooth-scroll {
-    z-index: 9999;
-    top: 40vw;
+    position: relative;
+        top: 0;
   }
 
   h1 {

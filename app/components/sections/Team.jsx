@@ -42,7 +42,7 @@ class Team extends Component {
           </div>
 
           <div className={'advisors-label-container'}>
-              <Label label={'Advisors'}/>
+              <Label label={'Advisors'} />
             </div>
           <div className={'team-members-row'}>
             {middleRow.map((member, i) => (

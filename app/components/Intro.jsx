@@ -6,15 +6,16 @@ class Intro extends Component {
     return (
       <div className={'Section'} id={'Intro'}>
                 <img className={'intro-image'} src={require('./img/01-header-1200.jpg')}/>
-                <div className={'text-block'}>
+                <div className={'block'}>
                   <h1>Warriorfy</h1>
                   <p>Learn for life.</p>
+                    <SmoothScroll className={'StartContainer'} section={'Mission'}>
+                      <div className={'start'}>
+                        <p>Start</p>
+                      </div>
+                    </SmoothScroll>
                 </div>
-              <SmoothScroll className={'StartContainer'} section={'Mission'}>
-                <div className={'start'}>
-                  <p>Start</p>
-                </div>
-              </SmoothScroll>
+
       </div>
     )
   }
