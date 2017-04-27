@@ -19,9 +19,27 @@ $product-bg-color: #835757;
     width: 75vw;
     height: 75vh;
     background: $product-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media all and(max-width: $mobile-width) {
       width: 100vw;
+    }
+
+    .phone {
+    @include css-transition(all, 0.5s, ease-in-out);
+    width: 20vh;
+    height: 40vh;
+    background: #f1f1f1;
+    border-radius: 10px;
+
+
+    }
+
+    .phone:hover {
+      @include css-rotate3D(50deg);
+      background: #b0a5a5;
     }
   }
 }

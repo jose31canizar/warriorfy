@@ -10,7 +10,7 @@ class Opportunity extends Component {
         <div className={'content'}>
           <div className={'problems'}>
             <div className={'problems-label'}>
-              <h3>problems</h3>
+              <h4>problems</h4>
             </div>
             <div className={'problem-1'}>
               <h3>Unclear</h3>
@@ -27,7 +27,7 @@ class Opportunity extends Component {
           </div>
           <div className={'solutions'}>
             <div className={'solutions-label'}>
-              <h3>solutions</h3>
+              <h4>solutions</h4>
             </div>
             <div className={'solution-1'}>
               <h3>Clarity</h3>

@@ -8,7 +8,7 @@ class Product extends Component {
           <h2>Every dream has its own journey.</h2>
         </div>
         <div className='product'>
-            <div></div>
+            <div className='phone'></div>
         </div>
       </div>
     )

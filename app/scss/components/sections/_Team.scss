@@ -10,6 +10,12 @@ $mobile-width: 1200px;
 
 #Team {
 
+  .team-members-container {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+
+
   .team-member-text {
 
   }
@@ -17,6 +23,8 @@ $mobile-width: 1200px;
   .advisors-label-container {
     position: relative;
     width: 100vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
 
     @media all and(max-width: $mobile-width) {
 

@@ -72,10 +72,11 @@ body {
   }
 
   h3 {
-    font-family: $global-font-stack;
+    font-family: $global-p-font-stack;
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
+    font-size: 25px;
   }
 
   h4 {
@@ -83,10 +84,11 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
+    font-size: 2em;
   }
 
   p {
-    font-family: $global-label-font-stack;
+    font-family: $global-p-font-stack;
     color: $global-p-color;
     font-weight: 200;
   }

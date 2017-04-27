@@ -12,26 +12,30 @@ $menu-button-color: #e09090;
     left: 0;
     width: 100vw;
     background: $bg-color;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
 
-    p {
+    h2 {
         z-index: 999999;
-        color: white;
+        color: #e09090;
         font-weight: 900px;
         padding: 5vh;
         margin-bottom: 5vh;
         @include css-user-select(none);
         cursor: pointer;
+        white-space: nowrap;
     }
 
 
     .smooth-scroll {
-      display: block;
-      position: relative;
-      top: 0;
       width: 100vw;
-      height: 5vh;
       background: transparent;
       z-index: 9999;
+      flex: 1;
 
       @media all and (max-width: 1200px) {
         z-index: -1;
@@ -69,8 +73,8 @@ $menu-button-color: #e09090;
 
     }
 
-  p {
-    color: #9a9aa2;
+  h2 {
+    color: #e09090;
     padding: 0px;
     font-weight: 200;
     margin: 0;
@@ -93,7 +97,7 @@ $menu-button-color: #e09090;
   background: $menu-button-color;
   cursor: pointer;
 
-  > p {
+  > h2 {
     @include css-transition(all, 0.5s, ease-in-out);
   }
 }

@@ -3,8 +3,9 @@ $text-color: #ac6e6e;
 $hover-color: #9d9dcd;
 $nav-button-color: #e09090;
 $nav-button-size: 35px;
-$padding-top: 3em;
-$p-font-size: 12px;
+$padding-top: 1.75em;
+$p-font-size: 1.1em;
+
 
 .nav-bar-container {
     top: 0;
@@ -51,7 +52,7 @@ $p-font-size: 12px;
       display: none;
     }
 
-p {
+h2 {
     @include css-user-select(none);
     cursor: pointer;
     padding: 1em;

@@ -34,20 +34,22 @@ $fg-color: #f1f1f1;
 
 
   .start {
-  width: 25vw;
-  background-color: #faa187;
-  border-radius: 8px;
-  position: relative;
-  cursor: pointer;
-  z-index: 99999;
-
-
+    width: 15vh;
+    background-color: #faa187;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    z-index: 99999;
+    margin-top: 4vw;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
   #gotoMission {
 
     p {
       color: #f1f1f1;
+      font-size: 1.5em;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
   }
