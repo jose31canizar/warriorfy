@@ -99,7 +99,14 @@ and (max-device-width : 1024px)  {
   -webkit-transform: translate3D($t, 0, 0); /* Safari */
   -o-transform: translate3D($t, 0, 0);
   transform: translate3D($t, 0, 0);
+}
 
+@mixin css-transform-translate-y($t) {
+  -ms-transform: translate3D(0, $t, 0); /* IE 9 */
+  -moz-transform: translate3D(0, $t, 0);
+  -webkit-transform: translate3D(0, $t, 0); /* Safari */
+  -o-transform: translate3D(0, $t, 0);
+  transform: translate3D(0, $t, 0);
 }
 
 @mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {

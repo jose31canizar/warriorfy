@@ -4,7 +4,7 @@ $transition-easing: ease-in-out;
 $bg-color: #7a6772;
 $menu-button-color: #e09090;
 
-.MenuBar {
+.menu-bar {
     @include css-transition(all, $transition-time, $transition-easing);
     position: fixed;
     top: 0;
@@ -44,9 +44,12 @@ $menu-button-color: #e09090;
     }
 }
 
-.MenuBarHidden {
-  @media all and (min-width: 1200px) {
-  }
+.menu-bar-hidden {
+  @include css-transform-translate-y(50px);
+}
+
+.menu-bar-shown {
+  @include css-transform-translate-y(0px);
 }
 
 

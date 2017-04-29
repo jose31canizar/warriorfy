@@ -7,7 +7,7 @@ $label-vertical-padding: 5vh;
   width: 100vw;
   z-index: 9;
   padding-top: $label-vertical-padding;
-  background: #f1f1f1;
+  background: $global-bg-color;
   padding-bottom: $label-vertical-padding;
 }
 

@@ -5,20 +5,20 @@ class MenuBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      MenuBarStyle: 'MenuBar'
+      MenuBarStyle: 'menu-bar menu-bar-hidden'
     }
   }
   componentWillReceiveProps(props) {
     if(!props.open) {
       this.setState((prevState, props) => {
         return {
-          MenuBarStyle: prevState.MenuBarStyle + ' MenuBarHidden'
+          MenuBarStyle: 'menu-bar menu-bar-hidden'
         }
       });
     } else {
       this.setState((prevState, props) => {
         return {
-          MenuBarStyle: 'MenuBar'
+          MenuBarStyle: 'menu-bar menu-bar-shown'
         }
       });
     }

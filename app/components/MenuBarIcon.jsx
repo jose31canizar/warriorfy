@@ -5,17 +5,17 @@ class MenuBarIcon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      MenuBarIconStyle: 'MenuBarIcon unclicked'
+      MenuBarIconStyle: 'menu-bar-icon unclicked'
     }
     this.toggleIcon = this.toggleIcon.bind(this);
   }
   toggleIcon() {
     this.setState((prevState, props) => {
       var newProp;
-      if(prevState.MenuBarIconStyle == 'MenuBarIcon unclicked') {
-        newProp = 'MenuBarIcon clicked';
+      if(prevState.MenuBarIconStyle == 'menu-bar-icon unclicked') {
+        newProp = 'menu-bar-icon clicked';
       } else {
-        newProp = 'MenuBarIcon unclicked';
+        newProp = 'menu-bar-icon unclicked';
       }
       return {
         MenuBarIconStyle: newProp
@@ -24,9 +24,9 @@ class MenuBarIcon extends Component {
   }
   componentWillUpdate(props) {
     if(props.open == true) {
-      this.state.MenuBarIconStyle = 'MenuBarIcon clicked'
+      this.state.MenuBarIconStyle = 'menu-bar-icon clicked'
     } else {
-      this.state.MenuBarIconStyle = 'MenuBarIcon unclicked'
+      this.state.MenuBarIconStyle = 'menu-bar-icon unclicked'
     }
   }
   render() {

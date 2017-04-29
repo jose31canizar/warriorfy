@@ -9,14 +9,14 @@ class MainContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuBarState: ''
+      menuBarState: 'menu-bar-close'
     }
   }
   componentWillReceiveProps(newProps) {
     if(newProps.open) {
-      this.state.menuBarState = 'MainContainer menuBarOpen';
+      this.state.menuBarState = 'MainContainer menu-bar-open';
     } else {
-      this.state.menuBarState = 'MainContainer menuBarClose';
+      this.state.menuBarState = 'MainContainer menu-bar-close';
     }
   }
   render() {
