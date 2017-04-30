@@ -9,11 +9,11 @@
   },
   {
       "title":"Value Proposition",
-      "label":"The Value Proposition"
+      "label":"Our Value Proposition"
   },
   {
       "title":"Product",
-      "label":"Product"
+      "label":"The App"
   },
   {
       "title":"Business Model",
@@ -21,11 +21,15 @@
   },
   {
       "title":"Competition",
-      "label":"Competition"
+      "label":"Our Competition"
   },
   {
       "title":"Adoption",
       "label":"Customer Adoption"
+  },
+  {
+      "title":"Competition",
+      "label":"Competition"
   },
   {
       "title":"Team",

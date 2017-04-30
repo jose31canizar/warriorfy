@@ -114,7 +114,21 @@ body {
       text-decoration: none;
   }
 
-  @media all and (max-width: 1200px) {
+  .text-block-grid {
+      display: flex;
+      width: 75vw;
+      justify-content: flex-end;
+  }
 
+  .text-block {
+    width: 30vh;
+    background: #4f4a54;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 4px;
   }
 }

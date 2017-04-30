@@ -110,7 +110,15 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 6500 && window.scrollY < 7250) {
+    if(window.scrollY > 6500 && window.scrollY < 7000) {
+      this.setState((prevState, props) => {
+            return {
+              selectedIndex : 8
+            }
+          });
+    }
+
+    if(window.scrollY > 7000 && window.scrollY < 8250) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 8
