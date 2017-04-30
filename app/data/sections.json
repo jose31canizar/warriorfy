@@ -12,21 +12,21 @@
   {
       "title":"Team",
       "label":"The Team",
-      "text":"What we're creating doesnt exist yet."
+      "text":"We have personal experience with the problem and are passionate about solving it"
   },
   {
       "title":"Market",
-      "label":"The Market",
+      "label":"Market",
       "text":"This is the plan."
   },
   {
       "title":"Product",
-      "label":"The App",
+      "label":"Product",
       "text":"There's a large community of podcast listeners out there."
   },
   {
       "title":"Business Model",
-      "label":"The Model",
+      "label":"Business Model",
       "text":"What we're creating is a community of warriors, those fighting to know more about themselves."
   },
   {
@@ -36,7 +36,7 @@
   },
   {
       "title":"Competition",
-      "label":"Competitors",
+      "label":"Competition",
       "text":"Money well spent."
   }
   ,
