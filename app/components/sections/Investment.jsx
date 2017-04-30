@@ -10,6 +10,7 @@ class Investment extends Component {
         <div className='investment'>
           <div className='milestones'>
             <h3>Upcoming Milestones</h3>
+              <p>• Upcoming Milestones</p>
           </div>
           <div className='money'>
             <h3>Money Well Spent</h3>

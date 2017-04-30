@@ -1,7 +1,7 @@
 [
   {
       "title":"Mission",
-      "label":"The Mission$$$$",
+      "label":"The Mission",
       "text":"We foresee a platform briding the gap between experts and those trying to find wellness resources."
   },
   {
@@ -9,11 +9,7 @@
       "label":"The Opportunity",
       "text":"What we're creating doesnt exist yet."
   },
-  {
-      "title":"Team",
-      "label":"The Team",
-      "text":"We have personal experience with the problem and are passionate about solving it"
-  },
+
   {
       "title":"Market",
       "label":"Market",
@@ -38,8 +34,12 @@
       "title":"Competition",
       "label":"Competition",
       "text":"Money well spent."
-  }
-  ,
+  },
+  {
+      "title":"Team",
+      "label":"The Team",
+      "text":"We have personal experience with the problem and are passionate about solving it"
+  },
   {
       "title":"Investment",
       "label":"Investment",
