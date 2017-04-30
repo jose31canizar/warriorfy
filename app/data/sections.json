@@ -1,47 +1,38 @@
 [
   {
       "title":"Mission",
-      "label":"The Mission",
-      "text":"We foresee a platform bridging the gap between experts and those trying to find wellness resources."
+      "label":"The Mission"
   },
   {
       "title":"Opportunity",
-      "label":"The Opportunity",
-      "text":"What we're creating doesnt exist yet."
+      "label":"The Opportunity"
   },
   {
-      "title":"Team",
-      "label":"The Team",
-      "text":"We have personal experience with the problem and are passionate about solving it"
-  },
-  {
-      "title":"Market",
-      "label":"Market",
-      "text":"This is the plan."
+      "title":"Value Proposition",
+      "label":"The Value Proposition"
   },
   {
       "title":"Product",
-      "label":"Product",
-      "text":"There's a large community of podcast listeners out there."
+      "label":"Product"
   },
   {
       "title":"Business Model",
-      "label":"Business Model",
-      "text":"What we're creating is a community of warriors, those fighting to know more about themselves."
-  },
-  {
-      "title":"Adoption",
-      "label":"Customer Adoption",
-      "text":"Money well spent."
+      "label":"Business Model"
   },
   {
       "title":"Competition",
-      "label":"Competition",
-      "text":"Money well spent."
+      "label":"Competition"
+  },
+  {
+      "title":"Adoption",
+      "label":"Customer Adoption"
+  },
+  {
+      "title":"Team",
+      "label":"The Team"
   },
   {
       "title":"Investment",
-      "label":"Investment",
-      "text":"Money well spent."
+      "label":"Investment"
   }
 ]

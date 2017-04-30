@@ -34,6 +34,7 @@ $fg-color: #f1f1f1;
 
 
   .start {
+    @include css-transition(all, 0.3s, ease);
     width: 15vh;
     background-color: #faa187;
     border-radius: 8px;
@@ -43,6 +44,10 @@ $fg-color: #f1f1f1;
     margin-top: 4vw;
     padding-top: 1em;
     padding-bottom: 1em;
+  }
+
+  .start:hover {
+  background-color: #b57d6d;
   }
 
   #gotoMission {
