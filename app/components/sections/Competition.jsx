@@ -7,8 +7,7 @@ class Competition extends Component {
         <div className='header'>
           <h1>Competition</h1>
         </div>
-        <div className='competition'>
-        </div>
+        <img className='section-medium-image' src={require('../img/05-Market-Competitive-Landscape.png')} alt='Warriorfy'/>
       </div>
     )
   }

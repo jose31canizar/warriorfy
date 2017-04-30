@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Mission from './sections/Mission.jsx';
 import Opportunity from './sections/Opportunity.jsx';
 import Team from './sections/Team.jsx';
-import Market from './sections/Market.jsx';
+import ValueProposition from './sections/ValueProposition.jsx';
 import Product from './sections/Product.jsx';
 import BusinessModel from './sections/BusinessModel.jsx';
 import Adoption from './sections/Adoption.jsx';
@@ -19,8 +19,8 @@ class SectionFactory extends Component {
       section = <Opportunity data={this.props.data}/>;
     } else if(this.props.data.title == 'Team') {
       section = <Team data={this.props.data}/>;
-    } else if(this.props.data.title == 'Market') {
-      section = <Market data={this.props.data}/>;
+    } else if(this.props.data.title == 'Value Proposition') {
+      section = <ValueProposition data={this.props.data}/>;
     } else if(this.props.data.title == 'Product') {
       section = <Product data={this.props.data}/>;
     } else if(this.props.data.title == 'Business Model') {
@@ -34,6 +34,13 @@ class SectionFactory extends Component {
     } else {
       section = <Investment data={this.props.data}/>;
     }
+    // console.log("section title is: " + this.props.data.title);
+    // if(this.props.data.title != undefined) {
+    //   section = React.createElement(this.props.data.title.replace(/\s/g, ''), {data: this.props.data});
+    // }
+
+
+
     return (
 
       <div className={'Section'} id={this.props.id}>

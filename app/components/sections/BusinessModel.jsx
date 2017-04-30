@@ -5,10 +5,9 @@ class BusinessModel extends Component {
     return (
       <div className='container'>
         <div className='header'>
-          <h1>Model</h1>
+          <h1>Business Model</h1>
         </div>
-        <div className='model'>
-        </div>
+        <img className='section-wide-image' src={require('../img/07-Business-Model.png')} alt='Warriorfy'/>
       </div>
     )
   }
