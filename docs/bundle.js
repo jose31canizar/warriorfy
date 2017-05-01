@@ -54,15 +54,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(197);
+	var _reactDom = __webpack_require__(201);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _main = __webpack_require__(198);
+	var _main = __webpack_require__(202);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _global = __webpack_require__(207);
+	var _global = __webpack_require__(211);
 
 	var _global2 = _interopRequireDefault(_global);
 
@@ -92,19 +92,19 @@
 
 	var _MainContainer2 = _interopRequireDefault(_MainContainer);
 
-	var _sections = __webpack_require__(193);
+	var _sections = __webpack_require__(197);
 
 	var _sections2 = _interopRequireDefault(_sections);
 
-	var _MenuBar = __webpack_require__(194);
+	var _MenuBar = __webpack_require__(198);
 
 	var _MenuBar2 = _interopRequireDefault(_MenuBar);
 
-	var _MenuBarIcon = __webpack_require__(195);
+	var _MenuBarIcon = __webpack_require__(199);
 
 	var _MenuBarIcon2 = _interopRequireDefault(_MenuBarIcon);
 
-	var _NavBar = __webpack_require__(196);
+	var _NavBar = __webpack_require__(200);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -130,14 +130,125 @@
 	      sections: sections,
 	      data: 'loading...',
 	      open: false,
-	      MenuBarIconStyle: 'MenuBarIcon'
+	      MenuBarIconStyle: 'menu-bar-icon',
+	      stick: false,
+	      selectedIndex: 0
 	    };
 	    _this.togglePanel = _this.togglePanel.bind(_this);
 	    _this.closeMenuBar = _this.closeMenuBar.bind(_this);
+	    _this.handleScroll = _this.handleScroll.bind(_this);
+	    _this.changeSelection = _this.changeSelection.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(App, [{
+	    key: 'handleScroll',
+	    value: function handleScroll() {
+	      if (window.scrollY > 500) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            stick: false
+	          };
+	        });
+	      } else {
+	        this.setState(function (prevState, props) {
+	          return {
+	            stick: true
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 0 && window.scrollY < 500) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: -1
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 500 && window.scrollY < 1250) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 0
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 1250 && window.scrollY < 2000) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 1
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 2000 && window.scrollY < 2750) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 2
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 2750 && window.scrollY < 3500) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 3
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 3500 && window.scrollY < 4000) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 4
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 4000 && window.scrollY < 5000) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 5
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 5000 && window.scrollY < 5750) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 6
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 5750 && window.scrollY < 6500) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 7
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 6500 && window.scrollY < 7000) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 8
+	          };
+	        });
+	      }
+
+	      if (window.scrollY > 7000 && window.scrollY < 8250) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            selectedIndex: 8
+	          };
+	        });
+	      }
+
+	      console.log(screen.height);
+	    }
+	  }, {
 	    key: 'togglePanel',
 	    value: function togglePanel() {
 	      this.setState(function (prevState, props) {
@@ -154,11 +265,21 @@
 	      });
 	    }
 	  }, {
+	    key: 'changeSelection',
+	    value: function changeSelection(i) {
+	      console.log('changed selection!' + i);
+	      this.setState({
+	        selectedIndex: i
+	      });
+	    }
+	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      this.setState({
 	        data: _sections2.default
 	      });
+
+	      window.addEventListener('scroll', this.handleScroll);
 	    }
 	  }, {
 	    key: 'render',
@@ -170,7 +291,7 @@
 	        { className: 'wrapper' },
 	        _react2.default.createElement(_MenuBarIcon2.default, { togglePanel: this.togglePanel, open: this.state.open }),
 	        _react2.default.createElement(_MenuBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open, closeMenuBar: this.closeMenuBar }),
-	        _react2.default.createElement(_NavBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open }),
+	        _react2.default.createElement(_NavBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open, stick: this.state.stick, selectedIndex: this.state.selectedIndex, changeSelection: this.changeSelection }),
 	        _react2.default.createElement(_MainContainer2.default, { data: this.state.data, sections: this.state.sections, togglePanel: this.togglePanel, open: this.state.open })
 	      );
 	    }
@@ -19898,7 +20019,7 @@
 
 	var _Label2 = _interopRequireDefault(_Label);
 
-	var _Intro = __webpack_require__(191);
+	var _Intro = __webpack_require__(195);
 
 	var _Intro2 = _interopRequireDefault(_Intro);
 
@@ -20046,27 +20167,27 @@
 
 	var _Team2 = _interopRequireDefault(_Team);
 
-	var _Market = __webpack_require__(185);
+	var _ValueProposition = __webpack_require__(189);
 
-	var _Market2 = _interopRequireDefault(_Market);
+	var _ValueProposition2 = _interopRequireDefault(_ValueProposition);
 
-	var _Product = __webpack_require__(186);
+	var _Product = __webpack_require__(190);
 
 	var _Product2 = _interopRequireDefault(_Product);
 
-	var _BusinessModel = __webpack_require__(187);
+	var _BusinessModel = __webpack_require__(191);
 
 	var _BusinessModel2 = _interopRequireDefault(_BusinessModel);
 
-	var _Adoption = __webpack_require__(188);
+	var _Adoption = __webpack_require__(192);
 
 	var _Adoption2 = _interopRequireDefault(_Adoption);
 
-	var _Competition = __webpack_require__(189);
+	var _Competition = __webpack_require__(193);
 
 	var _Competition2 = _interopRequireDefault(_Competition);
 
-	var _Investment = __webpack_require__(190);
+	var _Investment = __webpack_require__(194);
 
 	var _Investment2 = _interopRequireDefault(_Investment);
 
@@ -20097,8 +20218,8 @@
 	        section = _react2.default.createElement(_Opportunity2.default, { data: this.props.data });
 	      } else if (this.props.data.title == 'Team') {
 	        section = _react2.default.createElement(_Team2.default, { data: this.props.data });
-	      } else if (this.props.data.title == 'Market') {
-	        section = _react2.default.createElement(_Market2.default, { data: this.props.data });
+	      } else if (this.props.data.title == 'Value Proposition') {
+	        section = _react2.default.createElement(_ValueProposition2.default, { data: this.props.data });
 	      } else if (this.props.data.title == 'Product') {
 	        section = _react2.default.createElement(_Product2.default, { data: this.props.data });
 	      } else if (this.props.data.title == 'Business Model') {
@@ -20112,6 +20233,12 @@
 	      } else {
 	        section = _react2.default.createElement(_Investment2.default, { data: this.props.data });
 	      }
+	      // console.log("section title is: " + this.props.data.title);
+	      // if(this.props.data.title != undefined) {
+	      //   section = React.createElement(this.props.data.title.replace(/\s/g, ''), {data: this.props.data});
+	      // }
+
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'Section', id: this.props.id },
@@ -20183,7 +20310,7 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Our vision is to bring more heart to healthcare by connecting humans with humans and the knowledge, motivation, and support they need to change their lives.'
+	            'Our vision is to transform lives by changing the way people learn about health.'
 	          )
 	        )
 	      );
@@ -20242,7 +20369,7 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Every person on the planet has dreams, aspirations and goals. Most are stifled by the gap between dreams and reality.'
+	            'Worldwide, 2.3 billion people are obese and overweight and rates of eating disorders are skyrocketing.'
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -20546,17 +20673,17 @@
 
 	module.exports = [
 		{
-			"name": "Jessica",
+			"name": "Jessica Raymond",
 			"job_title": "Founder of Recovery Warriors",
 			"image": "04-Team-Raymond"
 		},
 		{
-			"name": "Natalie",
+			"name": "Patricia Natalie",
 			"job_title": "Team member",
 			"image": "04-Team-Natalie"
 		},
 		{
-			"name": "Savala",
+			"name": "Shauna Savala",
 			"job_title": "Team member",
 			"image": "04-Team-Savala"
 		},
@@ -20746,22 +20873,26 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./00-Logo.png": 169,
-		"./04-Team-Advisor-Kim.png": 170,
-		"./04-Team-Advisor-Montgomery.png": 171,
-		"./04-Team-Advisor-Rollo.png": 172,
-		"./04-Team-Natalie.png": 173,
-		"./04-Team-Raymond.png": 174,
-		"./04-Team-Savala.png": 175,
-		"./04-Team-Schmitt.png": 176,
-		"./05-Market-Validation-Featured-Forbes.png": 177,
-		"./05-Market-Validation-Featured-Psychology-Today.png": 178,
-		"./05-Market-Validation-Featured-Redbook.png": 179,
-		"./05-Market-Validation-Featured-Self.png": 180,
-		"./05-Market-Validation-Featured-Shape.png": 181,
-		"./05-Market-Validation-Growth.png": 182,
-		"./05-Market-Validation-Map.png": 183,
-		"./angel_list.png": 184
+		"./ House 1.png": 169,
+		"./00-Logo.png": 170,
+		"./04-Team-Advisor-Kim.png": 171,
+		"./04-Team-Advisor-Montgomery.png": 172,
+		"./04-Team-Advisor-Rollo.png": 173,
+		"./04-Team-Natalie.png": 174,
+		"./04-Team-Raymond.png": 175,
+		"./04-Team-Savala.png": 176,
+		"./04-Team-Schmitt.png": 177,
+		"./05-Market-Competitive-Landscape.png": 178,
+		"./05-Market-Validation-Featured-Forbes.png": 179,
+		"./05-Market-Validation-Featured-Psychology-Today.png": 180,
+		"./05-Market-Validation-Featured-Redbook.png": 181,
+		"./05-Market-Validation-Featured-Self.png": 182,
+		"./05-Market-Validation-Featured-Shape.png": 183,
+		"./05-Market-Validation-Growth.png": 184,
+		"./05-Market-Validation-Map.png": 185,
+		"./07-Business-Model.png": 186,
+		"./Arrow.png": 187,
+		"./angel_list.png": 188
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -20779,102 +20910,126 @@
 
 /***/ }),
 /* 169 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	module.exports = __webpack_require__.p + "1a113ef4a920eed00c206814faed6a5e.png";
+	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODcxRkMxQzBDQjYyMjg4QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNTFDMTcxNzVBMEMxMUUxOURCRUVGN0FGNTc2M0E5OCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNTFDMTcxNjVBMEMxMUUxOURCRUVGN0FGNTc2M0E5OCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA3ODAxMTc0MDcyMDY4MTE5MTQwOEYxMzNGODYwMzU5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjBBODAxMTc0MDcyMDY4MTE4NzFGQzFDMENCNjIyODhCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1FAf5wAAAShJREFUeNrs2e8GwlAYx/HtDrqXbmiU0duIiIiIiIgYdUldTFdwWnRIbZ39OWvn2fM9/F4di+9nvVsU9XuyfEmk9FzymdcSzfG9IsQ9/e3Tkrtpvqvj+bHj/hbym88K3vznJo7fcD0vOr4KgkiAc414u3QoAE3ifyGIAmgTX4YgBuDkIb4IQQSAz3i7mRSALuLfEYIGOHYYX3Wq4432+F4ADgHFG+3xRnu80R7/F4B9wPFGe/xz867idwLi7Raa470jSIz3hrAVHG+31BzfGGFI8bURNgOMt1tpjnciaIgvRVgriv9C0Bhvt67ycTTo720VTtz4EgAAAAAAAAAAaANwzzdqGWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8ADwEGAG4PqCkQka3xAAAAAElFTkSuQmCC"
 
 /***/ }),
 /* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "0d4d241e6517199ec57c14a7e3396f5e.png";
+	module.exports = __webpack_require__.p + "1a113ef4a920eed00c206814faed6a5e.png";
 
 /***/ }),
 /* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "3a560cb1db0edf9fcc1daea58c58797b.png";
+	module.exports = __webpack_require__.p + "0d4d241e6517199ec57c14a7e3396f5e.png";
 
 /***/ }),
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "a17a47904a021b545c5b880282c41c2d.png";
+	module.exports = __webpack_require__.p + "3a560cb1db0edf9fcc1daea58c58797b.png";
 
 /***/ }),
 /* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fc35d0967cad72b2662bc8f87c3b3963.png";
+	module.exports = __webpack_require__.p + "a17a47904a021b545c5b880282c41c2d.png";
 
 /***/ }),
 /* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "8bc5738a03f101288bbf28aa59a72bd0.png";
+	module.exports = __webpack_require__.p + "fc35d0967cad72b2662bc8f87c3b3963.png";
 
 /***/ }),
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "edd0f30994e3ac0a0f7942d64a2df095.png";
+	module.exports = __webpack_require__.p + "8bc5738a03f101288bbf28aa59a72bd0.png";
 
 /***/ }),
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "3ddf3e92c77d51f972b200d0040ccb63.png";
+	module.exports = __webpack_require__.p + "edd0f30994e3ac0a0f7942d64a2df095.png";
 
 /***/ }),
 /* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "2ce1b8d2fa3d5e753f1df52b7bf67d6c.png";
+	module.exports = __webpack_require__.p + "3ddf3e92c77d51f972b200d0040ccb63.png";
 
 /***/ }),
 /* 178 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAd0AAABqCAMAAADOW3slAAAAflBMVEX///8AAAD19fX8/Pzh4eH39/f6+vrT09O0tLTr6+uioqLz8/Pv7+8iIiJOTk5BQUF4eHgcHByPj49nZ2fc3Nw2Njazs7NYWFjW1tYqKipcXFzIyMiZmZl/f39wcHBHR0empqa/v78WFhY5OTkMDAwvLy+FhYWSkpI+Pj4eHh6eSfoZAAAUzklEQVR4nO2dh3bqOBCGMS5gMCXYVBPA1OT9X3BdBPxjjSRjTBLO3tm7u+eCUJlPM+pSq/X74vl38WrF4G6H43XUbjhfFWWRdLuz9E8qu9lOSO8qi4fiisefVzn7DeQtILlZr9eXyeTSmzkNRF1VkuF2ux19pX8Oh7hWDG0rk9Ws4YxVk9DSyeWhuNbwy04DeVvwmdoPk3pmVENmkG63Vgxt8etNE/X9UVlp6a4figvofjxm9bx0lPka/5SqmqNrjX4Bb5O22wP7asJ21XSt4Q+5525zdK3QbThzZnlTutbUbiABszRJ90FP2IS8K90Hs1ZXGqU77TecO6O8im69DiYVRa+qkGUTLbtRGqVrJQ3nzigvontsgq7Wdq0fGWM0S/ez4dwZ5X3prhpIwSgN9plTGTecO6P8Zbpaz2ydfqJf1azthg3nzih6upOH4vpZuj/Sa35zuut5uMrlBLkYhZvNeJPKY92Al9Id9rrdM2byx223XkOPdH+kMWGlgeHMK+nOg+yT5L3p/rjt3gSmEesOZ15JV8wELP/RrSV/nK5Q7fYf3Vryx+mKHsD8F+k+36uS2l0vCAzLXW3fb2JtGOiW0fiL3eWyi4zzaLvH6dopIqTkup6b/ut5blrqSKYLS1pL/J2/SGbryS7p0NUFt3+Tqxb7/SAIsg+CACNwkvHXcv8x3XQdnOxHupdFp5DI4RTux5/b034/HV1iXA1CunMMH3Xnh+zD6SZRLImkIfKW6GPYW0AlsOOkm/0z685mQi3BurfO/lwul0nERaWiG/Vubd1wJ2fDiVOtpPI1Go0+IIos2f78dDodpsvTcnlIgwyycNtJHFxzObWO1vF4hFqdgCoiji4M4AZ3ONF6OCg+3I/O0CVsT1ZhIauVaLij+eoq87sxRpPDLd5TCEaKGToei8weB4dwV67q/gUaje36zldhu4tP6P9PPxkk0Sd0MvYwfGnf82pti49w3qcnR6WiG5whiTQb61Kt7X1ZrOR0gwH73VWr9l7KJZpKZbr+mca/udXBYHj/NJRxXUfzwaSUw+FNAV1LIYMZWr49+Sh9v7saG2u77c9yfJNSdXE35RDhtVjtEeS0+CiGcGwDwtLtSnzIaMmZl7++RaGha1mfeR2xQSNDE92uRPdDqDeeSnncXbFB/jayHgRdnynFlZ2SLpk07o/lr8eumq7P7JlYkcV9LsRUrJu0wUswdNnOH0cXZ1mvMri7iP6B+V6Ilm4x4foQXdl2Bd2ES2TiVaF7LqroVvq5dSOvoXufpm2zG1zCvkRXlDJg9TYEvAGbp1OnSbrQS0K54vWYGnuLIqd7Un7fa4ouVwGt63x9FbrOSPpxLmsj3ase2woPVuzFkOn2h3z44bVD0uor8jSIFHSx3d1xdHE4k0iKQNkLD6FQbCFdPd3MwWO7y9BdGOjuM7rRUZHArCpd5UR7nmKiij+TU+EhLqrvJzzdcitP86MNMW+AblEwV+l3i0rpKSpYITndrFOskLTVsr+lXJZsF34t0z16tNtEJfc/Fegq/FMqA8dEt1CkygisYmMo0t0awsdyHkuyboqusgKJTnek/t660VWL9yzdvadjY4VeFbq+snoU7aqebt4P18Sw8Ri6mvBh4Qw0IbKNlU3QdTRoTuUfyGKkG1Vod0G1cp85tV1b2W2zcsMx09W1q4O2ie6XpzU063sh0401MRaThFqzSfXQBvoMXXa8W6arbVWzANKArJwLXbubRYFs+HYXFCF6MJDo0dVv3tgY6X4aCtGV6JbITAOti8s1XaarDX8xOM18QuRZuhka5VA2k1QvXqnTXjKjH6DrkcMPkiyr0MUfHFfnMZmcOZfohnG0iHH0c3JabdorO9EiDyW6NPxyuyV6G9klszlOku7nHoM0QxdjHOyShDRxab+qTxQx6TjRDOdrsijsuEskwXyndGEajKHbMdsu0fQliXv4wbFjpuvD3z7yvuIM0lwFhG6uelKrU7pktHxOQ3hoekeJro9qy0ddqNi0TCTGQz4GDiBE2mAxdJm1Ui1dLLeVD8Q6UNCDQ4fku0JzcjtJha64GOk6UGl3El3LJf4l73aRlr5rojsmfyumKn3UrUPonnO6Nsx7pnQX0DU85cNRG+K0fEJ3lDaqOP1azF8sSfjWAv4uxkho70kTdDH8Vx4AVbVcELrHIpsRuCV2xoTuMGToJhDATBc7j9tiKgDnb2dmujPyt0xcMP+UViK7DxjepnTRJ66KSXh0zhJd1KuY+sYucjoKW4CvFqRw2mjWBF3MdRGFhzP4lO6goOvAR6ztPkg3MtDFKR2hWZxZ2LUCQMXSRV9R2IkNKZToiixAY1+iK5JA/5HShRi2tEOsoAtqEaRwmaTL0cVY69F1ge6SpYtejbVdo2dOIEAFupDeqpjVxUbsQbpjKYVlRBobmW4aANsrMVzFJsshdL9q2q6a7lamy+5SLo2IatEFW2LpJiQNM11Zteij2gxd9A4/QxdiEHSx3+Q3Qhc90vN0jbabeuZ+dbp2v9gL0X7UM+vp9tsyXcS1a/VluliuF9kuztDWsV3ZM1M2z9Kd0Vw8RdedfW6KrRDzFe3RGujGpFfVk3RvBUa6T9ruIKUrNw6P0oUYDjXbXTXd0avoggNS0/WVEy8pXehc8nRhAC3KiQNaji56h4TYrlCl0XYv2+12WEjoP03XJ3S/Gqf7Ettd8nSlXtVCsTHHqkYXFCN0jz0Wjm7buYtXi67XvonbMtF1CN2NLdF9te3WbHeNtou7e1R0O5qpyG62a66URCuBALTdPeUT7GTSn6NLpQ5dKgxdUBRvuzh7ldIFBzSlC9IM3aieZ3YgAHv2C8cSM1ob5PHud4eji6utGV1fszOHp4utYkyX5k/h+bwik7KB+7N0e8/TtckoT2QJZ9x4usjmB+h+GOnuWnSYJsmM0N3KdBPimWU5ui6kx9OFLLN0E/jbhtNKB9j0JEWV6bo/T9eW6J7LZSjHsGuErmPY1/Ak3aVttl2ZLrY4D9KVVZ02UB2kxdKFiehKdHE+t47tGuk2Y7uajRNWNdstbxIm8tky0m2/mG5muzJd2ktqQ2tyeg+6+07LNdG1NVsmrQp0Y73tHmMzXdzyLVSJ5XqR7f4CXVzRe94zV6FLd9OPVqvVN37wLN1Ulb9Pt/OmdNHWG6B7Dtr9voMDJJYu9nn0nnkQtFo29qq4g1tGuvL67mN0F60FBBB5QFpOy6VHjiMIL1LEGZqMLqhFJElncJHuly3RZS/WMdMFVVWhi42eWKdGeFXoEmMnkm+5RrrDyIkWnfSfBRhx+9V0O2T1/hfoHjyJbk3bpXSNvSqkuyp8FkZaha5yy+M8kvR4l+V5IU4Boe2u7GfpXli6kMd3tl1c167SZ2bo+tDoPGG7w+v5SuXOPnE9NPHMT9OVVV2HLqhAVLhfoCv3qmy17X4XyuzTdpehC6qgdEcsXVDtKdyMi8u94aJy9fXDxRYnxnax1jZOt2+i6xHbFVnCXVOLR+nKnvl52z1Suh9V6UJJH6TL7idRnuDJh6IlukUWGrXdb5Yu1jnZdjG8TLdTj24fAjxP1zLS7Zno0rmqL5lul3hmlq5ut/rKY+mqbZe9TIppdx+lCwOFpUf6EpXp0h1LpFdVlMp4GSXds0JsfSvRNdtuj1PtQ3RnRBP83ca6m+F3FeiSHY0muhNJUR9xK4IiFXdqlenCUkpGF8KvPI6uA6umRrrTtkSXXQ3R0B1JdEu2uy/o4kHWHuljz4tM+CcMgHQP9eh21GOmLNcuTJe9B90F3Vn6O3R5232IbhXPDHQV95FqTjsdF+T8+PyP0EXP/CdsV/bMDdju7jHbVd02u1MfA5xRuiILRA+Y3pyLnqELqubpIi2HzPosXc52qV45ugmE6LZw4XMqX9/Azqga6ZL9iDXpTjEA0p0WSdDb5arQbUXKtvdC6RZ6eN52f5LupSJdDwJUoYtaqEfXZgznQALIdHG8UpFuWiV64UrscxvirsuJmS7Wphp09zGZ8xd0kZZEN8KZS54u/KAqXTy79DO2W4cunapEutqbor3+9TU3LAVLl3pmrE1Gz1ycEivbLhSiCl1cSREdPTNdeh3Vs3R7XK/KTNcFuuvH6B6eonsXerQe6YobZRqnK9su6imlC462RHdelW4CIbpEzQ3Y7tf70EU9nEkWWLoP9ap4unK7W7JdDd12PbrN2m4durxnJtMwBs+8a4AuHPhk6ZL7vSvShSRK7a64T6xku7DFIKOLnrzN6JWczjba7imoRhfHVD163lsYFp6NpXTF+V0Puq+87ZLOvpku2MVr6DJ9xwfp4tyDke7AJeGFVqheya5wvt3Fi259iS47Xw6ZzujivPS0Il0cC7B0gxEJAHRPLUn3L6ILGzXHzGy6hu6nRPeYkPFLJdvF2iCfKO/QS5Ymcqlm9AB5VbpQ7BLdU0W6tpHulgTQ0+29nO7mMdutShf15JBWcvAoXcZ2f42u2Xb/AF1YPd80YbuyZ6Z0vRJdrA1FlnBTf8kzT5qiW2p3cW6rMbo+6Q4a6K6fp4uKE1u71HSF7druXSjdcS3bNdPVtLs8XexV/QBdq4btpnRxft1El90LFs9uIp7TTiz8iW2iy8zZzObisPFqHjoV6OJV2DLdqOUBi2p05Xb3ebqQ6YyuC38VdKkHcZ+kmwbAkWAtulBMcecNloJ6ZiPdL6mUx0UFunjvTnH7OR5ZluiiZQq6GJ6nS6+B5PrM8snCEl3a7mJtYOl69LhMNbok4zb2JosIcBxG6bI7DqCYw6fpihk50PV39CBdv2m6Z5YuHqSuSDc20qW5+Jt0SxcF6j1z2DTderaLu8N+z3YpXbdRuieWLswDmejOZduldEcmuluplPuSZ5aadt520cctyBRPXdvFOluPrtl2S+1uHbqkO/hqumczXUzPaLsbTzKDhNAStquni+cn+BGRTBdLVZNu6ZQ5RLjk6HKeGebD63lm7Kk/Rpf3zIBqVOTRh/XVkKR3kOiWbJeni9tPWbp4IYVLLjdkbL10qbQoNR3P1Gp3H6Ibk0M8lngsSW27fYnumdAdyPtyKV12txDQ3cp0zwTVtMgjjnBD4qEOUimXRtulF42KJOiIyKZ08bIHUeFKIyJyHUSxRogrPGuy6WVZRGEcEZXp4unKIgTQ2nco3eJC/7ZyBVCUmx5mQrr7tqT7C1lPYelCMZkR0ZrQHXQk/CGpw99SnCldPATG0kUW38VzIPSEZ4kuGt5HkSU8u+BTusK6cY1wTVatRZKoWH7XfYkuOt48F33IReaDsBBF347egUdOZxd3TmDvMKWLI+ZYqqQTM108sOVLdLvU3YRO3+1jM5npAfdA9YJ+4OOm/bQtN9IlSZyzOoo7AvZ2mS65MXzsey0X61v2tiF6gzTTvu+QSwyo7RYPd3lo/pXoYpRfieMsMM6NTW3X6kVORLYnluhao/OEvHyd0cUYRnFajC5eVVyBLo4UCjvAN6Kd0lGUabhZkXfvwtLjDttwXr5b3UyX7LkN1xdSyrAl0SWXMm3H5xCdZNbO9sk2wI/DlORZUuxqvV6T+9or0aWvOXzQJLIApb2IS3oHSjkTkpzLTwFNDzSNCnRdSHPa6bf7qPlshKO9Wj/TQ0f3bkbqT/DYD0/X010QENONwhldT/ecQO7B9A9OrE0XklSiW7rwn0h2wbs5E/pHT86mAJQuu+OAPhDxvSRn9Wctkx6yXZCaKphVDzNd3SMV2TCtTFf7yk7eidJXyTVtfphIqtDVxZFvotY+epIF0b44ktHVPd5SjW6kNoSvrJsV6Qwrp7tQfx1Xo6s+Q148DlGmy7/xd0uRdi1lWdOlNlmq0VW/ofaV92Daqq+vmWipi2HlTUxfebo6kwnZZMfTVb8nJN4y1DggsYNZ6UDymYQKdNVvFuWjVZzrzumqW4PrSom2SVubDIuli9d7FHTbQ/7nYmyhT2Ott4uiKNoAlegq8TEztJLkdD1FCzPsl+mGCroq31zEINNVKS68njrXeAPhN9WXq1amS+60A7m94alredeaYufyaQpQjW7A470F17XtxekD+R3jTEbiMHcF2yXLyHeZi2kkmS7f9EIJYw3eXLH8q7KFVKVLFmluOby/v2srjPuWCd1NkbkbsjWn56vRbQUcnMnt7XpPk4I4W+IyuQzFinUl2215DK7ra8kc3VZX7g983rKsx1so1lGrvjLdliO94L3Ft7MDdQshTq+tld0aMYU64/2DleHHDbJKui33IrV7uE3HVvuH28kh6YXm8/Vdc4ehC+FuL7fEJWM67q6wWLqtqORyBgk+tJ5+r/SLYiNdMFFplu9V0TWia9665BbeQS8gP7KTkaJLcT1N7WwUB6ivA1j/oqinlC6b52saY6wiy3FEv47Gip71/VyYPZvflTWdOLcv8LYA6pmPx9tDxbl0w3s5hmt4B/symGZyOHwdtmCf8eet5ztYzSjbTBbrzfYqePbtdlwu2H3ObyEgAKspfxOGm0LCBL+Iz/M89uV23HXl3zm7CSfxLYAb9y75R/l/L6msU7ncA7SiXU8I2tm51b6kedlsxuPNeMO+kQIxCE/1EcaRpCk7StbncSqf6b/4EhyECTqzcDsajeab2MGfduJOJnHcuX7e79wF63o7mo23X2kMuw59wj5KRVz3TjUXz8areXhJFtwtiKnifEecfUs4ulnU1xB0bYSNLBWv2AtY0k/gpKWLI1+uYE2L8c40tdh+qj3fGCzA87M1c/njgmML9qgrnt/VebnflSfoVk0BbzZ4SQovECNd3OP4HnTZ9frnU/hH99cEd8L8o3sTpMtu28fV+79bKuOdaU8L0mXPdP5FwSXjf3Q18g62a5/3g8EylUH6v++P9L//6FYTHMD+Vdvl50b/0TXL29Pdcb94D7rG2yyflrenm3C/+Ee3kLegq1vgZaeU3oMujtv+v3Rtae3GpJX3oGsby/GsvDndZcT/4h/dXPAi0jeky7a6/+heJXhrujvVLxQrX39MXk8X74t6SQrPC7+TJ9vRr/wFhGJvd/kbYg2usn/NGhGuAP5ZPXC2+7HpaVZge+u1WCJfd9Whflv8IJV+Lq9ZTbbjbrebJOmfOFm8JIUGxIkliRxm58Q7y3/ztw9K20nH4QAAAABJRU5ErkJggg=="
+	module.exports = __webpack_require__.p + "2a3e761b488063e2760579e98f9f630b.png";
 
 /***/ }),
 /* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "40d23f0a0044e6e7f810b5977935ac8c.png";
+	module.exports = __webpack_require__.p + "2ce1b8d2fa3d5e753f1df52b7bf67d6c.png";
 
 /***/ }),
 /* 180 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-	module.exports = __webpack_require__.p + "bb29e95c06de8c390cfa66b9ad2aaf24.png";
+	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAd0AAABqCAMAAADOW3slAAAAflBMVEX///8AAAD19fX8/Pzh4eH39/f6+vrT09O0tLTr6+uioqLz8/Pv7+8iIiJOTk5BQUF4eHgcHByPj49nZ2fc3Nw2Njazs7NYWFjW1tYqKipcXFzIyMiZmZl/f39wcHBHR0empqa/v78WFhY5OTkMDAwvLy+FhYWSkpI+Pj4eHh6eSfoZAAAUzklEQVR4nO2dh3bqOBCGMS5gMCXYVBPA1OT9X3BdBPxjjSRjTBLO3tm7u+eCUJlPM+pSq/X74vl38WrF4G6H43XUbjhfFWWRdLuz9E8qu9lOSO8qi4fiisefVzn7DeQtILlZr9eXyeTSmzkNRF1VkuF2ux19pX8Oh7hWDG0rk9Ws4YxVk9DSyeWhuNbwy04DeVvwmdoPk3pmVENmkG63Vgxt8etNE/X9UVlp6a4figvofjxm9bx0lPka/5SqmqNrjX4Bb5O22wP7asJ21XSt4Q+5525zdK3QbThzZnlTutbUbiABszRJ90FP2IS8K90Hs1ZXGqU77TecO6O8im69DiYVRa+qkGUTLbtRGqVrJQ3nzigvontsgq7Wdq0fGWM0S/ez4dwZ5X3prhpIwSgN9plTGTecO6P8Zbpaz2ydfqJf1azthg3nzih6upOH4vpZuj/Sa35zuut5uMrlBLkYhZvNeJPKY92Al9Id9rrdM2byx223XkOPdH+kMWGlgeHMK+nOg+yT5L3p/rjt3gSmEesOZ15JV8wELP/RrSV/nK5Q7fYf3Vryx+mKHsD8F+k+36uS2l0vCAzLXW3fb2JtGOiW0fiL3eWyi4zzaLvH6dopIqTkup6b/ut5blrqSKYLS1pL/J2/SGbryS7p0NUFt3+Tqxb7/SAIsg+CACNwkvHXcv8x3XQdnOxHupdFp5DI4RTux5/b034/HV1iXA1CunMMH3Xnh+zD6SZRLImkIfKW6GPYW0AlsOOkm/0z685mQi3BurfO/lwul0nERaWiG/Vubd1wJ2fDiVOtpPI1Go0+IIos2f78dDodpsvTcnlIgwyycNtJHFxzObWO1vF4hFqdgCoiji4M4AZ3ONF6OCg+3I/O0CVsT1ZhIauVaLij+eoq87sxRpPDLd5TCEaKGToei8weB4dwV67q/gUaje36zldhu4tP6P9PPxkk0Sd0MvYwfGnf82pti49w3qcnR6WiG5whiTQb61Kt7X1ZrOR0gwH73VWr9l7KJZpKZbr+mca/udXBYHj/NJRxXUfzwaSUw+FNAV1LIYMZWr49+Sh9v7saG2u77c9yfJNSdXE35RDhtVjtEeS0+CiGcGwDwtLtSnzIaMmZl7++RaGha1mfeR2xQSNDE92uRPdDqDeeSnncXbFB/jayHgRdnynFlZ2SLpk07o/lr8eumq7P7JlYkcV9LsRUrJu0wUswdNnOH0cXZ1mvMri7iP6B+V6Ilm4x4foQXdl2Bd2ES2TiVaF7LqroVvq5dSOvoXufpm2zG1zCvkRXlDJg9TYEvAGbp1OnSbrQS0K54vWYGnuLIqd7Un7fa4ouVwGt63x9FbrOSPpxLmsj3ase2woPVuzFkOn2h3z44bVD0uor8jSIFHSx3d1xdHE4k0iKQNkLD6FQbCFdPd3MwWO7y9BdGOjuM7rRUZHArCpd5UR7nmKiij+TU+EhLqrvJzzdcitP86MNMW+AblEwV+l3i0rpKSpYITndrFOskLTVsr+lXJZsF34t0z16tNtEJfc/Fegq/FMqA8dEt1CkygisYmMo0t0awsdyHkuyboqusgKJTnek/t660VWL9yzdvadjY4VeFbq+snoU7aqebt4P18Sw8Ri6mvBh4Qw0IbKNlU3QdTRoTuUfyGKkG1Vod0G1cp85tV1b2W2zcsMx09W1q4O2ie6XpzU063sh0401MRaThFqzSfXQBvoMXXa8W6arbVWzANKArJwLXbubRYFs+HYXFCF6MJDo0dVv3tgY6X4aCtGV6JbITAOti8s1XaarDX8xOM18QuRZuhka5VA2k1QvXqnTXjKjH6DrkcMPkiyr0MUfHFfnMZmcOZfohnG0iHH0c3JabdorO9EiDyW6NPxyuyV6G9klszlOku7nHoM0QxdjHOyShDRxab+qTxQx6TjRDOdrsijsuEskwXyndGEajKHbMdsu0fQliXv4wbFjpuvD3z7yvuIM0lwFhG6uelKrU7pktHxOQ3hoekeJro9qy0ddqNi0TCTGQz4GDiBE2mAxdJm1Ui1dLLeVD8Q6UNCDQ4fku0JzcjtJha64GOk6UGl3El3LJf4l73aRlr5rojsmfyumKn3UrUPonnO6Nsx7pnQX0DU85cNRG+K0fEJ3lDaqOP1azF8sSfjWAv4uxkho70kTdDH8Vx4AVbVcELrHIpsRuCV2xoTuMGToJhDATBc7j9tiKgDnb2dmujPyt0xcMP+UViK7DxjepnTRJ66KSXh0zhJd1KuY+sYucjoKW4CvFqRw2mjWBF3MdRGFhzP4lO6goOvAR6ztPkg3MtDFKR2hWZxZ2LUCQMXSRV9R2IkNKZToiixAY1+iK5JA/5HShRi2tEOsoAtqEaRwmaTL0cVY69F1ge6SpYtejbVdo2dOIEAFupDeqpjVxUbsQbpjKYVlRBobmW4aANsrMVzFJsshdL9q2q6a7lamy+5SLo2IatEFW2LpJiQNM11Zteij2gxd9A4/QxdiEHSx3+Q3Qhc90vN0jbabeuZ+dbp2v9gL0X7UM+vp9tsyXcS1a/VluliuF9kuztDWsV3ZM1M2z9Kd0Vw8RdedfW6KrRDzFe3RGujGpFfVk3RvBUa6T9ruIKUrNw6P0oUYDjXbXTXd0avoggNS0/WVEy8pXehc8nRhAC3KiQNaji56h4TYrlCl0XYv2+12WEjoP03XJ3S/Gqf7Ettd8nSlXtVCsTHHqkYXFCN0jz0Wjm7buYtXi67XvonbMtF1CN2NLdF9te3WbHeNtou7e1R0O5qpyG62a66URCuBALTdPeUT7GTSn6NLpQ5dKgxdUBRvuzh7ldIFBzSlC9IM3aieZ3YgAHv2C8cSM1ob5PHud4eji6utGV1fszOHp4utYkyX5k/h+bwik7KB+7N0e8/TtckoT2QJZ9x4usjmB+h+GOnuWnSYJsmM0N3KdBPimWU5ui6kx9OFLLN0E/jbhtNKB9j0JEWV6bo/T9eW6J7LZSjHsGuErmPY1/Ak3aVttl2ZLrY4D9KVVZ02UB2kxdKFiehKdHE+t47tGuk2Y7uajRNWNdstbxIm8tky0m2/mG5muzJd2ktqQ2tyeg+6+07LNdG1NVsmrQp0Y73tHmMzXdzyLVSJ5XqR7f4CXVzRe94zV6FLd9OPVqvVN37wLN1Ulb9Pt/OmdNHWG6B7Dtr9voMDJJYu9nn0nnkQtFo29qq4g1tGuvL67mN0F60FBBB5QFpOy6VHjiMIL1LEGZqMLqhFJElncJHuly3RZS/WMdMFVVWhi42eWKdGeFXoEmMnkm+5RrrDyIkWnfSfBRhx+9V0O2T1/hfoHjyJbk3bpXSNvSqkuyp8FkZaha5yy+M8kvR4l+V5IU4Boe2u7GfpXli6kMd3tl1c167SZ2bo+tDoPGG7w+v5SuXOPnE9NPHMT9OVVV2HLqhAVLhfoCv3qmy17X4XyuzTdpehC6qgdEcsXVDtKdyMi8u94aJy9fXDxRYnxnax1jZOt2+i6xHbFVnCXVOLR+nKnvl52z1Suh9V6UJJH6TL7idRnuDJh6IlukUWGrXdb5Yu1jnZdjG8TLdTj24fAjxP1zLS7Zno0rmqL5lul3hmlq5ut/rKY+mqbZe9TIppdx+lCwOFpUf6EpXp0h1LpFdVlMp4GSXds0JsfSvRNdtuj1PtQ3RnRBP83ca6m+F3FeiSHY0muhNJUR9xK4IiFXdqlenCUkpGF8KvPI6uA6umRrrTtkSXXQ3R0B1JdEu2uy/o4kHWHuljz4tM+CcMgHQP9eh21GOmLNcuTJe9B90F3Vn6O3R5232IbhXPDHQV95FqTjsdF+T8+PyP0EXP/CdsV/bMDdju7jHbVd02u1MfA5xRuiILRA+Y3pyLnqELqubpIi2HzPosXc52qV45ugmE6LZw4XMqX9/Azqga6ZL9iDXpTjEA0p0WSdDb5arQbUXKtvdC6RZ6eN52f5LupSJdDwJUoYtaqEfXZgznQALIdHG8UpFuWiV64UrscxvirsuJmS7Wphp09zGZ8xd0kZZEN8KZS54u/KAqXTy79DO2W4cunapEutqbor3+9TU3LAVLl3pmrE1Gz1ycEivbLhSiCl1cSREdPTNdeh3Vs3R7XK/KTNcFuuvH6B6eonsXerQe6YobZRqnK9su6imlC462RHdelW4CIbpEzQ3Y7tf70EU9nEkWWLoP9ap4unK7W7JdDd12PbrN2m4durxnJtMwBs+8a4AuHPhk6ZL7vSvShSRK7a64T6xku7DFIKOLnrzN6JWczjba7imoRhfHVD163lsYFp6NpXTF+V0Puq+87ZLOvpku2MVr6DJ9xwfp4tyDke7AJeGFVqheya5wvt3Fi259iS47Xw6ZzujivPS0Il0cC7B0gxEJAHRPLUn3L6ILGzXHzGy6hu6nRPeYkPFLJdvF2iCfKO/QS5Ymcqlm9AB5VbpQ7BLdU0W6tpHulgTQ0+29nO7mMdutShf15JBWcvAoXcZ2f42u2Xb/AF1YPd80YbuyZ6Z0vRJdrA1FlnBTf8kzT5qiW2p3cW6rMbo+6Q4a6K6fp4uKE1u71HSF7druXSjdcS3bNdPVtLs8XexV/QBdq4btpnRxft1El90LFs9uIp7TTiz8iW2iy8zZzObisPFqHjoV6OJV2DLdqOUBi2p05Xb3ebqQ6YyuC38VdKkHcZ+kmwbAkWAtulBMcecNloJ6ZiPdL6mUx0UFunjvTnH7OR5ZluiiZQq6GJ6nS6+B5PrM8snCEl3a7mJtYOl69LhMNbok4zb2JosIcBxG6bI7DqCYw6fpihk50PV39CBdv2m6Z5YuHqSuSDc20qW5+Jt0SxcF6j1z2DTderaLu8N+z3YpXbdRuieWLswDmejOZduldEcmuluplPuSZ5aadt520cctyBRPXdvFOluPrtl2S+1uHbqkO/hqumczXUzPaLsbTzKDhNAStquni+cn+BGRTBdLVZNu6ZQ5RLjk6HKeGebD63lm7Kk/Rpf3zIBqVOTRh/XVkKR3kOiWbJeni9tPWbp4IYVLLjdkbL10qbQoNR3P1Gp3H6Ibk0M8lngsSW27fYnumdAdyPtyKV12txDQ3cp0zwTVtMgjjnBD4qEOUimXRtulF42KJOiIyKZ08bIHUeFKIyJyHUSxRogrPGuy6WVZRGEcEZXp4unKIgTQ2nco3eJC/7ZyBVCUmx5mQrr7tqT7C1lPYelCMZkR0ZrQHXQk/CGpw99SnCldPATG0kUW38VzIPSEZ4kuGt5HkSU8u+BTusK6cY1wTVatRZKoWH7XfYkuOt48F33IReaDsBBF347egUdOZxd3TmDvMKWLI+ZYqqQTM108sOVLdLvU3YRO3+1jM5npAfdA9YJ+4OOm/bQtN9IlSZyzOoo7AvZ2mS65MXzsey0X61v2tiF6gzTTvu+QSwyo7RYPd3lo/pXoYpRfieMsMM6NTW3X6kVORLYnluhao/OEvHyd0cUYRnFajC5eVVyBLo4UCjvAN6Kd0lGUabhZkXfvwtLjDttwXr5b3UyX7LkN1xdSyrAl0SWXMm3H5xCdZNbO9sk2wI/DlORZUuxqvV6T+9or0aWvOXzQJLIApb2IS3oHSjkTkpzLTwFNDzSNCnRdSHPa6bf7qPlshKO9Wj/TQ0f3bkbqT/DYD0/X010QENONwhldT/ecQO7B9A9OrE0XklSiW7rwn0h2wbs5E/pHT86mAJQuu+OAPhDxvSRn9Wctkx6yXZCaKphVDzNd3SMV2TCtTFf7yk7eidJXyTVtfphIqtDVxZFvotY+epIF0b44ktHVPd5SjW6kNoSvrJsV6Qwrp7tQfx1Xo6s+Q148DlGmy7/xd0uRdi1lWdOlNlmq0VW/ofaV92Daqq+vmWipi2HlTUxfebo6kwnZZMfTVb8nJN4y1DggsYNZ6UDymYQKdNVvFuWjVZzrzumqW4PrSom2SVubDIuli9d7FHTbQ/7nYmyhT2Ott4uiKNoAlegq8TEztJLkdD1FCzPsl+mGCroq31zEINNVKS68njrXeAPhN9WXq1amS+60A7m94alredeaYufyaQpQjW7A470F17XtxekD+R3jTEbiMHcF2yXLyHeZi2kkmS7f9EIJYw3eXLH8q7KFVKVLFmluOby/v2srjPuWCd1NkbkbsjWn56vRbQUcnMnt7XpPk4I4W+IyuQzFinUl2215DK7ra8kc3VZX7g983rKsx1so1lGrvjLdliO94L3Ft7MDdQshTq+tld0aMYU64/2DleHHDbJKui33IrV7uE3HVvuH28kh6YXm8/Vdc4ehC+FuL7fEJWM67q6wWLqtqORyBgk+tJ5+r/SLYiNdMFFplu9V0TWia9665BbeQS8gP7KTkaJLcT1N7WwUB6ivA1j/oqinlC6b52saY6wiy3FEv47Gip71/VyYPZvflTWdOLcv8LYA6pmPx9tDxbl0w3s5hmt4B/symGZyOHwdtmCf8eet5ztYzSjbTBbrzfYqePbtdlwu2H3ObyEgAKspfxOGm0LCBL+Iz/M89uV23HXl3zm7CSfxLYAb9y75R/l/L6msU7ncA7SiXU8I2tm51b6kedlsxuPNeMO+kQIxCE/1EcaRpCk7StbncSqf6b/4EhyECTqzcDsajeab2MGfduJOJnHcuX7e79wF63o7mo23X2kMuw59wj5KRVz3TjUXz8areXhJFtwtiKnifEecfUs4ulnU1xB0bYSNLBWv2AtY0k/gpKWLI1+uYE2L8c40tdh+qj3fGCzA87M1c/njgmML9qgrnt/VebnflSfoVk0BbzZ4SQovECNd3OP4HnTZ9frnU/hH99cEd8L8o3sTpMtu28fV+79bKuOdaU8L0mXPdP5FwSXjf3Q18g62a5/3g8EylUH6v++P9L//6FYTHMD+Vdvl50b/0TXL29Pdcb94D7rG2yyflrenm3C/+Ee3kLegq1vgZaeU3oMujtv+v3Rtae3GpJX3oGsby/GsvDndZcT/4h/dXPAi0jeky7a6/+heJXhrujvVLxQrX39MXk8X74t6SQrPC7+TJ9vRr/wFhGJvd/kbYg2usn/NGhGuAP5ZPXC2+7HpaVZge+u1WCJfd9Whflv8IJV+Lq9ZTbbjbrebJOmfOFm8JIUGxIkliRxm58Q7y3/ztw9K20nH4QAAAABJRU5ErkJggg=="
 
 /***/ }),
 /* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "53327dd2071704587147d9da14343a40.png";
+	module.exports = __webpack_require__.p + "40d23f0a0044e6e7f810b5977935ac8c.png";
 
 /***/ }),
 /* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e697bfa8cf38a579d1083abdaa1b3fde.png";
+	module.exports = __webpack_require__.p + "bb29e95c06de8c390cfa66b9ad2aaf24.png";
 
 /***/ }),
 /* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "bab9e80c57c306ea2b335f5776a5f196.png";
+	module.exports = __webpack_require__.p + "53327dd2071704587147d9da14343a40.png";
 
 /***/ }),
 /* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e697bfa8cf38a579d1083abdaa1b3fde.png";
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "bab9e80c57c306ea2b335f5776a5f196.png";
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "37f7e2cacec7bc30be83af6c1217651a.png";
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "6fbae5c0cb78502387ee679979ee9a16.png";
+
+/***/ }),
+/* 188 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 185 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20897,16 +21052,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var MarketValidation = function (_Component) {
-	  _inherits(MarketValidation, _Component);
+	var ValueProposition = function (_Component) {
+	  _inherits(ValueProposition, _Component);
 
-	  function MarketValidation() {
-	    _classCallCheck(this, MarketValidation);
+	  function ValueProposition() {
+	    _classCallCheck(this, ValueProposition);
 
-	    return _possibleConstructorReturn(this, (MarketValidation.__proto__ || Object.getPrototypeOf(MarketValidation)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (ValueProposition.__proto__ || Object.getPrototypeOf(ValueProposition)).apply(this, arguments));
 	  }
 
-	  _createClass(MarketValidation, [{
+	  _createClass(ValueProposition, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -20937,7 +21092,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          _react2.default.createElement('img', { className: 'market-image', src: __webpack_require__(183) })
+	          _react2.default.createElement('img', { className: 'market-image', src: __webpack_require__(185) })
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -20955,7 +21110,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'baseline-footer' },
-	          _react2.default.createElement('img', { className: 'baseline-footer-logo', src: __webpack_require__(169), alt: 'Warriorfy' }),
+	          _react2.default.createElement('img', { className: 'baseline-footer-logo', src: __webpack_require__(170), alt: 'Warriorfy' }),
 	          _react2.default.createElement(
 	            'h2',
 	            null,
@@ -20966,15 +21121,15 @@
 	    }
 	  }]);
 
-	  return MarketValidation;
+	  return ValueProposition;
 	}(_react.Component);
 
 	;
 
-	exports.default = MarketValidation;
+	exports.default = ValueProposition;
 
 /***/ }),
-/* 186 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21038,7 +21193,7 @@
 	exports.default = Product;
 
 /***/ }),
-/* 187 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21082,10 +21237,20 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
+	            'Business Model'
+	          ),
+	          _react2.default.createElement(
+	            'h1',
+	            null,
 	            'Model'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Here it is.'
 	          )
 	        ),
-	        _react2.default.createElement('div', { className: 'model' })
+	        _react2.default.createElement('img', { className: 'section-wide-image', src: __webpack_require__(186), alt: 'Warriorfy' })
 	      );
 	    }
 	  }]);
@@ -21098,7 +21263,7 @@
 	exports.default = BusinessModel;
 
 /***/ }),
-/* 188 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21177,7 +21342,7 @@
 	exports.default = Adoption;
 
 /***/ }),
-/* 189 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21224,7 +21389,7 @@
 	            'Competition'
 	          )
 	        ),
-	        _react2.default.createElement('div', { className: 'competition' })
+	        _react2.default.createElement('img', { className: 'section-medium-image', src: __webpack_require__(178), alt: 'Warriorfy' })
 	      );
 	    }
 	  }]);
@@ -21237,7 +21402,7 @@
 	exports.default = Competition;
 
 /***/ }),
-/* 190 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21286,23 +21451,58 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'investment' },
+	          { className: 'text-block-grid' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'milestones' },
+	            { className: 'text-block-row' },
 	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              'Upcoming Milestones'
+	              'div',
+	              { className: 'text-block' },
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Salaries'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'text-block' },
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Salaries'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'text-block' },
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Salaries'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'money' },
+	            { className: 'text-block-row' },
 	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              'Money Well Spent'
+	              'div',
+	              { className: 'text-block' },
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Salaries'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'text-block' },
+	              _react2.default.createElement(
+	                'h3',
+	                null,
+	                'Salaries'
+	              )
 	            )
 	          )
 	        )
@@ -21318,7 +21518,7 @@
 	exports.default = Investment;
 
 /***/ }),
-/* 191 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21358,7 +21558,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'Section', id: 'Intro' },
-	        _react2.default.createElement('img', { className: 'intro-image', src: __webpack_require__(192) }),
+	        _react2.default.createElement('img', { className: 'intro-image', src: __webpack_require__(196) }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'block' },
@@ -21398,65 +21598,60 @@
 	exports.default = Intro;
 
 /***/ }),
-/* 192 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "0596cda290b7a8b1089ea62c46f742ad.jpg";
 
 /***/ }),
-/* 193 */
+/* 197 */
 /***/ (function(module, exports) {
 
 	module.exports = [
 		{
 			"title": "Mission",
-			"label": "The Mission",
-			"text": "We foresee a platform briding the gap between experts and those trying to find wellness resources."
+			"label": "The Mission"
 		},
 		{
 			"title": "Opportunity",
-			"label": "The Opportunity",
-			"text": "What we're creating doesnt exist yet."
+			"label": "The Opportunity"
 		},
 		{
-			"title": "Team",
-			"label": "The Team",
-			"text": "We have personal experience with the problem and are passionate about solving it"
-		},
-		{
-			"title": "Market",
-			"label": "Market",
-			"text": "This is the plan."
+			"title": "Value Proposition",
+			"label": "Our Value Proposition"
 		},
 		{
 			"title": "Product",
-			"label": "Product",
-			"text": "There's a large community of podcast listeners out there."
+			"label": "The App"
 		},
 		{
 			"title": "Business Model",
-			"label": "Business Model",
-			"text": "What we're creating is a community of warriors, those fighting to know more about themselves."
-		},
-		{
-			"title": "Adoption",
-			"label": "Customer Adoption",
-			"text": "Money well spent."
+			"label": "Business Model"
 		},
 		{
 			"title": "Competition",
-			"label": "Competition",
-			"text": "Money well spent."
+			"label": "Our Competition"
+		},
+		{
+			"title": "Adoption",
+			"label": "Customer Adoption"
+		},
+		{
+			"title": "Competition",
+			"label": "Competition"
+		},
+		{
+			"title": "Team",
+			"label": "The Team"
 		},
 		{
 			"title": "Investment",
-			"label": "Investment",
-			"text": "Money well spent."
+			"label": "Investment"
 		}
 	];
 
 /***/ }),
-/* 194 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21545,7 +21740,7 @@
 	exports.default = MenuBar;
 
 /***/ }),
-/* 195 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21626,7 +21821,7 @@
 	exports.default = MenuBarIcon;
 
 /***/ }),
-/* 196 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21662,35 +21857,39 @@
 	    var _this = _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
 
 	    _this.state = {
-	      NavBarStyle: 'nav-bar-container',
-	      selectedIndex: -1
+	      NavBarStyle: 'nav-bar-container'
 	    };
-
-	    _this.changeSelection = _this.changeSelection.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(NavBar, [{
-	    key: 'changeSelection',
-	    value: function changeSelection(i) {
-	      console.log('changed selection!' + i);
-	      this.setState({
-	        selectedIndex: i
-	      });
-	    }
-	  }, {
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(props) {
 	      if (!props.open) {
 	        this.setState(function (prevState, props) {
 	          return {
-	            NavBarStyle: prevState.NavBarStyle + ' nav-bar-hidden'
+	            NavBarStyle: 'nav-bar-container nav-bar-hidden'
 	          };
 	        });
 	      } else {
 	        this.setState(function (prevState, props) {
 	          return {
 	            NavBarStyle: 'nav-bar-container'
+	          };
+	        });
+	      }
+
+	      if (!props.stick) {
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: prevState.NavBarStyle + ' stick'
+	          };
+	        });
+	      } else {
+	        console.log('sticking!');
+	        this.setState(function (prevState, props) {
+	          return {
+	            NavBarStyle: prevState.NavBarStyle + ' nonstick'
 	          };
 	        });
 	      }
@@ -21701,15 +21900,15 @@
 
 	      var self = this;
 
-	      var index = self.state.selectedIndex;
+	      var index = self.props.selectedIndex;
 
 	      var navBarButtons = [];
 
 	      var introButton;
-	      if (self.state.selectedIndex == -1) {
+	      if (self.props.selectedIndex == -1) {
 	        introButton = _react2.default.createElement(
 	          _SmoothScroll2.default,
-	          { type: 'nav-button selected', section: 'Intro', onMouseDown: self.changeSelection.bind(null, -1) },
+	          { type: 'nav-button selected', section: 'Intro', onMouseDown: self.props.changeSelection.bind(null, -1) },
 	          _react2.default.createElement(
 	            'h2',
 	            null,
@@ -21719,7 +21918,7 @@
 	      } else {
 	        introButton = _react2.default.createElement(
 	          _SmoothScroll2.default,
-	          { type: 'nav-button', section: 'Intro', onMouseDown: self.changeSelection.bind(null, -1) },
+	          { type: 'nav-button', section: 'Intro', onMouseDown: self.props.changeSelection.bind(null, -1) },
 	          _react2.default.createElement(
 	            'h2',
 	            null,
@@ -21731,10 +21930,10 @@
 	      navBarButtons.push(introButton);
 
 	      navBarButtons = navBarButtons.concat(this.props.sections.map(function (v, i) {
-	        if (self.state.selectedIndex == i) {
+	        if (self.props.selectedIndex == i) {
 	          return _react2.default.createElement(
 	            _SmoothScroll2.default,
-	            { type: 'nav-button selected', onMouseDown: self.changeSelection.bind(null, i), section: self.props.data[i].title },
+	            { type: 'nav-button selected', onMouseDown: self.props.changeSelection.bind(null, i), section: self.props.data[i].title },
 	            _react2.default.createElement(
 	              'h2',
 	              { key: i },
@@ -21744,7 +21943,7 @@
 	        } else {
 	          return _react2.default.createElement(
 	            _SmoothScroll2.default,
-	            { type: 'nav-button', onMouseDown: self.changeSelection.bind(null, i), section: self.props.data[i].title },
+	            { type: 'nav-button', onMouseDown: self.props.changeSelection.bind(null, i), section: self.props.data[i].title },
 	            _react2.default.createElement(
 	              'h2',
 	              { key: i },
@@ -21799,7 +21998,7 @@
 	exports.default = NavBar;
 
 /***/ }),
-/* 197 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21808,16 +22007,16 @@
 
 
 /***/ }),
-/* 198 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(199);
+	var content = __webpack_require__(203);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(205)(content, {});
+	var update = __webpack_require__(209)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -21834,21 +22033,21 @@
 	}
 
 /***/ }),
-/* 199 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(200)(true);
+	exports = module.exports = __webpack_require__(204)(true);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: white;\n  margin: 0;\n  width: 100%; }\n  .Section h1 {\n    text-align: center;\n    z-index: 999;\n    color: #5b4d4d; }\n  .Section .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section p {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    z-index: 999;\n    color: #7e6060; }\n\n.menu-bar-icon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  border: none;\n  color: #f7f5f5;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-icon {\n      z-index: 99999; } }\n\n.menu-bar-icon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.1s, ease;\n  -ms-transition: all, 1.1s, ease;\n  -o-transition: all, 1.1s, ease;\n  transition: all, 1.1s, ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.5s, ease;\n  -ms-transition: all, 1.5s, ease;\n  -o-transition: all, 1.5s, ease;\n  transition: all, 1.5s, ease;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  transform: translate3D(28vw, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      transform: translate3D(75vw, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  transform: translate3D(28vw, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      transform: translate3D(75vw, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(28vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 0, 0);\n  -webkit-transform: translate3D(28vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(28vw, 0, 0);\n  transform: translate3D(28vw, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.2s, ease-in-out;\n  -ms-transition: all, 0.2s, ease-in-out;\n  -o-transition: all, 0.2s, ease-in-out;\n  transition: all, 0.2s, ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  width: 100vw;\n  background: #7a6772;\n  justify-content: flex-start;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  display: flex;\n  height: 100vh;\n  flex-direction: column; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menu-bar h2 {\n    z-index: 999999;\n    color: #e09090;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    white-space: nowrap; }\n  .menu-bar .smooth-scroll {\n    width: 100vw;\n    background: transparent;\n    z-index: 9999;\n    flex: 1; }\n    @media all and (max-width: 1200px) {\n      .menu-bar .smooth-scroll {\n        z-index: -1; } }\n\n.menu-bar-hidden {\n  -ms-transform: translate3D(0, 50px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 50px, 0);\n  -webkit-transform: translate3D(0, 50px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 50px, 0);\n  transform: translate3D(0, 50px, 0); }\n\n.menu-bar-shown {\n  -ms-transform: translate3D(0, 0px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 0px, 0);\n  -webkit-transform: translate3D(0, 0px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 0px, 0);\n  transform: translate3D(0, 0px, 0); }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton h2 {\n    color: #e09090;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > h2 {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-open {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.menu-bar-close {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, linear;\n  -ms-transition: transform, 0.35s, linear;\n  -o-transition: transform, 0.35s, linear;\n  transition: transform, 0.35s, linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.nav-bar-container {\n  top: 0;\n  height: 18vh;\n  display: flex;\n  justify-content: center;\n  z-index: 9999;\n  background: white;\n  position: fixed;\n  width: 100vw; }\n  .nav-bar-container .selected {\n    background: #e09090 !important; }\n  .nav-bar-container .nav-warriorfy {\n    background-image: url(" + __webpack_require__(169) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-angel-list {\n    background-image: url(" + __webpack_require__(184) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1; }\n  .nav-bar-container .nav-bar {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw; }\n  @media all and (max-width: 1200px) {\n    .nav-bar-container {\n      display: none; } }\n  .nav-bar-container h2 {\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: #ac6e6e;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    white-space: nowrap;\n    font-size: 1.1em;\n    padding-top: 1.75em; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .nav-bar-container p:hover {\n    color: #9d9dcd; }\n  .nav-bar-container .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .smooth-scroll {\n        z-index: -1; } }\n  .nav-bar-container .nav-button {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 35px;\n    height: 35px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: white;\n    border: 2px solid #e09090; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .nav-button {\n        margin: 20px 20px; } }\n  .nav-bar-container .nav-button:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: 2px solid #e09090;\n    border-radius: 10%;\n    background: #e09090;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .nav-bar-container .nav-button:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all, 0.5s, ease-in-out;\n      -ms-transition: all, 0.5s, ease-in-out;\n      -o-transition: all, 0.5s, ease-in-out;\n      transition: all, 0.5s, ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Intro {\n  height: 70vw; }\n  #Intro .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw; }\n    #Intro .block h1 {\n      color: white;\n      font-size: 4vw;\n      margin: 0; }\n    #Intro .block p {\n      color: grey;\n      font-size: 4vw;\n      margin: 0; }\n  #Intro .start {\n    width: 15vh;\n    background-color: #faa187;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em; }\n  #Intro #gotoMission p {\n    color: #f1f1f1;\n    font-size: 1.5em;\n    -webkit-tap-highlight-color: transparent; }\n  #Intro p {\n    color: #111111;\n    font-weight: 300;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n    @media all and (max-width: 450px) {\n      #Intro p {\n        font-size: 0.75em; } }\n  #Intro .smooth-scroll {\n    position: relative;\n    top: 0; }\n  #Intro h1 {\n    color: #ac6e6e; }\n    @media all and (max-width: 450px) {\n      #Intro h1 {\n        font-size: 0.75em; } }\n  #Intro .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99; }\n  #Intro .background_image {\n    width: 70vw;\n    height: 33.33vh;\n    background-color: white;\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    @media all and (max-width: 800px) {\n      #Intro .background_image {\n        width: 100vw;\n        left: 0vw; } }\n  #Intro .foreground_image {\n    width: 33.33vw;\n    height: 33.33vh;\n    top: 10vw;\n    background-color: #f1f1f1; }\n    @media all and (max-width: 800px) {\n      #Intro .foreground_image {\n        max-width: 50vw; } }\n\n#Mission h1 {\n  width: 50vw;\n  font-size: 3.5em; }\n\n#Mission .container {\n  display: flex; }\n\n#Mission .mission {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#Opportunity .container {\n  width: 75vw; }\n\n#Opportunity .header {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Opportunity .header h1 {\n    text-align: center;\n    color: #705959;\n    width: 75vw;\n    font-size: 3em; }\n\n#Opportunity .content {\n  display: inline-flex;\n  justify-content: space-between;\n  width: 100%;\n  padding-bottom: 10vh; }\n\n#Opportunity .overall {\n  width: 100%;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  margin-bottom: 10vh; }\n  #Opportunity .overall .problem {\n    width: 20vw;\n    background: transparent;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #ded9d9; }\n  #Opportunity .overall .solution {\n    width: 20vw;\n    background: transparent;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #ded9d9; }\n  #Opportunity .overall h4 {\n    text-align: center; }\n\n#Opportunity p {\n  font-family: \"Minion Pro\", Didot, serif;\n  text-align: left;\n  font-size: 20px; }\n\n#Opportunity h3 {\n  text-align: left; }\n\n#Opportunity .problems {\n  width: 20vw; }\n\n#Opportunity .solutions {\n  width: 20vw; }\n\n#Opportunity .solutions-label {\n  border-radius: 4px; }\n  #Opportunity .solutions-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label {\n  border-radius: 4px; }\n  #Opportunity .problems-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Team .team-members-container {\n  margin-top: 10vh;\n  margin-bottom: 10vh; }\n\n#Team .advisors-label-container {\n  position: relative;\n  width: 100vw;\n  margin-top: 10vh;\n  margin-bottom: 10vh; }\n\n#Team .team-members {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members {\n      display: flex;\n      max-width: 100vw; } }\n\n#Team .team-member {\n  display: block; }\n  @media all and (max-width: 1200px) {\n    #Team .team-member {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap; } }\n\n#Team .team-members-row {\n  display: flex;\n  justify-content: space-around;\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members-row {\n      display: block;\n      max-width: 50vw; } }\n\n#Team .profile-pic-container {\n  display: block;\n  width: 180px;\n  height: 180px;\n  justify-content: center;\n  align-items: center; }\n\n#Team .profile-pic {\n  width: 180px;\n  height: 180px;\n  background: #d9cdcd;\n  border-radius: 50%; }\n\n#Team p {\n  width: 180px;\n  font-size: 15px;\n  text-align: center;\n  color: #977171; }\n\n#Team h2 {\n  width: 180px;\n  font-size: 20px;\n  text-align: center;\n  color: #7e6579; }\n\n#Market .market-image {\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Market .market-image {\n      width: 100vw; } }\n\n#Market .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Market .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  @media all and (max-width: 1200px) {\n    #Market .header {\n      width: 75vw; } }\n  #Market .header .header-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Market .header .header-text h1 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Market .header .header-text h1 {\n          width: 75vw; } }\n  #Market .header .subtitle-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Market .header .subtitle-text h3 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Market .header .subtitle-text h3 {\n          width: 75vw; } }\n\n#Market .footer {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Market .footer .footer-text {\n    width: 50vw; }\n    @media all and (max-width: 1200px) {\n      #Market .footer .footer-text {\n        width: 75vw; } }\n\n#Market .baseline-footer {\n  width: 50vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Market .baseline-footer .baseline-footer-logo {\n    width: 40px;\n    height: 40px; }\n  #Market .baseline-footer h2 {\n    margin-left: 20px; }\n\n#Product .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Product .header {\n  width: 100vw; }\n\n#Product .product {\n  width: 75vw;\n  height: 75vh;\n  background: #835757;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Product .product {\n      width: 100vw; } }\n  #Product .product .phone {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Product .product .phone:hover {\n    -ms-transform: rotate3d(0, 1, 0, 50deg);\n    /* IE 9 */\n    -moz-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -webkit-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -o-transform: rotate3d(0, 1, 0, 50deg);\n    transform: rotate3d(0, 1, 0, 50deg);\n    background: #b0a5a5; }\n\n#Business\\ Model .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Business\\ Model .header {\n  width: 100vw; }\n\n#Business\\ Model .model {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Business\\ Model .model {\n      width: 100vw; } }\n\n#Adoption .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Adoption .header {\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Adoption .header {\n      width: 100vw; } }\n\n#Adoption .adoption {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Adoption .adoption {\n      width: 100vw; } }\n  #Adoption .adoption .launch {\n    width: 25%;\n    height: 100%;\n    background: #b99494; }\n  #Adoption .adoption .scale {\n    width: 25%;\n    height: 100%;\n    background: #927171; }\n  #Adoption .adoption .example {\n    width: 50%;\n    height: 100%;\n    background: #796464; }\n\n#Investment .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .investment {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Investment .investment {\n      width: 100vw; } }\n  #Investment .investment .milestones {\n    width: 40%;\n    height: 100%;\n    background: #705959; }\n  #Investment .investment .money {\n    width: 60%;\n    height: 100%;\n    background: #574f4f; }\n\n#Competition .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Competition .header {\n  width: 100vw; }\n\n#Competition .competition {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Competition .competition {\n      width: 100vw; } }\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 5vh;\n  background: white;\n  padding-bottom: 5vh; }\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #d1a2a2; }\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n  position: absolute;\n  color: #aa8686;\n  cursor: default;\n  margin-top: 0vh;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9999;\n  padding: 10px 20px;\n  border-radius: 2px; }\n\n.label-text {\n  margin-top: -13vh;\n  margin-left: -35px;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  z-index: 999999; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: white;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body .container {\n    width: 100vw;\n    left: 0; }\n  body .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0; }\n  body h1 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300; }\n  body h2 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300; }\n  body h3 {\n    font-family: \"Minion Pro\", Didot, serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300;\n    font-size: 25px; }\n  body h4 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300;\n    font-size: 2em; }\n  body p {\n    font-family: \"Minion Pro\", Didot, serif;\n    color: #111111;\n    font-weight: 200; }\n  body .wrapper {\n    overflow-x: hidden; }\n  body a {\n    text-decoration: none; }\n", "", {"version":3,"sources":["/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/helpers/_Animation_Mixins.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_Section.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/main.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/helpers/_User_Events.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_MenuBarIcon.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/helpers/_Transform_Mixins.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_MenuBar.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_MainContainer.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_NavBar.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Intro.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Mission.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Opportunity.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Team.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Market.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Product.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_BusinessModel.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Adoption.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Investment.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/sections/_Competition.scss","/Users/Jessica/Desktop/jose31canizar.github.io/app/scss/components/_Label.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,wBCDqB;EDErB,UAAS;EACT,YAAW,EAoCZ;EAvCD;IAMI,mBAAkB;IAClB,aAAY;IACZ,eAVsB,EAWvB;EATH;IAYI,aAAY;IACZ,cAAa;IACb,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EAEpB;EAlBH;IAqBI,aAAY;IACZ,mBAAkB;IAClB,QAAO;IACP,UAAS;IACT,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EA5BH;IA+BI,qDC9BuD;ID+BvD,iBAAgB;IAChB,YAAW;IACX,mBAAkB;IEtCpB,4BFuC+B;IEvCJ,gBAAgB;IAC3C,0BFsC+B;IEtCN,YAAY;IACpC,yBFqC8B;IErCN,oBAAoB;IAC1C,uBFoC4B;IEpCN,aAAa;IAClC,sBFmC2B;IEnCN,4BAA4B;IAC7C,kBFkCuB;IElCN;gEACqC;IAC9D,yCAA0C;IFiCxC,aAAY;IACZ,eA1CqB,EA2CtB;;AGhCH;ECeE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAUtB,aAAY;EACZ,eAd2B;EAe3B,wBAAuB;EACvB,cAAa;EDfb,4BCgB6B;EDhBF,gBAAgB;EAC3C,0BCe6B;EDfJ,YAAY;EACpC,yBCc4B;EDdJ,oBAAoB;EAC1C,uBCa0B;EDbJ,aAAa;EAClC,sBCYyB;EDZJ,4BAA4B;EAC7C,kBCWqB;EDXJ;gEACqC;EAC9D,yCAA0C;ECU1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;ECIC;IDrBF;MCwBE,oDAAsD,EDPvD,EAAA;ECUC;ID3BF;MC8BE,oDAAsD,EDbvD,EAAA;ECgBD;IDjCA;MCoCA,oDAAsD,EDnBrD,EAAA;ECsBD;IDvCA;MC2CA,oDAAsD,ED1BrD,EAAA;EC6BD;ID9CA;MCkDA,oDAAsD,EDjCrD,EAAA;ECoCD;IDrDA;MCyDA,oDAAsD,EDxCrD,EAAA;EC2CD;ID5DA;MC+DA,oDAAsD,ED9CrD,EAAA;EAHC;IAdF;MAeI,eAAc,EAEjB,EAAA;;AAED;ECJE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EA6BtB,oBAAmB,EACpB;ECDC;IDFF;MCKE,oDAAsD,EDFvD,EAAA;ECKC;IDRF;MCWE,oDAAsD,EDRvD,EAAA;ECWD;IDdA;MCiBA,oDAAsD,EDdrD,EAAA;ECiBD;IDpBA;MCwBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID3BA;MC+BA,oDAAsD,ED5BrD,EAAA;EC+BD;IDlCA;MCsCA,oDAAsD,EDnCrD,EAAA;ECsCD;IDzCA;MC4CA,oDAAsD,EDzCrD,EAAA;;AAED;ECTE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAkCtB,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;ECTC;IDGF;MCAE,oDAAsD,EDMvD,EAAA;ECHC;IDHF;MCME,oDAAsD,EDAvD,EAAA;ECGD;IDTA;MCYA,oDAAsD,EDNrD,EAAA;ECSD;IDfA;MCmBA,oDAAsD,EDbrD,EAAA;ECgBD;IDtBA;MC0BA,oDAAsD,EDpBrD,EAAA;ECuBD;ID7BA;MCiCA,oDAAsD,ED3BrD,EAAA;EC8BD;IDpCA;MCuCA,oDAAsD,EDjCrD,EAAA;;AAED;ECjBE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EA0CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECfC;IDWF;MCRE,oDAAsD,EDYvD,EAAA;ECTC;IDKF;MCFE,oDAAsD,EDMvD,EAAA;ECHD;IDDA;MCIA,oDAAsD,EDArD,EAAA;ECGD;IDPA;MCWA,oDAAsD,EDPrD,EAAA;ECUD;IDdA;MCkBA,oDAAsD,EDdrD,EAAA;ECiBD;IDrBA;MCyBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID5BA;MC+BA,oDAAsD,ED3BrD,EAAA;;AAED;ECvBE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAgDtB,gEAAgE;EAChE,kEAAkE,EAEnE;ECtBC;IDiBF;MCdE,oDAAsD,EDmBvD,EAAA;EChBC;IDWF;MCRE,oDAAsD,EDavD,EAAA;ECVD;IDKA;MCFA,oDAAsD,EDOrD,EAAA;ECJD;IDDA;MCKA,oDAAsD,EDArD,EAAA;ECGD;IDRA;MCYA,oDAAsD,EDPrD,EAAA;ECUD;IDfA;MCmBA,oDAAsD,EDdrD,EAAA;ECiBD;IDtBA;MCyBA,oDAAsD,EDpBrD,EAAA;;AAED;EC9BE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAuDtB,8CAA8C;EAC9C,qCAAqC,EACtC;EC5BC;IDwBF;MCrBE,oDAAsD,EDyBvD,EAAA;ECtBC;IDkBF;MCfE,oDAAsD,EDmBvD,EAAA;EChBD;IDYA;MCTA,oDAAsD,EDarD,EAAA;ECVD;IDMA;MCFA,oDAAsD,EDMrD,EAAA;ECHD;IDDA;MCKA,oDAAsD,EDDrD,EAAA;ECID;IDRA;MCYA,oDAAsD,EDRrD,EAAA;ECWD;IDfA;MCkBA,oDAAsD,EDdrD,EAAA;;AAED;ECpCE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EC6HtB,wDAAgD;EAAG,UAAU;EAC7D,yDAAiD;EAAG,YAAY;EAChE,4DAAoD;EAAG,YAAY;EACnE,uDAA+C;EAC/C,oDAA4C,EDhE7C;ECpCC;ID8BF;MC3BE,oDAAsD,EDiCvD,EAAA;EC9BC;IDwBF;MCrBE,oDAAsD,ED2BvD,EAAA;ECxBD;IDkBA;MCfA,oDAAsD,EDqBrD,EAAA;EClBD;IDYA;MCRA,oDAAsD,EDcrD,EAAA;ECXD;IDKA;MCDA,oDAAsD,EDOrD,EAAA;ECJD;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D3EhD,uCC2EgD;ID1EhD,sCC0EgD;IDzEhD,mCCyEgD,EAC/C;IDxED;MC+DF;QD5DE,oDAAsD,ECqErD,EAAA;IDlED;MCyDF;QDtDE,oDAAsD,EC+DrD,EAAA;ID5DH;MCmDA;QDhDA,oDAAsD,ECyDnD,EAAA;IDtDH;MC6CA;QDzCA,oDAAsD,ECkDnD,EAAA;ID/CH;MCsCA;QDlCA,oDAAsD,EC2CnD,EAAA;IDxCH;MC+BA;QD3BA,oDAAsD,ECoCnD,EAAA;IDjCH;MCwBA;QDrBA,oDAAsD,EC8BnD,EAAA;;AC/FH;EACE,oBAT4B;EFyB5B,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EFWC;IEvBF;MF0BE,oDAAsD,EEdvD,EAAA;EFiBC;IE7BF;MFgCE,oDAAsD,EEpBvD,EAAA;EFuBD;IEnCA;MFsCA,oDAAsD,EE1BrD,EAAA;EF6BD;IEzCA;MF6CA,oDAAsD,EEjCrD,EAAA;EFoCD;IEhDA;MFoDA,oDAAsD,EExCrD,EAAA;EF2CD;IEvDA;MF2DA,oDAAsD,EE/CrD,EAAA;EFkDD;IE9DA;MFiEA,oDAAsD,EErDrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EFGE,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C,EAoBhD;EFOC;IETF;MFYE,oDAAsD,EEVvD,EAAA;EFaC;IEfF;MFkBE,oDAAsD,EEhBvD,EAAA;EFmBD;IErBA;MFwBA,oDAAsD,EEtBrD,EAAA;EFyBD;IE3BA;MF+BA,oDAAsD,EE7BrD,EAAA;EFgCD;IElCA;MFsCA,oDAAsD,EEpCrD,EAAA;EFuCD;IEzCA;MF6CA,oDAAsD,EE3CrD,EAAA;EF8CD;IEhDA;MFmDA,oDAAsD,EEjDrD,EAAA;;AAED;EFDE,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C,EA8BhD;EFHC;IELF;MFQE,oDAAsD,EEAvD,EAAA;EF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","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$p-section-color: #7e6060;\n$border-color: #ac9e9e;\n$label-color: #aa8686;\n$h1-section-color: #5b4d4d;\n\n.Section {\n  background-color: $global-bg-color;\n  margin: 0;\n  width: 100%;\n\n  h1 {\n    text-align: center;\n    z-index: 999;\n    color: $h1-section-color;\n  }\n\n  .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n  }\n\n  .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  p {\n    font-family: $global-font-stack;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    @include css-user-select(none);\n    z-index: 999;\n    color: $p-section-color;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #ca9191;\n$global-h2-color: #ca9191;\n$global-h3-color: #ca9191;\n$global-h4-color: #ca9191;\n$global-bg-color: white;\n$global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Minion Pro', Didot, serif;\n$global-box-width: 70vw;\n$section-color: #faa187;\n$start-button-color: #faa187;\n$global-font-weight: 300;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Intro.scss';\n@import './components/sections/Mission.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/Market.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/Adoption.scss';\n@import './components/sections/Investment.scss';\n@import './components/sections/Competition.scss';\n@import './components/Label.scss';\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $global-bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n  .container {\n      width: 100vw;\n      left: 0;\n  }\n\n  .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0;\n  }\n\n  h1 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n  }\n\n  h2 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n  }\n\n  h3 {\n    font-family: $global-p-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 25px;\n  }\n\n  h4 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 2em;\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    color: $global-p-color;\n    font-weight: 200;\n  }\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  a {\n      text-decoration: none;\n  }\n\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$menu-bar-icon-color: #f7f5f5;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.menu-bar-icon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.menu-bar-icon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: #bca293;\n}\n\n.menu-bar-icon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.menu-bar-icon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.menu-bar-icon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.menu-bar-icon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x($right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-rotate3D($a) {\n  -ms-transform: rotate3d(0,1,0,$a); /* IE 9 */\n  -moz-transform: rotate3d(0,1,0,$a); /* Safari */\n  -webkit-transform: rotate3d(0,1,0,$a); /* Safari */\n  -o-transform: rotate3d(0,1,0,$a);\n  transform: rotate3d(0,1,0,$a);\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-translate-y($t) {\n  -ms-transform: translate3D(0, $t, 0); /* IE 9 */\n  -moz-transform: translate3D(0, $t, 0);\n  -webkit-transform: translate3D(0, $t, 0); /* Safari */\n  -o-transform: translate3D(0, $t, 0);\n  transform: translate3D(0, $t, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #7a6772;\n$menu-button-color: #e09090;\n\n.menu-bar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    width: 100vw;\n    background: $bg-color;\n    justify-content: flex-start;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    display: flex;\n    height: 100vh;\n    flex-direction: column;\n\n    h2 {\n        z-index: 999999;\n        color: #e09090;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n        white-space: nowrap;\n    }\n\n\n    .smooth-scroll {\n      width: 100vw;\n      background: transparent;\n      z-index: 9999;\n      flex: 1;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n\n      }\n    }\n}\n\n.menu-bar-hidden {\n  @include css-transform-translate-y(50px);\n}\n\n.menu-bar-shown {\n  @include css-transform-translate-y(0px);\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    @media all and (max-width: 1200px) {\n\n    }\n\n  h2 {\n    color: #e09090;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > h2 {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menu-bar-open {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menu-bar-close {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 18vh;\n$text-color: #ac6e6e;\n$hover-color: #9d9dcd;\n$nav-button-color: #e09090;\n$nav-button-size: 35px;\n$padding-top: 1.75em;\n$p-font-size: 1.1em;\n\n\n.nav-bar-container {\n    top: 0;\n    height: $height;\n    display: flex;\n    justify-content: center;\n    z-index: 9999;\n    background: $global-bg-color;\n    position: fixed;\n    width: 100vw;\n\n    .selected {\n      background: $nav-button-color !important;\n    }\n\n    .nav-warriorfy {\n      background-image: url(\"../components/img/00-Logo.png\") !important;\n      background-size: cover !important;\n      background-repeat: no-repeat !important;\n    }\n\n    .nav-angel-list {\n    background-image: url(\"../components/img/angel_list.png\") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    }\n\n    .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1;\n    }\n\n    .nav-bar {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width: 100vw;\n    }\n\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\nh2 {\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n    white-space: nowrap;\n    font-size: $p-font-size;\n    padding-top: $padding-top;\n  }\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n\n  .nav-button {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: $nav-button-size;\n      height: $nav-button-size;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: $global-bg-color;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .nav-button:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.nav-bar-hidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n\n\n\n\n#Intro {\n\n  height: 70vw;\n\n\n  .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw;\n\n      h1 {\n      color: white;\n      font-size: 4vw;\n      margin: 0;\n      }\n\n      p {\n      color: grey;\n      font-size: 4vw;\n      margin: 0;\n      }\n  }\n\n\n\n  .start {\n    width: 15vh;\n    background-color: #faa187;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em;\n  }\n\n  #gotoMission {\n\n    p {\n      color: #f1f1f1;\n      font-size: 1.5em;\n      -webkit-tap-highlight-color: rgba(0,0,0,0);\n    }\n  }\n\n  p {\n    color: $global-p-color;\n    font-weight: 300;\n    @include css-user-select(none);\n    cursor: pointer;\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .smooth-scroll {\n    position: relative;\n        top: 0;\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $global-bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n#Mission {\n  h1 {\n    width: 50vw;\n    font-size: 3.5em;\n  }\n\n  .container {\n    display: flex;\n  }\n\n  .mission {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$header-color: #dedcdc;\n$box-color: transparent;\n$h1-color: #705959;\n$sub-section-width: 20vw;;\n$border-color: #ded9d9;\n$border-width: 2px;\n$p-font-size: 20px;\n\n#Opportunity {\n\n  .container {\n    width: 75vw;\n  }\n\n  .header {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    h1 {\n      text-align: center;\n      color: $h1-color;\n      width: 75vw;\n      font-size: 3em;\n    }\n  }\n\n  .content {\n    display: inline-flex;\n    justify-content: space-between;\n    width: 100%;\n    padding-bottom: 10vh;\n  }\n\n  .overall {\n    width: 100%;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    margin-bottom: 10vh;\n\n    .problem {\n      width: $sub-section-width;\n      background: transparent;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    .solution {\n      width: $sub-section-width;\n      background: transparent;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    h4 {\n    text-align: center;\n    }\n\n\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    text-align: left;\n    font-size: $p-font-size;\n  }\n\n  h3 {\n    text-align: left;\n  }\n\n  .problems {\n    width: $sub-section-width;\n  }\n\n  .solutions {\n    width: $sub-section-width;\n  }\n\n\n\n  .solutions-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n\n  .problems-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$profile-pic-size: 180px;\n$p-team-text-color: #977171;\n$h2-team-text-color: #7e6579;\n$p-team-font-size: 15px;\n$h2-team-font-size: 20px;\n$mobile-width: 1200px;\n\n\n#Team {\n\n  .team-members-container {\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n  }\n\n\n  .team-member-text {\n\n  }\n\n  .advisors-label-container {\n    position: relative;\n    width: 100vw;\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n\n    @media all and(max-width: $mobile-width) {\n\n    }\n  }\n\n  .team-members {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    max-width: 100vw;\n    }\n  }\n\n  .team-member {\n    display: block;\n\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    }\n  }\n\n  .team-members-row {\n    display: flex;\n    justify-content: space-around;\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n    display: block;\n    max-width: 50vw;\n    }\n  }\n\n  .profile-pic-container {\n    display: block;\n    width: $profile-pic-size;\n    height: $profile-pic-size;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .profile-pic {\n  width: $profile-pic-size;\n  height: $profile-pic-size;\n  background: #d9cdcd;\n  border-radius: 50%;\n  }\n\n  p {\n  width: $profile-pic-size;\n  font-size: $p-team-font-size;\n  text-align: center;\n  color: $p-team-text-color;\n  }\n\n  h2 {\n    width: $profile-pic-size;\n    font-size: $h2-team-font-size;\n    text-align: center;\n    color: $h2-team-text-color;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$baseline-logo-size: 40px;\n\n#Market {\n  .market-image {\n    width: 75vw;\n\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n\n    @media all and(max-width: $mobile-width) {\n      width: 75vw;\n    }\n\n    .header-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h1 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n\n    .subtitle-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h3 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n  }\n\n\n\n  .footer {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .footer-text {\n      width: 50vw;\n\n      @media all and(max-width: $mobile-width) {\n        width: 75vw;\n      }\n    }\n  }\n\n  .baseline-footer {\n    width: 50vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .baseline-footer-logo {\n      width: $baseline-logo-size;\n      height: $baseline-logo-size;\n    }\n\n    h2 {\n      margin-left: 20px;\n    }\n  }\n\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$product-bg-color: #835757;\n\n#Product {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n  }\n\n  .product {\n    width: 75vw;\n    height: 75vh;\n    background: $product-bg-color;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .phone {\n    @include css-transition(all, 0.5s, ease-in-out);\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px;\n\n\n    }\n\n    .phone:hover {\n      @include css-rotate3D(50deg);\n      background: #b0a5a5;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$model-color: #835757;\n\n#Business\\ Model {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n  width: 100vw;\n  }\n\n  .model {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$adoption-bg-color: white;\n\n#Adoption {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .adoption {\n    width: 75vw;\n    height: 50vh;\n    background: $adoption-bg-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .launch {\n      width: 25%;\n      height: 100%;\n      background: #b99494;\n    }\n\n    .scale {\n      width: 25%;\n      height: 100%;\n      background: #927171;\n    }\n\n    .example {\n      width: 50%;\n      height: 100%;\n      background: #796464;\n    }\n  }\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$investment-color: white;\n\n#Investment {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .investment {\n    width: 75vw;\n    height: 50vh;\n    background: $investment-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .milestones {\n      width: 40%;\n      height: 100%;\n      background: #705959;\n    }\n\n    .money {\n      width: 60%;\n      height: 100%;\n      background: #574f4f;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n\n#Competition {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n  }\n\n  .competition {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n}\n","$label-vertical-padding: 5vh;\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: $label-vertical-padding;\n  background: $global-bg-color;\n  padding-bottom: $label-vertical-padding;\n}\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #d1a2a2;\n}\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    position: absolute;\n    color: #aa8686;\n    cursor: default;\n    margin-top: 0vh;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 9999;\n\n    padding: 10px 20px;\n    border-radius: 2px;\n\n}\n\n.label-text {\n  margin-top: -13vh;\n  margin-left: -35px;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  z-index: 999999;\n}\n"],"sourceRoot":""}]);
+	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: white;\n  margin: 0;\n  width: 100%; }\n  .Section h1 {\n    text-align: center;\n    z-index: 999;\n    color: #5b4d4d; }\n  .Section .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section p {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    z-index: 999;\n    color: #7e6060; }\n\n.menu-bar-icon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  border: none;\n  color: #f7f5f5;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-icon {\n      z-index: 99999; } }\n\n.menu-bar-icon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.1s, ease;\n  -ms-transition: all, 1.1s, ease;\n  -o-transition: all, 1.1s, ease;\n  transition: all, 1.1s, ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 1.5s, ease;\n  -ms-transition: all, 1.5s, ease;\n  -o-transition: all, 1.5s, ease;\n  transition: all, 1.5s, ease;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.4s, ease;\n  -ms-transition: all, 0.4s, ease;\n  -o-transition: all, 0.4s, ease;\n  transition: all, 0.4s, ease;\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  transform: translate3D(28vw, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      transform: translate3D(75vw, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  transform: translate3D(28vw, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      transform: translate3D(75vw, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(28vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 0, 0);\n  -webkit-transform: translate3D(28vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(28vw, 0, 0);\n  transform: translate3D(28vw, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.7s, ease;\n  -ms-transition: all, 0.7s, ease;\n  -o-transition: all, 0.7s, ease;\n  transition: all, 0.7s, ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.2s, ease-in-out;\n  -ms-transition: all, 0.2s, ease-in-out;\n  -o-transition: all, 0.2s, ease-in-out;\n  transition: all, 0.2s, ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  width: 100vw;\n  background: #7a6772;\n  justify-content: flex-start;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  display: flex;\n  height: 100vh;\n  flex-direction: column; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menu-bar h2 {\n    z-index: 999999;\n    color: #e09090;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    white-space: nowrap; }\n  .menu-bar .smooth-scroll {\n    width: 100vw;\n    background: transparent;\n    z-index: 9999;\n    flex: 1; }\n    @media all and (max-width: 1200px) {\n      .menu-bar .smooth-scroll {\n        z-index: -1; } }\n\n.menu-bar-hidden {\n  -ms-transform: translate3D(0, 50px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 50px, 0);\n  -webkit-transform: translate3D(0, 50px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 50px, 0);\n  transform: translate3D(0, 50px, 0); }\n\n.menu-bar-shown {\n  -ms-transform: translate3D(0, 0px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 0px, 0);\n  -webkit-transform: translate3D(0, 0px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 0px, 0);\n  transform: translate3D(0, 0px, 0); }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #e09090;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton h2 {\n    color: #e09090;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out;\n  border: 2px solid #e09090;\n  border-radius: 10%;\n  background: #e09090;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > h2 {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-open {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform, 0.35s, cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n\n.menu-bar-close {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform, 0.35s, linear;\n  -ms-transition: transform, 0.35s, linear;\n  -o-transition: transform, 0.35s, linear;\n  transition: transform, 0.35s, linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.stick {\n  opacity: 1.0; }\n\n.nonstick {\n  opacity: 0.0; }\n\n.nav-bar-container {\n  top: 0;\n  height: 18vh;\n  display: flex;\n  justify-content: center;\n  z-index: 9999;\n  background: white;\n  position: fixed;\n  width: 100vw;\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all, 0.5s, ease-in-out;\n  -ms-transition: all, 0.5s, ease-in-out;\n  -o-transition: all, 0.5s, ease-in-out;\n  transition: all, 0.5s, ease-in-out; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .nav-bar-container .selected {\n    background: #e09090 !important; }\n  .nav-bar-container .nav-warriorfy {\n    background-image: url(" + __webpack_require__(170) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-angel-list {\n    background-image: url(" + __webpack_require__(188) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1; }\n  .nav-bar-container .nav-bar {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw; }\n  @media all and (max-width: 1200px) {\n    .nav-bar-container {\n      display: none; } }\n  .nav-bar-container h2 {\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: #ac6e6e;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    white-space: nowrap;\n    font-size: 1.1em;\n    padding-top: 1.75em; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .nav-bar-container p:hover {\n    color: #9d9dcd; }\n  .nav-bar-container .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .smooth-scroll {\n        z-index: -1; } }\n  .nav-bar-container .nav-button {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 35px;\n    height: 35px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: white;\n    border: 2px solid #e09090; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .nav-button {\n        margin: 20px 20px; } }\n  .nav-bar-container .nav-button:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    border: 2px solid #e09090;\n    border-radius: 10%;\n    background: #e09090;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .nav-bar-container .nav-button:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all, 0.5s, ease-in-out;\n      -ms-transition: all, 0.5s, ease-in-out;\n      -o-transition: all, 0.5s, ease-in-out;\n      transition: all, 0.5s, ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Intro {\n  height: 70vw; }\n  #Intro .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw; }\n    #Intro .block h1 {\n      color: white;\n      font-size: 4vw;\n      margin: 0; }\n    #Intro .block p {\n      color: grey;\n      font-size: 4vw;\n      margin: 0; }\n  #Intro .start {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.3s, ease;\n    -ms-transition: all, 0.3s, ease;\n    -o-transition: all, 0.3s, ease;\n    transition: all, 0.3s, ease;\n    width: 15vh;\n    background-color: #faa187;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Intro .start:hover {\n    background-color: #b57d6d; }\n  #Intro #gotoMission p {\n    color: #f1f1f1;\n    font-size: 1.5em;\n    -webkit-tap-highlight-color: transparent; }\n  #Intro p {\n    color: #111111;\n    font-weight: 300;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n    @media all and (max-width: 450px) {\n      #Intro p {\n        font-size: 0.75em; } }\n  #Intro .smooth-scroll {\n    position: relative;\n    top: 0; }\n  #Intro h1 {\n    color: #ac6e6e; }\n    @media all and (max-width: 450px) {\n      #Intro h1 {\n        font-size: 0.75em; } }\n  #Intro .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99; }\n  #Intro .background_image {\n    width: 70vw;\n    height: 33.33vh;\n    background-color: white;\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    @media all and (max-width: 800px) {\n      #Intro .background_image {\n        width: 100vw;\n        left: 0vw; } }\n  #Intro .foreground_image {\n    width: 33.33vw;\n    height: 33.33vh;\n    top: 10vw;\n    background-color: #f1f1f1; }\n    @media all and (max-width: 800px) {\n      #Intro .foreground_image {\n        max-width: 50vw; } }\n\n#Mission h1 {\n  width: 50vw;\n  font-size: 3.5em; }\n\n#Mission .container {\n  display: flex; }\n\n#Mission .mission {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#Opportunity .container {\n  width: 75vw; }\n\n#Opportunity .header {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Opportunity .header h1 {\n    text-align: center;\n    color: #705959;\n    width: 75vw;\n    font-size: 3em; }\n\n#Opportunity .content {\n  display: inline-flex;\n  justify-content: space-between;\n  width: 100%;\n  padding-bottom: 10vh; }\n\n#Opportunity .overall {\n  width: 100%;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  margin-bottom: 10vh; }\n  #Opportunity .overall .problem {\n    width: 20vw;\n    background: transparent;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #ded9d9; }\n  #Opportunity .overall .solution {\n    width: 20vw;\n    background: transparent;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #ded9d9; }\n  #Opportunity .overall h4 {\n    text-align: center; }\n\n#Opportunity p {\n  font-family: \"Minion Pro\", Didot, serif;\n  text-align: left;\n  font-size: 20px; }\n\n#Opportunity h3 {\n  text-align: left; }\n\n#Opportunity .problems {\n  width: 20vw; }\n\n#Opportunity .solutions {\n  width: 20vw; }\n\n#Opportunity .solutions-label {\n  border-radius: 4px; }\n  #Opportunity .solutions-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label {\n  border-radius: 4px; }\n  #Opportunity .problems-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Team .team-members-container {\n  margin-top: 10vh;\n  margin-bottom: 10vh; }\n\n#Team .advisors-label-container {\n  position: relative;\n  width: 100vw;\n  margin-top: 10vh;\n  margin-bottom: 10vh; }\n\n#Team .team-members {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members {\n      display: flex;\n      max-width: 100vw; } }\n\n#Team .team-member {\n  display: block; }\n  @media all and (max-width: 1200px) {\n    #Team .team-member {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap; } }\n\n#Team .team-members-row {\n  display: flex;\n  justify-content: space-around;\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members-row {\n      display: block;\n      max-width: 50vw; } }\n\n#Team .profile-pic-container {\n  display: block;\n  width: 180px;\n  height: 180px;\n  justify-content: center;\n  align-items: center; }\n\n#Team .profile-pic {\n  width: 180px;\n  height: 180px;\n  background: #d9cdcd;\n  border-radius: 50%; }\n\n#Team p {\n  width: 180px;\n  font-size: 15px;\n  text-align: center;\n  color: #977171; }\n\n#Team h2 {\n  width: 180px;\n  font-size: 20px;\n  text-align: center;\n  color: #7e6579; }\n\n#Value\\ Proposition .market-image {\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Value\\ Proposition .market-image {\n      width: 100vw; } }\n\n#Value\\ Proposition .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Value\\ Proposition .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  @media all and (max-width: 1200px) {\n    #Value\\ Proposition .header {\n      width: 75vw; } }\n  #Value\\ Proposition .header .header-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Value\\ Proposition .header .header-text h1 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value\\ Proposition .header .header-text h1 {\n          width: 75vw; } }\n  #Value\\ Proposition .header .subtitle-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Value\\ Proposition .header .subtitle-text h3 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value\\ Proposition .header .subtitle-text h3 {\n          width: 75vw; } }\n\n#Value\\ Proposition .footer {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value\\ Proposition .footer .footer-text {\n    width: 50vw; }\n    @media all and (max-width: 1200px) {\n      #Value\\ Proposition .footer .footer-text {\n        width: 75vw; } }\n\n#Value\\ Proposition .baseline-footer {\n  width: 50vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value\\ Proposition .baseline-footer .baseline-footer-logo {\n    width: 40px;\n    height: 40px; }\n  #Value\\ Proposition .baseline-footer h2 {\n    margin-left: 20px; }\n\n#Product .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Product .header {\n  width: 100vw; }\n\n#Product .product {\n  width: 75vw;\n  height: 75vh;\n  background: #835757;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Product .product {\n      width: 100vw; } }\n  #Product .product .phone {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all, 0.5s, ease-in-out;\n    -ms-transition: all, 0.5s, ease-in-out;\n    -o-transition: all, 0.5s, ease-in-out;\n    transition: all, 0.5s, ease-in-out;\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Product .product .phone:hover {\n    -ms-transform: rotate3d(0, 1, 0, 50deg);\n    /* IE 9 */\n    -moz-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -webkit-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -o-transform: rotate3d(0, 1, 0, 50deg);\n    transform: rotate3d(0, 1, 0, 50deg);\n    background: #b0a5a5; }\n\n#Business\\ Model .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Business\\ Model .header {\n  width: 100vw; }\n\n#Business\\ Model .model {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Business\\ Model .model {\n      width: 100vw; } }\n\n#Adoption .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Adoption .header {\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Adoption .header {\n      width: 100vw; } }\n\n#Adoption .adoption {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Adoption .adoption {\n      width: 100vw; } }\n  #Adoption .adoption .launch {\n    width: 25%;\n    height: 100%;\n    background: #b99494; }\n  #Adoption .adoption .scale {\n    width: 25%;\n    height: 100%;\n    background: #927171; }\n  #Adoption .adoption .example {\n    width: 50%;\n    height: 100%;\n    background: #796464; }\n\n#Investment .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .investment {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Investment .investment {\n      width: 100vw; } }\n  #Investment .investment .milestones {\n    width: 40%;\n    height: 100%;\n    background: #705959; }\n  #Investment .investment p {\n    color: white; }\n  #Investment .investment .money {\n    width: 60%;\n    height: 100%;\n    background: #574f4f; }\n\n#Competition .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Competition .header {\n  width: 100vw; }\n\n#Competition .competition {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Competition .competition {\n      width: 100vw; } }\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 5vh;\n  background: white;\n  padding-bottom: 5vh; }\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #d1a2a2; }\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n  position: absolute;\n  color: #aa8686;\n  cursor: default;\n  margin-top: 0vh;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9999;\n  padding: 10px 20px;\n  border-radius: 2px; }\n\n.label-text {\n  margin-top: -13vh;\n  margin-left: -35px;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  z-index: 999999; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: white;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body .container {\n    width: 100vw;\n    left: 0; }\n  body .section-medium-image {\n    position: relative;\n    width: 75vw;\n    left: 0; }\n  body .section-wide-image {\n    position: relative;\n    width: 100vw;\n    left: 0; }\n  body .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0; }\n  body h1 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300; }\n  body h2 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300; }\n  body h3 {\n    font-family: \"Minion Pro\", Didot, serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300;\n    font-size: 25px; }\n  body h4 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #ca9191;\n    text-align: center;\n    font-weight: 300;\n    font-size: 2em; }\n  body p {\n    font-family: \"Minion Pro\", Didot, serif;\n    color: #111111;\n    font-weight: 200; }\n  body .wrapper {\n    overflow-x: hidden; }\n  body a {\n    text-decoration: none; }\n  body .text-block-grid {\n    display: flex;\n    width: 75vw;\n    justify-content: flex-end; }\n  body .text-block {\n    width: 30vh;\n    background: #4f4a54;\n    height: 15vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 10px;\n    margin-left: 10px;\n    border-radius: 4px; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/main.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Intro.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Mission.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Opportunity.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Team.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_ValueProposition.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Product.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_BusinessModel.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Adoption.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Investment.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Competition.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Label.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,wBCDqB;EDErB,UAAS;EACT,YAAW,EAoCZ;EAvCD;IAMI,mBAAkB;IAClB,aAAY;IACZ,eAVsB,EAWvB;EATH;IAYI,aAAY;IACZ,cAAa;IACb,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EAEpB;EAlBH;IAqBI,aAAY;IACZ,mBAAkB;IAClB,QAAO;IACP,UAAS;IACT,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EA5BH;IA+BI,qDC9BuD;ID+BvD,iBAAgB;IAChB,YAAW;IACX,mBAAkB;IEtCpB,4BFuC+B;IEvCJ,gBAAgB;IAC3C,0BFsC+B;IEtCN,YAAY;IACpC,yBFqC8B;IErCN,oBAAoB;IAC1C,uBFoC4B;IEpCN,aAAa;IAClC,sBFmC2B;IEnCN,4BAA4B;IAC7C,kBFkCuB;IElCN;gEACqC;IAC9D,yCAA0C;IFiCxC,aAAY;IACZ,eA1CqB,EA2CtB;;AGhCH;ECeE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAUtB,aAAY;EACZ,eAd2B;EAe3B,wBAAuB;EACvB,cAAa;EDfb,4BCgB6B;EDhBF,gBAAgB;EAC3C,0BCe6B;EDfJ,YAAY;EACpC,yBCc4B;EDdJ,oBAAoB;EAC1C,uBCa0B;EDbJ,aAAa;EAClC,sBCYyB;EDZJ,4BAA4B;EAC7C,kBCWqB;EDXJ;gEACqC;EAC9D,yCAA0C;ECU1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;ECIC;IDrBF;MCwBE,oDAAsD,EDPvD,EAAA;ECUC;ID3BF;MC8BE,oDAAsD,EDbvD,EAAA;ECgBD;IDjCA;MCoCA,oDAAsD,EDnBrD,EAAA;ECsBD;IDvCA;MC2CA,oDAAsD,ED1BrD,EAAA;EC6BD;ID9CA;MCkDA,oDAAsD,EDjCrD,EAAA;ECoCD;IDrDA;MCyDA,oDAAsD,EDxCrD,EAAA;EC2CD;ID5DA;MC+DA,oDAAsD,ED9CrD,EAAA;EAHC;IAdF;MAeI,eAAc,EAEjB,EAAA;;AAED;ECJE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EA6BtB,oBAAmB,EACpB;ECDC;IDFF;MCKE,oDAAsD,EDFvD,EAAA;ECKC;IDRF;MCWE,oDAAsD,EDRvD,EAAA;ECWD;IDdA;MCiBA,oDAAsD,EDdrD,EAAA;ECiBD;IDpBA;MCwBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID3BA;MC+BA,oDAAsD,ED5BrD,EAAA;EC+BD;IDlCA;MCsCA,oDAAsD,EDnCrD,EAAA;ECsCD;IDzCA;MC4CA,oDAAsD,EDzCrD,EAAA;;AAED;ECTE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAkCtB,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;ECTC;IDGF;MCAE,oDAAsD,EDMvD,EAAA;ECHC;IDHF;MCME,oDAAsD,EDAvD,EAAA;ECGD;IDTA;MCYA,oDAAsD,EDNrD,EAAA;ECSD;IDfA;MCmBA,oDAAsD,EDbrD,EAAA;ECgBD;IDtBA;MC0BA,oDAAsD,EDpBrD,EAAA;ECuBD;ID7BA;MCiCA,oDAAsD,ED3BrD,EAAA;EC8BD;IDpCA;MCuCA,oDAAsD,EDjCrD,EAAA;;AAED;ECjBE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EA0CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECfC;IDWF;MCRE,oDAAsD,EDYvD,EAAA;ECTC;IDKF;MCFE,oDAAsD,EDMvD,EAAA;ECHD;IDDA;MCIA,oDAAsD,EDArD,EAAA;ECGD;IDPA;MCWA,oDAAsD,EDPrD,EAAA;ECUD;IDdA;MCkBA,oDAAsD,EDdrD,EAAA;ECiBD;IDrBA;MCyBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID5BA;MC+BA,oDAAsD,ED3BrD,EAAA;;AAED;ECvBE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAgDtB,gEAAgE;EAChE,kEAAkE,EAEnE;ECtBC;IDiBF;MCdE,oDAAsD,EDmBvD,EAAA;EChBC;IDWF;MCRE,oDAAsD,EDavD,EAAA;ECVD;IDKA;MCFA,oDAAsD,EDOrD,EAAA;ECJD;IDDA;MCKA,oDAAsD,EDArD,EAAA;ECGD;IDRA;MCYA,oDAAsD,EDPrD,EAAA;ECUD;IDfA;MCmBA,oDAAsD,EDdrD,EAAA;ECiBD;IDtBA;MCyBA,oDAAsD,EDpBrD,EAAA;;AAED;EC9BE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EAuDtB,8CAA8C;EAC9C,qCAAqC,EACtC;EC5BC;IDwBF;MCrBE,oDAAsD,EDyBvD,EAAA;ECtBC;IDkBF;MCfE,oDAAsD,EDmBvD,EAAA;EChBD;IDYA;MCTA,oDAAsD,EDarD,EAAA;ECVD;IDMA;MCFA,oDAAsD,EDMrD,EAAA;ECHD;IDDA;MCKA,oDAAsD,EDDrD,EAAA;ECID;IDRA;MCYA,oDAAsD,EDRrD,EAAA;ECWD;IDfA;MCkBA,oDAAsD,EDdrD,EAAA;;AAED;ECpCE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EC6HtB,wDAAgD;EAAG,UAAU;EAC7D,yDAAiD;EAAG,YAAY;EAChE,4DAAoD;EAAG,YAAY;EACnE,uDAA+C;EAC/C,oDAA4C,EDhE7C;ECpCC;ID8BF;MC3BE,oDAAsD,EDiCvD,EAAA;EC9BC;IDwBF;MCrBE,oDAAsD,ED2BvD,EAAA;ECxBD;IDkBA;MCfA,oDAAsD,EDqBrD,EAAA;EClBD;IDYA;MCRA,oDAAsD,EDcrD,EAAA;ECXD;IDKA;MCDA,oDAAsD,EDOrD,EAAA;ECJD;IDFA;MCMA,oDAAsD,EDArD,EAAA;ECGD;IDTA;MCYA,oDAAsD,EDNrD,EAAA;EAHC;IAHF;MCkEE,wDAAgD;MAAG,UAAU;MAC7D,yDAAiD;MAAG,YAAY;MAChE,4DAAoD;MAAG,YAAY;MACnE,uDAA+C;MAC/C,oDAA4C,EDhE7C,EAAA;;AAED;EC5CE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;ECqItB,0DAAgD;EAAG,UAAU;EAC7D,2DAAiD;EAAG,YAAY;EAChE,8DAAoD;EAAG,YAAY;EACnE,yDAA+C;EAC/C,sDAA4C,EDhE7C;EC5CC;IDsCF;MCnCE,oDAAsD,EDyCvD,EAAA;ECtCC;IDgCF;MC7BE,oDAAsD,EDmCvD,EAAA;EChCD;ID0BA;MCvBA,oDAAsD,ED6BrD,EAAA;EC1BD;IDoBA;MChBA,oDAAsD,EDsBrD,EAAA;ECnBD;IDaA;MCTA,oDAAsD,EDerD,EAAA;ECZD;IDMA;MCFA,oDAAsD,EDQrD,EAAA;ECLD;IDDA;MCIA,oDAAsD,EDErD,EAAA;EAHC;IAHF;MCkEE,0DAAgD;MAAG,UAAU;MAC7D,2DAAiD;MAAG,YAAY;MAChE,8DAAoD;MAAG,YAAY;MACnE,yDAA+C;MAC/C,sDAA4C,EDhE7C,EAAA;;AAED;ECpDE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;ECsLtB,mCAAoC;EAAE,UAAU;EAChD,oCAAqC;EAAE,YAAY;EACnD,uCAAwC;EAAE,YAAY;EACtD,kCAAmC;EACnC,+BAAgC;EA7FhC,uCAAoC;EAAE,UAAU;EAChD,wCAAqC;EACrC,2CAAwC;EAAE,YAAY;EACtD,sCAAmC;EACnC,mCAAgC;EDfhC,WAAU,EACX;ECtDC;ID8CF;MC3CE,oDAAsD,EDmDvD,EAAA;EChDC;IDwCF;MCrCE,oDAAsD,ED6CvD,EAAA;EC1CD;IDkCA;MC/BA,oDAAsD,EDuCrD,EAAA;ECpCD;ID4BA;MCxBA,oDAAsD,EDgCrD,EAAA;EC7BD;IDqBA;MCjBA,oDAAsD,EDyBrD,EAAA;ECtBD;IDcA;MCVA,oDAAsD,EDkBrD,EAAA;ECfD;IDOA;MCJA,oDAAsD,EDYrD,EAAA;EAJC;IAJF;MCkBE,uCAAoC;MAAE,UAAU;MAChD,wCAAqC;MACrC,2CAAwC;MAAE,YAAY;MACtD,sCAAmC;MACnC,mCAAgC,EDdjC,EAAA;;AAED;EC9DE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;EC6HtB,qDAAgD;EAAG,UAAU;EAC7D,sDAAiD;EAAG,YAAY;EAChE,yDAAoD;EAAG,YAAY;EACnE,oDAA+C;EAC/C,iDAA4C,EDzC7C;EC3DC;IDwDF;MCrDE,oDAAsD,EDwDvD,EAAA;ECrDC;IDkDF;MC/CE,oDAAsD,EDkDvD,EAAA;EC/CD;ID4CA;MCzCA,oDAAsD,ED4CrD,EAAA;ECzCD;IDsCA;MClCA,oDAAsD,EDqCrD,EAAA;EClCD;ID+BA;MC3BA,oDAAsD,ED8BrD,EAAA;EC3BD;IDwBA;MCpBA,oDAAsD,EDuBrD,EAAA;ECpBD;IDiBA;MCdA,oDAAsD,EDiBrD,EAAA;;AAED;ECnEE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;ECqItB,qDAAgD;EAAG,UAAU;EAC7D,sDAAiD;EAAG,YAAY;EAChE,yDAAoD;EAAG,YAAY;EACnE,oDAA+C;EAC/C,iDAA4C,ED5C7C;EChEC;ID6DF;MC1DE,oDAAsD,ED6DvD,EAAA;EC1DC;IDuDF;MCpDE,oDAAsD,EDuDvD,EAAA;ECpDD;IDiDA;MC9CA,oDAAsD,EDiDrD,EAAA;EC9CD;ID2CA;MCvCA,oDAAsD,ED0CrD,EAAA;ECvCD;IDoCA;MChCA,oDAAsD,EDmCrD,EAAA;EChCD;ID6BA;MCzBA,oDAAsD,ED4BrD,EAAA;ECzBD;IDsBA;MCnBA,oDAAsD,EDsBrD,EAAA;;AAED;ECxEE,yCAA0C;EAC1C,iCDxBsB;ECyBtB,gCDzBsB;EC0BtB,+BD1BsB;EC2BtB,4BD3BsB;ECsLtB,mCAAoC;EAAE,UAAU;EAChD,oCAAqC;EAAE,YAAY;EACnD,uCAAwC;EAAE,YAAY;EACtD,kCAAmC;EACnC,+BAAgC;EA7FhC,sCAAoC;EAAE,UAAU;EAChD,uCAAqC;EACrC,0CAAwC;EAAE,YAAY;EACtD,qCAAmC;EACnC,kCAAgC;EDEhC,WAAU,EACX;ECvEC;IDkEF;MC/DE,oDAAsD,EDoEvD,EAAA;ECjEC;ID4DF;MCzDE,oDAAsD,ED8DvD,EAAA;EC3DD;IDsDA;MCnDA,oDAAsD,EDwDrD,EAAA;ECrDD;IDgDA;MC5CA,oDAAsD,EDiDrD,EAAA;EC9CD;IDyCA;MCrCA,oDAAsD,ED0CrD,EAAA;ECvCD;IDkCA;MC9BA,oDAAsD,EDmCrD,EAAA;EChCD;ID2BA;MCxBA,oDAAsD,ED6BrD,EAAA;;AEjGD;EDoBE,yCAA0C;EAC1C,wCCzB6B;ED0B7B,uCC1B6B;ED2B7B,sCC3B6B;ED4B7B,mCC5B6B;EAM3B,gBAAe;EACf,OAAM;EACN,cAAa;EACb,QAAO;EACP,aAAY;EACZ,oBAVc;EAWd,4BAA2B;EAC3B,wBAAuB;EACvB,gBAAe;EACf,cAAa;EACb,cAAa;EACb,uBAAsB,EAyBzB;EDZC;IC1BF;MD6BE,oDAAsD,ECSvD,EAAA;EDNC;IChCF;MDmCE,oDAAsD,ECGvD,EAAA;EDAD;ICtCA;MDyCA,oDAAsD,ECHrD,EAAA;EDMD;IC5CA;MDgDA,oDAAsD,ECVrD,EAAA;EDaD;ICnDA;MDuDA,oDAAsD,ECjBrD,EAAA;EDoBD;IC1DA;MD8DA,oDAAsD,ECxBrD,EAAA;ED2BD;ICjEA;MDoEA,oDAAsD,EC9BrD,EAAA;EAtCD;IAgBQ,gBAAe;IACf,eAAc;IACd,mBAAkB;IAClB,aAAY;IACZ,mBAAkB;IHzBxB,4BG0BmC;IH1BR,gBAAgB;IAC3C,0BGyBmC;IHzBV,YAAY;IACpC,yBGwBkC;IHxBV,oBAAoB;IAC1C,uBGuBgC;IHvBV,aAAa;IAClC,sBGsB+B;IHtBV,4BAA4B;IAC7C,kBGqB2B;IHrBV;gEACqC;IAC9D,yCAA0C;IGoBpC,gBAAe;IACf,oBAAmB,EACtB;EAxBL;IA4BM,aAAY;IACZ,wBAAuB;IACvB,cAAa;IACb,QAAO,EAMR;IAJC;MAjCN;QAkCQ,YAAW,EAGd,EAAA;;AAGL;ED0DE,uCAAoC;EAAE,UAAU;EAChD,wCAAqC;EACrC,2CAAwC;EAAE,YAAY;EACtD,sCAAmC;EACnC,mCAAgC,EC5DjC;;AAED;EDsDE,sCAAoC;EAAE,UAAU;EAChD,uCAAqC;EACrC,0CAAwC;EAAE,YAAY;EACtD,qCAAmC;EACnC,kCAAgC,ECxDjC;;AAKD;ED/BE,yCAA0C;EAC1C,wCC+B8C;ED9B9C,uCC8B8C;ED7B9C,sCC6B8C;ED5B9C,mCC4B8C;EAC9C,aAAY;EACV,kBAAiB;EACjB,YAAW;EACX,oBAAmB;EACnB,YAAW;EACX,aAAY;EACZ,eAAc;EACd,cAAa;EACb,wBAAuB;EACvB,0BAhEuB;EAkEvB,cAAa;EACb,4BAA2B;EAC3B,oBAAmB,EAqBtB;ED7DC;ICyBF;MDtBE,oDAAsD,EC0DvD,EAAA;EDvDC;ICmBF;MDhBE,oDAAsD,ECoDvD,EAAA;EDjDD;ICaA;MDVA,oDAAsD,EC8CrD,EAAA;ED3CD;ICOA;MDHA,oDAAsD,ECuCrD,EAAA;EDpCD;ICAA;MDIA,oDAAsD,ECgCrD,EAAA;ED7BD;ICPA;MDWA,oDAAsD,ECyBrD,EAAA;EDtBD;ICdA;MDiBA,oDAAsD,ECmBrD,EAAA;EApCD;IAsBI,eAAc;IACd,aAAY;IACZ,iBAAgB;IAChB,UAAS;IACT,mBAAkB;IAClB,mBAAkB;IAClB,oBAAmB,EAKpB;;AAKH;EDrEE,yCAA0C;EAC1C,wCCqE8C;EDpE9C,uCCoE8C;EDnE9C,sCCmE8C;EDlE9C,mCCkE8C;EAC9C,0BA7FyB;EA8FzB,mBAAkB;EAClB,oBA/FyB;EAgGzB,gBAAe,EAKhB;EDzEC;IC+DF;MD5DE,oDAAsD,ECsEvD,EAAA;EDnEC;ICyDF;MDtDE,oDAAsD,ECgEvD,EAAA;ED7DD;ICmDA;MDhDA,oDAAsD,EC0DrD,EAAA;EDvDD;IC6CA;MDzCA,oDAAsD,ECmDrD,EAAA;EDhDD;ICsCA;MDlCA,oDAAsD,EC4CrD,EAAA;EDzCD;IC+BA;MD3BA,oDAAsD,ECqCrD,EAAA;EDlCD;ICwBA;MDrBA,oDAAsD,EC+BrD,EAAA;EAVD;IDrEE,yCAA0C;IAC1C,wCC4EgD;ID3EhD,uCC2EgD;ID1EhD,sCC0EgD;IDzEhD,mCCyEgD,EAC/C;IDxED;MC+DF;QD5DE,oDAAsD,ECqErD,EAAA;IDlED;MCyDF;QDtDE,oDAAsD,EC+DrD,EAAA;ID5DH;MCmDA;QDhDA,oDAAsD,ECyDnD,EAAA;IDtDH;MC6CA;QDzCA,oDAAsD,ECkDnD,EAAA;ID/CH;MCsCA;QDlCA,oDAAsD,EC2CnD,EAAA;IDxCH;MC+BA;QD3BA,oDAAsD,ECoCnD,EAAA;IDjCH;MCwBA;QDrBA,oDAAsD,EC8BnD,EAAA;;AC/FH;EACE,oBAT4B;EFyB5B,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EFWC;IEvBF;MF0BE,oDAAsD,EEdvD,EAAA;EFiBC;IE7BF;MFgCE,oDAAsD,EEpBvD,EAAA;EFuBD;IEnCA;MFsCA,oDAAsD,EE1BrD,EAAA;EF6BD;IEzCA;MF6CA,oDAAsD,EEjCrD,EAAA;EFoCD;IEhDA;MFoDA,oDAAsD,EExCrD,EAAA;EF2CD;IEvDA;MF2DA,oDAAsD,EE/CrD,EAAA;EFkDD;IE9DA;MFiEA,oDAAsD,EErDrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EFGE,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C,EAoBhD;EFOC;IETF;MFYE,oDAAsD,EEVvD,EAAA;EFaC;IEfF;MFkBE,oDAAsD,EEhBvD,EAAA;EFmBD;IErBA;MFwBA,oDAAsD,EEtBrD,EAAA;EFyBD;IE3BA;MF+BA,oDAAsD,EE7BrD,EAAA;EFgCD;IElCA;MFsCA,oDAAsD,EEpCrD,EAAA;EFuCD;IEzCA;MF6CA,oDAAsD,EE3CrD,EAAA;EF8CD;IEhDA;MFmDA,oDAAsD,EEjDrD,EAAA;;AAED;EFDE,+CAA0C;EAC1C,wEEtB+C;EFuB/C,uEEvB+C;EFwB/C,sEExB+C;EFyB/C,mEEzB+C,EA8BhD;EFHC;IELF;MFQE,oDAAsD,EEAvD,EAAA;EF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hD,sCGsEgD;IHrEhD,mCGqEgD;IAC9C,aAAY;IACV,kBAAiB;IACjB,YAAW;IACX,oBAAmB;IACnB,YApGgB;IAqGhB,aArGgB;IAsGhB,cAAa;IACb,wBAAuB;IACvB,cAAa;IACb,kBNxGiB;IMyGjB,0BA3GoB,EAgHvB;IHnFD;MGfF;QHkBE,oDAAsD,EGgFrD,EAAA;IH7ED;MGrBF;QHwBE,oDAAsD,EG0ErD,EAAA;IHvEH;MG3BA;QH8BA,oDAAsD,EGoEnD,EAAA;IHjEH;MGjCA;QHqCA,oDAAsD,EG6DnD,EAAA;IH1DH;MGxCA;QH4CA,oDAAsD,EGsDnD,EAAA;IHnDH;MG/CA;QHmDA,oDAAsD,EG+CnD,EAAA;IH5CH;MGtDA;QHyDA,oDAAsD,EGyCnD,EAAA;IAHG;MA/FN;QAgGQ,kBAAiB,EAEtB,EAAA;EAlGH;IHSE,yCAA0C;IAC1C,wCG2FgD;IH1FhD,uCG0FgD;IHzFhD,sCGyFgD;IHxFhD,mCGwFgD;IAC9C,0BApHsB;IAqHtB,mBAAkB;IAClB,oBAtHsB;IAuHtB,gBAAe,EAKhB;IH/FD;MGfF;QHkBE,oDAAsD,EG4FrD,EAAA;IHzFD;MGrBF;QHwBE,oDAAsD,EGsFrD,EAAA;IHnFH;MG3BA;QH8BA,oDAAsD,EGgFnD,EAAA;IH7EH;MGjCA;QHqCA,oDAAsD,EGyEnD,EAAA;IHtEH;MGxCA;QH4CA,oDAAsD,EGkEnD,EAAA;IH/DH;MG/CA;QHmDA,oDAAsD,EG2DnD,EAAA;IHxDH;MGtDA;QHyDA,oDAAsD,EGqDnD,EAAA;IA9GH;MHSE,yCAA0C;MAC1C,wCGkGkD;MHjGlD,uCGiGkD;MHhGlD,sCGgGkD;MH/FlD,mCG+FkD,EAC/C;MH9FH;QGfF;UHkBE,oDAAsD,EG2FnD,EAAA;MHxFH;QGrBF;UHwBE,oDAAsD,EGqFnD,EAAA;MHlFL;QG3BA;UH8BA,oDAAsD,EG+EjD,EAAA;MH5EL;QGjCA;UHqCA,oDAAsD,EGwEjD,EAAA;MHrEL;QGxCA;UH4CA,oDAAsD,EGiEjD,EAAA;MH9DL;QG/CA;UHmDA,oDAAsD,EG0DjD,EAAA;MHvDL;QGtDA;UHyDA,oDAAsD,EGoDjD,EAAA;;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","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$p-section-color: #7e6060;\n$border-color: #ac9e9e;\n$label-color: #aa8686;\n$h1-section-color: #5b4d4d;\n\n.Section {\n  background-color: $global-bg-color;\n  margin: 0;\n  width: 100%;\n\n  h1 {\n    text-align: center;\n    z-index: 999;\n    color: $h1-section-color;\n  }\n\n  .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n  }\n\n  .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  p {\n    font-family: $global-font-stack;\n    font-weight: 300;\n    width: 100%;\n    text-align: center;\n    @include css-user-select(none);\n    z-index: 999;\n    color: $p-section-color;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #ca9191;\n$global-h2-color: #ca9191;\n$global-h3-color: #ca9191;\n$global-h4-color: #ca9191;\n$global-bg-color: white;\n$global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Minion Pro', Didot, serif;\n$global-box-width: 70vw;\n$section-color: #faa187;\n$start-button-color: #faa187;\n$global-font-weight: 300;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Intro.scss';\n@import './components/sections/Mission.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/ValueProposition.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/Adoption.scss';\n@import './components/sections/Investment.scss';\n@import './components/sections/Competition.scss';\n@import './components/Label.scss';\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $global-bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n  .container {\n      width: 100vw;\n      left: 0;\n  }\n\n  .section-medium-image {\n  position: relative;\n  width: 75vw;\n  left: 0;\n  }\n\n  .section-wide-image {\n  position: relative;\n  width: 100vw;\n  left: 0;\n  }\n\n  .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0;\n  }\n\n  h1 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n  }\n\n  h2 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n  }\n\n  h3 {\n    font-family: $global-p-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 25px;\n  }\n\n  h4 {\n    font-family: $global-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 2em;\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    color: $global-p-color;\n    font-weight: 200;\n  }\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  a {\n      text-decoration: none;\n  }\n\n  .text-block-grid {\n      display: flex;\n      width: 75vw;\n      justify-content: flex-end;\n  }\n\n  .text-block {\n    width: 30vh;\n    background: #4f4a54;\n    height: 15vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 10px;\n    margin-left: 10px;\n    border-radius: 4px;\n  }\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$menu-bar-icon-color: #f7f5f5;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.menu-bar-icon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.menu-bar-icon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: #bca293;\n}\n\n.menu-bar-icon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.menu-bar-icon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.menu-bar-icon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.menu-bar-icon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x($right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-rotate3D($a) {\n  -ms-transform: rotate3d(0,1,0,$a); /* IE 9 */\n  -moz-transform: rotate3d(0,1,0,$a); /* Safari */\n  -webkit-transform: rotate3d(0,1,0,$a); /* Safari */\n  -o-transform: rotate3d(0,1,0,$a);\n  transform: rotate3d(0,1,0,$a);\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop, $time, $easing;\n  -ms-transition: $prop, $time, $easing;\n  -o-transition: $prop, $time, $easing;\n  transition: $prop, $time, $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-translate-y($t) {\n  -ms-transform: translate3D(0, $t, 0); /* IE 9 */\n  -moz-transform: translate3D(0, $t, 0);\n  -webkit-transform: translate3D(0, $t, 0); /* Safari */\n  -o-transform: translate3D(0, $t, 0);\n  transform: translate3D(0, $t, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #7a6772;\n$menu-button-color: #e09090;\n\n.menu-bar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    width: 100vw;\n    background: $bg-color;\n    justify-content: flex-start;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    display: flex;\n    height: 100vh;\n    flex-direction: column;\n\n    h2 {\n        z-index: 999999;\n        color: #e09090;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n        white-space: nowrap;\n    }\n\n\n    .smooth-scroll {\n      width: 100vw;\n      background: transparent;\n      z-index: 9999;\n      flex: 1;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n\n      }\n    }\n}\n\n.menu-bar-hidden {\n  @include css-transform-translate-y(50px);\n}\n\n.menu-bar-shown {\n  @include css-transform-translate-y(0px);\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    @media all and (max-width: 1200px) {\n\n    }\n\n  h2 {\n    color: #e09090;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > h2 {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 28vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menu-bar-open {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menu-bar-close {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 18vh;\n$text-color: #ac6e6e;\n$hover-color: #9d9dcd;\n$nav-button-color: #e09090;\n$nav-button-size: 35px;\n$padding-top: 1.75em;\n$p-font-size: 1.1em;\n\n.stick {\n  opacity: 1.0;\n}\n\n.nonstick {\n  opacity: 0.0;\n}\n\n\n.nav-bar-container {\n    top: 0;\n    height: $height;\n    display: flex;\n    justify-content: center;\n    z-index: 9999;\n    background: $global-bg-color;\n    position: fixed;\n    width: 100vw;\n    @include css-transition(all, 0.5s, ease-in-out);\n\n\n    .selected {\n      background: $nav-button-color !important;\n    }\n\n    .nav-warriorfy {\n      background-image: url(\"../components/img/00-Logo.png\") !important;\n      background-size: cover !important;\n      background-repeat: no-repeat !important;\n    }\n\n    .nav-angel-list {\n    background-image: url(\"../components/img/angel_list.png\") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    }\n\n    .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1;\n    }\n\n    .nav-bar {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width: 100vw;\n    }\n\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\nh2 {\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n    white-space: nowrap;\n    font-size: $p-font-size;\n    padding-top: $padding-top;\n  }\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n\n  .nav-button {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: $nav-button-size;\n      height: $nav-button-size;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: $global-bg-color;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .nav-button:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.nav-bar-hidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n\n\n\n\n#Intro {\n\n  height: 70vw;\n\n\n  .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw;\n\n      h1 {\n      color: white;\n      font-size: 4vw;\n      margin: 0;\n      }\n\n      p {\n      color: grey;\n      font-size: 4vw;\n      margin: 0;\n      }\n  }\n\n\n\n  .start {\n    @include css-transition(all, 0.3s, ease);\n    width: 15vh;\n    background-color: #faa187;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em;\n  }\n\n  .start:hover {\n  background-color: #b57d6d;\n  }\n\n  #gotoMission {\n\n    p {\n      color: #f1f1f1;\n      font-size: 1.5em;\n      -webkit-tap-highlight-color: rgba(0,0,0,0);\n    }\n  }\n\n  p {\n    color: $global-p-color;\n    font-weight: 300;\n    @include css-user-select(none);\n    cursor: pointer;\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .smooth-scroll {\n    position: relative;\n        top: 0;\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $global-bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n#Mission {\n  h1 {\n    width: 50vw;\n    font-size: 3.5em;\n  }\n\n  .container {\n    display: flex;\n  }\n\n  .mission {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$header-color: #dedcdc;\n$box-color: transparent;\n$h1-color: #705959;\n$sub-section-width: 20vw;;\n$border-color: #ded9d9;\n$border-width: 2px;\n$p-font-size: 20px;\n\n#Opportunity {\n\n  .container {\n    width: 75vw;\n  }\n\n  .header {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    h1 {\n      text-align: center;\n      color: $h1-color;\n      width: 75vw;\n      font-size: 3em;\n    }\n  }\n\n  .content {\n    display: inline-flex;\n    justify-content: space-between;\n    width: 100%;\n    padding-bottom: 10vh;\n  }\n\n  .overall {\n    width: 100%;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    margin-bottom: 10vh;\n\n    .problem {\n      width: $sub-section-width;\n      background: transparent;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    .solution {\n      width: $sub-section-width;\n      background: transparent;\n      height: 100%;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    h4 {\n    text-align: center;\n    }\n\n\n  }\n\n  p {\n    font-family: $global-p-font-stack;\n    text-align: left;\n    font-size: $p-font-size;\n  }\n\n  h3 {\n    text-align: left;\n  }\n\n  .problems {\n    width: $sub-section-width;\n  }\n\n  .solutions {\n    width: $sub-section-width;\n  }\n\n\n\n  .solutions-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n\n  .problems-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$profile-pic-size: 180px;\n$p-team-text-color: #977171;\n$h2-team-text-color: #7e6579;\n$p-team-font-size: 15px;\n$h2-team-font-size: 20px;\n$mobile-width: 1200px;\n\n\n#Team {\n\n  .team-members-container {\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n  }\n\n\n  .team-member-text {\n\n  }\n\n  .advisors-label-container {\n    position: relative;\n    width: 100vw;\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n\n    @media all and(max-width: $mobile-width) {\n\n    }\n  }\n\n  .team-members {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    max-width: 100vw;\n    }\n  }\n\n  .team-member {\n    display: block;\n\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    }\n  }\n\n  .team-members-row {\n    display: flex;\n    justify-content: space-around;\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n    display: block;\n    max-width: 50vw;\n    }\n  }\n\n  .profile-pic-container {\n    display: block;\n    width: $profile-pic-size;\n    height: $profile-pic-size;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .profile-pic {\n  width: $profile-pic-size;\n  height: $profile-pic-size;\n  background: #d9cdcd;\n  border-radius: 50%;\n  }\n\n  p {\n  width: $profile-pic-size;\n  font-size: $p-team-font-size;\n  text-align: center;\n  color: $p-team-text-color;\n  }\n\n  h2 {\n    width: $profile-pic-size;\n    font-size: $h2-team-font-size;\n    text-align: center;\n    color: $h2-team-text-color;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$baseline-logo-size: 40px;\n\n#Value\\ Proposition {\n  .market-image {\n    width: 75vw;\n\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n\n    @media all and(max-width: $mobile-width) {\n      width: 75vw;\n    }\n\n    .header-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h1 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n\n    .subtitle-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h3 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n  }\n\n\n\n  .footer {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .footer-text {\n      width: 50vw;\n\n      @media all and(max-width: $mobile-width) {\n        width: 75vw;\n      }\n    }\n  }\n\n  .baseline-footer {\n    width: 50vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .baseline-footer-logo {\n      width: $baseline-logo-size;\n      height: $baseline-logo-size;\n    }\n\n    h2 {\n      margin-left: 20px;\n    }\n  }\n\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$product-bg-color: #835757;\n\n#Product {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n  }\n\n  .product {\n    width: 75vw;\n    height: 75vh;\n    background: $product-bg-color;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .phone {\n    @include css-transition(all, 0.5s, ease-in-out);\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px;\n\n\n    }\n\n    .phone:hover {\n      @include css-rotate3D(50deg);\n      background: #b0a5a5;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$model-color: #835757;\n\n#Business\\ Model {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n  width: 100vw;\n  }\n\n  .model {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$adoption-bg-color: white;\n\n#Adoption {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .adoption {\n    width: 75vw;\n    height: 50vh;\n    background: $adoption-bg-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .launch {\n      width: 25%;\n      height: 100%;\n      background: #b99494;\n    }\n\n    .scale {\n      width: 25%;\n      height: 100%;\n      background: #927171;\n    }\n\n    .example {\n      width: 50%;\n      height: 100%;\n      background: #796464;\n    }\n  }\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$investment-color: white;\n\n#Investment {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .investment {\n    width: 75vw;\n    height: 50vh;\n    background: $investment-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .milestones {\n      width: 40%;\n      height: 100%;\n      background: #705959;\n    }\n\n    p {\n      color: white;\n    }\n\n    .money {\n      width: 60%;\n      height: 100%;\n      background: #574f4f;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n\n#Competition {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n  }\n\n  .competition {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n}\n","$label-vertical-padding: 5vh;\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: $label-vertical-padding;\n  background: $global-bg-color;\n  padding-bottom: $label-vertical-padding;\n}\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #d1a2a2;\n}\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    position: absolute;\n    color: #aa8686;\n    cursor: default;\n    margin-top: 0vh;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 9999;\n\n    padding: 10px 20px;\n    border-radius: 2px;\n\n}\n\n.label-text {\n  margin-top: -13vh;\n  margin-left: -35px;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  z-index: 999999;\n}\n"],"sourceRoot":""}]);
 
 	// exports
 
 
 /***/ }),
-/* 200 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -21927,10 +22126,10 @@
 	  return '/*# ' + data + ' */';
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(201).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(205).Buffer))
 
 /***/ }),
-/* 201 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -21943,9 +22142,9 @@
 
 	'use strict'
 
-	var base64 = __webpack_require__(202)
-	var ieee754 = __webpack_require__(203)
-	var isArray = __webpack_require__(204)
+	var base64 = __webpack_require__(206)
+	var ieee754 = __webpack_require__(207)
+	var isArray = __webpack_require__(208)
 
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -23726,7 +23925,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 202 */
+/* 206 */
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -23846,7 +24045,7 @@
 
 
 /***/ }),
-/* 203 */
+/* 207 */
 /***/ (function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -23936,7 +24135,7 @@
 
 
 /***/ }),
-/* 204 */
+/* 208 */
 /***/ (function(module, exports) {
 
 	var toString = {}.toString;
@@ -23947,7 +24146,7 @@
 
 
 /***/ }),
-/* 205 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -23984,7 +24183,7 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
-		fixUrls = __webpack_require__(206);
+		fixUrls = __webpack_require__(210);
 
 	module.exports = function(list, options) {
 		if(false) {
@@ -24243,7 +24442,7 @@
 
 
 /***/ }),
-/* 206 */
+/* 210 */
 /***/ (function(module, exports) {
 
 	
@@ -24338,16 +24537,16 @@
 
 
 /***/ }),
-/* 207 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(208);
+	var content = __webpack_require__(212);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(205)(content, {});
+	var update = __webpack_require__(209)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24364,645 +24563,645 @@
 	}
 
 /***/ }),
-/* 208 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(200)(undefined);
+	exports = module.exports = __webpack_require__(204)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(209) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(209) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(210) + ") format('woff2'), \n       url(" + __webpack_require__(211) + ") format('woff'), \n       url(" + __webpack_require__(212) + ") format('truetype'), \n       url(" + __webpack_require__(213) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(214) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(214) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(215) + ") format('woff2'), \n       url(" + __webpack_require__(216) + ") format('woff'), \n       url(" + __webpack_require__(217) + ") format('truetype'), \n       url(" + __webpack_require__(218) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(219) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(219) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(220) + ") format('woff2'), \n       url(" + __webpack_require__(221) + ") format('woff'), \n       url(" + __webpack_require__(222) + ") format('truetype'), \n       url(" + __webpack_require__(223) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(224) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(224) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(225) + ") format('woff2'), \n       url(" + __webpack_require__(226) + ") format('woff'), \n       url(" + __webpack_require__(227) + ") format('truetype'), \n       url(" + __webpack_require__(228) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(229) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(229) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(230) + ") format('woff2'), \n       url(" + __webpack_require__(231) + ") format('woff'), \n       url(" + __webpack_require__(232) + ") format('truetype'), \n       url(" + __webpack_require__(233) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(234) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(234) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(235) + ") format('woff2'), \n       url(" + __webpack_require__(236) + ") format('woff'), \n       url(" + __webpack_require__(237) + ") format('truetype'), \n       url(" + __webpack_require__(238) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(239) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(239) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(240) + ") format('woff2'), \n       url(" + __webpack_require__(241) + ") format('woff'), \n       url(" + __webpack_require__(242) + ") format('truetype'), \n       url(" + __webpack_require__(243) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(244) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(244) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(245) + ") format('woff2'), \n       url(" + __webpack_require__(246) + ") format('woff'), \n       url(" + __webpack_require__(247) + ") format('truetype'), \n       url(" + __webpack_require__(248) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(249) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(249) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(250) + ") format('woff2'), \n       url(" + __webpack_require__(251) + ") format('woff'), \n       url(" + __webpack_require__(252) + ") format('truetype'), \n       url(" + __webpack_require__(253) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(254) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(254) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(255) + ") format('woff2'), \n       url(" + __webpack_require__(256) + ") format('woff'), \n       url(" + __webpack_require__(257) + ") format('truetype'), \n       url(" + __webpack_require__(258) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(259) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(259) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(260) + ") format('woff2'), \n       url(" + __webpack_require__(261) + ") format('woff'), \n       url(" + __webpack_require__(262) + ") format('truetype'), \n       url(" + __webpack_require__(263) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(264) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(264) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(265) + ") format('woff2'), \n       url(" + __webpack_require__(266) + ") format('woff'), \n       url(" + __webpack_require__(267) + ") format('truetype'), \n       url(" + __webpack_require__(268) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(269) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(269) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(270) + ") format('woff2'), \n       url(" + __webpack_require__(271) + ") format('woff'), \n       url(" + __webpack_require__(272) + ") format('truetype'), \n       url(" + __webpack_require__(273) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(274) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(274) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(275) + ") format('woff2'), \n       url(" + __webpack_require__(276) + ") format('woff'), \n       url(" + __webpack_require__(277) + ") format('truetype'), \n       url(" + __webpack_require__(278) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(279) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(279) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(280) + ") format('woff2'), \n       url(" + __webpack_require__(281) + ") format('woff'), \n       url(" + __webpack_require__(282) + ") format('truetype'), \n       url(" + __webpack_require__(283) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n\n\n\n\n\n\n\n/* oswald-200 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(284) + "); /* IE9 Compat Modes */\n  src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),\n       url(" + __webpack_require__(284) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(285) + ") format('woff2'), \n       url(" + __webpack_require__(286) + ") format('woff'), \n       url(" + __webpack_require__(287) + ") format('truetype'), \n       url(" + __webpack_require__(288) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-300 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(289) + "); /* IE9 Compat Modes */\n  src: local('Oswald Light'), local('Oswald-Light'),\n       url(" + __webpack_require__(289) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(290) + ") format('woff2'), \n       url(" + __webpack_require__(291) + ") format('woff'), \n       url(" + __webpack_require__(292) + ") format('truetype'), \n       url(" + __webpack_require__(293) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-regular - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(294) + "); /* IE9 Compat Modes */\n  src: local('Oswald Regular'), local('Oswald-Regular'),\n       url(" + __webpack_require__(294) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(295) + ") format('woff2'), \n       url(" + __webpack_require__(296) + ") format('woff'), \n       url(" + __webpack_require__(297) + ") format('truetype'), \n       url(" + __webpack_require__(298) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-500 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(299) + "); /* IE9 Compat Modes */\n  src: local('Oswald Medium'), local('Oswald-Medium'),\n       url(" + __webpack_require__(299) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(300) + ") format('woff2'), \n       url(" + __webpack_require__(301) + ") format('woff'), \n       url(" + __webpack_require__(302) + ") format('truetype'), \n       url(" + __webpack_require__(303) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-600 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(304) + "); /* IE9 Compat Modes */\n  src: local('Oswald SemiBold'), local('Oswald-SemiBold'),\n       url(" + __webpack_require__(304) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(305) + ") format('woff2'), \n       url(" + __webpack_require__(306) + ") format('woff'), \n       url(" + __webpack_require__(307) + ") format('truetype'), \n       url(" + __webpack_require__(308) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-700 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(309) + "); /* IE9 Compat Modes */\n  src: local('Oswald Bold'), local('Oswald-Bold'),\n       url(" + __webpack_require__(309) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(310) + ") format('woff2'), \n       url(" + __webpack_require__(311) + ") format('woff'), \n       url(" + __webpack_require__(312) + ") format('truetype'), \n       url(" + __webpack_require__(313) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(213) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(213) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(214) + ") format('woff2'), \n       url(" + __webpack_require__(215) + ") format('woff'), \n       url(" + __webpack_require__(216) + ") format('truetype'), \n       url(" + __webpack_require__(217) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(218) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(218) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(219) + ") format('woff2'), \n       url(" + __webpack_require__(220) + ") format('woff'), \n       url(" + __webpack_require__(221) + ") format('truetype'), \n       url(" + __webpack_require__(222) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(223) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(223) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(224) + ") format('woff2'), \n       url(" + __webpack_require__(225) + ") format('woff'), \n       url(" + __webpack_require__(226) + ") format('truetype'), \n       url(" + __webpack_require__(227) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(228) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(228) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(229) + ") format('woff2'), \n       url(" + __webpack_require__(230) + ") format('woff'), \n       url(" + __webpack_require__(231) + ") format('truetype'), \n       url(" + __webpack_require__(232) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(233) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(233) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(234) + ") format('woff2'), \n       url(" + __webpack_require__(235) + ") format('woff'), \n       url(" + __webpack_require__(236) + ") format('truetype'), \n       url(" + __webpack_require__(237) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(238) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(238) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(239) + ") format('woff2'), \n       url(" + __webpack_require__(240) + ") format('woff'), \n       url(" + __webpack_require__(241) + ") format('truetype'), \n       url(" + __webpack_require__(242) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(243) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(243) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(244) + ") format('woff2'), \n       url(" + __webpack_require__(245) + ") format('woff'), \n       url(" + __webpack_require__(246) + ") format('truetype'), \n       url(" + __webpack_require__(247) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(248) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(248) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(249) + ") format('woff2'), \n       url(" + __webpack_require__(250) + ") format('woff'), \n       url(" + __webpack_require__(251) + ") format('truetype'), \n       url(" + __webpack_require__(252) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(253) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(253) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(254) + ") format('woff2'), \n       url(" + __webpack_require__(255) + ") format('woff'), \n       url(" + __webpack_require__(256) + ") format('truetype'), \n       url(" + __webpack_require__(257) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(258) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(258) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(259) + ") format('woff2'), \n       url(" + __webpack_require__(260) + ") format('woff'), \n       url(" + __webpack_require__(261) + ") format('truetype'), \n       url(" + __webpack_require__(262) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(263) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(263) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(264) + ") format('woff2'), \n       url(" + __webpack_require__(265) + ") format('woff'), \n       url(" + __webpack_require__(266) + ") format('truetype'), \n       url(" + __webpack_require__(267) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(268) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(268) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(269) + ") format('woff2'), \n       url(" + __webpack_require__(270) + ") format('woff'), \n       url(" + __webpack_require__(271) + ") format('truetype'), \n       url(" + __webpack_require__(272) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(273) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(273) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(274) + ") format('woff2'), \n       url(" + __webpack_require__(275) + ") format('woff'), \n       url(" + __webpack_require__(276) + ") format('truetype'), \n       url(" + __webpack_require__(277) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(278) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(278) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(279) + ") format('woff2'), \n       url(" + __webpack_require__(280) + ") format('woff'), \n       url(" + __webpack_require__(281) + ") format('truetype'), \n       url(" + __webpack_require__(282) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(283) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(283) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(284) + ") format('woff2'), \n       url(" + __webpack_require__(285) + ") format('woff'), \n       url(" + __webpack_require__(286) + ") format('truetype'), \n       url(" + __webpack_require__(287) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n\n\n\n\n\n\n\n/* oswald-200 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(288) + "); /* IE9 Compat Modes */\n  src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),\n       url(" + __webpack_require__(288) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(289) + ") format('woff2'), \n       url(" + __webpack_require__(290) + ") format('woff'), \n       url(" + __webpack_require__(291) + ") format('truetype'), \n       url(" + __webpack_require__(292) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-300 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(293) + "); /* IE9 Compat Modes */\n  src: local('Oswald Light'), local('Oswald-Light'),\n       url(" + __webpack_require__(293) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(294) + ") format('woff2'), \n       url(" + __webpack_require__(295) + ") format('woff'), \n       url(" + __webpack_require__(296) + ") format('truetype'), \n       url(" + __webpack_require__(297) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-regular - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(298) + "); /* IE9 Compat Modes */\n  src: local('Oswald Regular'), local('Oswald-Regular'),\n       url(" + __webpack_require__(298) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(299) + ") format('woff2'), \n       url(" + __webpack_require__(300) + ") format('woff'), \n       url(" + __webpack_require__(301) + ") format('truetype'), \n       url(" + __webpack_require__(302) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-500 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(303) + "); /* IE9 Compat Modes */\n  src: local('Oswald Medium'), local('Oswald-Medium'),\n       url(" + __webpack_require__(303) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(304) + ") format('woff2'), \n       url(" + __webpack_require__(305) + ") format('woff'), \n       url(" + __webpack_require__(306) + ") format('truetype'), \n       url(" + __webpack_require__(307) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-600 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(308) + "); /* IE9 Compat Modes */\n  src: local('Oswald SemiBold'), local('Oswald-SemiBold'),\n       url(" + __webpack_require__(308) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(309) + ") format('woff2'), \n       url(" + __webpack_require__(310) + ") format('woff'), \n       url(" + __webpack_require__(311) + ") format('truetype'), \n       url(" + __webpack_require__(312) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-700 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(313) + "); /* IE9 Compat Modes */\n  src: local('Oswald Bold'), local('Oswald-Bold'),\n       url(" + __webpack_require__(313) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(314) + ") format('woff2'), \n       url(" + __webpack_require__(315) + ") format('woff'), \n       url(" + __webpack_require__(316) + ") format('truetype'), \n       url(" + __webpack_require__(317) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 209 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.eot";
 
 /***/ }),
-/* 210 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff2";
 
 /***/ }),
-/* 211 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff";
 
 /***/ }),
-/* 212 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.ttf";
 
 /***/ }),
-/* 213 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.svg";
 
 /***/ }),
-/* 214 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.eot";
 
 /***/ }),
-/* 215 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff2";
 
 /***/ }),
-/* 216 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff";
 
 /***/ }),
-/* 217 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.ttf";
 
 /***/ }),
-/* 218 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.svg";
 
 /***/ }),
-/* 219 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.eot";
 
 /***/ }),
-/* 220 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff2";
 
 /***/ }),
-/* 221 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff";
 
 /***/ }),
-/* 222 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.ttf";
 
 /***/ }),
-/* 223 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.svg";
 
 /***/ }),
-/* 224 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.eot";
 
 /***/ }),
-/* 225 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff2";
 
 /***/ }),
-/* 226 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff";
 
 /***/ }),
-/* 227 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.ttf";
 
 /***/ }),
-/* 228 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.svg";
 
 /***/ }),
-/* 229 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.eot";
 
 /***/ }),
-/* 230 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff2";
 
 /***/ }),
-/* 231 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff";
 
 /***/ }),
-/* 232 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.ttf";
 
 /***/ }),
-/* 233 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.svg";
 
 /***/ }),
-/* 234 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.eot";
 
 /***/ }),
-/* 235 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff2";
 
 /***/ }),
-/* 236 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff";
 
 /***/ }),
-/* 237 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.ttf";
 
 /***/ }),
-/* 238 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.svg";
 
 /***/ }),
-/* 239 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.eot";
 
 /***/ }),
-/* 240 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff2";
 
 /***/ }),
-/* 241 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff";
 
 /***/ }),
-/* 242 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.ttf";
 
 /***/ }),
-/* 243 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.svg";
 
 /***/ }),
-/* 244 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.eot";
 
 /***/ }),
-/* 245 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff2";
 
 /***/ }),
-/* 246 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff";
 
 /***/ }),
-/* 247 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.ttf";
 
 /***/ }),
-/* 248 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.svg";
 
 /***/ }),
-/* 249 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.eot";
 
 /***/ }),
-/* 250 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff2";
 
 /***/ }),
-/* 251 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff";
 
 /***/ }),
-/* 252 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.ttf";
 
 /***/ }),
-/* 253 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.svg";
 
 /***/ }),
-/* 254 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.eot";
 
 /***/ }),
-/* 255 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff2";
 
 /***/ }),
-/* 256 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff";
 
 /***/ }),
-/* 257 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.ttf";
 
 /***/ }),
-/* 258 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.svg";
 
 /***/ }),
-/* 259 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.eot";
 
 /***/ }),
-/* 260 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff2";
 
 /***/ }),
-/* 261 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff";
 
 /***/ }),
-/* 262 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.ttf";
 
 /***/ }),
-/* 263 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.svg";
 
 /***/ }),
-/* 264 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.eot";
 
 /***/ }),
-/* 265 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff2";
 
 /***/ }),
-/* 266 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff";
 
 /***/ }),
-/* 267 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.ttf";
 
 /***/ }),
-/* 268 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.svg";
 
 /***/ }),
-/* 269 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.eot";
 
 /***/ }),
-/* 270 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff2";
 
 /***/ }),
-/* 271 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff";
 
 /***/ }),
-/* 272 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.ttf";
 
 /***/ }),
-/* 273 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.svg";
 
 /***/ }),
-/* 274 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.eot";
 
 /***/ }),
-/* 275 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff2";
 
 /***/ }),
-/* 276 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff";
 
 /***/ }),
-/* 277 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.ttf";
 
 /***/ }),
-/* 278 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.svg";
 
 /***/ }),
-/* 279 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.eot";
 
 /***/ }),
-/* 280 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff2";
 
 /***/ }),
-/* 281 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff";
 
 /***/ }),
-/* 282 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.ttf";
 
 /***/ }),
-/* 283 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.svg";
 
 /***/ }),
-/* 284 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.eot";
 
 /***/ }),
-/* 285 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.woff2";
 
 /***/ }),
-/* 286 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.woff";
 
 /***/ }),
-/* 287 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.ttf";
 
 /***/ }),
-/* 288 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.svg";
 
 /***/ }),
-/* 289 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.eot";
 
 /***/ }),
-/* 290 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.woff2";
 
 /***/ }),
-/* 291 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.woff";
 
 /***/ }),
-/* 292 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.ttf";
 
 /***/ }),
-/* 293 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.svg";
 
 /***/ }),
-/* 294 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.eot";
 
 /***/ }),
-/* 295 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.woff2";
 
 /***/ }),
-/* 296 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.woff";
 
 /***/ }),
-/* 297 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.ttf";
 
 /***/ }),
-/* 298 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.svg";
 
 /***/ }),
-/* 299 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.eot";
 
 /***/ }),
-/* 300 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.woff2";
 
 /***/ }),
-/* 301 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.woff";
 
 /***/ }),
-/* 302 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.ttf";
 
 /***/ }),
-/* 303 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.svg";
 
 /***/ }),
-/* 304 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.eot";
 
 /***/ }),
-/* 305 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.woff2";
 
 /***/ }),
-/* 306 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.woff";
 
 /***/ }),
-/* 307 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.ttf";
 
 /***/ }),
-/* 308 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.svg";
 
 /***/ }),
-/* 309 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.eot";
 
 /***/ }),
-/* 310 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.woff2";
 
 /***/ }),
-/* 311 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.woff";
 
 /***/ }),
-/* 312 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.ttf";
 
 /***/ }),
-/* 313 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.svg";
