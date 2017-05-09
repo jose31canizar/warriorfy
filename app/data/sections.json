@@ -8,7 +8,7 @@
       "label":"The Opportunity"
   },
   {
-      "title":"Value Proposition",
+      "title":"Value",
       "label":"Our Value Proposition"
   },
   {
@@ -20,16 +20,12 @@
       "label":"Business Model"
   },
   {
-      "title":"Competition",
-      "label":"Our Competition"
-  },
-  {
       "title":"Adoption",
       "label":"Customer Adoption"
   },
   {
-      "title":"Competition",
-      "label":"Competition"
+      "title":"Traction",
+      "label":"Traction"
   },
   {
       "title":"Team",
