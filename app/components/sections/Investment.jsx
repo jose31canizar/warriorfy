@@ -12,11 +12,38 @@ class Investment extends Component {
             <h3>Upcoming Milestones</h3>
               <p>• Upcoming Milestones</p>
           </div>
-          <div className='money'>
-            <h3>Money Well Spent</h3>
+          <div className={'overall'}>
+            <div className={'solution'}>
+              <div className={'solution-label'}>
+                <h3>overall solution</h3>
+              </div>
+            </div>
+            <div className={'solution'}>
+              <div className={'solution-label'}>
+                <h3>overall solution</h3>
+              </div>
+            </div>
+          </div>
+          <div className={'overall'}>
+            <div className={'problem'}>
+              <div className={'problem-label'}>
+                <h3>overall problem</h3>
+              </div>
+            </div>
+            <div className={'problem'}>
+              <div className={'problem-label'}>
+                <h3>overall problem</h3>
+              </div>
+            </div>
+            <div className={'problem'}>
+              <div className={'problem-label'}>
+                <h3>overall problem</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
     )
   }
 };

@@ -16,23 +16,29 @@
       "image":"04-Team-Savala"
   },
   {
-      "name":"Schmitt",
+      "name":"Margaret Schmitt",
       "job_title":"Team member",
       "image":"04-Team-Schmitt"
   },
   {
-      "name":"Kim",
+      "name":"Norman Kim, PhD",
       "job_title":"Advisor",
       "image":"04-Team-Advisor-Kim"
   },
   {
-      "name":"Montgomery",
+      "name":"Chris Montgomery",
       "job_title":"Advisor",
       "image":"04-Team-Advisor-Montgomery"
   },
+
   {
-      "name":"Rollo",
+      "name":"Nikki Rollo",
       "job_title":"Advisor",
       "image":"04-Team-Advisor-Rollo"
+  },
+  {
+      "name":"Jonathan Bush",
+      "job_title":"Advisor",
+      "image":"04-Team-Jonathan-Bush"
   }
 ]

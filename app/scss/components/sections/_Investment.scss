@@ -45,4 +45,36 @@ $investment-color: white;
       background: #574f4f;
     }
   }
+
+
+  .overall {
+    width: 100%;
+    background: transparent;
+    justify-content: center;
+    margin-bottom: 10vh;
+
+    .problem {
+      width: $sub-section-width;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid $border-color;
+    }
+
+    .solution {
+      width: $sub-section-width;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid $border-color;
+    }
+
+    h4 {
+    text-align: center;
+    }
+
+
+  }
 }

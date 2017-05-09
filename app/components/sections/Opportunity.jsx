@@ -5,7 +5,7 @@ class Opportunity extends Component {
     return (
       <div className={'container'}>
         <div className={'header'}>
-          <h1>Every person on the planet has dreams, aspirations and goals. Most are stifled by the gap between dreams and reality.</h1>
+          <h1>Worldwide, 2.3 billion people are overweight or obese and rates of eating disorders are skyrocketing.</h1>
         </div>
         <div className={'content'}>
           <div className={'problems'}>
