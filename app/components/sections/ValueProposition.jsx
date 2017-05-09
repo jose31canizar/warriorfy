@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class MarketValidation extends Component {
+class ValueProposition extends Component {
   render() {
     return (
       <div className={'container'}>
@@ -23,6 +23,7 @@ class MarketValidation extends Component {
         <div className='baseline-footer'>
           <img className='baseline-footer-logo' src={require('../img/00-Logo.png')} alt='Warriorfy'/>
           <h2>Warriorfy</h2>
+
         </div>
 
       </div>
@@ -30,4 +31,4 @@ class MarketValidation extends Component {
   }
 };
 
-export default MarketValidation;
+export default ValueProposition;

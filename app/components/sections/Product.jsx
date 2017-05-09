@@ -10,7 +10,6 @@ class Product extends Component {
         <div className='product'>
             <div className='phone'></div>
         </div>
-        <img className={'market-image'} src={require('../img/Arrow.png')}/>
       </div>
     )
   }

@@ -6,22 +6,13 @@ class NavBar extends React.Component {
     super(props);
     this.state = {
       NavBarStyle: 'nav-bar-container',
-      selectedIndex: -1
     }
-
-    this.changeSelection = this.changeSelection.bind(this);
-  }
-  changeSelection(i) {
-    console.log('changed selection!' + i);
-    this.setState({
-      selectedIndex: i
-    });
   }
   componentWillReceiveProps(props) {
     if(!props.open) {
       this.setState((prevState, props) => {
         return {
-          NavBarStyle: prevState.NavBarStyle + ' nav-bar-hidden'
+          NavBarStyle: 'nav-bar-container nav-bar-hidden'
         }
       });
     } else {
@@ -31,22 +22,37 @@ class NavBar extends React.Component {
         }
       });
     }
+
+    if(!props.stick) {
+      this.setState((prevState, props) => {
+        return {
+          NavBarStyle: prevState.NavBarStyle + ' stick'
+        }
+      });
+    } else {
+      console.log('sticking!');
+      this.setState((prevState, props) => {
+        return {
+          NavBarStyle: prevState.NavBarStyle + ' nonstick'
+        }
+      });
+    }
   }
   render() {
 
     var self = this;
 
-    var index = self.state.selectedIndex;
+    var index = self.props.selectedIndex;
 
     var navBarButtons = [];
 
     var introButton;
-    if(self.state.selectedIndex == -1) {
-      introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+    if(self.props.selectedIndex == -1) {
+      introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.props.changeSelection.bind(null, -1)}>
         <h2>Introduction</h2>
       </SmoothScroll>);
     } else {
-      introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.changeSelection.bind(null, -1)}>
+      introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.props.changeSelection.bind(null, -1)}>
         <h2>Introduction</h2>
       </SmoothScroll>);
     }
@@ -55,12 +61,12 @@ class NavBar extends React.Component {
 
 
     navBarButtons = navBarButtons.concat(this.props.sections.map(function(v, i) {
-        if(self.state.selectedIndex == i) {
-          return (<SmoothScroll type={'nav-button selected'} onMouseDown={self.changeSelection.bind(null, i)} section={self.props.data[i].title}>
+        if(self.props.selectedIndex == i) {
+          return (<SmoothScroll type={'nav-button selected'} onMouseDown={self.props.changeSelection.bind(null, i)} section={self.props.data[i].title}>
             <h2 key={i}>{self.props.data[i].title}</h2>
           </SmoothScroll>);
         } else {
-          return (<SmoothScroll type={'nav-button'} onMouseDown={self.changeSelection.bind(null, i)} section={self.props.data[i].title}>
+          return (<SmoothScroll type={'nav-button'} onMouseDown={self.props.changeSelection.bind(null, i)} section={self.props.data[i].title}>
             <h2 key={i}>{self.props.data[i].title}</h2>
           </SmoothScroll>);
         }

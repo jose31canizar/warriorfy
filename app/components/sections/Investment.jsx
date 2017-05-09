@@ -7,38 +7,24 @@ class Investment extends Component {
         <div className='header'>
           <h1>Seeking the best investors on the planet.</h1>
         </div>
-        <div className='investment'>
-          <div className='milestones'>
-            <h3>Upcoming Milestones</h3>
-              <p>• Upcoming Milestones</p>
-          </div>
-          <div className={'overall'}>
-            <div className={'solution'}>
-              <div className={'solution-label'}>
-                <h3>overall solution</h3>
-              </div>
+        <div className='text-block-grid'>
+          <div className='text-block-row'>
+            <div className='text-block'>
+              <h3>Salaries</h3>
             </div>
-            <div className={'solution'}>
-              <div className={'solution-label'}>
-                <h3>overall solution</h3>
-              </div>
+            <div className='text-block'>
+              <h3>Salaries</h3>
+            </div>
+            <div className='text-block'>
+              <h3>Salaries</h3>
             </div>
           </div>
-          <div className={'overall'}>
-            <div className={'problem'}>
-              <div className={'problem-label'}>
-                <h3>overall problem</h3>
-              </div>
+          <div className='text-block-row'>
+            <div className='text-block'>
+              <h3>Salaries</h3>
             </div>
-            <div className={'problem'}>
-              <div className={'problem-label'}>
-                <h3>overall problem</h3>
-              </div>
-            </div>
-            <div className={'problem'}>
-              <div className={'problem-label'}>
-                <h3>overall problem</h3>
-              </div>
+            <div className='text-block'>
+              <h3>Salaries</h3>
             </div>
           </div>
         </div>

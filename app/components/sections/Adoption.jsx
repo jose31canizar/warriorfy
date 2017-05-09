@@ -6,10 +6,10 @@ class Adoption extends Component {
       <div className='container'>
         <div className='header'>
           <div className='header-text'>
-            <h1>Evangelize the vision.</h1>
+            <h1>Focus on the roots</h1>
           </div>
           <div className='subtitle-text'>
-            <h3>Inspire and empower communities of doers and dreamers.</h3>
+            <h3>Connect to existing audience and grow new networks through press and creative marketing strategies.</h3>
           </div>
         </div>
         <div className='adoption'>

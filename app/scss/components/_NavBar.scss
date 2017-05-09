@@ -1,10 +1,18 @@
 $height: 18vh;
-$text-color: #ac6e6e;
+$text-color: #3d3d41;
 $hover-color: #9d9dcd;
-$nav-button-color: #e09090;
+$nav-button-color: #b7509e;
 $nav-button-size: 35px;
 $padding-top: 1.75em;
 $p-font-size: 1.1em;
+
+.stick {
+  opacity: 1.0;
+}
+
+.nonstick {
+  opacity: 0.0;
+}
 
 
 .nav-bar-container {
@@ -16,6 +24,8 @@ $p-font-size: 1.1em;
     background: $global-bg-color;
     position: fixed;
     width: 100vw;
+    @include css-transition(all, 0.5s, ease-in-out);
+
 
     .selected {
       background: $nav-button-color !important;
