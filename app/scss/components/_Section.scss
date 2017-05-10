@@ -37,7 +37,6 @@ $h1-section-color: #5b4d4d;
   p {
     font-weight: 300;
     width: 100%;
-    text-align: center;
     @include css-user-select(none);
     z-index: 999;
     color: $p-section-color;
