@@ -22,7 +22,7 @@
   },
   {
       "name":"Jonathan Bush",
-      "job_title":"CEO and Founder Athenahealth",
+      "job_title":"CEO and Founder of Athenahealth",
       "image":"04-Team-Advisor-Bush"
   },
   {
@@ -32,7 +32,7 @@
   },
   {
       "name":"Norman Kim, PhD",
-      "job_title":"Advisor",
+      "job_title":"National Director",
       "image":"04-Team-Advisor-Kim"
   },
 
@@ -48,14 +48,14 @@
   },
 
   {
-      "name":"Nikki Rollo",
-      "job_title":"Advisor",
+      "name":"Nikki Rollo, PhD, LMFT",
+      "job_title":"National Director",
       "image":"04-Team-Advisor-Rollo"
   },
 
   {
       "name":"Zach Nies",
       "job_title":"VP Education Techstars",
-      "image":"04-Team-Advisor-Montgomery"
+      "image":"04-Team-Advisor-Nies"
   }
 ]
