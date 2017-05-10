@@ -3,12 +3,14 @@ $global-h1-color: #3d3d41;
 $global-h2-color: #3d3d41;
 $global-h3-color: #3d3d41;
 $global-h4-color: #3d3d41;
+$global-h5-color: #3d3d41;
 $global-bg-color: white;
 $h1-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$h2-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$h3-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$h4-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$h2-font-stack: 'Raleway', Futura, Helvetica, sans-serif;
+$h3-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$h4-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
+$h5-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$global-label-font-stack: 'Monserrat', Futura, Helvetica, sans-serif;
 $global-p-font-stack: 'Open Sans', Didot, serif;
 $global-box-width: 70vw;
 $section-color: #faa187;
@@ -72,6 +74,10 @@ body {
     top: 0;
   }
 
+  .header-text {
+    padding-bottom: 40pt;
+  }
+
   h1 {
     font-family: $h1-font-stack;
     color: $global-h1-color;
@@ -88,7 +94,6 @@ body {
     font-weight: $global-font-weight;
     font-size: 3.852em;
     margin: 0pt;
-    padding-bottom: 50pt;
   }
 
   h3 {
@@ -101,12 +106,45 @@ body {
   }
 
   h4 {
-    font-family: Minion Pro;
-    color: #5fc5bb;
+    font-family: $h4-font-stack;
+    color: $global-h4-color;
     text-align: center;
     font-weight: $global-font-weight;
     font-size: 1.626em;
     margin: 0pt;
+  }
+
+  h5 {
+    font-family: $h5-font-stack;
+    color: $global-h5-color;
+    text-align: center;
+    font-weight: $global-font-weight;
+    font-size: 1.1em;
+    margin: 0pt;
+    @include css-user-select(none);
+    cursor: pointer;
+    padding: 1em;
+    padding-top: 2.25em;
+    font-weight: 300;
+    color: $text-color;
+    text-align: center;
+    @include css-transition(all, 0.5s, ease-in-out);
+    white-space: nowrap;
+  }
+
+  h6 {
+    font-family: $h5-font-stack;
+    color: $global-h5-color;
+    text-align: center;
+    font-weight: $global-font-weight;
+    font-size: 1.4em;
+    margin: 0pt;
+    @include css-user-select(none);
+    cursor: pointer;
+    font-weight: 300;
+    color: $text-color;
+    text-align: center;
+    white-space: nowrap;
   }
 
   p {

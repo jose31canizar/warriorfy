@@ -3,7 +3,6 @@ $text-color: #3d3d41;
 $hover-color: #9d9dcd;
 $nav-button-color: #b7509e;
 $nav-button-size: 35px;
-$padding-top: 2.25em;
 $p-font-size: 1.1em;
 
 .stick {
@@ -62,18 +61,6 @@ $p-font-size: 1.1em;
       display: none;
     }
 
-h2 {
-    @include css-user-select(none);
-    cursor: pointer;
-    padding: 1em;
-    font-weight: 300;
-    color: $text-color;
-    text-align: center;
-    @include css-transition(all, 0.5s, ease-in-out);
-    white-space: nowrap;
-    font-size: $p-font-size;
-    padding-top: $padding-top;
-  }
 
   p:hover {
     color: $hover-color;

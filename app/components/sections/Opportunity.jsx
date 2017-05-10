@@ -12,34 +12,43 @@ class Opportunity extends Component {
             <div className={'problems-label'}>
               <h4>PROBLEM</h4>
             </div>
-            <div className={'problem-1'}>
-              <h4>Unclear</h4>
+            <div className={'problems-label-subtitle'}>
+              <h6><strong>Diets are...</strong></h6>
+            </div>
+            <div className={'problem-block'}>
+              <p> <strong>Ineffective in the long-term</strong></p>
               <p>People often are confused.</p>
             </div>
-            <div className={'problem-2'}>
-              <h4>Distractable</h4>
+            <div className={'problem-block'}>
+              <p><strong>Increase anxiety</strong></p>
               <p>People are often distracted.</p>
             </div>
-            <div className={'problem-3'}>
-              <h4><strong>Inadequately Supported</strong></h4>
-              <p>People are often Inadequately supported.</p>
+            <div className={'problem-block'}>
+              <p><strong>Lower body confidence</strong></p>
+              <p>Reinforces the concept of not being good enough</p>
+            </div>
+            <div className={'problem-block'}>
+              <p><strong>Lower body confidence</strong></p>
+              <p>Increases shame, isolation, anxiety and depression</p>
             </div>
           </div>
           <div className={'solutions'}>
             <div className={'solutions-label'}>
               <h4>SOLUTION</h4>
             </div>
-            <div className={'solution-1'}>
-              <h4>Clarity</h4>
+            <div className={'solutions-label-subtitle'}>
+              <h6><strong>Warriorfy provides...</strong></h6>
+            </div>
+            <div className={'solution-block'}>
+              <p><strong>Realistic results</strong></p>
               <p>People get clarity.</p>
             </div>
-            <div className={'solution-2'}>
-              <h4>Focus</h4>
+            <div className={'solution-block'}>
               <p>People get focus.</p>
             </div>
-            <div className={'solution-3'}>
-              <h4>Support</h4>
-              <p>People get support.</p>
+            <div className={'solution-block'}>
+              <p><strong>Support</strong></p>
+              <p>Connects people to certified coaches who provide nutritional and emotional support</p>
             </div>
           </div>
         </div>

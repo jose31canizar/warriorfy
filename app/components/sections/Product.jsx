@@ -4,7 +4,7 @@ class Product extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='header'>
+        <div className='header-text'>
           <h2>Expert knowledge, motivation, and support in your pocket.</h2>
         </div>
 
@@ -13,7 +13,7 @@ class Product extends Component {
                   </div>
 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/FzO-U60-85M" frameborder="0" allowfullscreen></iframe>
-
+<p>These classes address the great challenges of life: work, relationships, friendship, anxiety and more. They offer insight, guidance and companionship.</p>
       </div>
     )
   }

@@ -49,11 +49,11 @@ class NavBar extends React.Component {
     var introButton;
     if(self.props.selectedIndex == -1) {
       introButton = (<SmoothScroll type={'nav-button selected'} section={'Intro'} onMouseDown={self.props.changeSelection.bind(null, -1)}>
-        <h2>Introduction</h2>
+        <h5>Introduction</h5>
       </SmoothScroll>);
     } else {
       introButton = (<SmoothScroll type={'nav-button'} section={'Intro'} onMouseDown={self.props.changeSelection.bind(null, -1)}>
-        <h2>Introduction</h2>
+        <h5>Introduction</h5>
       </SmoothScroll>);
     }
 
@@ -63,11 +63,11 @@ class NavBar extends React.Component {
     navBarButtons = navBarButtons.concat(this.props.sections.map(function(v, i) {
         if(self.props.selectedIndex == i) {
           return (<SmoothScroll type={'nav-button selected'} onMouseDown={self.props.changeSelection.bind(null, i)} section={self.props.data[i].title}>
-            <h2 key={i}>{self.props.data[i].title}</h2>
+            <h5 key={i}>{self.props.data[i].title}</h5>
           </SmoothScroll>);
         } else {
           return (<SmoothScroll type={'nav-button'} onMouseDown={self.props.changeSelection.bind(null, i)} section={self.props.data[i].title}>
-            <h2 key={i}>{self.props.data[i].title}</h2>
+            <h5 key={i}>{self.props.data[i].title}</h5>
           </SmoothScroll>);
         }
       }));
@@ -83,7 +83,7 @@ class NavBar extends React.Component {
 
             <SmoothScroll type={'nav-button nav-warriorfy'} section={''}>
               <a href={'http://warriorfy.com/'}>
-                <h2>Warriorfy</h2>
+                <h5>Warriorfy</h5>
               </a>
             </SmoothScroll>
 
@@ -91,7 +91,7 @@ class NavBar extends React.Component {
 
             <SmoothScroll type={'nav-button nav-angel-list'} section={''}>
               <a href={'http://angel.co/warriorfy'}>
-                <h2>Angel list</h2>
+                <h5>Angel list</h5>
               </a>
             </SmoothScroll>
         </div>
