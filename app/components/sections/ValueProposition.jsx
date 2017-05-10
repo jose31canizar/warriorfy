@@ -14,11 +14,14 @@ class ValueProposition extends Component {
             </div>
           </div>
           <div>
+            <img className={'market-image'} src={require('../img/04-value.png')}/>
+          </div>
+          <div>
             <img className={'market-image'} src={require('../img/05-Market-Competitive-Landscape.png')}/>
           </div>
           <div className='footer'>
             <div className='footer-text'>
-              <h4><strong>The key to our success is building things people need and love to use. Next step is to put them all into Warriorfy, a powerful platform to repair one's relationship to food, body, and self.</strong></h4>
+              <h4><strong>Warriorfy is the first to provide a cohesive user experience that brings insight, guidance, and support</strong></h4>
             </div>
           </div>
         </div>
