@@ -40,10 +40,11 @@ class Opportunity extends Component {
               <h6><strong>Warriorfy provides...</strong></h6>
             </div>
             <div className={'solution-block'}>
-              <p><strong>Realistic results</strong></p>
+              <p><strong>Insight</strong></p>
               <p>People get clarity.</p>
             </div>
             <div className={'solution-block'}>
+            <p><strong>Guidance</strong></p>
               <p>People get focus.</p>
             </div>
             <div className={'solution-block'}>
