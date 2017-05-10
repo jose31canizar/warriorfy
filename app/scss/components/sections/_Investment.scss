@@ -46,6 +46,10 @@ $investment-color: white;
   .text-block-milestone {
     width: 50%;
 
+    p {
+          padding-bottom: 12pt;
+        }
+
     h3 {
       text-align: left;
     }
@@ -60,7 +64,22 @@ $investment-color: white;
     flex-direction: column;
     border-radius: 4px;
     padding: 15px;
+
+        h6 {
+          text-align: left;
+          padding-bottom: 12pt;
+          font-weight: 400;
+        }
 }
+
+.header-text-milestone {
+  padding-bottom: 22pt;
+}
+
+.header-text-money {
+  padding-bottom: 12pt;
+}
+
 
   .investment {
     width: 75vw;

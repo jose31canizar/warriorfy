@@ -11,14 +11,15 @@ class Investment extends Component {
         </div>
         <div className='text-block-grid'>
         <div className='text-block-milestone'>
+          <div className='header-text-milestone'>
         <h3>Upcoming Milestones</h3>
+        </div>
         <p>Hire key roles:</p>
-        <ul>
-        <li>Front-end developer</li>
-        <li>Back-end developer</li>
-        <li>iOS developer</li>
-        <li>Android developer</li>
-        </ul>
+        <p>• Front-end developer</p>
+        <p>• Back-end developer</p>
+        <p>• iOS developer</p>
+        <p>• Android developer</p>
+        <br></br>
         <p> A successful well recieved product launch </p>
         <p> Establish core user base 100K </p>
         <p> Strong user acquistion metrics </p>
@@ -29,29 +30,31 @@ class Investment extends Component {
         </div>
 
         <div className='text-block-container'>
-        <h3>Money Well Spent</h3>
+        <div className='header-text-money'>
+        <h3>Money Well Spent:</h3>
+        </div>
         <div className='text-blocks'>
           <div className='text-block-row'>
             <div className='text-block'>
-              <h4>Salaries</h4>
+              <h6>Salaries</h6>
               <p>The companies first priority is to hire someone with a strong background in operations and recruit new engineering talent</p>
             </div>
             <div className='text-block'>
-              <h4>Marketing</h4>
+              <h6>Marketing</h6>
               <p>Creative ad campaigns to build a successful marketing funnel. </p>
             </div>
             <div className='text-block'>
-              <h4>Legal and Accounting</h4>
+              <h6>Legal and Accounting</h6>
               <p>Necessary legal work for licensing and distribution of audio content and protection of PHI</p>
             </div>
           </div>
           <div className='text-block-row'>
             <div className='text-block'>
-              <h4>Business Development</h4>
+              <h6>Business Development</h6>
               <p>Travel expenses to conferences to build partnerships and brand awareness</p>
             </div>
             <div className='text-block'>
-              <h4>Overhead</h4>
+              <h6>Overhead</h6>
               <p>Office space, software susbscriptions</p>
             </div>
           </div>
