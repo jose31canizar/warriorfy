@@ -6,7 +6,6 @@ $h1-color: #705959;
 $sub-section-width: 20vw;;
 $border-color: #ded9d9;
 $border-width: 2px;
-$p-font-size: 20px;
 
 #Opportunity {
 
@@ -23,7 +22,6 @@ $p-font-size: 20px;
       text-align: center;
       color: $h1-color;
       width: 75vw;
-      font-size: 3em;
     }
   }
 
@@ -71,7 +69,6 @@ $p-font-size: 20px;
   p {
     font-family: $global-p-font-stack;
     text-align: left;
-    font-size: $p-font-size;
   }
 
   h3 {

@@ -3,8 +3,6 @@ $start-button-color: #faa187;
 $profile-pic-size: 222px;
 $p-team-text-color: #977171;
 $h2-team-text-color: #7e6579;
-$p-team-font-size: 15px;
-$h2-team-font-size: 20px;
 $mobile-width: 1200px;
 
 
@@ -85,14 +83,12 @@ $mobile-width: 1200px;
 
   p {
   width: $profile-pic-size;
-  font-size: $p-team-font-size;
   text-align: center;
   color: $p-team-text-color;
   }
 
   h2 {
     width: $profile-pic-size;
-    font-size: $h2-team-font-size;
     text-align: center;
     color: $h2-team-text-color;
   }
