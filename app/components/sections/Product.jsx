@@ -12,10 +12,8 @@ class Product extends Component {
             <img src={require('../img/Product-1.png')} className={'product-image'}/>
                   </div>
 
-              <div className='product'>
-            <img src={require('../img/Product-02.png')} className={'product-image'}/>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FzO-U60-85M" frameborder="0" allowfullscreen></iframe>
 
-        </div>
       </div>
     )
   }
