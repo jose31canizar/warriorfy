@@ -21,7 +21,7 @@ class ValueProposition extends Component {
           </div>
           <div className='footer'>
             <div className='footer-text'>
-              <h4><strong>Warriorfy is the first to provide a cohesive user experience that brings insight, guidance, and support</strong></h4>
+              <h4><strong>Warriorfy is the first to provide a cohesive user experience that brings insight, guidance, and support.</strong></h4>
             </div>
           </div>
         </div>
