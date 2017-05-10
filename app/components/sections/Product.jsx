@@ -5,7 +5,7 @@ class Product extends Component {
     return (
       <div className='container'>
         <div className='header'>
-          <h2>Expert knowledge, motivation, and support into one convenient place.</h2>
+          <h2>Expert knowledge, motivation, and support in your pocket.</h2>
         </div>
 
         <div className='product'>

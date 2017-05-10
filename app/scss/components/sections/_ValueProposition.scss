@@ -6,6 +6,8 @@ $baseline-logo-size: 40px;
 #Value {
   .market-image {
     width: 75vw;
+    padding-top: 30pt;
+    padding-bottom: 30pt;
 
 
     @media all and(max-width: $mobile-width) {

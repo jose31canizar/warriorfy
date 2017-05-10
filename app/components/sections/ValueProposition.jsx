@@ -7,10 +7,10 @@ class ValueProposition extends Component {
       <div className={'container'}>
           <div className={'header'}>
             <div className='header-text'>
-              <h2>We've found blue ocean!</h2>
+              <h2>Welcome to our blue ocean</h2>
             </div>
             <div className='subtitle-text'>
-              <h4>You know you're in unchartered waters when you reach 750K people who struggle with their relationship to food and body with zero ad spend. The key to our success is building things people need and love to use.</h4>
+              <h4>You know you're in unchartered waters when you reach <strong>750K people who struggle with their relationship to food and body with zero ad spend</strong>.</h4>
             </div>
           </div>
           <div>
@@ -18,7 +18,7 @@ class ValueProposition extends Component {
           </div>
           <div className='footer'>
             <div className='footer-text'>
-              <h4>Warriorfy is the first to build a unified platform of supportive and evidence-based resources to repair one's relationship to food, body, and self.</h4>
+              <p>The key to our success is building things people need and love to use. Next step is to put them all into Warriorfy, a powerful platform to repair one's relationship to food, body, and self.</p>
             </div>
           </div>
         </div>
