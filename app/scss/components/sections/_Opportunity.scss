@@ -26,6 +26,27 @@ $border-width: 2px;
     }
   }
 
+  .block-row-container {
+    margin-top: 50pt;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .block-row {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .block {
+    width: 25%;
+
+    img {
+      width: 100%;
+      transform: scale(0.25);
+    }
+  }
+
   .arrows {
     display: flex;
     justify-content: flex-start;
@@ -34,10 +55,16 @@ $border-width: 2px;
   }
 
   .content {
-    display: inline-flex;
+    display: flex;
     justify-content: space-around;
     width: 100%;
+    flex-direction: column;
     padding-bottom: 10vh;
+  }
+
+  .top-labels {
+    display: inline-flex;
+    justify-content: space-around;
   }
 
   .arrows-label {
@@ -47,9 +74,10 @@ $border-width: 2px;
   .arrow {
     transform: scale(0.2) rotate3d(1, 0, 0, 0);
     @include css-transition(all, 0.5s, ease);
+    z-index: 9999;
   }
 
-  .problem-block:hover {
+  .arrow:hover {
     transform: scale(0.4) rotate3d(1, 0, 0, 45deg);
   }
 
