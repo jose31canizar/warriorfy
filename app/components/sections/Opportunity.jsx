@@ -7,31 +7,48 @@ class Opportunity extends Component {
         <div className={'header'}>
           <h2>Worldwide, 2.3 billion people are overweight or obese and rates of eating disorders are skyrocketing.</h2>
         </div>
-        <div className={'content'}>
-          <div className={'problems'}>
-            <div className={'problems-label'}>
+        <div className='content'>
+          <div className='problems'>
+            <div className='problems-label'>
               <h4>PROBLEM</h4>
             </div>
-            <div className={'problems-label-subtitle'}>
+            <div className='problems-label-subtitle'>
               <h6><strong>Diets are...</strong></h6>
             </div>
-            <div className={'problem-block'}>
+            <div className='problem-block'>
               <p> <strong>Ineffective in the long-term</strong></p>
               <p>People often are confused.</p>
             </div>
-            <div className={'problem-block'}>
+            <div className='problem-block'>
               <p><strong>Increase anxiety</strong></p>
               <p>People are often distracted.</p>
             </div>
-            <div className={'problem-block'}>
+            <div className='problem-block'>
               <p><strong>Lower body confidence</strong></p>
               <p>Reinforces the concept of not being good enough</p>
             </div>
-            <div className={'problem-block'}>
+            <div className='problem-block'>
               <p><strong>Lower body confidence</strong></p>
               <p>Increases shame, isolation, anxiety and depression</p>
             </div>
           </div>
+
+          <div className='problems arrows'>
+            <div className='problems-label'>
+              <h4 className='arrows-label'>PROBLEM</h4>
+            </div>
+            <div className='problems-label-subtitle'>
+              <h6 className='arrows-label'><strong>Diets are...</strong></h6>
+            </div>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+          </div>
+
+
+
+
           <div className={'solutions'}>
             <div className={'solutions-label'}>
               <h4>SOLUTION</h4>
