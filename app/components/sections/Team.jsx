@@ -13,8 +13,8 @@ class Team extends Component {
     // console.log(TeamData);
 
     const topRow = TeamData.slice(0,4);
-    const middleRow = TeamData.slice(4,7);
-    // const bottomRow = TeamData.slice(4,6);
+    const middleRow = TeamData.slice(4,8);
+    const bottomRow = TeamData.slice(8,12);
     console.log(topRow);
     console.log(middleRow);
     // console.log(bottomRow);
@@ -46,6 +46,24 @@ class Team extends Component {
             </div>
           <div className={'team-members-row'}>
             {middleRow.map((member, i) => (
+              <div className={'team-member'}>
+                <div className={'profile-pic-container'}>
+                  <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
+                </div>
+                <div className={'team-member-text'}>
+                    <h2>
+                      {member.name}
+                    </h2>
+                    <p>
+                      {member.job_title}
+                    </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={'team-members-row'}>
+            {bottomRow.map((member, i) => (
               <div className={'team-member'}>
                 <div className={'profile-pic-container'}>
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>

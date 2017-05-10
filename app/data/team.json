@@ -21,9 +21,25 @@
       "image":"04-Team-Schmitt"
   },
   {
+      "name":"Jonathan Bush",
+      "job_title":"CEO and Founder Athenahealth",
+      "image":"04-Team-Advisor-Bush"
+  },
+  {
+      "name":"Vikas Duvvuri, MD, PhD",
+      "job_title":"CEO and Founder Athenahealth",
+      "image":"04-Team-Advisor-Duvvuri"
+  },
+  {
       "name":"Norman Kim, PhD",
       "job_title":"Advisor",
       "image":"04-Team-Advisor-Kim"
+  },
+
+  {
+      "name":"Adam Stone",
+      "job_title":"Advisor",
+      "image":"04-Team-Advisor-Stone"
   },
   {
       "name":"Chris Montgomery",
@@ -36,9 +52,10 @@
       "job_title":"Advisor",
       "image":"04-Team-Advisor-Rollo"
   },
+
   {
-      "name":"Jonathan Bush",
-      "job_title":"Advisor",
-      "image":"04-Team-Jonathan-Bush"
+      "name":"Zach Nies",
+      "job_title":"VP Education Techstars",
+      "image":"04-Team-Advisor-Montgomery"
   }
 ]
