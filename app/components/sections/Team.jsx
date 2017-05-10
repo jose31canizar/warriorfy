@@ -29,10 +29,12 @@ class Team extends Component {
                 <div className={'profile-pic-container'}>
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
-                <div className={'team-member-text'}>
-                    <h4>
+                <div className='team-member-text'>
+                <div className='member-name'>
+                    <h6>
                       {member.name}
-                    </h4>
+                    </h6>
+                </div>
                     <p>
                       {member.job_title}
                     </p>
@@ -54,9 +56,11 @@ class Team extends Component {
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h4>
+                <div className='member-name'>
+                    <h6>
                       {member.name}
-                    </h4>
+                    </h6>
+                </div>
                     <p>
                       {member.job_title}
                     </p>
@@ -75,9 +79,11 @@ class Team extends Component {
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h4>
+                <div className='member-name'>
+                    <h6>
                       {member.name}
-                    </h4>
+                    </h6>
+                </div>
                     <p>
                       {member.job_title}
                     </p>

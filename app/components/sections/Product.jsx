@@ -16,7 +16,7 @@ class Product extends Component {
                   </div>
 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/FzO-U60-85M" frameborder="0" allowfullscreen></iframe>
-<p>These classes address the great challenges of life: work, relationships, friendship, anxiety and more. They offer insight, guidance and companionship.</p>
+<p>Our content address the great challenges of life: work, relationships, friendship, anxiety and more.</p>
       </div>
     )
   }

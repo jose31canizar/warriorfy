@@ -5,7 +5,9 @@ class Investment extends Component {
     return (
       <div className='container'>
         <div className='header'>
+        <div className='header-text'>
           <h2>Seeking investors who believe healthcare needs more innovation.</h2>
+        </div>
         </div>
         <div className='text-block-grid'>
         <div className='text-block-milestone'>
@@ -25,6 +27,10 @@ class Investment extends Component {
         <p> Strong operations and managment in place </p>
         <p> Port platform to the web </p>
         </div>
+
+        <div className='text-block-container'>
+        <h3>Money Well Spent</h3>
+        <div className='text-blocks'>
           <div className='text-block-row'>
             <div className='text-block'>
               <h4>Salaries</h4>
@@ -48,6 +54,8 @@ class Investment extends Component {
               <h4>Overhead</h4>
               <p>Office space, software susbscriptions</p>
             </div>
+          </div>
+          </div>
           </div>
         </div>
       </div>
