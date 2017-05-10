@@ -40,10 +40,10 @@ class Opportunity extends Component {
             <div className='problems-label-subtitle'>
               <h6 className='arrows-label'><strong>Diets are...</strong></h6>
             </div>
-            <img className='problem-block arrow' src={require("../img/03-arrows-2.png")}/>
-            <img className='problem-block arrow' src={require("../img/03-arrows-2.png")}/>
-            <img className='problem-block arrow' src={require("../img/03-arrows-2.png")}/>
-            <img className='problem-block arrow' src={require("../img/03-arrows-2.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
+            <img className='problem-block arrow' src={require("../img/03-arrows-3.png")}/>
           </div>
 
 
