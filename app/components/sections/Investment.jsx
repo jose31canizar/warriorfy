@@ -8,6 +8,9 @@ class Investment extends Component {
           <h2>Seeking investors who want more innovation in healthcare.</h2>
         </div>
         <div className='text-block-grid'>
+        <div className='text-block-milestone'>
+        <h3>Milestones</h3>
+        </div>
           <div className='text-block-row'>
             <div className='text-block'>
               <h4>Engineers</h4>

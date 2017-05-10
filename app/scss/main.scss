@@ -85,6 +85,7 @@ body {
     font-weight: $global-font-weight;
     font-size: 3.852em;
     margin: 0pt;
+    padding-bottom: 50pt;
   }
 
   h3 {
@@ -92,13 +93,13 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 2.89em;
+    font-size: 2.2em;
     margin: 0pt;
   }
 
   h4 {
-    font-family: Arial;
-    color: $global-h1-color;
+    font-family: Minion Pro;
+    color: #5fc5bb;
     text-align: center;
     font-weight: $global-font-weight;
     font-size: 1.626em;
@@ -122,6 +123,7 @@ body {
       text-decoration: none;
   }
 
+
   .text-block-grid {
       display: flex;
       width: 75vw;
@@ -129,14 +131,31 @@ body {
   }
 
   .text-block {
-    width: 30vh;
     background: #4f4a54;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 35vh;
+    text-align: left;
     margin-top: 10px;
+    flex-direction: column;
     margin-left: 10px;
     border-radius: 4px;
+    padding: 20px;
+
+    h4 {
+      text-align: left;
+    }
+
+    p {
+      text-align: left;
+    }
   }
+
+  .text-block-row {
+    width: 20vw;
+  }
+
+  .text-block-milestone {
+    width: 50%;
+  }
+
+
 }

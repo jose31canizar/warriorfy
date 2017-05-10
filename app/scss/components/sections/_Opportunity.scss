@@ -3,8 +3,8 @@ $start-button-color: #faa187;
 $header-color: #dedcdc;
 $box-color: transparent;
 $h1-color: #705959;
-$sub-section-width: 20vw;;
-$border-color: #ded9d9;
+$sub-section-width: 90vw;;
+$border-color: #3d3d41;
 $border-width: 2px;
 
 #Opportunity {
@@ -17,6 +17,7 @@ $border-width: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20pt;
 
     h1 {
       text-align: center;
@@ -39,6 +40,7 @@ $border-width: 2px;
     justify-content: center;
     margin-bottom: 10vh;
 
+
     .problem {
       width: $sub-section-width;
       background: transparent;
@@ -47,16 +49,19 @@ $border-width: 2px;
       align-items: center;
       justify-content: center;
       border: 1.5px solid $border-color;
+      padding: 22pt;
     }
 
     .solution {
       width: $sub-section-width;
-      background: transparent;
+      background: black;
+      font-color: white;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1.5px solid $border-color;
+      padding: 22pt;
     }
 
     h4 {
@@ -67,7 +72,7 @@ $border-width: 2px;
   }
 
   p {
-    font-family: $global-p-font-stack;
+    font-family: arial;
     text-align: left;
   }
 
