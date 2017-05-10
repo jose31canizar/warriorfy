@@ -1,8 +1,8 @@
 $transition-time: 0.2s;
 $transition-prop: transform;
 $transition-easing: ease-in-out;
-$bg-color: #7a6772;
-$menu-button-color: #e09090;
+$bg-color: #3d3d41;
+$menu-button-color: #ffffff;
 
 .menu-bar {
     @include css-transition(all, $transition-time, $transition-easing);
@@ -28,6 +28,7 @@ $menu-button-color: #e09090;
         @include css-user-select(none);
         cursor: pointer;
         white-space: nowrap;
+        font-size: 16pt;
     }
 
 
@@ -77,7 +78,7 @@ $menu-button-color: #e09090;
     }
 
   h2 {
-    color: #e09090;
+    color: $menu-button-color;
     padding: 0px;
     font-weight: 200;
     margin: 0;

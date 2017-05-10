@@ -1,12 +1,17 @@
 $global-p-color: #111111;
-$global-h1-color: #ca9191;
-$global-h2-color: #ca9191;
-$global-h3-color: #ca9191;
-$global-h4-color: #ca9191;
+$global-h1-color: #3d3d41;
+$global-h2-color: #3d3d41;
+$global-h3-color: #3d3d41;
+$global-h4-color: #3d3d41;
+$global-h5-color: #3d3d41;
 $global-bg-color: white;
-$global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$global-p-font-stack: 'Minion Pro', Didot, serif;
+$h1-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$h2-font-stack: 'Raleway', Futura, Helvetica, sans-serif;
+$h3-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
+$h4-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
+$h5-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
+$global-label-font-stack: 'Monserrat', Futura, Helvetica, sans-serif;
+$global-p-font-stack: 'Open Sans', Didot, serif;
 $global-box-width: 70vw;
 $section-color: #faa187;
 $start-button-color: #faa187;
@@ -34,7 +39,7 @@ $global-font-weight: 300;
 @import './components/sections/BusinessModel.scss';
 @import './components/sections/Adoption.scss';
 @import './components/sections/Investment.scss';
-@import './components/sections/Competition.scss';
+@import './components/sections/Traction.scss';
 @import './components/Label.scss';
 
 body {
@@ -69,18 +74,27 @@ body {
     top: 0;
   }
 
+  .header-text {
+    padding-bottom: 40pt;
+    width: 75vw;
+  }
+
   h1 {
-    font-family: $global-font-stack;
+    font-family: $h1-font-stack;
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
+    font-size: 5.135em;
+    margin: 0pt;
   }
 
   h2 {
-    font-family: $global-font-stack;
+    font-family: $h1-font-stack;
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
+    font-size: 3.852em;
+    margin: 0pt;
   }
 
   h3 {
@@ -88,22 +102,60 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 25px;
+    font-size: 2.0em;
+    margin: 0pt;
   }
 
   h4 {
-    font-family: $global-font-stack;
-    color: $global-h1-color;
+    font-family: $h4-font-stack;
+    color: $global-h4-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 2em;
+    font-size: 1.626em;
+    margin: 0pt;
   }
 
-  p {
-    font-family: $global-p-font-stack;
+  h5 {
+    font-family: $h5-font-stack;
+    color: $global-h5-color;
+    text-align: center;
+    font-weight: $global-font-weight;
+    font-size: 1.1em;
+    margin: 0pt;
+    @include css-user-select(none);
+    cursor: pointer;
+    padding: 1em;
+    padding-top: 2.25em;
+    font-weight: 300;
+    color: $text-color;
+    text-align: center;
+    @include css-transition(all, 0.5s, ease-in-out);
+    white-space: nowrap;
+  }
+
+  h6 {
+    font-family: $h5-font-stack;
+    color: $global-h5-color;
+    text-align: center;
+    font-weight: $global-font-weight;
+    font-size: 1.4em;
+    margin: 0pt;
+    @include css-user-select(none);
+    cursor: pointer;
+    font-weight: 300;
+    color: $text-color;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  p, li {
+    font-family: Arial;
     color: $global-p-color;
     font-weight: 200;
+    font-size: 1.1em;
+    margin: 0pt;
   }
+
 
   .wrapper {
     overflow-x:hidden;
@@ -114,21 +166,12 @@ body {
       text-decoration: none;
   }
 
-  .text-block-grid {
-      display: flex;
-      width: 75vw;
-      justify-content: flex-end;
-  }
 
-  .text-block {
-    width: 30vh;
-    background: #4f4a54;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-radius: 4px;
-  }
+    h4 {
+      text-align: left;
+    }
+
+    p {
+      text-align: left;
+    }
 }

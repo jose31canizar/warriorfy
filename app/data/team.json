@@ -1,38 +1,71 @@
 [
   {
       "name":"Jessica Raymond",
-      "job_title":"Founder of Recovery Warriors",
+      "job_title":"Chief Executive Officer",
+      "description":"",
       "image":"04-Team-Raymond"
   },
   {
       "name":"Patricia Natalie",
-      "job_title":"Team member",
+      "job_title":"UX Designer",
+      "description":"",
       "image":"04-Team-Natalie"
   },
 
   {
       "name":"Shauna Savala",
-      "job_title":"Team member",
+      "job_title":"Chief Editor",
+      "description":"",
       "image":"04-Team-Savala"
   },
   {
-      "name":"Schmitt",
-      "job_title":"Team member",
+      "name":"Margaret Schmitt",
+      "job_title":"Marketing",
+      "description":"",
       "image":"04-Team-Schmitt"
   },
   {
-      "name":"Kim",
-      "job_title":"Advisor",
+      "name":"Jonathan Bush",
+      "job_title":"CEO and Founder of Athenahealth. Author of \"Where Does It Hurt?: An Entrepreneur's Guide to Fixing Health Care\"",
+      "description":"",
+      "image":"04-Team-Advisor-Bush"
+  },
+  {
+      "name":"Vikas Duvvuri, MD, PhD",
+      "job_title":"Medical Director of Fremont Hospital",
+      "description":"",
+      "image":"04-Team-Advisor-Duvvuri"
+  },
+  {
+      "name":"Norman Kim, PhD",
+      "job_title":"National Director of Reasons Eating Disorder Center",
+      "description":"",
       "image":"04-Team-Advisor-Kim"
   },
+
   {
-      "name":"Montgomery",
-      "job_title":"Advisor",
-      "image":"04-Team-Advisor-Montgomery"
+      "name":"Adam Stone",
+      "job_title":"Product Manager at Google",
+      "description":"",
+      "image":"04-Team-Advisor-Stone"
   },
   {
-      "name":"Rollo",
+      "name":"Chris Montgomery",
       "job_title":"Advisor",
+      "description":"",
+      "image":"04-Team-Advisor-Montgomery"
+  },
+
+  {
+      "name":"Nikki Rollo, PhD, LMFT",
+      "job_title":"National Director of Reasons Eating Disorder Center",
+      "description":"",
       "image":"04-Team-Advisor-Rollo"
+  },
+
+  {
+      "name":"Zach Nies",
+      "job_title":"VP of Education at Techstars",
+      "image":"04-Team-Advisor-Nies"
   }
 ]

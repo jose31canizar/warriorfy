@@ -3,10 +3,9 @@ $start-button-color: #faa187;
 $header-color: #dedcdc;
 $box-color: transparent;
 $h1-color: #705959;
-$sub-section-width: 20vw;;
-$border-color: #ded9d9;
+$sub-section-width: 25%;
+$border-color: #3d3d41;
 $border-width: 2px;
-$p-font-size: 20px;
 
 #Opportunity {
 
@@ -18,20 +17,73 @@ $p-font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20pt;
 
     h1 {
       text-align: center;
       color: $h1-color;
       width: 75vw;
-      font-size: 3em;
     }
   }
 
-  .content {
+  .block-row-container {
+    margin-top: 50pt;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .block-row {
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .block {
+
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      transform: scale(0.25);
+    }
+  }
+
+  .arrows {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
+    flex-direction: column;
     padding-bottom: 10vh;
+  }
+
+  .top-labels {
+    display: inline-flex;
+    justify-content: space-around;
+  }
+
+  .arrows-label {
+    color: transparent;
+  }
+
+  .arrow {
+    transform: scale(0.2) rotate3d(1, 0, 0, 0);
+    @include css-transition(all, 0.5s, ease);
+    z-index: 9999;
+  }
+
+  .arrow:hover {
+    transform: scale(0.4) rotate3d(1, 0, 0, 45deg);
   }
 
   .overall {
@@ -41,24 +93,26 @@ $p-font-size: 20px;
     justify-content: center;
     margin-bottom: 10vh;
 
+
     .problem {
       width: $sub-section-width;
       background: transparent;
-      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1.5px solid $border-color;
+      padding: 22pt;
     }
 
     .solution {
       width: $sub-section-width;
-      background: transparent;
-      height: 100%;
+      background: black;
+      font-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1.5px solid $border-color;
+      padding: 22pt;
     }
 
     h4 {
@@ -69,9 +123,8 @@ $p-font-size: 20px;
   }
 
   p {
-    font-family: $global-p-font-stack;
+    font-family: arial;
     text-align: left;
-    font-size: $p-font-size;
   }
 
   h3 {
@@ -86,6 +139,13 @@ $p-font-size: 20px;
     width: $sub-section-width;
   }
 
+  .problem-block {
+    padding-bottom: 30pt;
+  }
+
+  .solution-block {
+    padding-bottom: 30pt;
+  }
 
 
   .solutions-label {
@@ -114,5 +174,28 @@ $p-font-size: 20px;
       padding-bottom: 10px;
       border-radius: 4px;
     }
+
+
   }
+
+  .problems-label-subtitle {
+    padding-bottom: 20pt;
+  }
+
+  .solutions-label-subtitle {
+    padding-bottom: 20pt;
+  }
+
+  .solution-label {
+
+    h4 {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+
+  }
+
 }

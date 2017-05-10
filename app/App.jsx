@@ -33,7 +33,7 @@ class App extends Component {
     } else {
       this.setState((prevState, props) => {
             return {
-              stick : true
+              stick : false
             }
           });
     }

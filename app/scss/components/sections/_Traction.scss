@@ -1,6 +1,6 @@
 $section-color: #f1f1f1;
 
-#Competition {
+#Traction {
 
   .container {
     display: flex;
@@ -13,7 +13,7 @@ $section-color: #f1f1f1;
     width: 100vw;
   }
 
-  .competition {
+  .traction {
     width: 75vw;
     height: 50vh;
     background: $model-color;
@@ -22,6 +22,10 @@ $section-color: #f1f1f1;
     @media all and(max-width: $mobile-width) {
       width: 100vw;
     }
+  }
+  .featured-in {
+    width: 15%;
+    padding: 10pt;
   }
 
 }

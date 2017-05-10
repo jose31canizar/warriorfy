@@ -1,42 +1,41 @@
 [
   {
       "title":"Mission",
-      "label":"The Mission"
+      "label":"OUR MISSION"
   },
   {
       "title":"Opportunity",
-      "label":"The Opportunity"
+      "label":"THE OPPORTUNITY"
   },
   {
-      "title":"Value Proposition",
-      "label":"Our Value Proposition"
+      "title":"Value",
+      "label":"OUR VALUE PROPOSITION"
   },
   {
       "title":"Product",
-      "label":"The App"
+      "label":"PRODUCT"
   },
   {
       "title":"Business Model",
-      "label":"Business Model"
-  },
-  {
-      "title":"Competition",
-      "label":"Our Competition"
+      "label":"BUSINESS MODEL"
   },
   {
       "title":"Adoption",
-      "label":"Customer Adoption"
+      "label":"CUSTOMER ADOPTION"
   },
-  {
-      "title":"Competition",
-      "label":"Competition"
-  },
+
   {
       "title":"Team",
-      "label":"The Team"
+      "label":"THE TEAM"
   },
+
+  {
+      "title":"Traction",
+      "label":"OUR TRACTION"
+  },
+
   {
       "title":"Investment",
-      "label":"Investment"
+      "label":"THE INVESTMENT"
   }
 ]

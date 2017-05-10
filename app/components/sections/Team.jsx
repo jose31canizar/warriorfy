@@ -13,8 +13,8 @@ class Team extends Component {
     // console.log(TeamData);
 
     const topRow = TeamData.slice(0,4);
-    const middleRow = TeamData.slice(4,7);
-    // const bottomRow = TeamData.slice(4,6);
+    const middleRow = TeamData.slice(4,8);
+    const bottomRow = TeamData.slice(8,12);
     console.log(topRow);
     console.log(middleRow);
     // console.log(bottomRow);
@@ -29,12 +29,17 @@ class Team extends Component {
                 <div className={'profile-pic-container'}>
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
-                <div className={'team-member-text'}>
-                    <h2>
+                <div className='team-member-text'>
+                <div className='member-name'>
+                    <h6>
                       {member.name}
-                    </h2>
+                    </h6>
+                </div>
                     <p>
                       {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
                     </p>
                 </div>
               </div>
@@ -44,18 +49,46 @@ class Team extends Component {
           <div className={'advisors-label-container'}>
               <Label label={'Advisors'} />
             </div>
-          <div className={'team-members-row'}>
+          <div className={'team-members-row middle-row'}>
             {middleRow.map((member, i) => (
               <div className={'team-member'}>
                 <div className={'profile-pic-container'}>
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h2>
+                <div className='member-name'>
+                    <h6>
                       {member.name}
-                    </h2>
+                    </h6>
+                </div>
                     <p>
                       {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
+                    </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className={'team-members-row'}>
+            {bottomRow.map((member, i) => (
+              <div className={'team-member'}>
+                <div className={'profile-pic-container'}>
+                  <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
+                </div>
+                <div className={'team-member-text'}>
+                <div className='member-name'>
+                    <h6>
+                      {member.name}
+                    </h6>
+                </div>
+                    <p>
+                      {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
                     </p>
                 </div>
               </div>

@@ -19,6 +19,68 @@ $investment-color: white;
     flex-wrap: wrap;
   }
 
+  .text-block-container {
+    width: 66.66%;
+
+    h3 {
+      text-align: left;
+    }
+  }
+
+  .text-blocks {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+  }
+
+  .text-block-grid {
+      display: flex;
+      width: 75vw;
+      justify-content: flex-end;
+  }
+
+  .text-block-row {
+    width: 20vw;
+  }
+
+  .text-block-milestone {
+    width: 50%;
+
+    p {
+          padding-bottom: 12pt;
+        }
+
+    h3 {
+      text-align: left;
+    }
+  }
+
+  .text-block {
+    background: transparent;
+    border: 2px solid #3d3d41;
+    height: 35vh;
+    text-align: left;
+    margin-top: 10px;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 15px;
+
+        h6 {
+          text-align: left;
+          padding-bottom: 12pt;
+          font-weight: 400;
+        }
+}
+
+.header-text-milestone {
+  padding-bottom: 22pt;
+}
+
+.header-text-money {
+  padding-bottom: 12pt;
+}
+
+
   .investment {
     width: 75vw;
     height: 50vh;
@@ -28,6 +90,8 @@ $investment-color: white;
     @media all and(max-width: $mobile-width) {
       width: 100vw;
     }
+
+
 
     .milestones {
       width: 40%;
@@ -44,5 +108,37 @@ $investment-color: white;
       height: 100%;
       background: #574f4f;
     }
+  }
+
+
+  .overall {
+    width: 100%;
+    background: transparent;
+    justify-content: center;
+    margin-bottom: 10vh;
+
+    .problem {
+      width: $sub-section-width;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid $border-color;
+    }
+
+    .solution {
+      width: $sub-section-width;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid $border-color;
+    }
+
+    h4 {
+    text-align: center;
+    }
+
+
   }
 }

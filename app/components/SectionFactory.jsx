@@ -6,7 +6,7 @@ import ValueProposition from './sections/ValueProposition.jsx';
 import Product from './sections/Product.jsx';
 import BusinessModel from './sections/BusinessModel.jsx';
 import Adoption from './sections/Adoption.jsx';
-import Competition from './sections/Competition.jsx';
+import Traction from './sections/Traction.jsx';
 import Investment from './sections/Investment.jsx';
 
 
@@ -19,7 +19,7 @@ class SectionFactory extends Component {
       section = <Opportunity data={this.props.data}/>;
     } else if(this.props.data.title == 'Team') {
       section = <Team data={this.props.data}/>;
-    } else if(this.props.data.title == 'Value Proposition') {
+    } else if(this.props.data.title == 'Value') {
       section = <ValueProposition data={this.props.data}/>;
     } else if(this.props.data.title == 'Product') {
       section = <Product data={this.props.data}/>;
@@ -27,8 +27,8 @@ class SectionFactory extends Component {
       section = <BusinessModel data={this.props.data}/>;
     } else if(this.props.data.title == 'Adoption') {
       section = <Adoption data={this.props.data}/>;
-    } else if(this.props.data.title == 'Competition') {
-      section = <Competition data={this.props.data}/>;
+    } else if(this.props.data.title == 'Traction') {
+      section = <Traction data={this.props.data}/>;
     } else if(this.props.data.title == 'Investment') {
       section = <Investment data={this.props.data}/>;
     } else {
