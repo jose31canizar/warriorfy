@@ -1,28 +1,26 @@
 $section-color: #f1f1f1;
 $start-button-color: #faa187;
 $profile-pic-size: 222px;
-$p-team-text-color: #977171;
-$h2-team-text-color: #7e6579;
+$p-team-text-color: #3d3d41;
+$h2-team-text-color: #3d3d41;
 $mobile-width: 1200px;
 
 
 #Team {
 
   .team-members-container {
-    margin-top: 10vh;
+    margin-top: 0vh;
     margin-bottom: 10vh;
   }
 
 
   .team-member-text {
-
+    margin-top: 20pt;
   }
 
   .advisors-label-container {
     position: relative;
     width: 100vw;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
 
     @media all and(max-width: $mobile-width) {
 
@@ -40,6 +38,8 @@ $mobile-width: 1200px;
     }
   }
 
+
+
   .team-member {
     display: block;
     margin-left: 25px;
@@ -51,6 +51,7 @@ $mobile-width: 1200px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 10vh;
     }
   }
 
@@ -58,12 +59,15 @@ $mobile-width: 1200px;
     display: flex;
     justify-content: center;
     width: 75vw;
-    padding-bottom: 40px;
 
     @media all and(max-width: $mobile-width) {
     display: block;
     max-width: 50vw;
     }
+  }
+
+  .middle-row {
+    padding-bottom: 40px;
   }
 
   .profile-pic-container {

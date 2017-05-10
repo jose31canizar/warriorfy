@@ -30,11 +30,14 @@ class Team extends Component {
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h2>
+                    <h4>
                       {member.name}
-                    </h2>
+                    </h4>
                     <p>
                       {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
                     </p>
                 </div>
               </div>
@@ -44,18 +47,21 @@ class Team extends Component {
           <div className={'advisors-label-container'}>
               <Label label={'Advisors'} />
             </div>
-          <div className={'team-members-row'}>
+          <div className={'team-members-row middle-row'}>
             {middleRow.map((member, i) => (
               <div className={'team-member'}>
                 <div className={'profile-pic-container'}>
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h2>
+                    <h4>
                       {member.name}
-                    </h2>
+                    </h4>
                     <p>
                       {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
                     </p>
                 </div>
               </div>
@@ -69,11 +75,14 @@ class Team extends Component {
                   <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
                 </div>
                 <div className={'team-member-text'}>
-                    <h2>
+                    <h4>
                       {member.name}
-                    </h2>
+                    </h4>
                     <p>
                       {member.job_title}
+                    </p>
+                    <p>
+                      {member.description}
                     </p>
                 </div>
               </div>

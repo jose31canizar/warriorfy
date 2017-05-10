@@ -5,12 +5,13 @@ class Investment extends Component {
     return (
       <div className='container'>
         <div className='header'>
-          <h1>Seeking the best investors on the planet.</h1>
+          <h2>Seeking investors who want more innovation in healthcare.</h2>
         </div>
         <div className='text-block-grid'>
           <div className='text-block-row'>
             <div className='text-block'>
-              <h3>Salaries</h3>
+              <h4>Engineers</h4>
+              <p>More Engineers</p>
             </div>
             <div className='text-block'>
               <h3>Salaries</h3>

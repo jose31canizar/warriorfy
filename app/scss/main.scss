@@ -1,8 +1,8 @@
 $global-p-color: #111111;
-$global-h1-color: #ca9191;
-$global-h2-color: #ca9191;
-$global-h3-color: #ca9191;
-$global-h4-color: #ca9191;
+$global-h1-color: #3d3d41;
+$global-h2-color: #3d3d41;
+$global-h3-color: #3d3d41;
+$global-h4-color: #3d3d41;
 $global-bg-color: white;
 $global-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
 $global-label-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
@@ -34,7 +34,7 @@ $global-font-weight: 300;
 @import './components/sections/BusinessModel.scss';
 @import './components/sections/Adoption.scss';
 @import './components/sections/Investment.scss';
-@import './components/sections/Competition.scss';
+@import './components/sections/Traction.scss';
 @import './components/Label.scss';
 
 body {
@@ -74,7 +74,8 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 1em;
+    font-size: 5.135em;
+    margin: 0pt;
   }
 
   h2 {
@@ -82,7 +83,8 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 1em;
+    font-size: 3.852em;
+    margin: 0pt;
   }
 
   h3 {
@@ -90,21 +92,25 @@ body {
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 1em;
+    font-size: 2.89em;
+    margin: 0pt;
   }
 
   h4 {
-    font-family: $global-font-stack;
+    font-family: Arial;
     color: $global-h1-color;
     text-align: center;
     font-weight: $global-font-weight;
-    font-size: 2em;
+    font-size: 1.626em;
+    margin: 0pt;
   }
 
   p {
-    font-family: $global-p-font-stack;
+    font-family: Arial;
     color: $global-p-color;
     font-weight: 200;
+    font-size: 1.22em;
+    margin: 0pt;
   }
 
   .wrapper {
