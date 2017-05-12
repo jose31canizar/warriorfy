@@ -39,7 +39,7 @@ class Opportunity extends Component {
                 <p><strong>Feel increased anxiety and depression</strong></p>
                 <p>Many people turn towards food or away from food in an effort to cope with mood disorders.</p>
               </div>
-              <div className='block'>
+              <div className='block arrow-block'>
                 <img src={require("../img/03-arrows-3.png")}/>
               </div>
               <div className='block'>

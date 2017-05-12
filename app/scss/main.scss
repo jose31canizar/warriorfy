@@ -6,7 +6,7 @@ $global-h4-color: #3d3d41;
 $global-h5-color: #3d3d41;
 $global-bg-color: white;
 $h1-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
-$h2-font-stack: 'Raleway', Futura, Helvetica, sans-serif;
+$h2-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
 $h3-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;
 $h4-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
 $h5-font-stack: 'Oswald', Futura, Helvetica, sans-serif;
@@ -96,6 +96,10 @@ body {
     font-weight: $global-font-weight;
     font-size: 5.135em;
     margin: 0pt;
+
+    @media all and (max-width: 1200px) {
+      font-size: 2.1em;
+      }
   }
 
   h2 {
@@ -105,7 +109,11 @@ body {
     font-weight: $global-font-weight;
     font-size: 3.852em;
     margin: 0pt;
-  }
+
+    @media all and (max-width: 1200px) {
+      font-size: 2.1em;
+      }
+    }
 
   h3 {
     font-family: $global-p-font-stack;
@@ -163,6 +171,12 @@ body {
     color: $global-p-color;
     font-weight: 200;
     font-size: 1.1em;
+
+    @media all and (max-width: 1200px) {
+      font-size: 1em;
+      }
+
+
     margin: 0pt;
   }
 
