@@ -21,6 +21,13 @@ $investment-color: white;
 
   .text-block-container {
     width: 66.66%;
+    @media all and (max-width: 800px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
     h3 {
       text-align: left;
@@ -29,6 +36,11 @@ $investment-color: white;
 
   .text-blocks {
     display: flex;
+    @media all and (max-width: 800px) {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      }
     width: 95%;
     justify-content: space-between;
   }
@@ -36,15 +48,25 @@ $investment-color: white;
   .text-block-grid {
       display: flex;
       width: 75vw;
+      @media all and (max-width: 800px) {
+          width: 75vw;
+          flex-direction: column;
+        }
       justify-content: flex-end;
   }
 
   .text-block-row {
     width: 20vw;
+    @media all and (max-width: 800px) {
+        width: 100%;
+      }
   }
 
   .text-block-milestone {
     width: 50%;
+    @media all and (max-width: 800px) {
+        width: 100%;
+      }
 
     p {
           padding-bottom: 12pt;
@@ -58,12 +80,13 @@ $investment-color: white;
   .text-block {
     background: transparent;
     border: 2px solid #3d3d41;
-    height: 35vh;
     text-align: left;
     margin-top: 10px;
     flex-direction: column;
     border-radius: 4px;
     padding: 15px;
+    display: flex;
+    justify-content: space-around;
 
         h6 {
           text-align: left;
@@ -71,6 +94,23 @@ $investment-color: white;
           font-weight: 400;
         }
 }
+
+.milestone {
+  font-weight: 900;
+  padding: 0;
+}
+
+.role {
+
+
+  .role-title {
+    color: #aa7373;
+    font-size: 1em;
+    font-style: italic;
+
+  }
+}
+
 
 .header-text-milestone {
   padding-bottom: 22pt;

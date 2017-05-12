@@ -97,8 +97,8 @@ body {
     font-size: 5.135em;
     margin: 0pt;
 
-    @media all and (max-width: 1200px) {
-      font-size: 2.1em;
+    @media all and (max-width: 800px) {
+      font-size: 2.2em;
       }
   }
 
@@ -110,7 +110,7 @@ body {
     font-size: 3.852em;
     margin: 0pt;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 800px) {
       font-size: 2.1em;
       }
     }
@@ -163,7 +163,6 @@ body {
     font-weight: 300;
     color: $text-color;
     text-align: center;
-    white-space: nowrap;
   }
 
   p, li {
@@ -172,12 +171,16 @@ body {
     font-weight: 200;
     font-size: 1.1em;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 800px) {
       font-size: 1em;
       }
 
 
     margin: 0pt;
+  }
+
+  img {
+  width: 100%;
   }
 
 

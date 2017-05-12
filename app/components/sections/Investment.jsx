@@ -12,21 +12,16 @@ class Investment extends Component {
         <div className='text-block-grid'>
         <div className='text-block-milestone'>
           <div className='header-text-milestone'>
-        <h3>Upcoming Milestones</h3>
+        <h3>Milestones</h3>
         </div>
-        <p>Hire key roles:</p>
-        <p>• Front-end developer</p>
-        <p>• Back-end developer</p>
-        <p>• iOS developer</p>
-        <p>• Android developer</p>
-        <br></br>
-        <p> A successful well recieved product launch </p>
-        <p> Establish core user base 100K </p>
-        <p> Strong user acquistion metrics </p>
-        <p> Connect with industry thought leaders </p>
-        <p> Partner with researchers to study outcome effect </p>
-        <p> Strong operations and managment in place </p>
-        <p> Port platform to the web </p>
+        <p className='milestone'>Hire key roles</p>
+        <p className='milestone'>• A successful well received product launch </p>
+        <p className='milestone'>• Establish a core user base 100K </p>
+        <p className='milestone'>• Strong user acquistion metrics </p>
+        <p className='milestone'>• Connect with industry thought leaders </p>
+        <p className='milestone'>• Partner with researchers to study outcome effect </p>
+        <p className='milestone'>• Strong operations and managment in place </p>
+        <p className='milestone'>• Port platform to the web </p>
         </div>
 
         <div className='text-block-container'>
@@ -37,7 +32,18 @@ class Investment extends Component {
           <div className='text-block-row'>
             <div className='text-block'>
               <h6>Salaries</h6>
-              <p>The companies first priority is to hire someone with a strong background in operations and recruit new engineering talent</p>
+                <p>Our top priority is to hire key roles for engineering and operations:</p>
+                <div className='roles'>
+                  <div className='role'>
+                    <p className='role-title'>• Full stack developer</p>
+                  </div>
+                  <div className='role'>
+                    <p className='role-title'>• Junior developer</p>
+                  </div>
+                  <div className='role'>
+                    <p className='role-title'>• Cross-platform mobile developer</p>
+                  </div>
+                </div>
             </div>
             <div className='text-block'>
               <h6>Marketing</h6>

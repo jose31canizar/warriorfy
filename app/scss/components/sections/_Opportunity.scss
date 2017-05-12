@@ -12,7 +12,7 @@ $border-width: 2px;
   .container {
     width: 75vw;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 800px) {
       width: 88vw;
       }
   }
@@ -20,7 +20,7 @@ $border-width: 2px;
 
   .arrow-block {
     width: 50%;
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 800px) {
       width: 20%;
       }
   }
@@ -54,7 +54,7 @@ $border-width: 2px;
 
     width: 25%;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: 800px) {
       width: 50%;
       }
 
@@ -68,14 +68,14 @@ $border-width: 2px;
       width: 100%;
       transform: scale(0.25);
 
-      @media all and (max-width: 1200px) {
+      @media all and (max-width: 800px) {
         transform: scale(0.5);
         }
     }
 
     p {
       padding-bottom: 5pt;
-      @media all and (max-width: 1200px) {
+      @media all and (max-width: 800px) {
         padding-bottom: 10pt;
         }
     }
@@ -99,6 +99,10 @@ $border-width: 2px;
   .top-labels {
     display: inline-flex;
     justify-content: space-around;
+    @media all and (max-width: 800px) {
+        justify-content: space-between;
+      }
+
   }
 
   .arrows-label {
@@ -125,20 +129,40 @@ $border-width: 2px;
 
     .problem {
       width: $sub-section-width;
+
+      @media all and (max-width: 800px) {
+          width: 50%;
+        }
       background: transparent;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       border: 1.5px solid $border-color;
       padding: 22pt;
     }
 
+    .problem-label {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    }
+
+
+    .solution-label {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    }
+
     .solution {
       width: $sub-section-width;
-      background: black;
+      @media all and (max-width: 800px) {
+          width: 50%;
+        }
+      background: #3d3d41;
       font-color: white;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       border: 1.5px solid $border-color;
       padding: 22pt;
@@ -179,6 +203,9 @@ $border-width: 2px;
 
   .solutions-label {
     border-radius: 4px;
+    @media all and (max-width: 800px) {
+      width: 33.33%;
+      }
 
     h4 {
       text-align: center;
@@ -193,6 +220,9 @@ $border-width: 2px;
 
   .problems-label {
     border-radius: 4px;
+    @media all and (max-width: 800px) {
+      width: 33.33%;
+      }
 
     h4 {
       text-align: center;
@@ -216,6 +246,8 @@ $border-width: 2px;
   }
 
   .solution-label {
+
+
 
     h4 {
       color: white;
