@@ -1,16 +1,38 @@
 $section-color: #f1f1f1;
 
+@import '../TextBlock.scss';
+
 #Traction {
 
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-block-container {
+    z-index: 9999;
+    width: 50%;
+  }
+
+  .featured-images {
+    z-index: 9999;
+    width: 50%;
   }
 
   .header {
     width: 100vw;
+  }
+  .product-image {
+    width: 75%;
+    position: absolute;
   }
 
   .traction {
