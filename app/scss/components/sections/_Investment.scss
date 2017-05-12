@@ -2,6 +2,8 @@ $section-color: #f1f1f1;
 $start-button-color: #faa187;
 $investment-color: white;
 
+@import '../TextBlock.scss';
+
 #Investment {
 
   .container {
@@ -19,86 +21,24 @@ $investment-color: white;
     flex-wrap: wrap;
   }
 
-  .text-block-container {
-    width: 66.66%;
-    @media all and (max-width: 800px) {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
 
-    h3 {
-      text-align: left;
+
+.text-block-milestone {
+  width: 50%;
+  @media all and (max-width: 800px) {
+      width: 100%;
     }
-  }
 
-  .text-blocks {
-    display: flex;
-    @media all and (max-width: 800px) {
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      }
-    width: 95%;
-    justify-content: space-between;
-  }
-
-  .text-block-grid {
-      display: flex;
-      width: 75vw;
-      @media all and (max-width: 800px) {
-          width: 75vw;
-          flex-direction: column;
-        }
-      justify-content: flex-end;
-  }
-
-  .text-block-row {
-    width: 20vw;
-    @media all and (max-width: 800px) {
-        width: 100%;
-      }
-  }
-
-  .text-block-milestone {
-    width: 50%;
-    @media all and (max-width: 800px) {
-        width: 100%;
+  p {
+        padding-bottom: 12pt;
       }
 
-    p {
-          padding-bottom: 12pt;
-        }
-
-    h3 {
-      text-align: left;
-    }
-  }
-
-  .text-block {
-    background: transparent;
-    border: 2px solid #3d3d41;
+  h3 {
     text-align: left;
-    margin-top: 10px;
-    flex-direction: column;
-    border-radius: 4px;
-    padding: 15px;
-    display: flex;
-    justify-content: space-around;
-
-        h6 {
-          text-align: left;
-          padding-bottom: 12pt;
-          font-weight: 400;
-        }
+  }
 }
 
-.text-block-description
-{
-  padding-top:8pt;
-}
+
 
 .milestone {
   font-weight: 900;
@@ -123,12 +63,12 @@ $investment-color: white;
 .role {
 
 
-  .role-title {
-    color: #aa7373;
-    font-size: 1em;
-    font-style: italic;
+    .role-title {
+      color: #aa7373;
+      font-size: 1em;
+      font-style: italic;
 
-  }
+    }
 }
 
 
@@ -175,37 +115,5 @@ $investment-color: white;
       height: 100%;
       background: #574f4f;
     }
-  }
-
-
-  .overall {
-    width: 100%;
-    background: transparent;
-    justify-content: center;
-    margin-bottom: 10vh;
-
-    .problem {
-      width: $sub-section-width;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid $border-color;
-    }
-
-    .solution {
-      width: $sub-section-width;
-      background: transparent;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1.5px solid $border-color;
-    }
-
-    h4 {
-    text-align: center;
-    }
-
-
   }
 }
