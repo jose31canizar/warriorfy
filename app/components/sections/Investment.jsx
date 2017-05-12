@@ -14,16 +14,47 @@ class Investment extends Component {
           <div className='header-text-milestone'>
         <h3>Milestones</h3>
         </div>
-        <p className='milestone'>Hire key roles</p>
-        <p className='milestone'>• A successful well received product launch </p>
-        <p className='milestone'>• Establish a core user base 100K </p>
-        <p className='milestone'>• Strong user acquistion metrics </p>
-        <p className='milestone'>• Connect with industry thought leaders </p>
-        <p className='milestone'>• Partner with researchers to study outcome effect </p>
-        <p className='milestone'>• Strong operations and managment in place </p>
-        <p className='milestone'>• Port platform to the web </p>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch tracking app on iOS and Android</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2015)</p>
+           </div>
         </div>
-
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch tracking app on iOS and Android</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2015)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch tracking app on iOS and Android</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2015)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch tracking app on iOS and Android.</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2015)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch tracking app on iOS and Android</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2015)</p>
+           </div>
+        </div>
+        </div>
         <div className='text-block-container'>
         <div className='header-text-money'>
         <h3>Money Well Spent:</h3>

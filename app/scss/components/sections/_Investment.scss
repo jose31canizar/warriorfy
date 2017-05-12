@@ -98,7 +98,22 @@ $investment-color: white;
 .milestone {
   font-weight: 900;
   padding: 0;
+  width: 85%;
 }
+
+.milestone-title {
+    text-align: right;
+}
+
+.milestone-date {
+  p
+  {
+    color: #5fc5bb;
+    font-size: 1em;
+    text-align: right;
+  }
+}
+
 
 .role {
 
@@ -113,11 +128,18 @@ $investment-color: white;
 
 
 .header-text-milestone {
+  width: 85%;
   padding-bottom: 22pt;
+  h3 {
+    text-align: right;
+  }
 }
 
 .header-text-money {
   padding-bottom: 12pt;
+  h3 {
+    text-align: center;
+  }
 }
 
 
