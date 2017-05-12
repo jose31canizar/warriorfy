@@ -23,14 +23,14 @@ class Opportunity extends Component {
             <div className='block-row'>
               <div className='block'>
                 <p><strong>Be Misinformed</strong></p>
-                <p>Restrictive diets are ineffective at long-term weight management, yet continue to be prescribed by the media and medical doctors.</p>
+                <p>Research shows restrictive diets are ineffective at long-term weight management.</p>
               </div>
               <div className='block'>
                 <img src={require("../img/03-arrows-3.png")}/>
               </div>
               <div className='block'>
                 <p><strong>Education</strong></p>
-                <p>Our subject matter experts share valuable knowledge on how to optimize one's overall health for the long-term.</p>
+                <p>Our subject matter experts share valuable knowledge on how to make lifestyle changes that last.</p>
               </div>
             </div>
 
