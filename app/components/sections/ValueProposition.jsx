@@ -7,21 +7,19 @@ class ValueProposition extends Component {
       <div className={'container'}>
           <div className={'header'}>
             <div className='header-text'>
+              <h2>What we're building doesn't exist yet</h2>
               <h2>Welcome to our blue ocean</h2>
             </div>
             <div className='subtitle-text'>
-              <h4>You know you're in unchartered waters when you reach <strong>750K people who struggle with their relationship to food and body with zero ad spend</strong>.</h4>
+              <h4>We've found unchartered waters at the intersection of four growing markets. The result, a reach of 750K people who struggle with their relationship to food and body with zero ad spend.</h4>
             </div>
-          </div>
-          <div>
-            <img className={'market-image'} src={require('../img/04-value.png')}/>
           </div>
           <div>
             <img className={'market-image'} src={require('../img/05-Market-Competitive-Landscape.png')}/>
           </div>
           <div className='footer'>
             <div className='footer-text'>
-              <h4><strong>Warriorfy is the first to provide a cohesive user experience that brings insight, guidance, and support.</strong></h4>
+              <h4><strong>Warriorfy is the first to combine educational audio content, self-tracking tools, and 1:1 support into one beautifully designed and easy-to-use platform.</strong></h4>
             </div>
           </div>
         </div>
