@@ -30,7 +30,7 @@ class Opportunity extends Component {
               </div>
               <div className='block'>
                 <p><strong>Education</strong></p>
-                <p>We believe when you know better you do better. Our subject matter experts have a lot to say about this.</p>
+                <p>Our subject matter experts share valuable knowledge on how to optimize one's overall health for the long-term.</p>
               </div>
             </div>
 
@@ -103,7 +103,7 @@ class Opportunity extends Component {
             <div className='solution'>
               <div className='solution-label'>
                 <h4>Solution</h4>
-                <p>Build an immersive educational experience that connects people to expert knowledge, health data, and a coach.</p>
+                <p>We believe when you know better you do better. Build an immersive educational experience that connects people to expert knowledge, health data, and a coach.</p>
               </div>
             </div>
           </div>
