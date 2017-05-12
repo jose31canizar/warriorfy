@@ -67,26 +67,26 @@ $mobile-right-transition: 75vw;
 
 .clicked > #topBar {
   @include css-transition($transition-prop, $transition-time, $transition-easing);
-  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);
+  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
   @media all and (max-width: 800px) {
-    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);
+    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
   }
 }
 
 .clicked > #bottomBar {
   @include css-transition($transition-prop, $transition-time, $transition-easing);
-  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);
+  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
   @media all and (max-width: 800px) {
-    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);
+    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
   }
 }
 
 .clicked > #middleBar {
   @include css-transition($transition-prop, $transition-time, $transition-easing);
   @include css-transform-squash(0);
-  @include css-transform-translate-x($right-transition);
+  @include css-transform-translate-x(0);
   @media all and (max-width: 800px) {
-    @include css-transform-translate-x($mobile-right-transition);
+    @include css-transform-translate-x(0);
   }
   opacity: 0;
 }

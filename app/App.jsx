@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MainContainer from './components/MainContainer.jsx';
 import SectionsData from './data/sections.json';
 import MenuBar from './components/MenuBar.jsx';
-import MenuBarIcon from './components/MenuBarIcon.jsx';
+
 import NavBar from './components/NavBar.jsx';
 
 class App extends Component {
@@ -159,7 +159,6 @@ class App extends Component {
 
     return (
       <div className={'wrapper'}>
-          <MenuBarIcon togglePanel={this.togglePanel} open={this.state.open}/>
           <MenuBar data={this.state.data} sections={this.state.sections} open={this.state.open} closeMenuBar={this.closeMenuBar}/>
           <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open} stick={this.state.stick} selectedIndex={this.state.selectedIndex} changeSelection={this.changeSelection}/>
           <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>

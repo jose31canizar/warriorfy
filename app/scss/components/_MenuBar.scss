@@ -10,7 +10,6 @@ $menu-button-color: #ffffff;
     top: 0;
     height: 100vh;
     left: 0;
-    width: 100vw;
     background: $bg-color;
     justify-content: flex-start;
     align-items: flex-start;
@@ -46,11 +45,11 @@ $menu-button-color: #ffffff;
 }
 
 .menu-bar-hidden {
-  @include css-transform-translate-y(50px);
+  /*@include css-transform-translate-y(50px);*/
 }
 
 .menu-bar-shown {
-  @include css-transform-translate-y(0px);
+  /*@include css-transform-translate-y(0px);*/
 }
 
 
