@@ -14,12 +14,13 @@ $section-color: #f1f1f1;
   .content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    width: 75%;
   }
 
   .text-block-container {
     z-index: 9999;
-    width: 50%;
+    width: 40%;
   }
 
   .featured-images {
@@ -28,11 +29,19 @@ $section-color: #f1f1f1;
   }
 
   .header {
-    width: 100vw;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
   .product-image {
-    width: 75%;
-    position: absolute;
+    width: 70%;
+  }
+
+  .text-block {
+    align-items: flex-start;
   }
 
   .traction {

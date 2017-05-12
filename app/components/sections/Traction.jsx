@@ -4,105 +4,75 @@ class Traction extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='header'>
-          <h2>We're gaining it.</h2>
-        </div>
-        <img src={require('../img/05-Market-Validation-Growth.png')} className='product-image'/>
         <div className='content'>
-          <div className='text-block-container'>
-            <h2>Platform session growth</h2>
+
+          <div className='product-image'>
+            <div className='header'>
+              <h4>MoM Platform Growth.</h4>
+            </div>
+            <img src={require('../img/05-Market-Validation-Growth.png')} />
           </div>
           <div className='text-block-container'>
-            <div className='header-text-money'>
-              <h3>Traction growth:</h3>
-            </div>
             <div className='text-blocks'>
               <div className='text-block-row'>
                 <div className='text-block'>
-                  <h6>Salaries</h6>
-
-                    <p>Our top priority is to hire key roles for engineering and operations:</p>
-
+                  <h6>Tracking App</h6>
                     <div className='text-block-description'>
                       <div className='roles'>
                         <div className='role'>
-                          <p className='role-title'>• Full stack developer</p>
+                          <p className='role-title'>Downloads: 190 K</p>
                         </div>
                         <div className='role'>
-                          <p className='role-title'>• Junior developer</p>
+                          <p className='role-title'>Sessions: 4 M</p>
                         </div>
                         <div className='role'>
-                          <p className='role-title'>• Cross-platform mobile developer</p>
+                          <p className='role-title'>Countries: 184</p>
                         </div>
                       </div>
                     </div>
                 </div>
                 <div className='text-block'>
-                  <h6>Marketing</h6>
-                  <p>Creative ad campaigns to build a successful marketing funnel. </p>
+                  <h6>Online Magazine</h6>
                   <div className='text-block-description'>
                     <div className='roles'>
                       <div className='role'>
-                        <p className='role-title'>• Full stack developer</p>
+                        <p className='role-title'>Unique Users: 550 K</p>
                       </div>
                       <div className='role'>
-                        <p className='role-title'>• Junior developer</p>
+                        <p className='role-title'>Pageviews: 3 M</p>
                       </div>
                       <div className='role'>
-                        <p className='role-title'>• Cross-platform mobile developer</p>
+                        <p className='role-title'>Articles: 684</p>
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div className='text-block'>
-                  <h6>Legal and Accounting</h6>
-                  <p>Necessary legal work for licensing and distribution of audio content and protection of PHI</p>
-                  <div className='text-block-description'>
-                    <div className='roles'>
-                      <div className='role'>
-                        <p className='role-title'>• Full stack developer</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>• Junior developer</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>• Cross-platform mobile developer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='text-block-row'>
-                <div className='text-block'>
-                  <h6>Business Development</h6>
-                  <p>Travel expenses to conferences to build partnerships and brand awareness</p>
+                  <h6>Podcast</h6>
                     <div className='text-block-description'>
                         <div className='roles'>
                           <div className='role'>
-                            <p className='role-title'>• Full stack developer</p>
+                            <p className='role-title'>Listens: 530 K</p>
                           </div>
                           <div className='role'>
-                            <p className='role-title'>• Junior developer</p>
+                            <p className='role-title'>Shows: 111</p>
                           </div>
                           <div className='role'>
-                            <p className='role-title'>• Cross-platform mobile developer</p>
+                            <p className='role-title'>Experts Interviewed: 69</p>
                           </div>
                         </div>
                     </div>
                   </div>
                   <div className='text-block'>
-                    <h6>Overhead</h6>
-                    <p>Office space, software susbscriptions</p>
+                    <h6>Treatment Directory</h6>
                     <div className='text-block-description'>
                       <div className='roles'>
                         <div className='role'>
-                          <p className='role-title'>• Full stack developer</p>
+                          <p className='role-title'>Listings: 192</p>
                         </div>
                         <div className='role'>
-                          <p className='role-title'>• Junior developer</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>• Cross-platform mobile developer</p>
+                          <p className='role-title'>Revenue: $110 K</p>
                         </div>
                       </div>
                     </div>
