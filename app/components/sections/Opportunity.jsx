@@ -11,7 +11,7 @@ class Opportunity extends Component {
           <div className='top-labels'>
             <div className='problems-label'>
               <h4>PROBLEM</h4>
-              <h6><strong>People who struggle with food can...</strong></h6>
+              <h6><strong>People who struggle with food can be...</strong></h6>
             </div>
             <div className='solutions-label'>
               <h4>SOLUTION</h4>
@@ -22,7 +22,7 @@ class Opportunity extends Component {
           <div className='block-row-container'>
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Be Misinformed</strong></p>
+                <p><strong>Misinformed</strong></p>
                 <p>Research shows restrictive diets are ineffective at long-term weight management.</p>
               </div>
               <div className='block'>
@@ -36,22 +36,22 @@ class Opportunity extends Component {
 
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Feel increased anxiety and depression</strong></p>
+                <p><strong>Anxious and depressed</strong></p>
                 <p>Many people turn towards food or away from food in an effort to cope with mood disorders.</p>
               </div>
               <div className='block arrow-block'>
                 <img src={require("../img/03-arrows-3.png")}/>
               </div>
               <div className='block'>
-              <p><strong>Guidance</strong></p>
-                <p>People get focus.</p>
+              <p><strong>Coping Skills</strong></p>
+                <p>We use evidence-based skills to help people manage and improve their anxiety and depression.</p>
               </div>
             </div>
           </div>
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Get caught in a negative emotional spiral</strong></p>
+              <p><strong>Inadequately supported</strong></p>
               <p>Failed attempts to control food and weight lead to  guilt, shame, disappointment, and isolation.</p>
             </div>
             <div className='block'>
@@ -65,7 +65,7 @@ class Opportunity extends Component {
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Have lower body confidence</strong></p>
+              <p><strong>Full of self-hatred and doubt</strong></p>
               <p>The media’s promotion of unrealistic beauty standards can lead to lower self-esteem and body confidence</p>
             </div>
             <div className='block'>
@@ -79,7 +79,7 @@ class Opportunity extends Component {
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Feel out of control</strong></p>
+              <p><strong>Lacking positive structure</strong></p>
               <p>Increases shame, isolation, anxiety and depression</p>
             </div>
             <div className='block'>
