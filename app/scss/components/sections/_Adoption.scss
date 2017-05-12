@@ -24,6 +24,10 @@ $adoption-bg-color: white;
     }
   }
 
+  .body-subtitle {
+    padding: 0pt;
+  }
+
   .adoption {
     width: 75vw;
     height: 50vh;
@@ -35,21 +39,15 @@ $adoption-bg-color: white;
     }
 
     .launch {
-      width: 25%;
+      width: 66.666%;
       height: 100%;
-      background: #b99494;
-    }
-
-    .scale {
-      width: 25%;
-      height: 100%;
-      background: #927171;
+      background: white;
     }
 
     .example {
-      width: 50%;
+      width: 33.333%;
       height: 100%;
-      background: #796464;
+      background: white;
     }
   }
 
