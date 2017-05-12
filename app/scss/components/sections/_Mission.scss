@@ -4,6 +4,10 @@ $start-button-color: #faa187;
 #Mission {
   h1 {
     width: 50vw;
+
+    @media all and (max-width: 1200px) {
+      width: 80vw;
+      }
   }
 
   .container {

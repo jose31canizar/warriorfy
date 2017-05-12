@@ -11,6 +11,18 @@ $border-width: 2px;
 
   .container {
     width: 75vw;
+
+    @media all and (max-width: 1200px) {
+      width: 88vw;
+      }
+  }
+
+
+  .arrow-block {
+    width: 50%;
+    @media all and (max-width: 1200px) {
+      width: 20%;
+      }
   }
 
   .header {
@@ -41,6 +53,11 @@ $border-width: 2px;
   .block {
 
     width: 25%;
+
+    @media all and (max-width: 1200px) {
+      width: 50%;
+      }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,10 +67,17 @@ $border-width: 2px;
     img {
       width: 100%;
       transform: scale(0.25);
+
+      @media all and (max-width: 1200px) {
+        transform: scale(0.5);
+        }
     }
 
     p {
       padding-bottom: 5pt;
+      @media all and (max-width: 1200px) {
+        padding-bottom: 10pt;
+        }
     }
   }
 
