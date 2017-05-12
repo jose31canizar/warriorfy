@@ -11,7 +11,7 @@ class Opportunity extends Component {
           <div className='top-labels'>
             <div className='problems-label'>
               <h4>PROBLEM</h4>
-              <h6><strong>Diets are...</strong></h6>
+              <h6><strong>People who struggle with food can...</strong></h6>
             </div>
             <div className='solutions-label'>
               <h4>SOLUTION</h4>
@@ -22,22 +22,22 @@ class Opportunity extends Component {
           <div className='block-row-container'>
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Ineffective in the long-term</strong></p>
-                <p>People often are confused.</p>
+                <p><strong>Be Misinformed</strong></p>
+                <p>Restrictive diets are ineffective at long-term weight management, yet continue to be prescribed by the media and medical doctors.</p>
               </div>
               <div className='block'>
                 <img src={require("../img/03-arrows-3.png")}/>
               </div>
               <div className='block'>
-                <p><strong>Insight</strong></p>
-                <p>People get clarity.</p>
+                <p><strong>Education</strong></p>
+                <p>We believe when you know better you do better. Our subject matter experts have a lot to say about this.</p>
               </div>
             </div>
 
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Increase anxiety</strong></p>
-                <p>People are often distracted.</p>
+                <p><strong>Feel increased anxiety and depression</strong></p>
+                <p>Many people turn towards food or away from food in an effort to cope with mood disorders.</p>
               </div>
               <div className='block'>
                 <img src={require("../img/03-arrows-3.png")}/>
@@ -49,11 +49,10 @@ class Opportunity extends Component {
             </div>
           </div>
 
-
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Lower body confidence</strong></p>
-              <p>Increases shame, isolation, anxiety and depression</p>
+              <p><strong>Get caught in a negative emotional spiral</strong></p>
+              <p>Failed attempts to control food and weight lead to  guilt, shame, disappointment, and isolation.</p>
             </div>
             <div className='block'>
               <img src={require("../img/03-arrows-3.png")}/>
@@ -64,15 +63,28 @@ class Opportunity extends Component {
             </div>
           </div>
 
+          <div className='block-row'>
+            <div className='block'>
+              <p><strong>Have lower body confidence</strong></p>
+              <p>The media’s promotion of unrealistic beauty standards can lead to lower self-esteem and body confidence</p>
+            </div>
+            <div className='block'>
+                <img src={require("../img/03-arrows-3.png")}/>
+              </div>
+            <div className='block'>
+              <p><strong>Support</strong></p>
+              <p>Connects people to certified coaches who provide nutritional and emotional support</p>
+            </div>
+          </div>
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Lower body confidence</strong></p>
+              <p><strong>Feel out of control</strong></p>
               <p>Increases shame, isolation, anxiety and depression</p>
             </div>
             <div className='block'>
-              <img src={require("../img/03-arrows-3.png")}/>
-            </div>
+                <img src={require("../img/03-arrows-3.png")}/>
+              </div>
             <div className='block'>
               <p><strong>Support</strong></p>
               <p>Connects people to certified coaches who provide nutritional and emotional support</p>
@@ -80,11 +92,12 @@ class Opportunity extends Component {
           </div>
         </div>
 
+
           <div className='overall'>
             <div className='problem'>
               <div className='problem-label'>
                 <h4>Overall Problem</h4>
-                  <p>Dieting is ineffective at long term weight management, yet continues to be prescribed by the media and medical doctors.</p>
+                  <p>Dieting is ineffective at long term weight management, yet continues to be prescribed by the media and medical doctors.  The collateral damage of repeated dieting cycles extends past weight gain to one’s self-esteem and emotional health, two determinants largely ignored in the weight debate.</p>
               </div>
             </div>
             <div className='solution'>
