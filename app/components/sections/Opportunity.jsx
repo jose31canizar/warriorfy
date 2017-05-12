@@ -44,7 +44,7 @@ class Opportunity extends Component {
               </div>
               <div className='block'>
               <p><strong>Coping Strategies</strong></p>
-                <p>We have evidence-based strategies to help people manage and improve their anxiety and depression.</p>
+                <p>We provide evidence-based strategies to help people manage and improve their anxiety and depression.</p>
               </div>
             </div>
           </div>
@@ -69,14 +69,14 @@ class Opportunity extends Component {
             <div className='problem'>
               <div className='problem-label'>
                 <h4>Overall Problem</h4>
-                  <p>Dieting is ineffective at long term weight management, yet continues to be prescribed by the media and medical doctors.  The collateral damage of repeated dieting cycles extends past weight gain to one’s self-esteem and emotional health, two determinants largely ignored in the weight debate.</p>
+                  <p>Dieting is ineffective at long-term weight management, yet continues to be prescribed by the media and medical doctors.  The collateral damage of repeated dieting cycles extends past weight gain to one’s self-esteem, impacting mental and emotional health.</p>
               </div>
             </div>
             <div className='solution'>
               <div className='solution-label'>
                 <h4>Solution</h4>
-                <p>We believe when you know better you do better. Build an immersive educational experience that connects people to expert knowledge, health data, and a coach.</p>
-              </div>
+                <p>We believe real change happens from the inside out. Warriorfy combines accountability, education, and motivation, all the necessary ingredients for successful lifestyle change, into one convenient platform. </p>
+                </div>
             </div>
           </div>
 

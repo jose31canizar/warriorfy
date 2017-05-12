@@ -6,21 +6,33 @@ class Adoption extends Component {
       <div className='container'>
         <div className='header'>
           <div className='header-text'>
-            <h2>Focus on the roots</h2>
+            <h2>Leverage a Grassroots Movement.</h2>
           </div>
           <div className='subtitle-text'>
-            <h3>Connect to existing audience and grow new networks through press and creative marketing strategies.</h3>
+            <h3>Connect with existing warrior audience and grow laterally into new customer groups.</h3>
           </div>
         </div>
         <div className='adoption'>
           <div className='launch'>
-          <p>Placeholder</p>
+          <h5>Launch</h5>
+          <p>• Direct Email to 4,000 subscribers</p>
+          <p>• Share with social media following of over 57K Recovery Warriors </p>
+          <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
+          <p>• Promote on The Recovery Warrior Show with 25K monthly plays</p>
+          <p>• Network outreach</p>
+          <p>• Digital advertising</p>
           </div>
           <div className='scale'>
-            <p>Placeholder</p>
+            <h5>Scale</h5>
+          <p>• Lead generation quizzes</p>
+          <p>• Audio advertisements on health-focused podcasts</p>
+          <p>• Affiliate marketing program</p>
+          <p>• Treatment center partnerships</p>
+          <p>• Influencer marketing</p>
+          <p>• PR</p>
           </div>
           <div className='example'>
-            <p>Placeholder</p>
+              <img src={require('../img/Product-1.png')} className={'product-image'}/>
           </div>
         </div>
       </div>
