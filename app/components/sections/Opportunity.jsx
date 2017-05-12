@@ -36,58 +36,30 @@ class Opportunity extends Component {
 
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Anxious and depressed</strong></p>
+                <p><strong>Anxious and Depressed</strong></p>
                 <p>Many people turn towards food or away from food in an effort to cope with mood disorders.</p>
               </div>
               <div className='block arrow-block'>
                 <img src={require("../img/03-arrows-3.png")}/>
               </div>
               <div className='block'>
-              <p><strong>Coping Skills</strong></p>
-                <p>We use evidence-based skills to help people manage and improve their anxiety and depression.</p>
+              <p><strong>Coping Strategies</strong></p>
+                <p>We have evidence-based strategies to help people manage and improve their anxiety and depression.</p>
               </div>
             </div>
           </div>
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Inadequately supported</strong></p>
-              <p>Failed attempts to control food and weight lead to  guilt, shame, disappointment, and isolation.</p>
+              <p><strong>Inadequately Supported</strong></p>
+              <p>Failed attempts to control food and weight lead to guilt, shame, disappointment, and isolation.</p>
             </div>
             <div className='block'>
               <img src={require("../img/03-arrows-3.png")}/>
             </div>
             <div className='block'>
               <p><strong>Support</strong></p>
-              <p>Connects people to certified coaches who provide nutritional and emotional support</p>
-            </div>
-          </div>
-
-          <div className='block-row'>
-            <div className='block'>
-              <p><strong>Full of self-hatred and doubt</strong></p>
-              <p>The media’s promotion of unrealistic beauty standards can lead to lower self-esteem and body confidence</p>
-            </div>
-            <div className='block'>
-                <img src={require("../img/03-arrows-3.png")}/>
-              </div>
-            <div className='block'>
-              <p><strong>Support</strong></p>
-              <p>Connects people to certified coaches who provide nutritional and emotional support</p>
-            </div>
-          </div>
-
-          <div className='block-row'>
-            <div className='block'>
-              <p><strong>Lacking positive structure</strong></p>
-              <p>Increases shame, isolation, anxiety and depression</p>
-            </div>
-            <div className='block'>
-                <img src={require("../img/03-arrows-3.png")}/>
-              </div>
-            <div className='block'>
-              <p><strong>Support</strong></p>
-              <p>Connects people to certified coaches who provide nutritional and emotional support</p>
+              <p>We connect people to certified coaches who provide nutritional and emotional chat-based support.</p>
             </div>
           </div>
         </div>
