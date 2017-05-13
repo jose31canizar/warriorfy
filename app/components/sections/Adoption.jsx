@@ -6,12 +6,12 @@ class Adoption extends Component {
       <div className='container'>
         <div className='header'>
           <div className='header-text'>
-            <h2>Grassroots Go-to-Market Strategy.</h2>
+            <h2>Grassroots go-to-market strategy.</h2>
           </div>
           <div className='subtitle-text'>
-            <h3>1.) Start with our growing audience</h3>
-            <h3>2.) Expand Warriorfy network through ads</h3>
-            <h3>2.) Expand Warriorfy network through ads</h3>
+            <h3>1.) Start with our existing growing audience</h3>
+            <h3>2.) Expand reach through digital advertising</h3>
+            <h3>3.) Strengthen brand through media exposure</h3>
           </div>
         </div>
         <div className='adoption'>

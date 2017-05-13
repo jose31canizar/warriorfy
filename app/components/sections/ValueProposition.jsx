@@ -11,7 +11,8 @@ class ValueProposition extends Component {
               <h2>Welcome to our blue ocean</h2>
             </div>
             <div className='subtitle-text'>
-              <h4>We've found unchartered waters at the intersection of four growing markets. The result, a reach of 750K people who struggle with their relationship to food and body with zero ad spend.</h4>
+              <h4>We've found unchartered waters at the intersection of four growing markets.</h4>
+              <h4>The result, a reach of 750K people who struggle with their relationship to food and body with zero ad spend.</h4>
             </div>
           </div>
           <div>

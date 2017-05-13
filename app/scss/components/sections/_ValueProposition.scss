@@ -60,7 +60,7 @@ $baseline-logo-size: 40px;
     }
 
     .subtitle-text {
-      width: 100vw;
+      width: 60vw;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -85,7 +85,7 @@ $baseline-logo-size: 40px;
     align-items: center;
 
     .footer-text {
-      width: 50vw;
+      width: 60vw;
       padding: 0pt;
 
       @media all and(max-width: $mobile-width) {

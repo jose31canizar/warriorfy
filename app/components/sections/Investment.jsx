@@ -139,7 +139,7 @@ class Investment extends Component {
               </div>
               <div className='text-block'>
                 <h6>Marketing</h6>
-                <p>Our organic traction proves product-market fit. Now it's time to put fuel on the fire with some fun and creative marketing strategies.</p>
+                <p>Our organic traction proves product-market fit. Now it's time to scale with fun and creative marketing strategies.</p>
                 <div className='text-block-description'>
                   <div className='roles'>
                     <div className='role'>

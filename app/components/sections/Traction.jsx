@@ -8,7 +8,7 @@ class Traction extends Component {
 
           <div className='product-image'>
             <div className='header'>
-              <h3>MoM Platform Growth</h3>
+              <h2>MoM Platform Growth</h2>
             </div>
             <img src={require('../img/05-Market-Validation-Growth.png')} />
           </div>
@@ -83,7 +83,7 @@ class Traction extends Component {
         </div>
 
         <div className='header'>
-          <h4>Featured In</h4>
+          <h6>Featured In</h6>
         </div>
 
         <div className='featured-images'>
