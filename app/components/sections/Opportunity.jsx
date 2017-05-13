@@ -69,13 +69,13 @@ class Opportunity extends Component {
             <div className='problem'>
               <div className='problem-label'>
                 <h4>Overall Problem</h4>
-                  <p>Dieting is ineffective at long-term weight management, yet continues to be prescribed by the media and medical doctors.  The collateral damage of repeated dieting cycles extends past weight gain to one’s self-esteem, impacting mental and emotional health.</p>
+                  <p>Dieting is ineffective at long-term weight management, yet continues to be prescribed by the media and medical doctors. The collateral damage of repeated dieting cycles extends past weight gain to one’s self-esteem, impacting both mental and emotional health.</p>
               </div>
             </div>
             <div className='solution'>
               <div className='solution-label'>
                 <h4>Solution</h4>
-                <p>We believe real change happens from the inside out. Warriorfy combines accountability, education, and motivation, all the necessary ingredients for successful lifestyle change, into one convenient platform. </p>
+                <p>We believe real change happens from the inside out. Warriorfy combines all the tools, motivation, and support one needs to improve their relationship to food, body, and life into one convenient platform that can be used anytime, anywhere. </p>
                 </div>
             </div>
           </div>

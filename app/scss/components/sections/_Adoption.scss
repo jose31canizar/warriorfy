@@ -24,8 +24,14 @@ $adoption-bg-color: white;
     }
   }
 
-  .body-subtitle {
-    padding: 0pt;
+  .subtitle-text {
+    padding-top: 0pt;
+    padding-bottom: 40pt;
+
+    h3 {
+        text-align: left;
+    }
+
   }
 
   .adoption {
@@ -49,18 +55,27 @@ $adoption-bg-color: white;
       @media all and(max-width: $mobile-width) {
         width: 95%;
       }
-
-      h3 {
+      h3{
         text-align: left;
-        padding: 10px 0px;
+        padding-bottom:10px;
         @media all and(max-width: 800px) {
         text-align: center;
         }
       }
-
-      p {
+      p{
         text-align: left;
-        padding: 5px 0px;
+        padding-top:5pt;
+      }
+    }
+
+    .scale {
+      h3{
+        text-align: left;
+        padding-top:50px;
+        padding-bottom:10px;
+      }
+      p{
+        padding-top:5pt;
       }
     }
 
@@ -76,6 +91,15 @@ $adoption-bg-color: white;
       }
 
 
+    }
+  }
+
+  .footer-text {
+    width: 50vw;
+    padding-bottom: 20pt;
+
+    @media all and(max-width: $mobile-width) {
+      width: 75vw;
     }
   }
 

@@ -6,10 +6,12 @@ class Adoption extends Component {
       <div className='container'>
         <div className='header'>
           <div className='header-text'>
-            <h2>Leverage a Grassroots Movement.</h2>
+            <h2>Grassroots Go-to-Market Strategy.</h2>
           </div>
           <div className='subtitle-text'>
-            <h3>Connect with existing warrior audience and grow laterally into new customer groups.</h3>
+            <h3>1.) Start with our growing audience</h3>
+            <h3>2.) Expand Warriorfy network through ads</h3>
+            <h3>2.) Expand Warriorfy network through ads</h3>
           </div>
         </div>
         <div className='adoption'>
@@ -22,7 +24,8 @@ class Adoption extends Component {
             <p>• Share with social media following of over 57K Recovery Warriors </p>
             <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
             <p>• Digital advertising</p>
-
+            </div>
+            <div className='launch'>
             <h3>Scale</h3>
               <p>• Lead generation quizzes</p>
               <p>• Audio advertisements on health-focused podcasts</p>
@@ -30,11 +33,18 @@ class Adoption extends Component {
               <p>• Treatment center partnerships</p>
               <p>• Influencer marketing</p>
               <p>• PR</p>
-            </div>
+              </div>
 
 
         </div>
+        <div className='footer'>
+          <div className='footer-text'>
+          </div>
+        </div>
+
       </div>
+
+
     )
   }
 };
