@@ -24,8 +24,9 @@ class MainContainer extends Component {
     var self = this;
 
     return (
+      <div>
+        <MenuBarIcon togglePanel={this.props.togglePanel} open={this.props.open}/>
         <div className={this.state.menuBarState}>
-          <MenuBarIcon togglePanel={this.props.togglePanel} open={this.props.open}/>
           <Intro/>
           <SectionContainer>
             {this.props.sections.map((v, i) => (
@@ -36,6 +37,7 @@ class MainContainer extends Component {
             ))}
           </SectionContainer>
         </div>
+      </div>
     )
   }
 }

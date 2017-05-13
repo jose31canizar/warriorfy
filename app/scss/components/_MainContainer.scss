@@ -36,7 +36,7 @@ $mobile-right-transition: 60vw;
 }
 
 .menu-bar-close {
-  @include css-transition($transition-prop, $transition-time, linear);
+  @include css-transition($transition-prop, $transition-time, $transition-easing);
   @include css-transform-translate-x(0vw);
   @media all and (max-width: 1200px) {
 
