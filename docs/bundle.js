@@ -54,15 +54,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(219);
+	var _reactDom = __webpack_require__(220);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _main = __webpack_require__(220);
+	var _main = __webpack_require__(221);
 
 	var _main2 = _interopRequireDefault(_main);
 
-	var _global = __webpack_require__(229);
+	var _global = __webpack_require__(230);
 
 	var _global2 = _interopRequireDefault(_global);
 
@@ -92,19 +92,15 @@
 
 	var _MainContainer2 = _interopRequireDefault(_MainContainer);
 
-	var _sections = __webpack_require__(215);
+	var _sections = __webpack_require__(217);
 
 	var _sections2 = _interopRequireDefault(_sections);
 
-	var _MenuBar = __webpack_require__(216);
+	var _MenuBar = __webpack_require__(218);
 
 	var _MenuBar2 = _interopRequireDefault(_MenuBar);
 
-	var _MenuBarIcon = __webpack_require__(217);
-
-	var _MenuBarIcon2 = _interopRequireDefault(_MenuBarIcon);
-
-	var _NavBar = __webpack_require__(218);
+	var _NavBar = __webpack_require__(219);
 
 	var _NavBar2 = _interopRequireDefault(_NavBar);
 
@@ -289,7 +285,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'wrapper' },
-	        _react2.default.createElement(_MenuBarIcon2.default, { togglePanel: this.togglePanel, open: this.state.open }),
 	        _react2.default.createElement(_MenuBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open, closeMenuBar: this.closeMenuBar }),
 	        _react2.default.createElement(_NavBar2.default, { data: this.state.data, sections: this.state.sections, open: this.state.open, stick: this.state.stick, selectedIndex: this.state.selectedIndex, changeSelection: this.changeSelection }),
 	        _react2.default.createElement(_MainContainer2.default, { data: this.state.data, sections: this.state.sections, togglePanel: this.togglePanel, open: this.state.open })
@@ -20019,7 +20014,11 @@
 
 	var _Label2 = _interopRequireDefault(_Label);
 
-	var _Intro = __webpack_require__(213);
+	var _MenuBarIcon = __webpack_require__(214);
+
+	var _MenuBarIcon2 = _interopRequireDefault(_MenuBarIcon);
+
+	var _Intro = __webpack_require__(215);
 
 	var _Intro2 = _interopRequireDefault(_Intro);
 
@@ -20064,6 +20063,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: this.state.menuBarState },
+	        _react2.default.createElement(_MenuBarIcon2.default, { togglePanel: this.props.togglePanel, open: this.props.open }),
 	        _react2.default.createElement(_Intro2.default, null),
 	        _react2.default.createElement(
 	          _SectionContainer2.default,
@@ -20167,27 +20167,27 @@
 
 	var _Team2 = _interopRequireDefault(_Team);
 
-	var _ValueProposition = __webpack_require__(206);
+	var _ValueProposition = __webpack_require__(207);
 
 	var _ValueProposition2 = _interopRequireDefault(_ValueProposition);
 
-	var _Product = __webpack_require__(207);
+	var _Product = __webpack_require__(208);
 
 	var _Product2 = _interopRequireDefault(_Product);
 
-	var _BusinessModel = __webpack_require__(208);
+	var _BusinessModel = __webpack_require__(209);
 
 	var _BusinessModel2 = _interopRequireDefault(_BusinessModel);
 
-	var _Adoption = __webpack_require__(209);
+	var _Adoption = __webpack_require__(210);
 
 	var _Adoption2 = _interopRequireDefault(_Adoption);
 
-	var _Traction = __webpack_require__(210);
+	var _Traction = __webpack_require__(211);
 
 	var _Traction2 = _interopRequireDefault(_Traction);
 
-	var _Investment = __webpack_require__(212);
+	var _Investment = __webpack_require__(213);
 
 	var _Investment2 = _interopRequireDefault(_Investment);
 
@@ -20403,7 +20403,7 @@
 	                _react2.default.createElement(
 	                  'strong',
 	                  null,
-	                  'Diets are...'
+	                  'People who struggle with food can be...'
 	                )
 	              )
 	            ),
@@ -20441,13 +20441,13 @@
 	                  _react2.default.createElement(
 	                    'strong',
 	                    null,
-	                    'Ineffective in the long-term'
+	                    'Misinformed'
 	                  )
 	                ),
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'People often are confused.'
+	                  'Research shows restrictive diets are ineffective at long-term weight management.'
 	                )
 	              ),
 	              _react2.default.createElement(
@@ -20464,13 +20464,13 @@
 	                  _react2.default.createElement(
 	                    'strong',
 	                    null,
-	                    'Insight'
+	                    'Education'
 	                  )
 	                ),
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'People get clarity.'
+	                  'Our subject matter experts share valuable knowledge on how to make lifestyle changes that last.'
 	                )
 	              )
 	            ),
@@ -20486,18 +20486,18 @@
 	                  _react2.default.createElement(
 	                    'strong',
 	                    null,
-	                    'Increase anxiety'
+	                    'Anxious and Depressed'
 	                  )
 	                ),
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'People are often distracted.'
+	                  'Many people turn towards food or away from food in an effort to cope with mood disorders.'
 	                )
 	              ),
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'block' },
+	                { className: 'block arrow-block' },
 	                _react2.default.createElement('img', { src: __webpack_require__(165) })
 	              ),
 	              _react2.default.createElement(
@@ -20509,13 +20509,13 @@
 	                  _react2.default.createElement(
 	                    'strong',
 	                    null,
-	                    'Guidance'
+	                    'Coping Strategies'
 	                  )
 	                ),
 	                _react2.default.createElement(
 	                  'p',
 	                  null,
-	                  'People get focus.'
+	                  'We provide evidence-based strategies to help people manage and improve their anxiety and depression.'
 	                )
 	              )
 	            )
@@ -20532,13 +20532,13 @@
 	                _react2.default.createElement(
 	                  'strong',
 	                  null,
-	                  'Lower body confidence'
+	                  'Inadequately Supported'
 	                )
 	              ),
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Increases shame, isolation, anxiety and depression'
+	                'Failed attempts to control food and weight lead to guilt, shame, disappointment, and isolation.'
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -20561,52 +20561,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Connects people to certified coaches who provide nutritional and emotional support'
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'block-row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'block' },
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Lower body confidence'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Increases shame, isolation, anxiety and depression'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'block' },
-	              _react2.default.createElement('img', { src: __webpack_require__(165) })
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'block' },
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  'Support'
-	                )
-	              ),
-	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Connects people to certified coaches who provide nutritional and emotional support'
+	                'We connect people to certified coaches who provide nutritional and emotional chat-based support.'
 	              )
 	            )
 	          )
@@ -20628,7 +20583,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Dieting is ineffective at long term weight management, yet continues to be prescribed by the media and medical doctors.'
+	                'Dieting is ineffective at long-term weight management, yet continues to be prescribed by the media and medical doctors.  The collateral damage of repeated dieting cycles extends past weight gain to one\u2019s self-esteem, impacting mental and emotional health.'
 	              )
 	            )
 	          ),
@@ -20646,7 +20601,7 @@
 	              _react2.default.createElement(
 	                'p',
 	                null,
-	                'Build an immersive educational experience that connects people to expert knowledge, health data, and a coach.'
+	                'We believe real change happens from the inside out. Warriorfy combines accountability, education, and motivation, all the necessary ingredients for successful lifestyle change, into one convenient platform. '
 	              )
 	            )
 	          )
@@ -20720,6 +20675,7 @@
 	      // const teamMembers = Array.apply(null, {length: N}).map(Number.call, Number);
 	      // console.log(TeamData);
 
+
 	      var topRow = _team2.default.slice(0, 4);
 	      var middleRow = _team2.default.slice(4, 8);
 	      var bottomRow = _team2.default.slice(8, 12);
@@ -20729,128 +20685,141 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'team-members-container' },
+	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'team-members' },
+	          { className: 'team-header-text' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'We build things people need and love to use.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'team-members-container' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'team-members-row' },
-	            topRow.map(function (member, i) {
-	              return _react2.default.createElement(
-	                'div',
-	                { className: 'team-member' },
-	                _react2.default.createElement(
+	            { className: 'team-members' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'team-members-row' },
+	              topRow.map(function (member, i) {
+	                return _react2.default.createElement(
 	                  'div',
-	                  { className: 'profile-pic-container' },
-	                  _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'team-member-text' },
+	                  { className: 'team-member' },
 	                  _react2.default.createElement(
 	                    'div',
-	                    { className: 'member-name' },
-	                    _react2.default.createElement(
-	                      'h6',
-	                      null,
-	                      member.name
-	                    )
+	                    { className: 'profile-pic-container' },
+	                    _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
 	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.job_title
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.description
-	                  )
-	                )
-	              );
-	            })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'advisors-label-container' },
-	            _react2.default.createElement(_Label2.default, { label: 'Advisors' })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'team-members-row middle-row' },
-	            middleRow.map(function (member, i) {
-	              return _react2.default.createElement(
-	                'div',
-	                { className: 'team-member' },
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'profile-pic-container' },
-	                  _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'team-member-text' },
 	                  _react2.default.createElement(
 	                    'div',
-	                    { className: 'member-name' },
+	                    { className: 'team-member-text' },
 	                    _react2.default.createElement(
-	                      'h6',
+	                      'div',
+	                      { className: 'member-name' },
+	                      _react2.default.createElement(
+	                        'h6',
+	                        null,
+	                        member.name
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
 	                      null,
-	                      member.name
+	                      member.job_title
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      member.description
 	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.job_title
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.description
 	                  )
-	                )
-	              );
-	            })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'team-members-row' },
-	            bottomRow.map(function (member, i) {
-	              return _react2.default.createElement(
-	                'div',
-	                { className: 'team-member' },
-	                _react2.default.createElement(
+	                );
+	              })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'advisors-label-container' },
+	              _react2.default.createElement(_Label2.default, { label: 'Advisors' })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'team-members-row middle-row' },
+	              middleRow.map(function (member, i) {
+	                return _react2.default.createElement(
 	                  'div',
-	                  { className: 'profile-pic-container' },
-	                  _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
-	                ),
-	                _react2.default.createElement(
-	                  'div',
-	                  { className: 'team-member-text' },
+	                  { className: 'team-member' },
 	                  _react2.default.createElement(
 	                    'div',
-	                    { className: 'member-name' },
+	                    { className: 'profile-pic-container' },
+	                    _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'team-member-text' },
 	                    _react2.default.createElement(
-	                      'h6',
+	                      'div',
+	                      { className: 'member-name' },
+	                      _react2.default.createElement(
+	                        'h6',
+	                        null,
+	                        member.name
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
 	                      null,
-	                      member.name
+	                      member.job_title
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      member.description
 	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.job_title
-	                  ),
-	                  _react2.default.createElement(
-	                    'p',
-	                    null,
-	                    member.description
 	                  )
-	                )
-	              );
-	            })
+	                );
+	              })
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'team-members-row' },
+	              bottomRow.map(function (member, i) {
+	                return _react2.default.createElement(
+	                  'div',
+	                  { className: 'team-member' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'profile-pic-container' },
+	                    _react2.default.createElement('img', { src: __webpack_require__(170)("./" + member.image + '.png'), className: 'profile-pic' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'team-member-text' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'member-name' },
+	                      _react2.default.createElement(
+	                        'h6',
+	                        null,
+	                        member.name
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      member.job_title
+	                    ),
+	                    _react2.default.createElement(
+	                      'p',
+	                      null,
+	                      member.description
+	                    )
+	                  )
+	                );
+	              })
+	            )
 	          )
 	        )
 	      );
@@ -21132,10 +21101,11 @@
 		"./08-Featured-Self.png": 199,
 		"./08-Featured-Shape.png": 200,
 		"./08-Featured-redbook.png": 201,
-		"./Arrow.png": 202,
-		"./Product-02.png": 203,
-		"./Product-1.png": 204,
-		"./angel_list.png": 205
+		"./Adoption-IG.png": 202,
+		"./Arrow.png": 203,
+		"./Product-02.png": 204,
+		"./Product-1.png": 205,
+		"./angel_list.png": 206
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -21341,28 +21311,34 @@
 /* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "6fbae5c0cb78502387ee679979ee9a16.png";
+	module.exports = __webpack_require__.p + "330cc912cebafa8f61f58f8e30350584.png";
 
 /***/ }),
 /* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "d4690bced4ae1fb158c570f9d8c48715.png";
+	module.exports = __webpack_require__.p + "6fbae5c0cb78502387ee679979ee9a16.png";
 
 /***/ }),
 /* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "007594986a93a92bc5510db264ec26f9.png";
+	module.exports = __webpack_require__.p + "d4690bced4ae1fb158c570f9d8c48715.png";
 
 /***/ }),
 /* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "007594986a93a92bc5510db264ec26f9.png";
+
+/***/ }),
+/* 206 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21412,6 +21388,11 @@
 	              _react2.default.createElement(
 	                'h2',
 	                null,
+	                'What we\'re building doesn\'t exist yet'
+	              ),
+	              _react2.default.createElement(
+	                'h2',
+	                null,
 	                'Welcome to our blue ocean'
 	              )
 	            ),
@@ -21421,20 +21402,9 @@
 	              _react2.default.createElement(
 	                'h4',
 	                null,
-	                'You know you\'re in unchartered waters when you reach ',
-	                _react2.default.createElement(
-	                  'strong',
-	                  null,
-	                  '750K people who struggle with their relationship to food and body with zero ad spend'
-	                ),
-	                '.'
+	                'We\'ve found unchartered waters at the intersection of four growing markets. The result, a reach of 750K people who struggle with their relationship to food and body with zero ad spend.'
 	              )
 	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement('img', { className: 'market-image', src: __webpack_require__(187) })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -21453,7 +21423,7 @@
 	                _react2.default.createElement(
 	                  'strong',
 	                  null,
-	                  'Warriorfy is the first to provide a cohesive user experience that brings insight, guidance, and support.'
+	                  'Warriorfy is the first to combine educational audio content, self-tracking tools, and 1:1 support into one beautifully designed and easy-to-use platform.'
 	                )
 	              )
 	            )
@@ -21471,7 +21441,7 @@
 	exports.default = ValueProposition;
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21520,31 +21490,13 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'header-text' },
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            _react2.default.createElement(
-	              'strong',
-	              null,
-	              'The key to our success is building things people need and love to use. Warriorfy takes all our popular resources and put\'s them into one powerful platform to repair one\'s relationship to food, body, and self.'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
 	          { className: 'product' },
-	          _react2.default.createElement('img', { src: __webpack_require__(204), className: 'product-image' })
+	          _react2.default.createElement('img', { src: __webpack_require__(205), className: 'product-image' })
 	        ),
-	        _react2.default.createElement('iframe', { width: '560', height: '315', src: 'https://www.youtube.com/embed/FzO-U60-85M', frameborder: '0', allowfullscreen: true }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'footer-text' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            'Our content address the great challenges of life: work, relationships, friendship, anxiety and more.'
-	          )
+	          _react2.default.createElement('p', null)
 	        )
 	      );
 	    }
@@ -21558,7 +21510,7 @@
 	exports.default = Product;
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21597,7 +21549,21 @@
 	        'div',
 	        { className: 'container' },
 	        _react2.default.createElement('div', { className: 'header' }),
-	        _react2.default.createElement('img', { className: 'section-wide-image', src: __webpack_require__(196), alt: 'Warriorfy' })
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'Freemium model with consistent 2% conversion from free to paid plans'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          '5% churn equates to a LTV of $X and allows us to spend up to $Y to acquire a free user'
+	        ),
+	        _react2.default.createElement(
+	          'h3',
+	          null,
+	          'At 1M users our projected revenue is $XM'
+	        )
 	      );
 	    }
 	  }]);
@@ -21610,7 +21576,7 @@
 	exports.default = BusinessModel;
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21657,7 +21623,7 @@
 	            _react2.default.createElement(
 	              'h2',
 	              null,
-	              'Focus on the roots'
+	              'Leverage a Grassroots Movement.'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -21666,7 +21632,7 @@
 	            _react2.default.createElement(
 	              'h3',
 	              null,
-	              'Connect to existing audience and grow new networks through press and creative marketing strategies.'
+	              'Connect with existing warrior audience and grow laterally into new customer groups.'
 	            )
 	          )
 	        ),
@@ -21677,28 +21643,80 @@
 	            'div',
 	            { className: 'launch' },
 	            _react2.default.createElement(
-	              'p',
+	              'h3',
 	              null,
-	              'Placeholder'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'scale' },
+	              'Launch'
+	            ),
 	            _react2.default.createElement(
 	              'p',
 	              null,
-	              'Placeholder'
+	              '\u2022 Direct Email to 4,000 subscribers'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Share with social media following of over 57K Recovery Warriors '
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Promote on Recovery Warriors website with 35K monthly unique visitors '
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Promote on The Recovery Warrior Show with 25K monthly plays'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Network outreach'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Digital advertising'
+	            ),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              'Scale'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Lead generation quizzes'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Audio advertisements on health-focused podcasts'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Affiliate marketing program'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Treatment center partnerships'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 Influencer marketing'
+	            ),
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              '\u2022 PR'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'example' },
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'Placeholder'
-	            )
+	            _react2.default.createElement('img', { src: __webpack_require__(202), className: 'product-image' })
 	          )
 	        )
 	      );
@@ -21713,7 +21731,7 @@
 	exports.default = Adoption;
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21751,13 +21769,212 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2.default.createElement('img', { src: __webpack_require__(194), className: 'product-image' }),
-	        _react2.default.createElement('div', { className: 'header' }),
-	        _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(199), alt: 'Warriorfy' }),
-	        _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(211), alt: 'Warriorfy' }),
-	        _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(197), alt: 'Warriorfy' }),
-	        _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(198), alt: 'Warriorfy' }),
-	        _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(200), alt: 'Warriorfy' })
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'content' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'product-image' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'header' },
+	              _react2.default.createElement(
+	                'h4',
+	                null,
+	                'MoM Platform Growth.'
+	              )
+	            ),
+	            _react2.default.createElement('img', { src: __webpack_require__(194) })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'text-block-container' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'text-blocks' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'text-block-row' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'text-block' },
+	                  _react2.default.createElement(
+	                    'h6',
+	                    null,
+	                    'Tracking App'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Downloads: 190 K'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Sessions: 4 M'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Countries: 184'
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'text-block' },
+	                  _react2.default.createElement(
+	                    'h6',
+	                    null,
+	                    'Online Magazine'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Unique Users: 550 K'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Pageviews: 3 M'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Articles: 684'
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'text-block' },
+	                  _react2.default.createElement(
+	                    'h6',
+	                    null,
+	                    'Podcast'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Listens: 530 K'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Shows: 111'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Experts Interviewed: 69'
+	                        )
+	                      )
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'text-block' },
+	                  _react2.default.createElement(
+	                    'h6',
+	                    null,
+	                    'Treatment Directory'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Listings: 192'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          'Revenue: $110 K'
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'featured-images' },
+	          _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(199), alt: 'Warriorfy' }),
+	          _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(212), alt: 'Warriorfy' }),
+	          _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(197), alt: 'Warriorfy' }),
+	          _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(198), alt: 'Warriorfy' }),
+	          _react2.default.createElement('img', { className: 'featured-in', src: __webpack_require__(200), alt: 'Warriorfy' })
+	        )
 	      );
 	    }
 	  }]);
@@ -21770,13 +21987,13 @@
 	exports.default = Traction;
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "806de703254abc782f7a9d760bf1d57a.png";
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21839,69 +22056,118 @@
 	              _react2.default.createElement(
 	                'h3',
 	                null,
-	                'Upcoming Milestones'
+	                'Milestones'
 	              )
 	            ),
 	            _react2.default.createElement(
-	              'p',
-	              null,
-	              'Hire key roles:'
+	              'div',
+	              { className: 'milestone' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-title' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Launch tracking app on iOS and Android'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-date' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  '(Feb 2015)'
+	                )
+	              )
 	            ),
 	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '\u2022 Front-end developer'
+	              'div',
+	              { className: 'milestone' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-title' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Launch tracking app on iOS and Android'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-date' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  '(Feb 2015)'
+	                )
+	              )
 	            ),
 	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '\u2022 Back-end developer'
+	              'div',
+	              { className: 'milestone' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-title' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Launch tracking app on iOS and Android'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-date' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  '(Feb 2015)'
+	                )
+	              )
 	            ),
 	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '\u2022\xA0iOS developer'
+	              'div',
+	              { className: 'milestone' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-title' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Launch tracking app on iOS and Android.'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-date' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  '(Feb 2015)'
+	                )
+	              )
 	            ),
 	            _react2.default.createElement(
-	              'p',
-	              null,
-	              '\u2022 Android developer'
-	            ),
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' A successful well recieved product launch '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Establish core user base 100K '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Strong user acquistion metrics '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Connect with industry thought leaders '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Partner with researchers to study outcome effect '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Strong operations and managment in place '
-	            ),
-	            _react2.default.createElement(
-	              'p',
-	              null,
-	              ' Port platform to the web '
+	              'div',
+	              { className: 'milestone' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-title' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Launch tracking app on iOS and Android'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'milestone-date' },
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  '(Feb 2015)'
+	                )
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -21933,7 +22199,42 @@
 	                  _react2.default.createElement(
 	                    'p',
 	                    null,
-	                    'The companies first priority is to hire someone with a strong background in operations and recruit new engineering talent'
+	                    'Our top priority is to hire key roles for engineering and operations:'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Full stack developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Junior developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022\xA0Cross-platform mobile developer'
+	                        )
+	                      )
+	                    )
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -21948,6 +22249,41 @@
 	                    'p',
 	                    null,
 	                    'Creative ad campaigns to build a successful marketing funnel. '
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Full stack developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Junior developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022\xA0Cross-platform mobile developer'
+	                        )
+	                      )
+	                    )
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -21962,6 +22298,41 @@
 	                    'p',
 	                    null,
 	                    'Necessary legal work for licensing and distribution of audio content and protection of PHI'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Full stack developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Junior developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022\xA0Cross-platform mobile developer'
+	                        )
+	                      )
+	                    )
 	                  )
 	                )
 	              ),
@@ -21980,6 +22351,41 @@
 	                    'p',
 	                    null,
 	                    'Travel expenses to conferences to build partnerships and brand awareness'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Full stack developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Junior developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022\xA0Cross-platform mobile developer'
+	                        )
+	                      )
+	                    )
 	                  )
 	                ),
 	                _react2.default.createElement(
@@ -21994,6 +22400,41 @@
 	                    'p',
 	                    null,
 	                    'Office space, software susbscriptions'
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'text-block-description' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'roles' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Full stack developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022 Junior developer'
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'role' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'role-title' },
+	                          '\u2022\xA0Cross-platform mobile developer'
+	                        )
+	                      )
+	                    )
 	                  )
 	                )
 	              )
@@ -22012,7 +22453,88 @@
 	exports.default = Investment;
 
 /***/ }),
-/* 213 */
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MenuBarIcon = function (_Component) {
+	  _inherits(MenuBarIcon, _Component);
+
+	  function MenuBarIcon(props) {
+	    _classCallCheck(this, MenuBarIcon);
+
+	    var _this = _possibleConstructorReturn(this, (MenuBarIcon.__proto__ || Object.getPrototypeOf(MenuBarIcon)).call(this, props));
+
+	    _this.state = {
+	      MenuBarIconStyle: 'menu-bar-icon unclicked'
+	    };
+	    _this.toggleIcon = _this.toggleIcon.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(MenuBarIcon, [{
+	    key: 'toggleIcon',
+	    value: function toggleIcon() {
+	      this.setState(function (prevState, props) {
+	        var newProp;
+	        if (prevState.MenuBarIconStyle == 'menu-bar-icon unclicked') {
+	          newProp = 'menu-bar-icon clicked';
+	        } else {
+	          newProp = 'menu-bar-icon unclicked';
+	        }
+	        return {
+	          MenuBarIconStyle: newProp
+	        };
+	      });
+	    }
+	  }, {
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate(props) {
+	      if (props.open == true) {
+	        this.state.MenuBarIconStyle = 'menu-bar-icon clicked';
+	      } else {
+	        this.state.MenuBarIconStyle = 'menu-bar-icon unclicked';
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'button',
+	        { className: this.state.MenuBarIconStyle, onMouseDown: this.props.togglePanel },
+	        _react2.default.createElement('div', { id: 'topBar' }),
+	        _react2.default.createElement('div', { id: 'middleBar' }),
+	        _react2.default.createElement('div', { id: 'bottomBar' })
+	      );
+	    }
+	  }]);
+
+	  return MenuBarIcon;
+	}(_react.Component);
+
+	exports.default = MenuBarIcon;
+
+/***/ }),
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22052,7 +22574,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'Section', id: 'Intro' },
-	        _react2.default.createElement('img', { className: 'intro-image', src: __webpack_require__(214) })
+	        _react2.default.createElement('img', { className: 'intro-image', src: __webpack_require__(216) })
 	      );
 	    }
 	  }]);
@@ -22065,13 +22587,13 @@
 	exports.default = Intro;
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "ef231c47928453bc06a2b132ad2b8220.jpg";
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, exports) {
 
 	module.exports = [
@@ -22114,7 +22636,7 @@
 	];
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22203,88 +22725,7 @@
 	exports.default = MenuBar;
 
 /***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var MenuBarIcon = function (_Component) {
-	  _inherits(MenuBarIcon, _Component);
-
-	  function MenuBarIcon(props) {
-	    _classCallCheck(this, MenuBarIcon);
-
-	    var _this = _possibleConstructorReturn(this, (MenuBarIcon.__proto__ || Object.getPrototypeOf(MenuBarIcon)).call(this, props));
-
-	    _this.state = {
-	      MenuBarIconStyle: 'menu-bar-icon unclicked'
-	    };
-	    _this.toggleIcon = _this.toggleIcon.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(MenuBarIcon, [{
-	    key: 'toggleIcon',
-	    value: function toggleIcon() {
-	      this.setState(function (prevState, props) {
-	        var newProp;
-	        if (prevState.MenuBarIconStyle == 'menu-bar-icon unclicked') {
-	          newProp = 'menu-bar-icon clicked';
-	        } else {
-	          newProp = 'menu-bar-icon unclicked';
-	        }
-	        return {
-	          MenuBarIconStyle: newProp
-	        };
-	      });
-	    }
-	  }, {
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate(props) {
-	      if (props.open == true) {
-	        this.state.MenuBarIconStyle = 'menu-bar-icon clicked';
-	      } else {
-	        this.state.MenuBarIconStyle = 'menu-bar-icon unclicked';
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'button',
-	        { className: this.state.MenuBarIconStyle, onMouseDown: this.props.togglePanel },
-	        _react2.default.createElement('div', { id: 'topBar' }),
-	        _react2.default.createElement('div', { id: 'middleBar' }),
-	        _react2.default.createElement('div', { id: 'bottomBar' })
-	      );
-	    }
-	  }]);
-
-	  return MenuBarIcon;
-	}(_react.Component);
-
-	exports.default = MenuBarIcon;
-
-/***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22461,7 +22902,7 @@
 	exports.default = NavBar;
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22470,16 +22911,16 @@
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(221);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(227)(content, {});
+	var update = __webpack_require__(228)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22496,21 +22937,21 @@
 	}
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(222)(true);
+	exports = module.exports = __webpack_require__(223)(true);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: white;\n  margin: 0;\n  width: 100%; }\n  .Section h1 {\n    text-align: center;\n    z-index: 999;\n    color: #5b4d4d; }\n  .Section .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section p {\n    font-weight: 300;\n    width: 100%;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    z-index: 999;\n    color: #3d3d41; }\n\n.menu-bar-icon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  border: none;\n  color: #3d3d41;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-icon {\n      z-index: 99999; } }\n\n.menu-bar-icon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 1.1s ease;\n  -ms-transition: all 1.1s ease;\n  -o-transition: all 1.1s ease;\n  transition: all 1.1s ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 1.5s ease;\n  -ms-transition: all 1.5s ease;\n  -o-transition: all 1.5s ease;\n  transition: all 1.5s ease;\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease;\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, 10px, 0) rotate(45deg);\n  transform: translate3D(28vw, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, 10px, 0) rotate(45deg);\n      transform: translate3D(75vw, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(28vw, -10px, 0) rotate(-45deg);\n  transform: translate3D(28vw, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(75vw, -10px, 0) rotate(-45deg);\n      transform: translate3D(75vw, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(28vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(28vw, 0, 0);\n  -webkit-transform: translate3D(28vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(28vw, 0, 0);\n  transform: translate3D(28vw, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(75vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(75vw, 0, 0);\n      -webkit-transform: translate3D(75vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(75vw, 0, 0);\n      transform: translate3D(75vw, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.2s ease-in-out;\n  -ms-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  width: 100vw;\n  background: #3d3d41;\n  justify-content: flex-start;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  display: flex;\n  height: 100vh;\n  flex-direction: column; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menu-bar h2 {\n    z-index: 999999;\n    color: #e09090;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    white-space: nowrap;\n    font-size: 16pt; }\n  .menu-bar .smooth-scroll {\n    width: 100vw;\n    background: transparent;\n    z-index: 9999;\n    flex: 1; }\n    @media all and (max-width: 1200px) {\n      .menu-bar .smooth-scroll {\n        z-index: -1; } }\n\n.menu-bar-hidden {\n  -ms-transform: translate3D(0, 50px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 50px, 0);\n  -webkit-transform: translate3D(0, 50px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 50px, 0);\n  transform: translate3D(0, 50px, 0); }\n\n.menu-bar-shown {\n  -ms-transform: translate3D(0, 0px, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 0px, 0);\n  -webkit-transform: translate3D(0, 0px, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 0px, 0);\n  transform: translate3D(0, 0px, 0); }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #ffffff;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton h2 {\n    color: #ffffff;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n  border: 2px solid #ffffff;\n  border-radius: 10%;\n  background: #ffffff;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > h2 {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-open {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(60vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(60vw, 0, 0);\n      -webkit-transform: translate3D(60vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(60vw, 0, 0);\n      transform: translate3D(60vw, 0, 0); } }\n\n.menu-bar-close {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s linear;\n  -ms-transition: transform 0.35s linear;\n  -o-transition: transform 0.35s linear;\n  transition: transform 0.35s linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.stick {\n  opacity: 1.0; }\n\n.nonstick {\n  opacity: 0.0; }\n\n.nav-bar-container {\n  top: 0;\n  height: 18vh;\n  display: flex;\n  justify-content: center;\n  z-index: 9999;\n  background: white;\n  position: fixed;\n  width: 100vw;\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .nav-bar-container .selected {\n    background: #b7509e !important; }\n  .nav-bar-container .nav-warriorfy {\n    background-image: url(" + __webpack_require__(173) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-angel-list {\n    background-image: url(" + __webpack_require__(205) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1; }\n  .nav-bar-container .nav-bar {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw; }\n  @media all and (max-width: 1200px) {\n    .nav-bar-container {\n      display: none; } }\n  .nav-bar-container p:hover {\n    color: #9d9dcd; }\n  .nav-bar-container .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .smooth-scroll {\n        z-index: -1; } }\n  .nav-bar-container .nav-button {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 35px;\n    height: 35px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: white;\n    border: 2px solid #b7509e; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .nav-button {\n        margin: 20px 20px; } }\n  .nav-bar-container .nav-button:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    border: 2px solid #b7509e;\n    border-radius: 10%;\n    background: #b7509e;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .nav-bar-container .nav-button:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all 0.5s ease-in-out;\n      -ms-transition: all 0.5s ease-in-out;\n      -o-transition: all 0.5s ease-in-out;\n      transition: all 0.5s ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Intro {\n  height: 70vw; }\n  #Intro .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw; }\n    #Intro .block h1 {\n      color: white;\n      margin: 0; }\n    #Intro .block p {\n      color: #3d3d41;\n      margin: 0; }\n  #Intro .start {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.3s ease;\n    -ms-transition: all 0.3s ease;\n    -o-transition: all 0.3s ease;\n    transition: all 0.3s ease;\n    width: 15vh;\n    background-color: #f1c478;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Intro .start:hover {\n    background-color: #b57d6d; }\n  #Intro #gotoMission p {\n    color: #f1f1f1;\n    -webkit-tap-highlight-color: transparent; }\n  #Intro p {\n    color: #111111;\n    font-weight: 300;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n  #Intro .smooth-scroll {\n    position: relative;\n    top: 0; }\n  #Intro h1 {\n    color: #3d3d41; }\n    @media all and (max-width: 450px) {\n      #Intro h1 {\n        font-size: 0.75em; } }\n  #Intro .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99; }\n  #Intro .background_image {\n    width: 70vw;\n    height: 33.33vh;\n    background-color: white;\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    @media all and (max-width: 800px) {\n      #Intro .background_image {\n        width: 100vw;\n        left: 0vw; } }\n  #Intro .foreground_image {\n    width: 33.33vw;\n    height: 33.33vh;\n    top: 10vw;\n    background-color: #f1f1f1; }\n    @media all and (max-width: 800px) {\n      #Intro .foreground_image {\n        max-width: 50vw; } }\n\n#Mission h1 {\n  width: 50vw; }\n\n#Mission .container {\n  display: flex; }\n\n#Mission .mission {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#Mission .mission-background {\n  width: 100%; }\n\n#Opportunity .container {\n  width: 75vw; }\n\n#Opportunity .header {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 20pt; }\n  #Opportunity .header h1 {\n    text-align: center;\n    color: #705959;\n    width: 75vw; }\n\n#Opportunity .block-row-container {\n  margin-top: 50pt;\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n#Opportunity .block-row {\n  display: inline-flex;\n  justify-content: center; }\n\n#Opportunity .block {\n  width: 25%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-bottom: 50px; }\n  #Opportunity .block img {\n    width: 100%;\n    transform: scale(0.25); }\n\n#Opportunity .arrows {\n  display: flex;\n  justify-content: flex-start;\n  flex-direction: column;\n  align-items: center; }\n\n#Opportunity .content {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  flex-direction: column;\n  padding-bottom: 10vh; }\n\n#Opportunity .top-labels {\n  display: inline-flex;\n  justify-content: space-around; }\n\n#Opportunity .arrows-label {\n  color: transparent; }\n\n#Opportunity .arrow {\n  transform: scale(0.2) rotate3d(1, 0, 0, 0);\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease;\n  -ms-transition: all 0.5s ease;\n  -o-transition: all 0.5s ease;\n  transition: all 0.5s ease;\n  z-index: 9999; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Opportunity .arrow:hover {\n  transform: scale(0.4) rotate3d(1, 0, 0, 45deg); }\n\n#Opportunity .overall {\n  width: 100%;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  margin-bottom: 10vh; }\n  #Opportunity .overall .problem {\n    width: 25%;\n    background: transparent;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #3d3d41;\n    padding: 22pt; }\n  #Opportunity .overall .solution {\n    width: 25%;\n    background: black;\n    font-color: white;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #3d3d41;\n    padding: 22pt; }\n  #Opportunity .overall h4 {\n    text-align: center; }\n\n#Opportunity p {\n  font-family: arial;\n  text-align: left; }\n\n#Opportunity h3 {\n  text-align: left; }\n\n#Opportunity .problems {\n  width: 25%; }\n\n#Opportunity .solutions {\n  width: 25%; }\n\n#Opportunity .problem-block {\n  padding-bottom: 30pt; }\n\n#Opportunity .solution-block {\n  padding-bottom: 30pt; }\n\n#Opportunity .solutions-label {\n  border-radius: 4px; }\n  #Opportunity .solutions-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label {\n  border-radius: 4px; }\n  #Opportunity .problems-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label-subtitle {\n  padding-bottom: 20pt; }\n\n#Opportunity .solutions-label-subtitle {\n  padding-bottom: 20pt; }\n\n#Opportunity .solution-label h4 {\n  color: white; }\n\n#Opportunity .solution-label p {\n  color: white; }\n\n#Team .team-members-container {\n  margin-top: 0vh;\n  margin-bottom: 10vh; }\n\n#Team .team-member-text {\n  margin-top: 20pt; }\n\n#Team .advisors-label-container {\n  position: relative;\n  width: 100vw; }\n\n#Team .member-name {\n  padding-bottom: 8pt; }\n\n#Team .team-members {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members {\n      display: flex;\n      max-width: 100vw; } }\n\n#Team .team-member {\n  display: block;\n  margin-left: 25px;\n  margin-right: 25px; }\n  @media all and (max-width: 1200px) {\n    #Team .team-member {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      margin-bottom: 10vh; } }\n\n#Team .team-members-row {\n  display: flex;\n  justify-content: center;\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members-row {\n      display: block; } }\n\n#Team .middle-row {\n  padding-bottom: 40px; }\n\n#Team .profile-pic-container {\n  display: block;\n  width: 222px;\n  height: 222px;\n  justify-content: center;\n  align-items: center; }\n\n#Team .profile-pic {\n  width: 222px;\n  height: 222px;\n  background: #d9cdcd;\n  border-radius: 50%; }\n\n#Team p {\n  width: 222px;\n  text-align: center;\n  color: #3d3d41; }\n\n#Team h2 {\n  width: 222px;\n  text-align: center;\n  color: #3d3d41; }\n\n#Value .market-image {\n  width: 75vw;\n  padding-top: 30pt;\n  padding-bottom: 30pt; }\n  @media all and (max-width: 1200px) {\n    #Value .market-image {\n      width: 100vw; } }\n\n#Value .container-wrapper {\n  width: 100vw;\n  display: flex;\n  justify-content: center; }\n  #Value .container-wrapper .container {\n    display: flex;\n    width: 75vw;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap; }\n\n#Value .header {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  @media all and (max-width: 1200px) {\n    #Value .header {\n      width: 75vw; } }\n  #Value .header .header-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Value .header .header-text h1 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value .header .header-text h1 {\n          width: 75vw; } }\n  #Value .header .subtitle-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    #Value .header .subtitle-text h3 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value .header .subtitle-text h3 {\n          width: 75vw; } }\n\n#Value .footer {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value .footer .footer-text {\n    width: 50vw; }\n    @media all and (max-width: 1200px) {\n      #Value .footer .footer-text {\n        width: 75vw; } }\n\n#Value .baseline-footer {\n  width: 50vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value .baseline-footer .baseline-footer-logo {\n    width: 40px;\n    height: 40px; }\n  #Value .baseline-footer h2 {\n    margin-left: 20px; }\n\n#Product .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Product .header {\n  width: 75vw; }\n\n#Product .product {\n  width: 75vw;\n  background: #835757;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Product .product {\n      width: 100vw; } }\n  #Product .product .phone {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Product .product .phone:hover {\n    -ms-transform: rotate3d(0, 1, 0, 50deg);\n    /* IE 9 */\n    -moz-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -webkit-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -o-transform: rotate3d(0, 1, 0, 50deg);\n    transform: rotate3d(0, 1, 0, 50deg);\n    background: #b0a5a5; }\n\n#Business\\ Model .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Business\\ Model .header {\n  width: 100vw; }\n\n#Business\\ Model .model {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Business\\ Model .model {\n      width: 100vw; } }\n\n#Adoption .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Adoption .header {\n  width: 75vw;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Adoption .header {\n      width: 100vw; } }\n\n#Adoption .adoption {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Adoption .adoption {\n      width: 100vw; } }\n  #Adoption .adoption .launch {\n    width: 25%;\n    height: 100%;\n    background: #b99494; }\n  #Adoption .adoption .scale {\n    width: 25%;\n    height: 100%;\n    background: #927171; }\n  #Adoption .adoption .example {\n    width: 50%;\n    height: 100%;\n    background: #796464; }\n\n#Investment .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .text-block-container {\n  width: 66.66%; }\n  #Investment .text-block-container h3 {\n    text-align: left; }\n\n#Investment .text-blocks {\n  display: flex;\n  width: 95%;\n  justify-content: space-between; }\n\n#Investment .text-block-grid {\n  display: flex;\n  width: 75vw;\n  justify-content: flex-end; }\n\n#Investment .text-block-row {\n  width: 20vw; }\n\n#Investment .text-block-milestone {\n  width: 50%; }\n  #Investment .text-block-milestone p {\n    padding-bottom: 12pt; }\n  #Investment .text-block-milestone h3 {\n    text-align: left; }\n\n#Investment .text-block {\n  background: transparent;\n  border: 2px solid #3d3d41;\n  height: 35vh;\n  text-align: left;\n  margin-top: 10px;\n  flex-direction: column;\n  border-radius: 4px;\n  padding: 15px; }\n  #Investment .text-block h6 {\n    text-align: left;\n    padding-bottom: 12pt;\n    font-weight: 400; }\n\n#Investment .header-text-milestone {\n  padding-bottom: 22pt; }\n\n#Investment .header-text-money {\n  padding-bottom: 12pt; }\n\n#Investment .investment {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Investment .investment {\n      width: 100vw; } }\n  #Investment .investment .milestones {\n    width: 40%;\n    height: 100%;\n    background: #705959; }\n  #Investment .investment p {\n    color: white; }\n  #Investment .investment .money {\n    width: 60%;\n    height: 100%;\n    background: #574f4f; }\n\n#Investment .overall {\n  width: 100%;\n  background: transparent;\n  justify-content: center;\n  margin-bottom: 10vh; }\n  #Investment .overall .problem {\n    width: 25%;\n    background: transparent;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #3d3d41; }\n  #Investment .overall .solution {\n    width: 25%;\n    background: transparent;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border: 1.5px solid #3d3d41; }\n  #Investment .overall h4 {\n    text-align: center; }\n\n#Traction .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Traction .header {\n  width: 100vw; }\n\n#Traction .traction {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Traction .traction {\n      width: 100vw; } }\n\n#Traction .featured-in {\n  width: 15%;\n  padding: 10pt; }\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 15vh;\n  background: white;\n  padding-bottom: 15vh; }\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #3d3d41; }\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n  position: absolute;\n  color: #3d3d41;\n  cursor: default;\n  margin-top: 0vh;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9999;\n  padding: 10px 20px;\n  border-radius: 2px; }\n\n.label-text {\n  color: #3d3d41;\n  font-family: \"Oswald\";\n  font-weight: 200;\n  font-size: 22pt;\n  margin-left: -35px;\n  margin-top: -34.5vh;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  border-left: 2px solid #3d3d41;\n  border-right: 2px solid #3d3d41;\n  border-top: 2px solid #3d3d41;\n  border-bottom: 2px solid #3d3d41;\n  z-index: 999999; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: white;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  overflow-x: hidden; }\n  body .container {\n    width: 100vw;\n    left: 0; }\n  body .section-medium-image {\n    position: relative;\n    width: 75vw;\n    left: 0; }\n  body .section-wide-image {\n    position: relative;\n    width: 100vw;\n    left: 0; }\n  body .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0; }\n  body .header-text {\n    padding-bottom: 40pt;\n    width: 75vw; }\n  body .footer-text {\n    padding: 40pt 0pt;\n    width: 75vw;\n    text-align: center; }\n  body .subtitle-text {\n    padding: 40pt 0pt; }\n  body h1 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 5.135em;\n    margin: 0pt; }\n  body h2 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 3.852em;\n    margin: 0pt; }\n  body h3 {\n    font-family: \"Open Sans\", Didot, serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 2.0em;\n    margin: 0pt; }\n  body h4 {\n    font-family: \"Open Sans\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.626em;\n    margin: 0pt; }\n  body h5 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.1em;\n    margin: 0pt;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    padding-top: 2.25em;\n    font-weight: 300;\n    color: #3d3d41;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    white-space: nowrap; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  body h6 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.4em;\n    margin: 0pt;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    font-weight: 300;\n    color: #3d3d41;\n    text-align: center;\n    white-space: nowrap; }\n  body p, body li {\n    font-family: Arial;\n    color: #111111;\n    font-weight: 200;\n    font-size: 1.1em;\n    margin: 0pt; }\n  body .wrapper {\n    overflow-x: hidden; }\n  body a {\n    text-decoration: none; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/main.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Intro.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Mission.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Opportunity.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Team.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_ValueProposition.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Product.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_BusinessModel.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Adoption.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Investment.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Traction.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Label.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,wBCAqB;EDCrB,UAAS;EACT,YAAW,EAmCZ;EAtCD;IAOI,mBAAkB;IAClB,aAAY;IACZ,eAXsB,EAYvB;EAVH;IAaI,aAAY;IACZ,cAAa;IACb,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EAEpB;EAnBH;IAsBI,aAAY;IACZ,mBAAkB;IAClB,QAAO;IACP,UAAS;IACT,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EA7BH;IAgCI,iBAAgB;IAChB,YAAW;IErCb,4BFsC+B;IEtCJ,gBAAgB;IAC3C,0BFqC+B;IErCN,YAAY;IACpC,yBFoC8B;IEpCN,oBAAoB;IAC1C,uBFmC4B;IEnCN,aAAa;IAClC,sBFkC2B;IElCN,4BAA4B;IAC7C,kBFiCuB;IEjCN;gEACqC;IAC9D,yCAA0C;IFgCxC,aAAY;IACZ,eAzCqB,EA0CtB;;AG/BH;ECeE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EAUtB,aAAY;EACZ,eAd2B;EAe3B,wBAAuB;EACvB,cAAa;EDfb,4BCgB6B;EDhBF,gBAAgB;EAC3C,0BCe6B;EDfJ,YAAY;EACpC,yBCc4B;EDdJ,oBAAoB;EAC1C,uBCa0B;EDbJ,aAAa;EAClC,sBCYyB;EDZJ,4BAA4B;EAC7C,kBCWqB;EDXJ;gEACqC;EAC9D,yCAA0C;ECU1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc,EAKf;ECIC;IDrBF;MCwBE,oDAAsD,EDPvD,EAAA;ECUC;ID3BF;MC8BE,oDAAsD,EDbvD,EAAA;ECgBD;IDjCA;MCoCA,oDAAsD,EDnBrD,EAAA;ECsBD;IDvCA;MC2CA,oDAAsD,ED1BrD,EAAA;EC6BD;ID9CA;MCkDA,oDAAsD,EDjCrD,EAAA;ECoCD;IDrDA;MCyDA,oDAAsD,EDxCrD,EAAA;EC2CD;ID5DA;MC+DA,oDAAsD,ED9CrD,EAAA;EAHC;IAdF;MAeI,eAAc,EAEjB,EAAA;;AAED;ECJE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EA6BtB,oBAAmB,EACpB;ECDC;IDFF;MCKE,oDAAsD,EDFvD,EAAA;ECKC;IDRF;MCWE,oDAAsD,EDRvD,EAAA;ECWD;IDdA;MCiBA,oDAAsD,EDdrD,EAAA;ECiBD;IDpBA;MCwBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID3BA;MC+BA,oDAAsD,ED5BrD,EAAA;EC+BD;IDlCA;MCsCA,oDAAsD,EDnCrD,EAAA;ECsCD;IDzCA;MC4CA,oDAAsD,EDzCrD,EAAA;;AAED;ECTE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EAkCtB,YAAW;EACX,YAAW;EACX,oBAAmB;EACnB,gBAAe,EAChB;ECTC;IDGF;MCAE,oDAAsD,EDMvD,EAAA;ECHC;IDHF;MCME,oDAAsD,EDAvD,EAAA;ECGD;IDTA;MCYA,oDAAsD,EDNrD,EAAA;ECSD;IDfA;MCmBA,oDAAsD,EDbrD,EAAA;ECgBD;IDtBA;MC0BA,oDAAsD,EDpBrD,EAAA;ECuBD;ID7BA;MCiCA,oDAAsD,ED3BrD,EAAA;EC8BD;IDpCA;MCuCA,oDAAsD,EDjCrD,EAAA;;AAED;ECjBE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EA0CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECfC;IDWF;MCRE,oDAAsD,EDYvD,EAAA;ECTC;IDKF;MCFE,oDAAsD,EDMvD,EAAA;ECHD;IDDA;MCIA,oDAAsD,EDArD,EAAA;ECGD;IDPA;MCWA,oDAAsD,EDPrD,EAAA;ECUD;IDdA;MCkBA,oDAAsD,EDdrD,EAAA;ECiBD;IDrBA;MCyBA,oDAAsD,EDrBrD,EAAA;ECwBD;ID5BA;MC+BA,oDAAsD,ED3BrD,EAAA;;AAED;ECvBE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EAgDtB,gEAAgE;EAChE,kEAAkE,EAEnE;ECtBC;IDiBF;MCdE,oDAAsD,EDmBvD,EAAA;EChBC;IDWF;MCRE,oDAAsD,EDavD,EAAA;ECVD;IDKA;MCFA,oDAAsD,EDOrD,EAAA;ECJD;IDDA;MCKA,oDAAsD,EDArD,EAAA;ECGD;IDRA;MCYA,oDAAsD,EDPrD,EAAA;ECUD;IDfA;MCmBA,oDAAsD,EDdrD,EAAA;ECiBD;IDtBA;MCyBA,oDAAsD,EDpBrD,EAAA;;AAED;EC9BE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EAuDtB,8CAA8C;EAC9C,qCAAqC,EACtC;EC5BC;IDwBF;MCrBE,oDAAsD,EDyBvD,EAAA;ECtBC;IDkBF;MCfE,oDAAsD,EDmBvD,EAAA;EChBD;IDYA;MCTA,oDAAsD,EDarD,EAAA;ECVD;IDMA;MCFA,oDAAsD,EDMrD,EAAA;ECHD;IDDA;MCKA,oDAAsD,EDDrD,EAAA;ECID;IDRA;MCYA,oDAAsD,EDRrD,EAAA;ECWD;IDfA;MCkBA,oDAAsD,EDdrD,EAAA;;AAED;ECpCE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EC6HtB,wDAAgD;EAAG,UAAU;EAC7D,yDAAiD;EAAG,YAAY;EAChE,4DAAoD;EAAG,YAAY;EACnE,uDAA+C;EAC/C,oDAA4C,EDhE7C;ECpCC;ID8BF;MC3BE,oDAAsD,EDiCvD,EAAA;EC9BC;IDwBF;MCrBE,oDAAsD,ED2BvD,EAAA;ECxBD;IDkBA;MCfA,oDAAsD,EDqBrD,EAAA;EClBD;IDYA;MCRA,oDAAsD,EDcrD,EAAA;ECXD;IDKA;MCDA,oDAAsD,EDOrD,EAAA;ECJD;IDFA;MCMA,oDAAsD,EDArD,EAAA;ECGD;IDTA;MCYA,oDAAsD,EDNrD,EAAA;EAHC;IAHF;MCkEE,wDAAgD;MAAG,UAAU;MAC7D,yDAAiD;MAAG,YAAY;MAChE,4DAAoD;MAAG,YAAY;MACnE,uDAA+C;MAC/C,oDAA4C,EDhE7C,EAAA;;AAED;EC5CE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;ECqItB,0DAAgD;EAAG,UAAU;EAC7D,2DAAiD;EAAG,YAAY;EAChE,8DAAoD;EAAG,YAAY;EACnE,yDAA+C;EAC/C,sDAA4C,EDhE7C;EC5CC;IDsCF;MCnCE,oDAAsD,EDyCvD,EAAA;ECtCC;IDgCF;MC7BE,oDAAsD,EDmCvD,EAAA;EChCD;ID0BA;MCvBA,oDAAsD,ED6BrD,EAAA;EC1BD;IDoBA;MChBA,oDAAsD,EDsBrD,EAAA;ECnBD;IDaA;MCTA,oDAAsD,EDerD,EAAA;ECZD;IDMA;MCFA,oDAAsD,EDQrD,EAAA;ECLD;IDDA;MCIA,oDAAsD,EDErD,EAAA;EAHC;IAHF;MCkEE,0DAAgD;MAAG,UAAU;MAC7D,2DAAiD;MAAG,YAAY;MAChE,8DAAoD;MAAG,YAAY;MACnE,yDAA+C;MAC/C,sDAA4C,EDhE7C,EAAA;;AAED;ECpDE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;ECsLtB,mCAAoC;EAAE,UAAU;EAChD,oCAAqC;EAAE,YAAY;EACnD,uCAAwC;EAAE,YAAY;EACtD,kCAAmC;EACnC,+BAAgC;EA7FhC,uCAAoC;EAAE,UAAU;EAChD,wCAAqC;EACrC,2CAAwC;EAAE,YAAY;EACtD,sCAAmC;EACnC,mCAAgC;EDfhC,WAAU,EACX;ECtDC;ID8CF;MC3CE,oDAAsD,EDmDvD,EAAA;EChDC;IDwCF;MCrCE,oDAAsD,ED6CvD,EAAA;EC1CD;IDkCA;MC/BA,oDAAsD,EDuCrD,EAAA;ECpCD;ID4BA;MCxBA,oDAAsD,EDgCrD,EAAA;EC7BD;IDqBA;MCjBA,oDAAsD,EDyBrD,EAAA;ECtBD;IDcA;MCVA,oDAAsD,EDkBrD,EAAA;ECfD;IDOA;MCJA,oDAAsD,EDYrD,EAAA;EAJC;IAJF;MCkBE,uCAAoC;MAAE,UAAU;MAChD,wCAAqC;MACrC,2CAAwC;MAAE,YAAY;MACtD,sCAAmC;MACnC,mCAAgC,EDdjC,EAAA;;AAED;EC9DE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;EC6HtB,qDAAgD;EAAG,UAAU;EAC7D,sDAAiD;EAAG,YAAY;EAChE,yDAAoD;EAAG,YAAY;EACnE,oDAA+C;EAC/C,iDAA4C,EDzC7C;EC3DC;IDwDF;MCrDE,oDAAsD,EDwDvD,EAAA;ECrDC;IDkDF;MC/CE,oDAAsD,EDkDvD,EAAA;EC/CD;ID4CA;MCzCA,oDAAsD,ED4CrD,EAAA;ECzCD;IDsCA;MClCA,oDAAsD,EDqCrD,EAAA;EClCD;ID+BA;MC3BA,oDAAsD,ED8BrD,EAAA;EC3BD;IDwBA;MCpBA,oDAAsD,EDuBrD,EAAA;ECpBD;IDiBA;MCdA,oDAAsD,EDiBrD,EAAA;;AAED;ECnEE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;ECqItB,qDAAgD;EAAG,UAAU;EAC7D,sDAAiD;EAAG,YAAY;EAChE,yDAAoD;EAAG,YAAY;EACnE,oDAA+C;EAC/C,iDAA4C,ED5C7C;EChEC;ID6DF;MC1DE,oDAAsD,ED6DvD,EAAA;EC1DC;IDuDF;MCpDE,oDAAsD,EDuDvD,EAAA;ECpDD;IDiDA;MC9CA,oDAAsD,EDiDrD,EAAA;EC9CD;ID2CA;MCvCA,oDAAsD,ED0CrD,EAAA;ECvCD;IDoCA;MChCA,oDAAsD,EDmCrD,EAAA;EChCD;ID6BA;MCzBA,oDAAsD,ED4BrD,EAAA;ECzBD;IDsBA;MCnBA,oDAAsD,EDsBrD,EAAA;;AAED;ECxEE,yCAA0C;EAC1C,+BDxBsB;ECyBtB,8BDzBsB;EC0BtB,6BD1BsB;EC2BtB,0BD3BsB;ECsLtB,mCAAoC;EAAE,UAAU;EAChD,oCAAqC;EAAE,YAAY;EACnD,uCAAwC;EAAE,YAAY;EACtD,kCAAmC;EACnC,+BAAgC;EA7FhC,sCAAoC;EAAE,UAAU;EAChD,uCAAqC;EACrC,0CAAwC;EAAE,YAAY;EACtD,qCAAmC;EACnC,kCAAgC;EDEhC,WAAU,EACX;ECvEC;IDkEF;MC/DE,oDAAsD,EDoEvD,EAAA;ECjEC;ID4DF;MCzDE,oDAAsD,ED8DvD,EAAA;EC3DD;IDsDA;MCnDA,oDAAsD,EDwDrD,EAAA;ECrDD;IDgDA;MC5CA,oDAAsD,EDiDrD,EAAA;EC9CD;IDyCA;MCrCA,oDAAsD,ED0CrD,EAAA;ECvCD;IDkCA;MC9BA,oDAAsD,EDmCrD,EAAA;EChCD;ID2BA;MCxBA,oDAAsD,ED6BrD,EAAA;;AEjGD;EDoBE,yCAA0C;EAC1C,sCCzB6B;ED0B7B,qCC1B6B;ED2B7B,oCC3B6B;ED4B7B,iCC5B6B;EAM3B,gBAAe;EACf,OAAM;EACN,cAAa;EACb,QAAO;EACP,aAAY;EACZ,oBAVc;EAWd,4BAA2B;EAC3B,wBAAuB;EACvB,gBAAe;EACf,cAAa;EACb,cAAa;EACb,uBAAsB,EA0BzB;EDbC;IC1BF;MD6BE,oDAAsD,ECUvD,EAAA;EDPC;IChCF;MDmCE,oDAAsD,ECIvD,EAAA;EDDD;ICtCA;MDyCA,oDAAsD,ECFrD,EAAA;EDKD;IC5CA;MDgDA,oDAAsD,ECTrD,EAAA;EDYD;ICnDA;MDuDA,oDAAsD,EChBrD,EAAA;EDmBD;IC1DA;MD8DA,oDAAsD,ECvBrD,EAAA;ED0BD;ICjEA;MDoEA,oDAAsD,EC7BrD,EAAA;EAvCD;IAgBQ,gBAAe;IACf,eAAc;IACd,mBAAkB;IAClB,aAAY;IACZ,mBAAkB;IHzBxB,4BG0BmC;IH1BR,gBAAgB;IAC3C,0BGyBmC;IHzBV,YAAY;IACpC,yBGwBkC;IHxBV,oBAAoB;IAC1C,uBGuBgC;IHvBV,aAAa;IAClC,sBGsB+B;IHtBV,4BAA4B;IAC7C,kBGqB2B;IHrBV;gEACqC;IAC9D,yCAA0C;IGoBpC,gBAAe;IACf,oBAAmB;IACnB,gBAAe,EAClB;EAzBL;IA6BM,aAAY;IACZ,wBAAuB;IACvB,cAAa;IACb,QAAO,EAMR;IAJC;MAlCN;QAmCQ,YAAW,EAGd,EAAA;;AAGL;EDyDE,uCAAoC;EAAE,UAAU;EAChD,wCAAqC;EACrC,2CAAwC;EAAE,YAAY;EACtD,sCAAmC;EACnC,mCAAgC,EC3DjC;;AAED;EDqDE,sCAAoC;EAAE,UAAU;EAChD,uCAAqC;EACrC,0CAAwC;EAAE,YAAY;EACtD,qCAAmC;EACnC,kCAAgC,ECvDjC;;AAKD;EDhCE,yCAA0C;EAC1C,sCCgC8C;ED/B9C,qCC+B8C;ED9B9C,oCC8B8C;ED7B9C,iCC6B8C;EAC9C,aAAY;EACV,kBAAiB;EACjB,YAAW;EACX,oBAAmB;EACnB,YAAW;EACX,aAAY;EACZ,eAAc;EACd,cAAa;EACb,wBAAuB;EACvB,0BAjEuB;EAmEvB,cAAa;EACb,4BAA2B;EAC3B,oBAAmB,EAqBtB;ED9DC;IC0BF;MDvBE,oDAAsD,EC2DvD,EAAA;EDxDC;ICoBF;MDjBE,oDAAsD,ECqDvD,EAAA;EDlDD;ICcA;MDXA,oDAAsD,EC+CrD,EAAA;ED5CD;ICQA;MDJA,oDAAsD,ECwCrD,EAAA;EDrCD;ICCA;MDGA,oDAAsD,ECiCrD,EAAA;ED9BD;ICNA;MDUA,oDAAsD,EC0BrD,EAAA;EDvBD;ICbA;MDgBA,oDAAsD,ECoBrD,EAAA;EApCD;IAsBI,eA5EuB;IA6EvB,aAAY;IACZ,iBAAgB;IAChB,UAAS;IACT,mBAAkB;IAClB,mBAAkB;IAClB,oBAAmB,EAKpB;;AAKH;EDtEE,yCAA0C;EAC1C,sCCsE8C;EDrE9C,qCCqE8C;EDpE9C,oCCoE8C;EDnE9C,iCCmE8C;EAC9C,0BA9FyB;EA+FzB,mBAAkB;EAClB,oBAhGyB;EAiGzB,gBAAe,EAKhB;ED1EC;ICgEF;MD7DE,oDAAsD,ECuEvD,EAAA;EDpEC;IC0DF;MDvDE,oDAAsD,ECiEvD,EAAA;ED9DD;ICoDA;MDjDA,oDAAsD,EC2DrD,EAAA;EDxDD;IC8CA;MD1CA,oDAAsD,ECoDrD,EAAA;EDjDD;ICuCA;MDnCA,oDAAsD,EC6CrD,EAAA;ED1CD;ICgCA;MD5BA,oDAAsD,ECsCrD,EAAA;EDnCD;ICyBA;MDtBA,oDAAsD,ECgCrD,EAAA;EAVD;IDtEE,yCAA0C;IAC1C,sCC6EgD;ID5EhD,qCC4EgD;ID3EhD,oCC2EgD;ID1EhD,iCC0EgD,EAC/C;IDzED;MCgEF;QD7DE,oDAAsD,ECsErD,EAAA;IDnED;MC0DF;QDvDE,oDAAsD,ECgErD,EAAA;ID7DH;MCoDA;QDjDA,oDAAsD,EC0DnD,EAAA;IDvDH;MC8CA;QD1CA,oDAAsD,ECmDnD,EAAA;IDhDH;MCuCA;QDnCA,oDAAsD,EC4CnD,EAAA;IDzCH;MCgCA;QD5BA,oDAAsD,ECqCnD,EAAA;IDlCH;MCyBA;QDtBA,oDAAsD,EC+BnD,EAAA;;AChGH;EACE,oBAT4B;EFyB5B,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EFWC;IEvBF;MF0BE,oDAAsD,EEdvD,EAAA;EFiBC;IE7BF;MFgCE,oDAAsD,EEpBvD,EAAA;EFuBD;IEnCA;MFsCA,oDAAsD,EE1BrD,EAAA;EF6BD;IEzCA;MF6CA,oDAAsD,EEjCrD,EAAA;EFoCD;IEhDA;MFoDA,oDAAsD,EExCrD,EAAA;EF2CD;IEvDA;MF2DA,oDAAsD,EE/CrD,EAAA;EFkDD;IE9DA;MFiEA,oDAAsD,EErDrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EFGE,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C,EAoBhD;EFOC;IETF;MFYE,oDAAsD,EEVvD,EAAA;EFaC;IEfF;MFkBE,oDAAsD,EEhBvD,EAAA;EFmBD;IErBA;MFwBA,oDAAsD,EEtBrD,EAAA;EFyBD;IE3BA;MF+BA,oDAAsD,EE7BrD,EAAA;EFgCD;IElCA;MFsCA,oDAAsD,EEpCrD,EAAA;EFuCD;IEzCA;MF6CA,oDAAsD,EE3CrD,EAAA;EF8CD;IEhDA;MFmDA,oDAAsD,EEjDrD,EAAA;;AAED;EFDE,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C,EA8BhD;EFHC;IELF;MFQE,oDAAsD,EEAvD,EAAA;EFGC;IEXF;MFcE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sD,EG+ErD,EAAA;IH5ED;MGtBF;QHyBE,oDAAsD,EGyErD,EAAA;IHtEH;MG5BA;QH+BA,oDAAsD,EGmEnD,EAAA;IHhEH;MGlCA;QHsCA,oDAAsD,EG4DnD,EAAA;IHzDH;MGzCA;QH6CA,oDAAsD,EGqDnD,EAAA;IHlDH;MGhDA;QHoDA,oDAAsD,EG8CnD,EAAA;IH3CH;MGvDA;QH0DA,oDAAsD,EGwCnD,EAAA;IAlGH;MHUE,yCAA0C;MAC1C,sCGqFkD;MHpFlD,qCGoFkD;MHnFlD,oCGmFkD;MHlFlD,iCGkFkD,EAC/C;MHjFH;QGhBF;UHmBE,oDAAsD,EG8EnD,EAAA;MH3EH;QGtBF;UHyBE,oDAAsD,EGwEnD,EAAA;MHrEL;QG5BA;UH+BA,oDAAsD,EGkEjD,EAAA;MH/DL;QGlCA;UHsCA,oDAAsD,EG2DjD,EAAA;MHxDL;QGzCA;UH6CA,oDAAsD,EGoDjD,EAAA;MHjDL;QGhDA;UHoDA,oDAAsD,EG6CjD,EAAA;MH1CL;QGvDA;UH0DA,oDAAsD,EGuCjD,EAAA;;AC3GL;EAEE,aAAY,EA2Gb;EA7GD;IAMI,mBAAkB;IAClB,eAAc;IACd,cAAa;IACb,wBAAuB;IACvB,oBAAmB;IACnB,gBAAe;IACf,UAAS,EAWV;IAvBH;MAeM,aAAY;MACZ,UAAS,EACR;IAjBP;MAoBM,eAAc;MACd,UAAS,EACR;EAtBP;IJoBE,yCAA0C;IAC1C,+BIOyC;IJNzC,8BIMyC;IJLzC,6BIKyC;IJJzC,0BIIyC;IACvC,YAAW;IACX,0BAAyB;IACzB,mBAAkB;IAClB,mBAAkB;IAClB,gBAAe;IACf,eAAc;IACd,gBAAe;IACf,iBAAgB;IAChB,oBAAmB,EACpB;IJZD;MI1BF;QJ6BE,oDAAsD,EISrD,EAAA;IJND;MIhCF;QJmCE,oDAAsD,EIGrD,EAAA;IJAH;MItCA;QJyCA,oDAAsD,EIHnD,EAAA;IJMH;MI5CA;QJgDA,oDAAsD,EIVnD,EAAA;IJaH;MInDA;QJuDA,oDAAsD,EIjBnD,EAAA;IJoBH;MI1DA;QJ8DA,oDAAsD,EIxBnD,EAAA;IJ2BH;MIjEA;QJoEA,oDAAsD,EI9BnD,EAAA;EAtCH;IAyC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","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$p-section-color: #3d3d41;\n$border-color: #ac9e9e;\n$label-color: #aa8686;\n$h1-section-color: #5b4d4d;\n\n.Section {\n  background-color: $global-bg-color;\n  margin: 0;\n  width: 100%;\n\n\n  h1 {\n    text-align: center;\n    z-index: 999;\n    color: $h1-section-color;\n  }\n\n  .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n  }\n\n  .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  p {\n    font-weight: 300;\n    width: 100%;\n    @include css-user-select(none);\n    z-index: 999;\n    color: $p-section-color;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #3d3d41;\n$global-h2-color: #3d3d41;\n$global-h3-color: #3d3d41;\n$global-h4-color: #3d3d41;\n$global-h5-color: #3d3d41;\n$global-bg-color: white;\n$h1-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$h2-font-stack: 'Raleway', Futura, Helvetica, sans-serif;\n$h3-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$h4-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$h5-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-label-font-stack: 'Monserrat', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Open Sans', Didot, serif;\n$global-box-width: 70vw;\n$section-color: #faa187;\n$start-button-color: #faa187;\n$global-font-weight: 300;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Intro.scss';\n@import './components/sections/Mission.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/ValueProposition.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/Adoption.scss';\n@import './components/sections/Investment.scss';\n@import './components/sections/Traction.scss';\n@import './components/Label.scss';\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $global-bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  overflow-x:hidden;\n\n  .container {\n      width: 100vw;\n      left: 0;\n  }\n\n  .section-medium-image {\n  position: relative;\n  width: 75vw;\n  left: 0;\n  }\n\n  .section-wide-image {\n  position: relative;\n  width: 100vw;\n  left: 0;\n  }\n\n  .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0;\n  }\n\n  .header-text {\n    padding-bottom: 40pt;\n    width: 75vw;\n  }\n\n  .footer-text {\n    padding: 40pt 0pt;\n    width: 75vw;\n    text-align: center;\n  }\n\n  .subtitle-text {\n    padding: 40pt 0pt;\n  }\n\n  h1 {\n    font-family: $h1-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 5.135em;\n    margin: 0pt;\n  }\n\n  h2 {\n    font-family: $h1-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 3.852em;\n    margin: 0pt;\n  }\n\n  h3 {\n    font-family: $global-p-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 2.0em;\n    margin: 0pt;\n  }\n\n  h4 {\n    font-family: $h4-font-stack;\n    color: $global-h4-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.626em;\n    margin: 0pt;\n  }\n\n  h5 {\n    font-family: $h5-font-stack;\n    color: $global-h5-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.1em;\n    margin: 0pt;\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    padding-top: 2.25em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n    white-space: nowrap;\n  }\n\n  h6 {\n    font-family: $h5-font-stack;\n    color: $global-h5-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.4em;\n    margin: 0pt;\n    @include css-user-select(none);\n    cursor: pointer;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    white-space: nowrap;\n  }\n\n  p, li {\n    font-family: Arial;\n    color: $global-p-color;\n    font-weight: 200;\n    font-size: 1.1em;\n    margin: 0pt;\n  }\n\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  a {\n      text-decoration: none;\n  }\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$menu-bar-icon-color: #3d3d41;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.menu-bar-icon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.menu-bar-icon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: #bca293;\n}\n\n.menu-bar-icon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: #1c1c1c;\n  margin-top: 5px;\n}\n\n.menu-bar-icon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.menu-bar-icon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-up(-45deg, -10px);*/\n\n}\n\n.menu-bar-icon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n  /*@include css-transform-squash(0);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, $mobile-right-transition);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x($right-transition);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-rotate3D($a) {\n  -ms-transform: rotate3d(0,1,0,$a); /* IE 9 */\n  -moz-transform: rotate3d(0,1,0,$a); /* Safari */\n  -webkit-transform: rotate3d(0,1,0,$a); /* Safari */\n  -o-transform: rotate3d(0,1,0,$a);\n  transform: rotate3d(0,1,0,$a);\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop $time $easing;\n  -ms-transition: $prop $time $easing;\n  -o-transition: $prop $time $easing;\n  transition: $prop $time $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-translate-y($t) {\n  -ms-transform: translate3D(0, $t, 0); /* IE 9 */\n  -moz-transform: translate3D(0, $t, 0);\n  -webkit-transform: translate3D(0, $t, 0); /* Safari */\n  -o-transform: translate3D(0, $t, 0);\n  transform: translate3D(0, $t, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #3d3d41;\n$menu-button-color: #ffffff;\n\n.menu-bar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    width: 100vw;\n    background: $bg-color;\n    justify-content: flex-start;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    display: flex;\n    height: 100vh;\n    flex-direction: column;\n\n    h2 {\n        z-index: 999999;\n        color: #e09090;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n        white-space: nowrap;\n        font-size: 16pt;\n    }\n\n\n    .smooth-scroll {\n      width: 100vw;\n      background: transparent;\n      z-index: 9999;\n      flex: 1;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n\n      }\n    }\n}\n\n.menu-bar-hidden {\n  @include css-transform-translate-y(50px);\n}\n\n.menu-bar-shown {\n  @include css-transform-translate-y(0px);\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    @media all and (max-width: 1200px) {\n\n    }\n\n  h2 {\n    color: $menu-button-color;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > h2 {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 60vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menu-bar-open {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menu-bar-close {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 18vh;\n$text-color: #3d3d41;\n$hover-color: #9d9dcd;\n$nav-button-color: #b7509e;\n$nav-button-size: 35px;\n$p-font-size: 1.1em;\n\n.stick {\n  opacity: 1.0;\n}\n\n.nonstick {\n  opacity: 0.0;\n}\n\n\n.nav-bar-container {\n    top: 0;\n    height: $height;\n    display: flex;\n    justify-content: center;\n    z-index: 9999;\n    background: $global-bg-color;\n    position: fixed;\n    width: 100vw;\n    @include css-transition(all, 0.5s, ease-in-out);\n\n\n    .selected {\n      background: $nav-button-color !important;\n    }\n\n    .nav-warriorfy {\n      background-image: url(\"../components/img/00-Logo.png\") !important;\n      background-size: cover !important;\n      background-repeat: no-repeat !important;\n    }\n\n    .nav-angel-list {\n    background-image: url(\"../components/img/angel_list.png\") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    }\n\n    .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1;\n    }\n\n    .nav-bar {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width: 100vw;\n    }\n\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n\n  .nav-button {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: $nav-button-size;\n      height: $nav-button-size;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: $global-bg-color;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .nav-button:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.nav-bar-hidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n\n\n\n\n#Intro {\n\n  height: 70vw;\n\n\n  .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw;\n\n      h1 {\n      color: white;\n      margin: 0;\n      }\n\n      p {\n      color: #3d3d41;\n      margin: 0;\n      }\n  }\n\n\n\n  .start {\n    @include css-transition(all, 0.3s, ease);\n    width: 15vh;\n    background-color: #f1c478;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em;\n  }\n\n  .start:hover {\n  background-color: #b57d6d;\n  }\n\n  #gotoMission {\n\n    p {\n      color: #f1f1f1;\n      -webkit-tap-highlight-color: rgba(0,0,0,0);\n    }\n  }\n\n  p {\n    color: $global-p-color;\n    font-weight: 300;\n    @include css-user-select(none);\n    cursor: pointer;\n    @media all and(max-width: 450px) {\n    }\n  }\n\n  .smooth-scroll {\n    position: relative;\n        top: 0;\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $global-bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n#Mission {\n  h1 {\n    width: 50vw;\n  }\n\n  .container {\n    display: flex;\n  }\n\n  .mission {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .mission-background {\n    width: 100%;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$header-color: #dedcdc;\n$box-color: transparent;\n$h1-color: #705959;\n$sub-section-width: 25%;\n$border-color: #3d3d41;\n$border-width: 2px;\n\n#Opportunity {\n\n  .container {\n    width: 75vw;\n  }\n\n  .header {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-bottom: 20pt;\n\n    h1 {\n      text-align: center;\n      color: $h1-color;\n      width: 75vw;\n    }\n  }\n\n  .block-row-container {\n    margin-top: 50pt;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n  }\n\n  .block-row {\n    display: inline-flex;\n    justify-content: center;\n  }\n\n  .block {\n\n    width: 25%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    margin-bottom: 50px;\n\n    img {\n      width: 100%;\n      transform: scale(0.25);\n    }\n  }\n\n  .arrows {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column;\n    align-items: center;\n  }\n\n  .content {\n    display: flex;\n    justify-content: space-around;\n    width: 100%;\n    flex-direction: column;\n    padding-bottom: 10vh;\n  }\n\n  .top-labels {\n    display: inline-flex;\n    justify-content: space-around;\n  }\n\n  .arrows-label {\n    color: transparent;\n  }\n\n  .arrow {\n    transform: scale(0.2) rotate3d(1, 0, 0, 0);\n    @include css-transition(all, 0.5s, ease);\n    z-index: 9999;\n  }\n\n  .arrow:hover {\n    transform: scale(0.4) rotate3d(1, 0, 0, 45deg);\n  }\n\n  .overall {\n    width: 100%;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    margin-bottom: 10vh;\n\n\n    .problem {\n      width: $sub-section-width;\n      background: transparent;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n      padding: 22pt;\n    }\n\n    .solution {\n      width: $sub-section-width;\n      background: black;\n      font-color: white;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n      padding: 22pt;\n    }\n\n    h4 {\n    text-align: center;\n    }\n\n\n  }\n\n  p {\n    font-family: arial;\n    text-align: left;\n  }\n\n  h3 {\n    text-align: left;\n  }\n\n  .problems {\n    width: $sub-section-width;\n  }\n\n  .solutions {\n    width: $sub-section-width;\n  }\n\n  .problem-block {\n    padding-bottom: 30pt;\n  }\n\n  .solution-block {\n    padding-bottom: 30pt;\n  }\n\n\n  .solutions-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n\n  .problems-label {\n    border-radius: 4px;\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n\n\n  }\n\n  .problems-label-subtitle {\n    padding-bottom: 20pt;\n  }\n\n  .solutions-label-subtitle {\n    padding-bottom: 20pt;\n  }\n\n  .solution-label {\n\n    h4 {\n      color: white;\n    }\n\n    p {\n      color: white;\n    }\n\n  }\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$profile-pic-size: 222px;\n$p-team-text-color: #3d3d41;\n$h2-team-text-color: #3d3d41;\n$mobile-width: 1200px;\n\n\n#Team {\n\n  .team-members-container {\n    margin-top: 0vh;\n    margin-bottom: 10vh;\n  }\n\n\n  .team-member-text {\n    margin-top: 20pt;\n  }\n\n  .advisors-label-container {\n    position: relative;\n    width: 100vw;\n\n    @media all and(max-width: $mobile-width) {\n\n    }\n  }\n\n  .member-name {\n    padding-bottom: 8pt;\n  }\n\n  .team-members {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    max-width: 100vw;\n    }\n  }\n\n\n\n  .team-member {\n    display: block;\n    margin-left: 25px;\n    margin-right: 25px;\n\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    margin-bottom: 10vh;\n    }\n  }\n\n  .team-members-row {\n    display: flex;\n    justify-content: center;\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n    display: block;\n    }\n  }\n\n  .middle-row {\n    padding-bottom: 40px;\n  }\n\n  .profile-pic-container {\n    display: block;\n    width: $profile-pic-size;\n    height: $profile-pic-size;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .profile-pic {\n  width: $profile-pic-size;\n  height: $profile-pic-size;\n  background: #d9cdcd;\n  border-radius: 50%;\n  }\n\n  p {\n  width: $profile-pic-size;\n  text-align: center;\n  color: $p-team-text-color;\n  }\n\n  h2 {\n    width: $profile-pic-size;\n    text-align: center;\n    color: $h2-team-text-color;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$baseline-logo-size: 40px;\n\n#Value {\n  .market-image {\n    width: 75vw;\n    padding-top: 30pt;\n    padding-bottom: 30pt;\n\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .container-wrapper {\n    width:100vw;\n    display: flex;\n    justify-content: center;\n\n    .container {\n      display: flex;\n      width: 75vw;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n    }\n\n  }\n\n\n\n  .header {\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n\n    @media all and(max-width: $mobile-width) {\n      width: 75vw;\n    }\n\n    .header-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h1 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n\n    .subtitle-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      h3 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n  }\n\n\n\n  .footer {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .footer-text {\n      width: 50vw;\n\n      @media all and(max-width: $mobile-width) {\n        width: 75vw;\n      }\n    }\n  }\n\n  .baseline-footer {\n    width: 50vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .baseline-footer-logo {\n      width: $baseline-logo-size;\n      height: $baseline-logo-size;\n    }\n\n    h2 {\n      margin-left: 20px;\n    }\n  }\n\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$product-bg-color: #835757;\n\n#Product {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n  }\n\n  .product {\n    width: 75vw;\n    background: $product-bg-color;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .phone {\n    @include css-transition(all, 0.5s, ease-in-out);\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px;\n\n\n    }\n\n    .phone:hover {\n      @include css-rotate3D(50deg);\n      background: #b0a5a5;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$model-color: #835757;\n\n#Business\\ Model {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n  width: 100vw;\n  }\n\n  .model {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #f1c478;\n$adoption-bg-color: white;\n\n#Adoption {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n\n    }\n  }\n\n  .adoption {\n    width: 75vw;\n    height: 50vh;\n    background: $adoption-bg-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .launch {\n      width: 25%;\n      height: 100%;\n      background: #b99494;\n    }\n\n    .scale {\n      width: 25%;\n      height: 100%;\n      background: #927171;\n    }\n\n    .example {\n      width: 50%;\n      height: 100%;\n      background: #796464;\n    }\n  }\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$investment-color: white;\n\n#Investment {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .text-block-container {\n    width: 66.66%;\n\n    h3 {\n      text-align: left;\n    }\n  }\n\n  .text-blocks {\n    display: flex;\n    width: 95%;\n    justify-content: space-between;\n  }\n\n  .text-block-grid {\n      display: flex;\n      width: 75vw;\n      justify-content: flex-end;\n  }\n\n  .text-block-row {\n    width: 20vw;\n  }\n\n  .text-block-milestone {\n    width: 50%;\n\n    p {\n          padding-bottom: 12pt;\n        }\n\n    h3 {\n      text-align: left;\n    }\n  }\n\n  .text-block {\n    background: transparent;\n    border: 2px solid #3d3d41;\n    height: 35vh;\n    text-align: left;\n    margin-top: 10px;\n    flex-direction: column;\n    border-radius: 4px;\n    padding: 15px;\n\n        h6 {\n          text-align: left;\n          padding-bottom: 12pt;\n          font-weight: 400;\n        }\n}\n\n.header-text-milestone {\n  padding-bottom: 22pt;\n}\n\n.header-text-money {\n  padding-bottom: 12pt;\n}\n\n\n  .investment {\n    width: 75vw;\n    height: 50vh;\n    background: $investment-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n\n\n    .milestones {\n      width: 40%;\n      height: 100%;\n      background: #705959;\n    }\n\n    p {\n      color: white;\n    }\n\n    .money {\n      width: 60%;\n      height: 100%;\n      background: #574f4f;\n    }\n  }\n\n\n  .overall {\n    width: 100%;\n    background: transparent;\n    justify-content: center;\n    margin-bottom: 10vh;\n\n    .problem {\n      width: $sub-section-width;\n      background: transparent;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    .solution {\n      width: $sub-section-width;\n      background: transparent;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n    }\n\n    h4 {\n    text-align: center;\n    }\n\n\n  }\n}\n","$section-color: #f1f1f1;\n\n#Traction {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n  }\n\n  .traction {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n  .featured-in {\n    width: 15%;\n    padding: 10pt;\n  }\n\n}\n","$label-vertical-padding: 5vh;\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 15vh;\n  background: $global-bg-color;\n  padding-bottom: 15vh;\n}\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #3d3d41;\n}\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    position: absolute;\n    color: #3d3d41;\n    cursor: default;\n    margin-top: 0vh;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 9999;\n\n    padding: 10px 20px;\n    border-radius: 2px;\n\n}\n\n.label-text {\n  color: #3d3d41;\n  font-family: \"Oswald\";\n  font-weight: 200;\n  font-size: 22pt;\n  margin-left: -35px;\n  margin-top: -34.5vh;\n  padding: 5px 15px;\n  text-align: center;\n  background: white;\n  border-left: 2px solid #3d3d41;\n  border-right: 2px solid #3d3d41;\n  border-top: 2px solid #3d3d41;\n  border-bottom: 2px solid #3d3d41;\n  z-index: 999999;\n}\n"],"sourceRoot":""}]);
+	exports.push([module.id, "@keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Section {\n  background-color: white;\n  margin: 0;\n  width: 100%; }\n  .Section h1 {\n    text-align: center;\n    z-index: 999;\n    color: #5b4d4d; }\n  .Section .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .Section p {\n    font-weight: 300;\n    width: 100%;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    z-index: 999;\n    color: #3d3d41; }\n\n.menu-bar-icon {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  border: none;\n  color: #bca293;\n  background: transparent;\n  outline: none;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: transparent;\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n  background: white;\n  width: 100%;\n  margin: 0;\n  padding: 10px;\n  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-icon {\n      z-index: 99999; } }\n\n.menu-bar-icon:hover > div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 1.1s ease;\n  -ms-transition: all 1.1s ease;\n  -o-transition: all 1.1s ease;\n  transition: all 1.1s ease;\n  background: #bca293; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon div {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 1.5s ease;\n  -ms-transition: all 1.5s ease;\n  -o-transition: all 1.5s ease;\n  transition: all 1.5s ease;\n  width: 30px;\n  height: 5px;\n  background: #bca293;\n  margin-top: 5px; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon div {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease;\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-icon:hover > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.4s ease;\n  -ms-transition: all 0.4s ease;\n  -o-transition: all 0.4s ease;\n  transition: all 0.4s ease;\n  /*@include css-transform-translate-x(-50px);*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-icon:hover > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.clicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* Safari */\n  -webkit-transform: translate3D(0, 10px, 0) rotate(45deg);\n  /* Safari */\n  -o-transform: translate3D(0, 10px, 0) rotate(45deg);\n  transform: translate3D(0, 10px, 0) rotate(45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #topBar {\n      -ms-transform: translate3D(0, 10px, 0) rotate(45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(0, 10px, 0) rotate(45deg);\n      /* Safari */\n      -webkit-transform: translate3D(0, 10px, 0) rotate(45deg);\n      /* Safari */\n      -o-transform: translate3D(0, 10px, 0) rotate(45deg);\n      transform: translate3D(0, 10px, 0) rotate(45deg); } }\n\n.clicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -webkit-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  /* Safari */\n  -o-transform: translate3D(0, -10px, 0) rotate(-45deg);\n  transform: translate3D(0, -10px, 0) rotate(-45deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #bottomBar {\n      -ms-transform: translate3D(0, -10px, 0) rotate(-45deg);\n      /* IE 9 */\n      -moz-transform: translate3D(0, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -webkit-transform: translate3D(0, -10px, 0) rotate(-45deg);\n      /* Safari */\n      -o-transform: translate3D(0, -10px, 0) rotate(-45deg);\n      transform: translate3D(0, -10px, 0) rotate(-45deg); } }\n\n.clicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0, 0, 0);\n  -webkit-transform: translate3D(0, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0, 0, 0);\n  transform: translate3D(0, 0, 0);\n  opacity: 0; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .clicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 800px) {\n    .clicked > #middleBar {\n      -ms-transform: translate3D(0, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(0, 0, 0);\n      -webkit-transform: translate3D(0, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(0, 0, 0);\n      transform: translate3D(0, 0, 0); } }\n\n.unclicked > #topBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #topBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #bottomBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -webkit-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0px, 0) rotate(0deg);\n  transform: translate3D(0vw, 0px, 0) rotate(0deg); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #bottomBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.unclicked > #middleBar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.7s ease;\n  -ms-transition: all 0.7s ease;\n  -o-transition: all 0.7s ease;\n  transition: all 0.7s ease;\n  -ms-transform: scaleY(0) scaleX(0);\n  /* IE 9 */\n  -moz-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -webkit-transform: scaleY(0) scaleX(0);\n  /* Safari */\n  -o-transform: scaleY(0) scaleX(0);\n  transform: scaleY(0) scaleX(0);\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0);\n  opacity: 1; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .unclicked > #middleBar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.2s ease-in-out;\n  -ms-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  position: fixed;\n  top: 0;\n  height: 100vh;\n  left: 0;\n  background: #3d3d41;\n  justify-content: flex-start;\n  align-items: flex-start;\n  flex-wrap: wrap;\n  display: flex;\n  height: 100vh;\n  flex-direction: column; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menu-bar h2 {\n    z-index: 999999;\n    color: #e09090;\n    font-weight: 900px;\n    padding: 5vh;\n    margin-bottom: 5vh;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    white-space: nowrap;\n    font-size: 16pt; }\n  .menu-bar .smooth-scroll {\n    width: 100vw;\n    background: transparent;\n    z-index: 9999;\n    flex: 1; }\n    @media all and (max-width: 1200px) {\n      .menu-bar .smooth-scroll {\n        z-index: -1; } }\n\n.menu-bar-hidden {\n  /*@include css-transform-translate-y(50px);*/ }\n\n.menu-bar-shown {\n  /*@include css-transform-translate-y(0px);*/ }\n\n.menuButton {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n  border: none;\n  margin: 20px 20px;\n  width: 60px;\n  border-radius: 100%;\n  width: 20px;\n  height: 20px;\n  display: block;\n  outline: none;\n  background: transparent;\n  border: 2px solid #ffffff;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton h2 {\n    color: #ffffff;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap; }\n\n.menuButton:hover {\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out;\n  border: 2px solid #ffffff;\n  border-radius: 10%;\n  background: #ffffff;\n  cursor: pointer; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menuButton:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .menuButton:hover > h2 {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .menuButton:hover > h2 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.MainContainer {\n  background: #f7f5f5;\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  position: relative;\n  width: 100%;\n  overflow-x: hidden;\n  /*-webkit-overflow-scrolling: touch;*/ }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .MainContainer {\n      z-index: 9999; } }\n\n.MainContainer:hover {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .MainContainer:hover {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.menu-bar-open {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -ms-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  -o-transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95);\n  transition: transform 0.35s cubic-bezier(0.94, 0.06, 0.32, 0.95); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-open {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media all and (max-width: 1200px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(28vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(28vw, 0, 0);\n      -webkit-transform: translate3D(28vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(28vw, 0, 0);\n      transform: translate3D(28vw, 0, 0); } }\n  @media all and (max-width: 800px) {\n    .menu-bar-open {\n      -ms-transform: translate3D(60vw, 0, 0);\n      /* IE 9 */\n      -moz-transform: translate3D(60vw, 0, 0);\n      -webkit-transform: translate3D(60vw, 0, 0);\n      /* Safari */\n      -o-transform: translate3D(60vw, 0, 0);\n      transform: translate3D(60vw, 0, 0); } }\n\n.menu-bar-close {\n  -webkit-transition: transform 0.5s ease-in-out;\n  -moz-transition: transform 0.35s linear;\n  -ms-transition: transform 0.35s linear;\n  -o-transition: transform 0.35s linear;\n  transition: transform 0.35s linear;\n  -ms-transform: translate3D(0vw, 0, 0);\n  /* IE 9 */\n  -moz-transform: translate3D(0vw, 0, 0);\n  -webkit-transform: translate3D(0vw, 0, 0);\n  /* Safari */\n  -o-transform: translate3D(0vw, 0, 0);\n  transform: translate3D(0vw, 0, 0); }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .menu-bar-close {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n.stick {\n  opacity: 1.0; }\n\n.nonstick {\n  opacity: 0.0; }\n\n.nav-bar-container {\n  top: 0;\n  height: 18vh;\n  display: flex;\n  justify-content: center;\n  z-index: 9999;\n  background: white;\n  position: fixed;\n  width: 100vw;\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease-in-out;\n  -ms-transition: all 0.5s ease-in-out;\n  -o-transition: all 0.5s ease-in-out;\n  transition: all 0.5s ease-in-out; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    .nav-bar-container {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  .nav-bar-container .selected {\n    background: #b7509e !important; }\n  .nav-bar-container .nav-warriorfy {\n    background-image: url(" + __webpack_require__(173) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-angel-list {\n    background-image: url(" + __webpack_require__(206) + ") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important; }\n  .nav-bar-container .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1; }\n  .nav-bar-container .nav-bar {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw; }\n  @media all and (max-width: 1200px) {\n    .nav-bar-container {\n      display: none; } }\n  .nav-bar-container p:hover {\n    color: #9d9dcd; }\n  .nav-bar-container .smooth-scroll {\n    display: flex;\n    justify-content: space-around;\n    align-items: flex-start;\n    position: relative;\n    top: 0;\n    width: 100%;\n    z-index: 9999; }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .smooth-scroll {\n        z-index: -1; } }\n  .nav-bar-container .nav-button {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    border: none;\n    margin: 20px 20px;\n    width: 12em;\n    border-radius: 100%;\n    width: 35px;\n    height: 35px;\n    display: flex;\n    justify-content: center;\n    outline: none;\n    background: white;\n    border: 2px solid #b7509e; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media all and (max-width: 1200px) {\n      .nav-bar-container .nav-button {\n        margin: 20px 20px; } }\n  .nav-bar-container .nav-button:hover {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    border: 2px solid #b7509e;\n    border-radius: 10%;\n    background: #b7509e;\n    cursor: pointer; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      .nav-bar-container .nav-button:hover {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    .nav-bar-container .nav-button:hover > p {\n      -webkit-transition: all 0.5s ease-in-out;\n      -moz-transition: all 0.5s ease-in-out;\n      -ms-transition: all 0.5s ease-in-out;\n      -o-transition: all 0.5s ease-in-out;\n      transition: all 0.5s ease-in-out; }\n      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n        .nav-bar-container .nav-button:hover > p {\n          -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Intro {\n  height: 70vw; }\n  #Intro .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw; }\n    #Intro .block h1 {\n      color: white;\n      margin: 0; }\n    #Intro .block p {\n      color: #3d3d41;\n      margin: 0; }\n  #Intro .start {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.3s ease;\n    -ms-transition: all 0.3s ease;\n    -o-transition: all 0.3s ease;\n    transition: all 0.3s ease;\n    width: 15vh;\n    background-color: #f1c478;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Intro .start {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Intro .start:hover {\n    background-color: #b57d6d; }\n  #Intro #gotoMission p {\n    color: #f1f1f1;\n    -webkit-tap-highlight-color: transparent; }\n  #Intro p {\n    color: #111111;\n    font-weight: 300;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer; }\n  #Intro .smooth-scroll {\n    position: relative;\n    top: 0; }\n  #Intro h1 {\n    color: #3d3d41; }\n    @media all and (max-width: 450px) {\n      #Intro h1 {\n        font-size: 0.75em; } }\n  #Intro .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99; }\n  #Intro .background_image {\n    width: 70vw;\n    height: 33.33vh;\n    background-color: white;\n    position: absolute;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n    @media all and (max-width: 800px) {\n      #Intro .background_image {\n        width: 100vw;\n        left: 0vw; } }\n  #Intro .foreground_image {\n    width: 33.33vw;\n    height: 33.33vh;\n    top: 10vw;\n    background-color: #f1f1f1; }\n    @media all and (max-width: 800px) {\n      #Intro .foreground_image {\n        max-width: 50vw; } }\n\n#Mission h1 {\n  width: 50vw; }\n  @media all and (max-width: 1200px) {\n    #Mission h1 {\n      width: 80vw; } }\n\n#Mission .container {\n  display: flex; }\n\n#Mission .mission {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n#Mission .mission-background {\n  width: 100%; }\n\n#Opportunity .container {\n  width: 75vw; }\n  @media all and (max-width: 800px) {\n    #Opportunity .container {\n      width: 88vw; } }\n\n#Opportunity .arrow-block {\n  width: 50%; }\n  @media all and (max-width: 800px) {\n    #Opportunity .arrow-block {\n      width: 20%; } }\n\n#Opportunity .header {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 20pt; }\n  #Opportunity .header h1 {\n    text-align: center;\n    color: #705959;\n    width: 75vw; }\n\n#Opportunity .block-row-container {\n  margin-top: 50pt;\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n#Opportunity .block-row {\n  display: inline-flex;\n  justify-content: center; }\n\n#Opportunity .block {\n  width: 25%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-bottom: 50px; }\n  @media all and (max-width: 800px) {\n    #Opportunity .block {\n      width: 50%; } }\n  #Opportunity .block img {\n    width: 100%;\n    transform: scale(0.25); }\n    @media all and (max-width: 800px) {\n      #Opportunity .block img {\n        transform: scale(0.5); } }\n  #Opportunity .block p {\n    padding-bottom: 5pt; }\n    @media all and (max-width: 800px) {\n      #Opportunity .block p {\n        padding-bottom: 10pt; } }\n\n#Opportunity .arrows {\n  display: flex;\n  justify-content: flex-start;\n  flex-direction: column;\n  align-items: center; }\n\n#Opportunity .content {\n  display: flex;\n  justify-content: space-around;\n  width: 100%;\n  flex-direction: column;\n  padding-bottom: 10vh; }\n\n#Opportunity .top-labels {\n  display: inline-flex;\n  justify-content: space-around; }\n  @media all and (max-width: 800px) {\n    #Opportunity .top-labels {\n      justify-content: space-between; } }\n\n#Opportunity .arrows-label {\n  color: transparent; }\n\n#Opportunity .arrow {\n  transform: scale(0.2) rotate3d(1, 0, 0, 0);\n  -webkit-transition: all 0.5s ease-in-out;\n  -moz-transition: all 0.5s ease;\n  -ms-transition: all 0.5s ease;\n  -o-transition: all 0.5s ease;\n  transition: all 0.5s ease;\n  z-index: 9999; }\n  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n    #Opportunity .arrow {\n      -webkit-transition: -webkit-transform 0.4s ease-out; } }\n\n#Opportunity .arrow:hover {\n  transform: scale(0.4) rotate3d(1, 0, 0, 45deg); }\n\n#Opportunity .overall {\n  width: 100%;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  margin-bottom: 10vh; }\n  #Opportunity .overall .problem {\n    width: 37.5%;\n    background: transparent;\n    display: flex;\n    align-items: flex-start;\n    justify-content: center;\n    border: 1.5px solid #3d3d41;\n    padding: 22pt; }\n    @media all and (max-width: 800px) {\n      #Opportunity .overall .problem {\n        width: 50%; } }\n  #Opportunity .overall .problem-label {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column; }\n    #Opportunity .overall .problem-label h4 {\n      padding-bottom: 10pt; }\n  #Opportunity .overall .solution-label {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column; }\n    #Opportunity .overall .solution-label h4 {\n      padding-bottom: 10pt; }\n  #Opportunity .overall .solution {\n    width: 37.5%;\n    background: #3d3d41;\n    font-color: white;\n    display: flex;\n    align-items: flex-start;\n    justify-content: center;\n    border: 1.5px solid #3d3d41;\n    padding: 22pt; }\n    @media all and (max-width: 800px) {\n      #Opportunity .overall .solution {\n        width: 50%; } }\n  #Opportunity .overall h4 {\n    text-align: center; }\n\n#Opportunity p {\n  font-family: arial;\n  text-align: left; }\n\n#Opportunity h3 {\n  text-align: left; }\n\n#Opportunity .problems {\n  width: 37.5%; }\n\n#Opportunity .solutions {\n  width: 37.5%; }\n\n#Opportunity .problem-block {\n  padding-bottom: 30pt; }\n\n#Opportunity .solution-block {\n  padding-bottom: 30pt; }\n\n#Opportunity .solutions-label {\n  border-radius: 4px;\n  width: 25%; }\n  @media all and (max-width: 800px) {\n    #Opportunity .solutions-label {\n      width: 33.33%; } }\n  #Opportunity .solutions-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label {\n  border-radius: 4px;\n  width: 25%; }\n  @media all and (max-width: 800px) {\n    #Opportunity .problems-label {\n      width: 33.33%; } }\n  #Opportunity .problems-label h4 {\n    text-align: center;\n    text-align: center;\n    background: white;\n    padding-top: 10px;\n    width: 100%;\n    padding-bottom: 10px;\n    border-radius: 4px; }\n\n#Opportunity .problems-label-subtitle {\n  padding-bottom: 20pt; }\n\n#Opportunity .solutions-label-subtitle {\n  padding-bottom: 20pt; }\n\n#Opportunity .solution-label h4 {\n  color: white; }\n\n#Opportunity .solution-label p {\n  color: white; }\n\n#Team .team-members-container {\n  margin-top: 0vh;\n  margin-bottom: 10vh; }\n\n#Team .team-member-text {\n  margin-top: 20pt; }\n\n#Team .team-header-text {\n  width: 100%;\n  padding-bottom: 50px; }\n  #Team .team-header-text h2 {\n    width: 100%; }\n\n#Team .advisors-label-container {\n  position: relative;\n  width: 100vw; }\n\n#Team .member-name {\n  padding-bottom: 8pt; }\n\n#Team .team-members {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members {\n      display: flex;\n      max-width: 100vw; } }\n\n#Team .team-member {\n  display: block;\n  margin-left: 25px;\n  margin-right: 25px; }\n  @media all and (max-width: 1200px) {\n    #Team .team-member {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n      margin-bottom: 10vh; } }\n\n#Team .team-members-row {\n  display: flex;\n  justify-content: center;\n  width: 75vw; }\n  @media all and (max-width: 1200px) {\n    #Team .team-members-row {\n      display: block; } }\n\n#Team .middle-row {\n  padding-bottom: 40px; }\n\n#Team .profile-pic-container {\n  display: block;\n  width: 222px;\n  height: 222px;\n  justify-content: center;\n  align-items: center; }\n\n#Team .profile-pic {\n  width: 222px;\n  height: 222px;\n  background: #d9cdcd;\n  border-radius: 50%; }\n\n#Team p {\n  width: 222px;\n  text-align: center;\n  color: #3d3d41; }\n\n#Team h2 {\n  width: 222px;\n  text-align: center;\n  color: #3d3d41; }\n\n#Value .market-image {\n  width: 75vw;\n  padding-top: 30pt;\n  padding-bottom: 30pt; }\n  @media all and (max-width: 1200px) {\n    #Value .market-image {\n      width: 100vw; } }\n\n#Value .container-wrapper {\n  width: 100vw;\n  display: flex;\n  justify-content: center; }\n  #Value .container-wrapper .container {\n    display: flex;\n    width: 75vw;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap; }\n\n#Value .header {\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n  @media all and (max-width: 1200px) {\n    #Value .header {\n      width: 75vw; } }\n  #Value .header .header-text {\n    width: 100vw;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center; }\n    #Value .header .header-text h1 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value .header .header-text h1 {\n          width: 75vw; } }\n  #Value .header .subtitle-text {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-top: 0pt;\n    flex-direction: column; }\n    #Value .header .subtitle-text h3 {\n      width: 50vw; }\n      @media all and (max-width: 1200px) {\n        #Value .header .subtitle-text h3 {\n          width: 75vw; } }\n\n#Value .footer {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value .footer .footer-text {\n    width: 50vw;\n    padding: 0pt; }\n    @media all and (max-width: 1200px) {\n      #Value .footer .footer-text {\n        width: 75vw; } }\n\n#Value .baseline-footer {\n  width: 50vw;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  #Value .baseline-footer .baseline-footer-logo {\n    width: 40px;\n    height: 40px; }\n  #Value .baseline-footer h2 {\n    margin-left: 20px; }\n\n#Product .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Product .header {\n  width: 75vw; }\n\n#Product .product {\n  width: 75vw;\n  background: #835757;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Product .product {\n      width: 100vw; } }\n  #Product .product .phone {\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      #Product .product .phone {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  #Product .product .phone:hover {\n    -ms-transform: rotate3d(0, 1, 0, 50deg);\n    /* IE 9 */\n    -moz-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -webkit-transform: rotate3d(0, 1, 0, 50deg);\n    /* Safari */\n    -o-transform: rotate3d(0, 1, 0, 50deg);\n    transform: rotate3d(0, 1, 0, 50deg);\n    background: #b0a5a5; }\n\n#Business\\ Model .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Business\\ Model .header {\n  width: 100vw; }\n\n#Business\\ Model .model {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Business\\ Model .model {\n      width: 100vw; } }\n\n#Adoption .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Adoption .header {\n  width: 75vw;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center; }\n  @media all and (max-width: 1200px) {\n    #Adoption .header {\n      width: 100vw; } }\n\n#Adoption .body-subtitle {\n  padding: 0pt; }\n\n#Adoption .adoption {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Adoption .adoption {\n      width: 100vw; } }\n  #Adoption .adoption .launch {\n    width: 66.666%;\n    height: 100%;\n    background: white; }\n  #Adoption .adoption .example {\n    width: 33.333%;\n    height: 100%;\n    background: white; }\n\n.text-block-container {\n  width: 66.66%; }\n  @media all and (max-width: 800px) {\n    .text-block-container {\n      width: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-direction: column; } }\n  .text-block-container h3 {\n    text-align: left; }\n  .text-block-container .text-blocks {\n    display: flex;\n    width: 95%;\n    justify-content: space-between; }\n    @media all and (max-width: 800px) {\n      .text-block-container .text-blocks {\n        justify-content: center;\n        align-items: center;\n        flex-direction: column; } }\n  .text-block-container .text-block-row {\n    width: 20vw; }\n    @media all and (max-width: 800px) {\n      .text-block-container .text-block-row {\n        width: 100%; } }\n  .text-block-container .text-block {\n    background: white;\n    border: 2px solid #3d3d41;\n    text-align: left;\n    margin-bottom: 10px;\n    flex-direction: column;\n    border-radius: 4px;\n    padding: 15px;\n    display: flex;\n    justify-content: space-around; }\n    .text-block-container .text-block h6 {\n      text-align: left;\n      padding-bottom: 12pt;\n      font-weight: 400; }\n  .text-block-container .text-block-description {\n    padding-top: 8pt; }\n\n.text-block-grid {\n  display: flex;\n  width: 75vw;\n  justify-content: flex-end; }\n  @media all and (max-width: 800px) {\n    .text-block-grid {\n      width: 75vw;\n      flex-direction: column; } }\n\n#Investment .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap; }\n\n#Investment .text-block-milestone {\n  width: 50%; }\n  @media all and (max-width: 800px) {\n    #Investment .text-block-milestone {\n      width: 100%; } }\n  #Investment .text-block-milestone p {\n    padding-bottom: 12pt; }\n  #Investment .text-block-milestone h3 {\n    text-align: left; }\n\n#Investment .milestone {\n  font-weight: 900;\n  padding: 0;\n  width: 85%; }\n\n#Investment .milestone-title {\n  text-align: right; }\n\n#Investment .milestone-date p {\n  color: #5fc5bb;\n  font-size: 1em;\n  text-align: right; }\n\n#Investment .role .role-title {\n  color: #aa7373;\n  font-size: 1em;\n  font-style: italic; }\n\n#Investment .header-text-milestone {\n  width: 85%;\n  padding-bottom: 22pt; }\n  #Investment .header-text-milestone h3 {\n    text-align: right; }\n\n#Investment .header-text-money {\n  padding-bottom: 12pt; }\n  #Investment .header-text-money h3 {\n    text-align: center; }\n\n#Investment .investment {\n  width: 75vw;\n  height: 50vh;\n  background: white;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Investment .investment {\n      width: 100vw; } }\n  #Investment .investment .milestones {\n    width: 40%;\n    height: 100%;\n    background: #705959; }\n  #Investment .investment p {\n    color: white; }\n  #Investment .investment .money {\n    width: 60%;\n    height: 100%;\n    background: #574f4f; }\n\n.text-block-container {\n  width: 66.66%; }\n  @media all and (max-width: 800px) {\n    .text-block-container {\n      width: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-direction: column; } }\n  .text-block-container h3 {\n    text-align: left; }\n  .text-block-container .text-blocks {\n    display: flex;\n    width: 95%;\n    justify-content: space-between; }\n    @media all and (max-width: 800px) {\n      .text-block-container .text-blocks {\n        justify-content: center;\n        align-items: center;\n        flex-direction: column; } }\n  .text-block-container .text-block-row {\n    width: 20vw; }\n    @media all and (max-width: 800px) {\n      .text-block-container .text-block-row {\n        width: 100%; } }\n  .text-block-container .text-block {\n    background: white;\n    border: 2px solid #3d3d41;\n    text-align: left;\n    margin-bottom: 10px;\n    flex-direction: column;\n    border-radius: 4px;\n    padding: 15px;\n    display: flex;\n    justify-content: space-around; }\n    .text-block-container .text-block h6 {\n      text-align: left;\n      padding-bottom: 12pt;\n      font-weight: 400; }\n  .text-block-container .text-block-description {\n    padding-top: 8pt; }\n\n.text-block-grid {\n  display: flex;\n  width: 75vw;\n  justify-content: flex-end; }\n  @media all and (max-width: 800px) {\n    .text-block-grid {\n      width: 75vw;\n      flex-direction: column; } }\n\n#Traction .container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column; }\n\n#Traction .content {\n  display: flex;\n  justify-content: center;\n  align-items: flex-end;\n  width: 75%; }\n\n#Traction .text-block-container {\n  z-index: 9999;\n  width: 40%; }\n\n#Traction .featured-images {\n  z-index: 9999;\n  width: 50%; }\n\n#Traction .header {\n  width: 100%;\n  z-index: 9999;\n  display: flex;\n  text-align: center;\n  align-items: center;\n  justify-content: center; }\n\n#Traction .product-image {\n  width: 70%; }\n\n#Traction .text-block {\n  align-items: flex-start; }\n\n#Traction .traction {\n  width: 75vw;\n  height: 50vh;\n  background: #835757;\n  display: flex; }\n  @media all and (max-width: 1200px) {\n    #Traction .traction {\n      width: 100vw; } }\n\n#Traction .featured-in {\n  width: 15%;\n  padding: 10pt; }\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 15vh;\n  background: white;\n  padding-bottom: 12vh; }\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #3d3d41; }\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n  position: absolute;\n  color: #3d3d41;\n  cursor: default;\n  margin-top: 0vh;\n  background: transparent;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9999;\n  padding: 10px 20px;\n  border-radius: 2px; }\n\n.label-text {\n  color: #3d3d41;\n  font-family: \"Oswald\";\n  font-weight: 200;\n  font-size: 22pt;\n  margin-left: -40px;\n  margin-top: -27vh;\n  padding: 5px 20px;\n  text-align: center;\n  background: white;\n  border-left: 2px solid #3d3d41;\n  border-right: 2px solid #3d3d41;\n  border-top: 2px solid #3d3d41;\n  border-bottom: 2px solid #3d3d41;\n  z-index: 999999; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: white;\n  -webkit-animation: fadein 3s;\n  /* Safari, Chrome and Opera > 12.1 */\n  -moz-animation: fadein 3s;\n  /* Firefox < 16 */\n  -ms-animation: fadein 3s;\n  /* Internet Explorer */\n  -o-animation: fadein 3s;\n  /* Opera < 12.1 */\n  animation: fadein 3s;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  overflow-x: hidden; }\n  body .container {\n    width: 100vw;\n    left: 0;\n    /*-webkit-overflow-scrolling: auto;*/ }\n  body .section-medium-image {\n    position: relative;\n    width: 75vw;\n    left: 0; }\n  body .section-wide-image {\n    position: relative;\n    width: 100vw;\n    left: 0; }\n  body .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0; }\n  body .header-text {\n    padding-bottom: 40pt;\n    width: 75vw; }\n  body .footer-text {\n    padding: 40pt 0pt;\n    width: 75vw;\n    text-align: center; }\n  body .subtitle-text {\n    padding: 40pt 0pt; }\n  body h1 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 5.135em;\n    margin: 0pt; }\n    @media all and (max-width: 800px) {\n      body h1 {\n        font-size: 2.2em; } }\n  body h2 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 3.852em;\n    margin: 0pt; }\n    @media all and (max-width: 800px) {\n      body h2 {\n        font-size: 2.1em; } }\n  body h3 {\n    font-family: \"Open Sans\", Didot, serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 2.0em;\n    margin: 0pt; }\n  body h4 {\n    font-family: \"Open Sans\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.4em;\n    margin: 0pt; }\n  body h5 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.1em;\n    margin: 0pt;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    padding: 1em;\n    padding-top: 2.25em;\n    font-weight: 300;\n    color: #3d3d41;\n    text-align: center;\n    -webkit-transition: all 0.5s ease-in-out;\n    -moz-transition: all 0.5s ease-in-out;\n    -ms-transition: all 0.5s ease-in-out;\n    -o-transition: all 0.5s ease-in-out;\n    transition: all 0.5s ease-in-out;\n    white-space: nowrap; }\n    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {\n      body h5 {\n        -webkit-transition: -webkit-transform 0.4s ease-out; } }\n  body h6 {\n    font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    color: #3d3d41;\n    text-align: center;\n    font-weight: 300;\n    font-size: 1.4em;\n    margin: 0pt;\n    -webkit-touch-callout: none;\n    /* iOS Safari */\n    -webkit-user-select: none;\n    /* Safari */\n    -khtml-user-select: none;\n    /* Konqueror HTML */\n    -moz-user-select: none;\n    /* Firefox */\n    -ms-user-select: none;\n    /* Internet Explorer/Edge */\n    user-select: none;\n    /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n    -webkit-tap-highlight-color: transparent;\n    cursor: pointer;\n    font-weight: 300;\n    color: #3d3d41;\n    text-align: center; }\n  body p, body li {\n    font-family: Arial;\n    color: #111111;\n    font-weight: 200;\n    font-size: 1.1em;\n    margin: 0pt; }\n    @media all and (max-width: 800px) {\n      body p, body li {\n        font-size: 1em; } }\n  body img {\n    width: 100%; }\n  body .wrapper {\n    overflow-x: hidden; }\n  body a {\n    text-decoration: none; }\n", "", {"version":3,"sources":["/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Animation_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Section.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/main.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_User_Events.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBarIcon.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/helpers/_Transform_Mixins.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MenuBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_MainContainer.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_NavBar.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Intro.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Mission.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Opportunity.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Team.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_ValueProposition.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Product.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_BusinessModel.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Adoption.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_TextBlock.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Investment.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/sections/_Traction.scss","/Users/josecanizares/Desktop/warriorfy/app/scss/components/_Label.scss"],"names":[],"mappings":"AASA;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,qCAAqC;AACrC;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AAGrB,uBAAuB;AACvB;EACI;IAAO,WAAU,EAAK;EACtB;IAAO,WAAU,EAAK,EAAA;;AAG1B,kBAAkB;AAClB;EACI;IAAO,WAAU,EAAA;EACjB;IAAO,WAAU,EAAA,EAAA;;AC9BrB;EACE,wBCAqB;EDCrB,UAAS;EACT,YAAW,EAmCZ;EAtCD;IAOI,mBAAkB;IAClB,aAAY;IACZ,eAXsB,EAYvB;EAVH;IAaI,aAAY;IACZ,cAAa;IACb,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EAEpB;EAnBH;IAsBI,aAAY;IACZ,mBAAkB;IAClB,QAAO;IACP,UAAS;IACT,cAAa;IACb,wBAAuB;IACvB,oBAAmB,EACpB;EA7BH;IAgCI,iBAAgB;IAChB,YAAW;IErCb,4BFsC+B;IEtCJ,gBAAgB;IAC3C,0BFqC+B;IErCN,YAAY;IACpC,yBFoC8B;IEpCN,oBAAoB;IAC1C,uBFmC4B;IEnCN,aAAa;IAClC,sBFkC2B;IElCN,4BAA4B;IAC7C,kBFiCuB;IEjCN;gEACqC;IAC9D,yCAA0C;IFgCxC,aAAY;IACZ,eAzCqB,EA0CtB;;AG9BH;ECcE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EAUtB,aAAY;EACZ,eAf2B;EAgB3B,wBAAuB;EACvB,cAAa;EDhBb,4BCiB6B;EDjBF,gBAAgB;EAC3C,0BCgB6B;EDhBJ,YAAY;EACpC,yBCe4B;EDfJ,oBAAoB;EAC1C,uBCc0B;EDdJ,aAAa;EAClC,sBCayB;EDbJ,4BAA4B;EAC7C,kBCYqB;EDZJ;gEACqC;EAC9D,yCAA0C;ECW1C,gBAAe;EACf,kBAAiB;EACjB,gBAAe;EACf,OAAM;EACN,aAAY;EACZ,eAAc;EACd,kBAAiB;EACjB,YAAW;EACX,UAAS;EACT,cAAa;EACb,+CAA2C,EAK5C;ECFC;IDpBF;MCuBE,oDAAsD,EDDvD,EAAA;ECIC;ID1BF;MC6BE,oDAAsD,EDPvD,EAAA;ECUD;IDhCA;MCmCA,oDAAsD,EDbrD,EAAA;ECgBD;IDtCA;MC0CA,oDAAsD,EDpBrD,EAAA;ECuBD;ID7CA;MCiDA,oDAAsD,ED3BrD,EAAA;EC8BD;IDpDA;MCwDA,oDAAsD,EDlCrD,EAAA;ECqCD;ID3DA;MC8DA,oDAAsD,EDxCrD,EAAA;EAHC;IAnBF;MAoBI,eAAc,EAEjB,EAAA;;AAED;ECVE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EAkCtB,oBArCiC,EAsClC;ECPC;IDIF;MCDE,oDAAsD,EDIvD,EAAA;ECDC;IDFF;MCKE,oDAAsD,EDFvD,EAAA;ECKD;IDRA;MCWA,oDAAsD,EDRrD,EAAA;ECWD;IDdA;MCkBA,oDAAsD,EDfrD,EAAA;ECkBD;IDrBA;MCyBA,oDAAsD,EDtBrD,EAAA;ECyBD;ID5BA;MCgCA,oDAAsD,ED7BrD,EAAA;ECgCD;IDnCA;MCsCA,oDAAsD,EDnCrD,EAAA;;AAED;ECfE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EAuCtB,YAAW;EACX,YAAW;EACX,oBA7C2B;EA8C3B,gBAAe,EAChB;ECfC;IDSF;MCNE,oDAAsD,EDYvD,EAAA;ECTC;IDGF;MCAE,oDAAsD,EDMvD,EAAA;ECHD;IDHA;MCMA,oDAAsD,EDArD,EAAA;ECGD;IDTA;MCaA,oDAAsD,EDPrD,EAAA;ECUD;IDhBA;MCoBA,oDAAsD,EDdrD,EAAA;ECiBD;IDvBA;MC2BA,oDAAsD,EDrBrD,EAAA;ECwBD;ID9BA;MCiCA,oDAAsD,ED3BrD,EAAA;;AAED;ECvBE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EA+CtB,gEAAgE;EAChE,kEAAkE,EACnE;ECrBC;IDiBF;MCdE,oDAAsD,EDkBvD,EAAA;ECfC;IDWF;MCRE,oDAAsD,EDYvD,EAAA;ECTD;IDKA;MCFA,oDAAsD,EDMrD,EAAA;ECHD;IDDA;MCKA,oDAAsD,EDDrD,EAAA;ECID;IDRA;MCYA,oDAAsD,EDRrD,EAAA;ECWD;IDfA;MCmBA,oDAAsD,EDfrD,EAAA;ECkBD;IDtBA;MCyBA,oDAAsD,EDrBrD,EAAA;;AAED;EC7BE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB,EAqDvB;ECzBC;IDuBF;MCpBE,oDAAsD,EDsBvD,EAAA;ECnBC;IDiBF;MCdE,oDAAsD,EDgBvD,EAAA;ECbD;IDWA;MCRA,oDAAsD,EDUrD,EAAA;ECPD;IDKA;MCDA,oDAAsD,EDGrD,EAAA;ECAD;IDFA;MCMA,oDAAsD,EDJrD,EAAA;ECOD;IDTA;MCaA,oDAAsD,EDXrD,EAAA;ECcD;IDhBA;MCmBA,oDAAsD,EDjBrD,EAAA;;AAED;ECjCE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EAyDtB,8CAA8C,EAC/C;EC9BC;ID2BF;MCxBE,oDAAsD,ED2BvD,EAAA;ECxBC;IDqBF;MClBE,oDAAsD,EDqBvD,EAAA;EClBD;IDeA;MCZA,oDAAsD,EDerD,EAAA;ECZD;IDSA;MCLA,oDAAsD,EDQrD,EAAA;ECLD;IDEA;MCEA,oDAAsD,EDCrD,EAAA;ECED;IDLA;MCSA,oDAAsD,EDNrD,EAAA;ECSD;IDZA;MCeA,oDAAsD,EDZrD,EAAA;;AAED;ECtCE,yCAA0C;EAC1C,+BDvBsB;ECwBtB,8BDxBsB;ECyBtB,6BDzBsB;EC0BtB,0BD1BsB;EC4HtB,qDAAgD;EAAG,UAAU;EAC7D,sDAAiD;EAAG,YAAY;EAChE,yDAAoD;EAAG,YAAY;EACnE,oDAA+C;EAC/C,iDAA4C,ED9D7C;ECtCC;IDgCF;MC7BE,oDAAsD,EDmCvD,EAAA;EChCC;ID0BF;MCvBE,oDAAsD,ED6BvD,EAAA;EC1BD;IDoBA;MCjBA,oDAAsD,EDuBrD,EAAA;ECpBD;IDcA;MCVA,oDAAsD,EDgBrD,EAAA;ECbD;IDOA;MCHA,oDAAsD,EDSrD,EAAA;ECND;IDAA;MCI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D,ECyDnD,EAAA;IDtDH;MC6CA;QDzCA,oDAAsD,ECkDnD,EAAA;ID/CH;MCsCA;QDlCA,oDAAsD,EC2CnD,EAAA;IDxCH;MC+BA;QD3BA,oDAAsD,ECoCnD,EAAA;IDjCH;MCwBA;QDrBA,oDAAsD,EC8BnD,EAAA;;AC/FH;EACE,oBAT4B;EFyB5B,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C;EAO/C,mBAAkB;EAClB,YAAW;EACX,mBAAiB;EACjB,sCAAsC,EAMvC;EFWC;IEvBF;MF0BE,oDAAsD,EEdvD,EAAA;EFiBC;IE7BF;MFgCE,oDAAsD,EEpBvD,EAAA;EFuBD;IEnCA;MFsCA,oDAAsD,EE1BrD,EAAA;EF6BD;IEzCA;MF6CA,oDAAsD,EEjCrD,EAAA;EFoCD;IEhDA;MFoDA,oDAAsD,EExCrD,EAAA;EF2CD;IEvDA;MF2DA,oDAAsD,EE/CrD,EAAA;EFkDD;IE9DA;MFiEA,oDAAsD,EErDrD,EAAA;EAJC;IARF;MASI,cAAa,EAGhB,EAAA;;AAED;EFGE,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C,EAoBhD;EFOC;IETF;MFYE,oDAAsD,EEVvD,EAAA;EFaC;IEfF;MFkBE,oDAAsD,EEhBvD,EAAA;EFmBD;IErBA;MFwBA,oDAAsD,EEtBrD,EAAA;EFyBD;IE3BA;MF+BA,oDAAsD,EE7BrD,EAAA;EFgCD;IElCA;MFsCA,oDAAsD,EEpCrD,EAAA;EFuCD;IEzCA;MF6CA,oDAAsD,EE3CrD,EAAA;EF8CD;IEhDA;MFmDA,oDAAsD,EEjDrD,EAAA;;AAED;EFDE,+CAA0C;EAC1C,sEEtB+C;EFuB/C,qEEvB+C;EFwB/C,oEExB+C;EFyB/C,iEEzB+C,EA8BhD;EFHC;IELF;MFQE,oDAAsD,EEAvD,EAAA;EFGC;IEXF;MFcE,oDAAsD,EENvD,EAAA;EFSD;IEjBA;MFoBA,oDAAsD,EEZrD,EAAA;EFeD;IEvBA;MF2BA,oDAAsD,EEnBrD,EAAA;EFsBD;IE9BA;MFkCA,oDAAsD,EE1BrD,EAAA;EF6BD;IE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","file":"main.scss","sourcesContent":["@mixin css-fadein($t) {\n-webkit-animation: fadein $t; /* Safari, Chrome and Opera > 12.1 */\n   -moz-animation: fadein $t; /* Firefox < 16 */\n    -ms-animation: fadein $t; /* Internet Explorer */\n     -o-animation: fadein $t; /* Opera < 12.1 */\n        animation: fadein $t;\n}\n\n\n@keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Firefox < 16 */\n@-moz-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Safari, Chrome and Opera > 12.1 */\n@-webkit-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Internet Explorer */\n@-ms-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n\n/* Opera < 12.1 */\n@-o-keyframes fadein {\n    from { opacity: 0; }\n    to   { opacity: 1; }\n}\n","$p-section-color: #3d3d41;\n$border-color: #ac9e9e;\n$label-color: #aa8686;\n$h1-section-color: #5b4d4d;\n\n.Section {\n  background-color: $global-bg-color;\n  margin: 0;\n  width: 100%;\n\n\n  h1 {\n    text-align: center;\n    z-index: 999;\n    color: $h1-section-color;\n  }\n\n  .container-wrapper {\n    width: 100vw;\n    display: flex;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n  }\n\n  .smooth-scroll {\n    width: 100vw;\n    position: absolute;\n    left: 0;\n    top: 25vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  p {\n    font-weight: 300;\n    width: 100%;\n    @include css-user-select(none);\n    z-index: 999;\n    color: $p-section-color;\n  }\n}\n","$global-p-color: #111111;\n$global-h1-color: #3d3d41;\n$global-h2-color: #3d3d41;\n$global-h3-color: #3d3d41;\n$global-h4-color: #3d3d41;\n$global-h5-color: #3d3d41;\n$global-bg-color: white;\n$h1-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$h2-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$h3-font-stack: 'Montserrat', Futura, Helvetica, sans-serif;\n$h4-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$h5-font-stack: 'Oswald', Futura, Helvetica, sans-serif;\n$global-label-font-stack: 'Monserrat', Futura, Helvetica, sans-serif;\n$global-p-font-stack: 'Open Sans', Didot, serif;\n$global-box-width: 70vw;\n$section-color: #faa187;\n$start-button-color: #faa187;\n$global-font-weight: 300;\n\n\n@import './helpers/Animation_Mixins.scss';\n@import './helpers/Transform_Mixins.scss';\n@import './helpers/Display.scss';\n@import './helpers/User_Events.scss';\n\n@import './components/Section.scss';\n@import './components/Subsection.scss';\n@import './components/MenuBarIcon.scss';\n@import './components/MenuBar.scss';\n@import './components/MainContainer.scss';\n@import './components/NavBar.scss';\n\n@import './components/sections/Intro.scss';\n@import './components/sections/Mission.scss';\n@import './components/sections/Opportunity.scss';\n@import './components/sections/Team.scss';\n@import './components/sections/ValueProposition.scss';\n@import './components/sections/Product.scss';\n@import './components/sections/BusinessModel.scss';\n@import './components/sections/Adoption.scss';\n@import './components/sections/Investment.scss';\n@import './components/sections/Traction.scss';\n@import './components/Label.scss';\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: $global-bg-color;\n  @include css-fadein(3s);\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  overflow-x:hidden;\n\n\n  .container {\n      width: 100vw;\n      left: 0;\n      /*-webkit-overflow-scrolling: auto;*/\n  }\n\n  .section-medium-image {\n  position: relative;\n  width: 75vw;\n  left: 0;\n  }\n\n  .section-wide-image {\n  position: relative;\n  width: 100vw;\n  left: 0;\n  }\n\n  .intro-image {\n    position: absolute;\n    width: 100vw;\n    left: 0;\n    top: 0;\n  }\n\n  .header-text {\n    padding-bottom: 40pt;\n    width: 75vw;\n  }\n\n  .footer-text {\n    padding: 40pt 0pt;\n    width: 75vw;\n    text-align: center;\n  }\n\n  .subtitle-text {\n    padding: 40pt 0pt;\n  }\n\n  h1 {\n    font-family: $h1-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 5.135em;\n    margin: 0pt;\n\n    @media all and (max-width: 800px) {\n      font-size: 2.2em;\n      }\n  }\n\n  h2 {\n    font-family: $h1-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 3.852em;\n    margin: 0pt;\n\n    @media all and (max-width: 800px) {\n      font-size: 2.1em;\n      }\n    }\n\n  h3 {\n    font-family: $global-p-font-stack;\n    color: $global-h1-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 2.0em;\n    margin: 0pt;\n  }\n\n  h4 {\n    font-family: $h4-font-stack;\n    color: $global-h4-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.4em;\n    margin: 0pt;\n  }\n\n  h5 {\n    font-family: $h5-font-stack;\n    color: $global-h5-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.1em;\n    margin: 0pt;\n    @include css-user-select(none);\n    cursor: pointer;\n    padding: 1em;\n    padding-top: 2.25em;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n    @include css-transition(all, 0.5s, ease-in-out);\n    white-space: nowrap;\n  }\n\n  h6 {\n    font-family: $h5-font-stack;\n    color: $global-h5-color;\n    text-align: center;\n    font-weight: $global-font-weight;\n    font-size: 1.4em;\n    margin: 0pt;\n    @include css-user-select(none);\n    cursor: pointer;\n    font-weight: 300;\n    color: $text-color;\n    text-align: center;\n  }\n\n  p, li {\n    font-family: Arial;\n    color: $global-p-color;\n    font-weight: 200;\n    font-size: 1.1em;\n\n    @media all and (max-width: 800px) {\n      font-size: 1em;\n      }\n\n\n    margin: 0pt;\n  }\n\n  img {\n  width: 100%;\n  }\n\n\n  .wrapper {\n    overflow-x:hidden;\n\n  }\n\n  a {\n      text-decoration: none;\n  }\n}\n","@mixin css-user-select($n){\n  -webkit-touch-callout: $n; /* iOS Safari */\n  -webkit-user-select: $n; /* Safari */\n   -khtml-user-select: $n; /* Konqueror HTML */\n     -moz-user-select: $n; /* Firefox */\n      -ms-user-select: $n; /* Internet Explorer/Edge */\n          user-select: $n; /* Non-prefixed version, currently\n                                supported by Chrome and Opera */\n  -webkit-tap-highlight-color: rgba(0,0,0,0);\n}\n","$menu-bar-icon-color: #bca293;\n$menu-bar-icon-color-hover: #bca293;\n$transition-time: 0.7s;\n$transition-prop: all;\n$transition-easing: ease;\n$g-time: 0.75s;\n$right-transition: 28vw;\n$mobile-right-transition: 75vw;\n\n@import '../helpers/Transform_Mixins.scss';\n\n\n.menu-bar-icon {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  border: none;\n  color: $menu-bar-icon-color;\n  background: transparent;\n  outline: none;\n  @include css-user-select(none);\n  position: fixed;\n  margin: 20px 20px;\n  cursor: pointer;\n  top: 0;\n  z-index: -10;\n  display: block;\n  background: white;\n  width: 100%;\n  margin: 0;\n  padding: 10px;\n  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);\n\n  @media all and (max-width: 1200px) {\n    z-index: 99999;\n  }\n}\n\n.menu-bar-icon:hover > div {\n  @include css-transition($transition-prop, 1.1s, $transition-easing);\n  background: $menu-bar-icon-color-hover;\n}\n\n.menu-bar-icon div {\n  @include css-transition($transition-prop, 1.5s, $transition-easing);\n  width: 30px;\n  height: 5px;\n  background: $menu-bar-icon-color;\n  margin-top: 5px;\n}\n\n.menu-bar-icon:hover > #topBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transition(all, $transition-time, ease-in-out);*/\n  /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/\n}\n\n.menu-bar-icon:hover > #bottomBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n}\n\n.menu-bar-icon:hover > #middleBar {\n  @include css-transition($transition-prop, $g-time, $transition-easing);\n  /*@include css-transform-translate-x(-50px);*/\n}\n\n.clicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);\n  }\n}\n\n.clicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);\n  @media all and (max-width: 800px) {\n    @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);\n  }\n}\n\n.clicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0);\n  @media all and (max-width: 800px) {\n    @include css-transform-translate-x(0);\n  }\n  opacity: 0;\n}\n\n.unclicked > #topBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #bottomBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);\n}\n\n.unclicked > #middleBar {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @include css-transform-squash(0);\n  @include css-transform-translate-x(0vw);\n  opacity: 1;\n}\n","$g-time: 0.4s;\n\n@mixin css-linear-gradient($first, $second) {\n  background: -webkit-linear-gradient($first, $second); /* For Safari 5.1 to 6.0 */\n  background: -o-linear-gradient($first, $second); /* For Opera 11.1 to 12.0 */\n  background: -moz-linear-gradient($first, $second); /* For Firefox 3.6 to 15 */\n  background: linear-gradient($first, $second); /* Standard syntax */\n}\n\n@mixin origin($o) {\n  -webkit-transform-origin: $o;\n  -ms-tranform-origin: $o;\n  -moz-transform-origin: $o;\n  -o-transform-origin: $o;\n  transform-origin: $o;\n}\n\n@mixin css-rotate3D($a) {\n  -ms-transform: rotate3d(0,1,0,$a); /* IE 9 */\n  -moz-transform: rotate3d(0,1,0,$a); /* Safari */\n  -webkit-transform: rotate3d(0,1,0,$a); /* Safari */\n  -o-transform: rotate3d(0,1,0,$a);\n  transform: rotate3d(0,1,0,$a);\n}\n\n@mixin css-transition($prop, $time, $easing) {\n  -webkit-transition: $prop 0.5s ease-in-out;\n  -moz-transition: $prop $time $easing;\n  -ms-transition: $prop $time $easing;\n  -o-transition: $prop $time $easing;\n  transition: $prop $time $easing;\n\n  @media only screen\nand (min-device-width : 320px)\nand (max-device-width : 568px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n  }\n\n  @media only screen\nand (min-device-width : 414px)\nand (max-device-width : 736px) {\n  -webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 375px)\nand (max-device-width : 667px) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 1){\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n@media only screen\nand (min-device-width : 768px)\nand (max-device-width : 1024px)  {\n-webkit-transition: -webkit-transform $g-time ease-out;\n}\n\n}\n\n@mixin css-transform-perspective($p) {\n  -ms-transform: perspective($p); /* IE 9 */\n  -moz-transform: perspective($p);\n  -webkit-transform: perspective($p); /* Safari */\n  -o-transform: perspective($p);\n  transform: perspective($p);\n}\n\n@mixin css-transform-scale($t) {\n  -ms-transform: scale($t); /* IE 9 */\n  -moz-transform: scale($t);\n  -webkit-transform: scale($t); /* Safari */\n  -o-transform: scale($t);\n  transform: scale($t);\n}\n\n@mixin css-transform-translate-x($t) {\n  -ms-transform: translate3D($t, 0, 0); /* IE 9 */\n  -moz-transform: translate3D($t, 0, 0);\n  -webkit-transform: translate3D($t, 0, 0); /* Safari */\n  -o-transform: translate3D($t, 0, 0);\n  transform: translate3D($t, 0, 0);\n}\n\n@mixin css-transform-translate-y($t) {\n  -ms-transform: translate3D(0, $t, 0); /* IE 9 */\n  -moz-transform: translate3D(0, $t, 0);\n  -webkit-transform: translate3D(0, $t, 0); /* Safari */\n  -o-transform: translate3D(0, $t, 0);\n  transform: translate3D(0, $t, 0);\n}\n\n@mixin css-transform-scale-translateX-translateY($s, $tx, $ty) {\n  -ms-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0); /* IE 9 */\n  -moz-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -webkit-transform: scale($s) translate3D($tx, 0, 0), translate3D(0, $ty, 0); /* Safari */\n  -o-transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n  transform: scale($s) translate3D($tx, 0, 0) translate3D(0, $ty, 0);\n}\n\n@mixin css-transform-rotate-and-translate-down($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-down-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up-and-right($a, $b, $c) {\n  -ms-transform: translate3D($c, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D($c, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D($c, $b, 0) rotate($a) ;\n  transform: translate3D($c, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate-and-translate-up($a, $b) {\n  -ms-transform: translate3D(0, $b, 0) rotate($a) ; /* IE 9 */\n  -moz-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -webkit-transform: translate3D(0, $b, 0) rotate($a) ; /* Safari */\n  -o-transform: translate3D(0, $b, 0) rotate($a) ;\n  transform: translate3D(0, $b, 0) rotate($a) ;\n}\n\n@mixin css-transform-rotate($a) {\n  -ms-transform: rotate($a); /* IE 9 */\n  -moz-transform: rotate($a); /* Safari */\n  -webkit-transform: rotate($a); /* Safari */\n  -o-transform: rotate($a);\n  transform: rotate($a);\n}\n\n@mixin css-transform-rotate-x($a) {\n  -ms-transform: rotateX($a); /* IE 9 */\n  -moz-transform: rotateX($a); /* Safari */\n  -webkit-transform: rotateX($a); /* Safari */\n  -o-transform: rotateX($a);\n  transform: rotateX($a);\n}\n\n\n@mixin css-transform-rotate-y($a) {\n  -ms-transform: rotateY($a); /* IE 9 */\n  -moz-transform: rotateY($a); /* Safari */\n  -webkit-transform: rotateY($a); /* Safari */\n  -o-transform: rotateY($a);\n  transform: rotateY($a);\n}\n\n@mixin css-transform-rotate-z($a) {\n  -ms-transform: rotateZ($a); /* IE 9 */\n  -moz-transform: rotateZ($a); /* Safari */\n  -webkit-transform: rotateZ($a); /* Safari */\n  -o-transform: rotateZ($a);\n  transform: rotateZ($a);\n}\n\n@mixin css-transform-squash($a) {\n  -ms-transform: scaleY($a) scaleX($a); /* IE 9 */\n  -moz-transform: scaleY($a) scaleX($a); /* Safari */\n  -webkit-transform: scaleY($a) scaleX($a); /* Safari */\n  -o-transform: scaleY($a) scaleX($a);\n  transform: scaleY($a) scaleX($a);\n}\n\n\n@mixin css-transform-open-book($s, $r, $t) {\n  -ms-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* IE 9 */\n  -moz-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -webkit-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important; /* Safari */\n  -o-transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n  transform: scale($s) rotateY($r) translate3D($t, 0, 0) !important;\n}\n\n@mixin css-transform-skew-x($transformation) {\n  -ms-transform: skewX($transformation); /* IE 9 */\n  -moz-transform: skewX($transformation);  /* Safari */\n  -webkit-transform: skewX($transformation);  /* Safari */\n  -o-transform: skewX($transformation);\n  transform: skewX($transformation);\n}\n\n@mixin css-transform-skew-y($transformation) {\n  -ms-transform: skewY($transformation); /* IE 9 */\n  -moz-transform: skewY($transformation);  /* Safari */\n  -webkit-transform: skewY($transformation);  /* Safari */\n  -o-transform: skewY($transformation);\n  transform: skewY($transformation);\n}\n","$transition-time: 0.2s;\n$transition-prop: transform;\n$transition-easing: ease-in-out;\n$bg-color: #3d3d41;\n$menu-button-color: #ffffff;\n\n.menu-bar {\n    @include css-transition(all, $transition-time, $transition-easing);\n    position: fixed;\n    top: 0;\n    height: 100vh;\n    left: 0;\n    background: $bg-color;\n    justify-content: flex-start;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    display: flex;\n    height: 100vh;\n    flex-direction: column;\n\n    h2 {\n        z-index: 999999;\n        color: #e09090;\n        font-weight: 900px;\n        padding: 5vh;\n        margin-bottom: 5vh;\n        @include css-user-select(none);\n        cursor: pointer;\n        white-space: nowrap;\n        font-size: 16pt;\n    }\n\n\n    .smooth-scroll {\n      width: 100vw;\n      background: transparent;\n      z-index: 9999;\n      flex: 1;\n\n      @media all and (max-width: 1200px) {\n        z-index: -1;\n\n      }\n    }\n}\n\n.menu-bar-hidden {\n  /*@include css-transform-translate-y(50px);*/\n}\n\n.menu-bar-shown {\n  /*@include css-transform-translate-y(0px);*/\n}\n\n\n\n\n.menuButton {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: none;\n    margin: 20px 20px;\n    width: 60px;\n    border-radius: 100%;\n    width: 20px;\n    height: 20px;\n    display: block;\n    outline: none;\n    background: transparent;\n    border: 2px solid $menu-button-color;\n\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n\n    @media all and (max-width: 1200px) {\n\n    }\n\n  h2 {\n    color: $menu-button-color;\n    padding: 0px;\n    font-weight: 200;\n    margin: 0;\n    padding-left: 50px;\n    text-align: center;\n    white-space: nowrap;\n\n    @media all and (max-width: 1200px) {\n    }\n\n  }\n\n\n}\n\n.menuButton:hover {\n  @include css-transition(all, 0.5s, ease-in-out);\n  border: 2px solid $menu-button-color;\n  border-radius: 10%;\n  background: $menu-button-color;\n  cursor: pointer;\n\n  > h2 {\n    @include css-transition(all, 0.5s, ease-in-out);\n  }\n}\n","$live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;\n$main-container-color: #f7f5f5;\n$live-stream-text-color: #a29393;\n$transition-time: 0.35s;\n$transition-prop: transform;\n$transition-easing: cubic-bezier(.94,.06,.32,.95);\n$right-transition: 28vw;\n$mobile-right-transition: 60vw;\n\n.MainContainer {\n  background: $main-container-color;\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  position: relative;\n  width: 100%;\n  overflow-x:hidden;\n  /*-webkit-overflow-scrolling: touch;*/\n\n  @media all and (max-width: 1200px) {\n    z-index: 9999;\n  }\n\n}\n\n.MainContainer:hover {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n}\n\n.menu-bar-open {\n  @include css-transition($transition-prop, $transition-time, $transition-easing);\n  @media all and (max-width: 1200px) {\n  @include css-transform-translate-x($right-transition);\n  }\n    @media all and (max-width: 800px) {\n    @include css-transform-translate-x($mobile-right-transition);\n    }\n}\n\n.menu-bar-close {\n  @include css-transition($transition-prop, $transition-time, linear);\n  @include css-transform-translate-x(0vw);\n  @media all and (max-width: 1200px) {\n\n  }\n}\n","$height: 18vh;\n$text-color: #3d3d41;\n$hover-color: #9d9dcd;\n$nav-button-color: #b7509e;\n$nav-button-size: 35px;\n$p-font-size: 1.1em;\n\n.stick {\n  opacity: 1.0;\n}\n\n.nonstick {\n  opacity: 0.0;\n}\n\n\n.nav-bar-container {\n    top: 0;\n    height: $height;\n    display: flex;\n    justify-content: center;\n    z-index: 9999;\n    background: $global-bg-color;\n    position: fixed;\n    width: 100vw;\n    @include css-transition(all, 0.5s, ease-in-out);\n\n\n    .selected {\n      background: $nav-button-color !important;\n    }\n\n    .nav-warriorfy {\n      background-image: url(\"../components/img/00-Logo.png\") !important;\n      background-size: cover !important;\n      background-repeat: no-repeat !important;\n    }\n\n    .nav-angel-list {\n    background-image: url(\"../components/img/angel_list.png\") !important;\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    }\n\n    .nav-bar-connector {\n    width: 90vw;\n    margin-top: 0px;\n    height: 2px;\n    position: absolute;\n    background: #9c9ca1;\n    }\n\n    .nav-bar {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width: 100vw;\n    }\n\n    @media all and (max-width: 1200px) {\n      display: none;\n    }\n\n\n  p:hover {\n    color: $hover-color;\n  }\n\n\n  .smooth-scroll {\n  display: flex;\n  justify-content: space-around;\n  align-items: flex-start;\n  position: relative;\n  top: 0;\n  width: 100%;\n  z-index: 9999;\n\n    @media all and (max-width: 1200px) {\n      z-index: -1;\n    }\n  }\n\n\n\n  .nav-button {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: none;\n      margin: 20px 20px;\n      width: 12em;\n      border-radius: 100%;\n      width: $nav-button-size;\n      height: $nav-button-size;\n      display: flex;\n      justify-content: center;\n      outline: none;\n      background: $global-bg-color;\n      border: 2px solid $nav-button-color;\n\n      @media all and (max-width: 1200px) {\n        margin: 20px 20px;\n      }\n  }\n\n  .nav-button:hover {\n    @include css-transition(all, 0.5s, ease-in-out);\n    border: 2px solid $nav-button-color;\n    border-radius: 10%;\n    background: $nav-button-color;\n    cursor: pointer;\n\n    > p {\n      @include css-transition(all, 0.5s, ease-in-out);\n    }\n  }\n\n}\n\n.nav-bar-hidden {\n  @media all and (max-width: 1200px) {\n  }\n}\n","$bg-color: #ac9e9e;\n$fg-color: #f1f1f1;\n\n\n\n\n#Intro {\n\n  height: 70vw;\n\n\n  .block {\n    position: relative;\n    width: 33.33vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    top: 33vw;\n\n      h1 {\n      color: white;\n      margin: 0;\n      }\n\n      p {\n      color: #3d3d41;\n      margin: 0;\n      }\n  }\n\n\n\n  .start {\n    @include css-transition(all, 0.3s, ease);\n    width: 15vh;\n    background-color: #f1c478;\n    border-radius: 8px;\n    position: relative;\n    cursor: pointer;\n    z-index: 99999;\n    margin-top: 4vw;\n    padding-top: 1em;\n    padding-bottom: 1em;\n  }\n\n  .start:hover {\n  background-color: #b57d6d;\n  }\n\n  #gotoMission {\n\n    p {\n      color: #f1f1f1;\n      -webkit-tap-highlight-color: rgba(0,0,0,0);\n    }\n  }\n\n  p {\n    color: $global-p-color;\n    font-weight: 300;\n    @include css-user-select(none);\n    cursor: pointer;\n    @media all and(max-width: 450px) {\n    }\n  }\n\n  .smooth-scroll {\n    position: relative;\n        top: 0;\n  }\n\n  h1 {\n    color: $text-color;\n\n    @media all and(max-width: 450px) {\n    font-size: 0.75em;\n    }\n  }\n\n  .StartContainer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-top: 75vh;\n    z-index: 99;\n  }\n\n  .background_image {\n      width: $global-box-width;\n      height: 33.33vh;\n      background-color: $global-bg-color;\n      position: absolute;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n\n      @media all and (max-width: 800px) {\n        width: 100vw;\n        left: 0vw;\n      }\n  }\n\n  .foreground_image {\n      width: 33.33vw;\n      height: 33.33vh;\n      top: 10vw;\n      background-color: $fg-color;\n\n\n      @media all and (max-width: 800px) {\n\n        max-width: 50vw;\n      }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n\n#Mission {\n  h1 {\n    width: 50vw;\n\n    @media all and (max-width: 1200px) {\n      width: 80vw;\n      }\n  }\n\n  .container {\n    display: flex;\n  }\n\n  .mission {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .mission-background {\n    width: 100%;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$header-color: #dedcdc;\n$box-color: transparent;\n$h1-color: #705959;\n$sub-section-width: 37.5%;\n$border-color: #3d3d41;\n$border-width: 2px;\n\n#Opportunity {\n\n  .container {\n    width: 75vw;\n\n    @media all and (max-width: 800px) {\n      width: 88vw;\n      }\n  }\n\n\n  .arrow-block {\n    width: 50%;\n    @media all and (max-width: 800px) {\n      width: 20%;\n      }\n  }\n\n  .header {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-bottom: 20pt;\n\n    h1 {\n      text-align: center;\n      color: $h1-color;\n      width: 75vw;\n    }\n  }\n\n  .block-row-container {\n    margin-top: 50pt;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n  }\n\n  .block-row {\n    display: inline-flex;\n    justify-content: center;\n  }\n\n  .block {\n\n    width: 25%;\n\n    @media all and (max-width: 800px) {\n      width: 50%;\n      }\n\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    margin-bottom: 50px;\n\n    img {\n      width: 100%;\n      transform: scale(0.25);\n\n      @media all and (max-width: 800px) {\n        transform: scale(0.5);\n        }\n    }\n\n    p {\n      padding-bottom: 5pt;\n      @media all and (max-width: 800px) {\n        padding-bottom: 10pt;\n        }\n    }\n  }\n\n  .arrows {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column;\n    align-items: center;\n  }\n\n  .content {\n    display: flex;\n    justify-content: space-around;\n    width: 100%;\n    flex-direction: column;\n    padding-bottom: 10vh;\n  }\n\n  .top-labels {\n    display: inline-flex;\n    justify-content: space-around;\n    @media all and (max-width: 800px) {\n        justify-content: space-between;\n      }\n\n  }\n\n  .arrows-label {\n    color: transparent;\n  }\n\n  .arrow {\n    transform: scale(0.2) rotate3d(1, 0, 0, 0);\n    @include css-transition(all, 0.5s, ease);\n    z-index: 9999;\n  }\n\n  .arrow:hover {\n    transform: scale(0.4) rotate3d(1, 0, 0, 45deg);\n  }\n\n  .overall {\n    width: 100%;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    margin-bottom: 10vh;\n\n\n    .problem {\n      width: $sub-section-width;\n\n      @media all and (max-width: 800px) {\n          width: 50%;\n        }\n      background: transparent;\n      display: flex;\n      align-items: flex-start;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n      padding: 22pt;\n    }\n\n    .problem-label {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column;\n    h4{\n      padding-bottom: 10pt;\n    }\n    }\n\n\n    .solution-label {\n    display: flex;\n    justify-content: flex-start;\n    flex-direction: column;\n    h4{\n      padding-bottom: 10pt;\n    }\n    }\n\n    .solution {\n      width: $sub-section-width;\n      @media all and (max-width: 800px) {\n          width: 50%;\n        }\n      background: #3d3d41;\n      font-color: white;\n      display: flex;\n      align-items: flex-start;\n      justify-content: center;\n      border: 1.5px solid $border-color;\n      padding: 22pt;\n    }\n\n    h4 {\n    text-align: center;\n    }\n\n\n  }\n\n  p {\n    font-family: arial;\n    text-align: left;\n  }\n\n  h3 {\n    text-align: left;\n  }\n\n  .problems {\n    width: $sub-section-width;\n  }\n\n  .solutions {\n    width: $sub-section-width;\n  }\n\n  .problem-block {\n    padding-bottom: 30pt;\n  }\n\n  .solution-block {\n    padding-bottom: 30pt;\n  }\n\n\n  .solutions-label {\n    border-radius: 4px;\n    width: 25%;\n    @media all and (max-width: 800px) {\n      width: 33.33%;\n      }\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n  }\n\n  .problems-label {\n    border-radius: 4px;\n    width: 25%;\n    @media all and (max-width: 800px) {\n      width: 33.33%;\n      }\n\n    h4 {\n      text-align: center;\n      text-align: center;\n      background: white;\n      padding-top: 10px;\n      width: 100%;\n      padding-bottom: 10px;\n      border-radius: 4px;\n    }\n\n\n  }\n\n  .problems-label-subtitle {\n    padding-bottom: 20pt;\n  }\n\n  .solutions-label-subtitle {\n    padding-bottom: 20pt;\n  }\n\n  .solution-label {\n\n\n\n    h4 {\n      color: white;\n    }\n\n    p {\n      color: white;\n    }\n\n  }\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$profile-pic-size: 222px;\n$p-team-text-color: #3d3d41;\n$h2-team-text-color: #3d3d41;\n$mobile-width: 1200px;\n\n\n#Team {\n\n  .team-members-container {\n    margin-top: 0vh;\n    margin-bottom: 10vh;\n  }\n\n\n  .team-member-text {\n    margin-top: 20pt;\n  }\n\n  .team-header-text {\n    width: 100%;\n    padding-bottom: 50px;\n\n    h2 {\n      width: 100%;\n    }\n  }\n\n  .advisors-label-container {\n    position: relative;\n    width: 100vw;\n\n    @media all and(max-width: $mobile-width) {\n\n    }\n  }\n\n  .member-name {\n    padding-bottom: 8pt;\n  }\n\n  .team-members {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    max-width: 100vw;\n    }\n  }\n\n\n\n  .team-member {\n    display: block;\n    margin-left: 25px;\n    margin-right: 25px;\n\n\n    @media all and(max-width: $mobile-width) {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n    margin-bottom: 10vh;\n    }\n  }\n\n  .team-members-row {\n    display: flex;\n    justify-content: center;\n    width: 75vw;\n\n    @media all and(max-width: $mobile-width) {\n    display: block;\n    }\n  }\n\n  .middle-row {\n    padding-bottom: 40px;\n  }\n\n  .profile-pic-container {\n    display: block;\n    width: $profile-pic-size;\n    height: $profile-pic-size;\n    justify-content: center;\n    align-items: center;\n  }\n\n  .profile-pic {\n  width: $profile-pic-size;\n  height: $profile-pic-size;\n  background: #d9cdcd;\n  border-radius: 50%;\n  }\n\n  p {\n  width: $profile-pic-size;\n  text-align: center;\n  color: $p-team-text-color;\n  }\n\n  h2 {\n    width: $profile-pic-size;\n    text-align: center;\n    color: $h2-team-text-color;\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$baseline-logo-size: 40px;\n\n#Value {\n  .market-image {\n    width: 75vw;\n    padding-top: 30pt;\n    padding-bottom: 30pt;\n\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n\n  .container-wrapper {\n    width:100vw;\n    display: flex;\n    justify-content: center;\n\n    .container {\n      display: flex;\n      width: 75vw;\n      justify-content: center;\n      align-items: center;\n      flex-wrap: wrap;\n    }\n\n  }\n\n\n\n  .header {\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n\n    @media all and(max-width: $mobile-width) {\n      width: 75vw;\n    }\n\n    .header-text {\n      width: 100vw;\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: center;\n\n      h1 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n\n    .subtitle-text {\n      width: 100vw;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding-top: 0pt;\n      flex-direction: column;\n      h3 {\n        width: 50vw;\n\n        @media all and(max-width: $mobile-width) {\n          width: 75vw;\n        }\n      }\n    }\n  }\n\n\n\n  .footer {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .footer-text {\n      width: 50vw;\n      padding: 0pt;\n\n      @media all and(max-width: $mobile-width) {\n        width: 75vw;\n      }\n    }\n  }\n\n  .baseline-footer {\n    width: 50vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    .baseline-footer-logo {\n      width: $baseline-logo-size;\n      height: $baseline-logo-size;\n    }\n\n    h2 {\n      margin-left: 20px;\n    }\n  }\n\n\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$mobile-width: 1200px;\n$product-bg-color: #835757;\n\n#Product {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n  }\n\n  .product {\n    width: 75vw;\n    background: $product-bg-color;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .phone {\n    @include css-transition(all, 0.5s, ease-in-out);\n    width: 20vh;\n    height: 40vh;\n    background: #f1f1f1;\n    border-radius: 10px;\n\n\n    }\n\n    .phone:hover {\n      @include css-rotate3D(50deg);\n      background: #b0a5a5;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$model-color: #835757;\n\n#Business\\ Model {\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n  width: 100vw;\n  }\n\n  .model {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n$start-button-color: #f1c478;\n$adoption-bg-color: white;\n\n#Adoption {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 75vw;\n    display: flex;\n    justify-content: center;\n    flex-direction: column;\n    align-items: center;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n\n    }\n  }\n\n  .body-subtitle {\n    padding: 0pt;\n  }\n\n  .adoption {\n    width: 75vw;\n    height: 50vh;\n    background: $adoption-bg-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n    .launch {\n      width: 66.666%;\n      height: 100%;\n      background: white;\n    }\n\n    .example {\n      width: 33.333%;\n      height: 100%;\n      background: white;\n    }\n  }\n\n}\n","$text-block-background-color: white;\n\n\n.text-block-container {\n  width: 66.66%;\n  @media all and (max-width: 800px) {\n      width: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      flex-direction: column;\n    }\n\n  h3 {\n    text-align: left;\n  }\n\n  .text-blocks {\n    display: flex;\n    @media all and (max-width: 800px) {\n      justify-content: center;\n      align-items: center;\n      flex-direction: column;\n      }\n    width: 95%;\n    justify-content: space-between;\n  }\n\n\n\n\n  .text-block-row {\n    width: 20vw;\n    @media all and (max-width: 800px) {\n        width: 100%;\n      }\n  }\n\n\n  .text-block {\n    background: $text-block-background-color;\n    border: 2px solid #3d3d41;\n    text-align: left;\n    margin-bottom: 10px;\n    flex-direction: column;\n    border-radius: 4px;\n    padding: 15px;\n    display: flex;\n    justify-content: space-around;\n\n        h6 {\n          text-align: left;\n          padding-bottom: 12pt;\n          font-weight: 400;\n        }\n    }\n\n  .text-block-description\n  {\n    padding-top:8pt;\n  }\n}\n\n.text-block-grid {\ndisplay: flex;\nwidth: 75vw;\n@media all and (max-width: 800px) {\n    width: 75vw;\n    flex-direction: column;\n  }\njustify-content: flex-end;\n}\n","$section-color: #f1f1f1;\n$start-button-color: #faa187;\n$investment-color: white;\n\n@import '../TextBlock.scss';\n\n#Investment {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n  .header {\n    width: 100vw;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-wrap: wrap;\n  }\n\n\n\n.text-block-milestone {\n  width: 50%;\n  @media all and (max-width: 800px) {\n      width: 100%;\n    }\n\n  p {\n        padding-bottom: 12pt;\n      }\n\n  h3 {\n    text-align: left;\n  }\n}\n\n\n\n.milestone {\n  font-weight: 900;\n  padding: 0;\n  width: 85%;\n}\n\n.milestone-title {\n    text-align: right;\n}\n\n.milestone-date {\n  p\n  {\n    color: #5fc5bb;\n    font-size: 1em;\n    text-align: right;\n  }\n}\n\n\n.role {\n\n\n    .role-title {\n      color: #aa7373;\n      font-size: 1em;\n      font-style: italic;\n\n    }\n}\n\n\n.header-text-milestone {\n  width: 85%;\n  padding-bottom: 22pt;\n  h3 {\n    text-align: right;\n  }\n}\n\n.header-text-money {\n  padding-bottom: 12pt;\n  h3 {\n    text-align: center;\n  }\n}\n\n\n  .investment {\n    width: 75vw;\n    height: 50vh;\n    background: $investment-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n\n\n\n    .milestones {\n      width: 40%;\n      height: 100%;\n      background: #705959;\n    }\n\n    p {\n      color: white;\n    }\n\n    .money {\n      width: 60%;\n      height: 100%;\n      background: #574f4f;\n    }\n  }\n}\n","$section-color: #f1f1f1;\n\n@import '../TextBlock.scss';\n\n#Traction {\n\n  .container {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n  }\n\n  .content {\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    width: 75%;\n  }\n\n  .text-block-container {\n    z-index: 9999;\n    width: 40%;\n  }\n\n  .featured-images {\n    z-index: 9999;\n    width: 50%;\n  }\n\n  .header {\n    width: 100%;\n    z-index: 9999;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n  }\n  .product-image {\n    width: 70%;\n  }\n\n  .text-block {\n    align-items: flex-start;\n  }\n\n  .traction {\n    width: 75vw;\n    height: 50vh;\n    background: $model-color;\n    display: flex;\n\n    @media all and(max-width: $mobile-width) {\n      width: 100vw;\n    }\n  }\n  .featured-in {\n    width: 15%;\n    padding: 10pt;\n  }\n\n}\n","$label-vertical-padding: 5vh;\n\n.border-container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100vw;\n  z-index: 9;\n  padding-top: 15vh;\n  background: $global-bg-color;\n  padding-bottom: 12vh;\n}\n\n.border {\n  position: relative;\n  width: 50vw;\n  height: 2px;\n  background: #3d3d41;\n}\n\n.label {\n  font-family: \"Oswald\", Futura, Helvetica, sans-serif;\n    position: absolute;\n    color: #3d3d41;\n    cursor: default;\n    margin-top: 0vh;\n    background: transparent;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100vw;\n    z-index: 9999;\n\n    padding: 10px 20px;\n    border-radius: 2px;\n\n}\n\n.label-text {\n  color: #3d3d41;\n  font-family: \"Oswald\";\n  font-weight: 200;\n  font-size: 22pt;\n  margin-left: -40px;\n  margin-top: -27vh;\n  padding: 5px 20px;\n  text-align: center;\n  background: white;\n  border-left: 2px solid #3d3d41;\n  border-right: 2px solid #3d3d41;\n  border-top: 2px solid #3d3d41;\n  border-bottom: 2px solid #3d3d41;\n  z-index: 999999;\n}\n"],"sourceRoot":""}]);
 
 	// exports
 
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -22589,10 +23030,10 @@
 	  return '/*# ' + data + ' */';
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(223).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(224).Buffer))
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -22605,9 +23046,9 @@
 
 	'use strict'
 
-	var base64 = __webpack_require__(224)
-	var ieee754 = __webpack_require__(225)
-	var isArray = __webpack_require__(226)
+	var base64 = __webpack_require__(225)
+	var ieee754 = __webpack_require__(226)
+	var isArray = __webpack_require__(227)
 
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -24388,7 +24829,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports) {
 
 	'use strict'
@@ -24508,7 +24949,7 @@
 
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -24598,7 +25039,7 @@
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports) {
 
 	var toString = {}.toString;
@@ -24609,7 +25050,7 @@
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -24646,7 +25087,7 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
-		fixUrls = __webpack_require__(228);
+		fixUrls = __webpack_require__(229);
 
 	module.exports = function(list, options) {
 		if(false) {
@@ -24905,7 +25346,7 @@
 
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 	
@@ -25000,16 +25441,16 @@
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(230);
+	var content = __webpack_require__(231);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(227)(content, {});
+	var update = __webpack_require__(228)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -25026,645 +25467,645 @@
 	}
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(222)(undefined);
+	exports = module.exports = __webpack_require__(223)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(231) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(231) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(232) + ") format('woff2'), \n       url(" + __webpack_require__(233) + ") format('woff'), \n       url(" + __webpack_require__(234) + ") format('truetype'), \n       url(" + __webpack_require__(235) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(236) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(236) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(237) + ") format('woff2'), \n       url(" + __webpack_require__(238) + ") format('woff'), \n       url(" + __webpack_require__(239) + ") format('truetype'), \n       url(" + __webpack_require__(240) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(241) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(241) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(242) + ") format('woff2'), \n       url(" + __webpack_require__(243) + ") format('woff'), \n       url(" + __webpack_require__(244) + ") format('truetype'), \n       url(" + __webpack_require__(245) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(246) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(246) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(247) + ") format('woff2'), \n       url(" + __webpack_require__(248) + ") format('woff'), \n       url(" + __webpack_require__(249) + ") format('truetype'), \n       url(" + __webpack_require__(250) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(251) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(251) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(252) + ") format('woff2'), \n       url(" + __webpack_require__(253) + ") format('woff'), \n       url(" + __webpack_require__(254) + ") format('truetype'), \n       url(" + __webpack_require__(255) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(256) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(256) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(257) + ") format('woff2'), \n       url(" + __webpack_require__(258) + ") format('woff'), \n       url(" + __webpack_require__(259) + ") format('truetype'), \n       url(" + __webpack_require__(260) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(261) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(261) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(262) + ") format('woff2'), \n       url(" + __webpack_require__(263) + ") format('woff'), \n       url(" + __webpack_require__(264) + ") format('truetype'), \n       url(" + __webpack_require__(265) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(266) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(266) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(267) + ") format('woff2'), \n       url(" + __webpack_require__(268) + ") format('woff'), \n       url(" + __webpack_require__(269) + ") format('truetype'), \n       url(" + __webpack_require__(270) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(271) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(271) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(272) + ") format('woff2'), \n       url(" + __webpack_require__(273) + ") format('woff'), \n       url(" + __webpack_require__(274) + ") format('truetype'), \n       url(" + __webpack_require__(275) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(276) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(276) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(277) + ") format('woff2'), \n       url(" + __webpack_require__(278) + ") format('woff'), \n       url(" + __webpack_require__(279) + ") format('truetype'), \n       url(" + __webpack_require__(280) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(281) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(281) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(282) + ") format('woff2'), \n       url(" + __webpack_require__(283) + ") format('woff'), \n       url(" + __webpack_require__(284) + ") format('truetype'), \n       url(" + __webpack_require__(285) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(286) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(286) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(287) + ") format('woff2'), \n       url(" + __webpack_require__(288) + ") format('woff'), \n       url(" + __webpack_require__(289) + ") format('truetype'), \n       url(" + __webpack_require__(290) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(291) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(291) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(292) + ") format('woff2'), \n       url(" + __webpack_require__(293) + ") format('woff'), \n       url(" + __webpack_require__(294) + ") format('truetype'), \n       url(" + __webpack_require__(295) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(296) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(296) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(297) + ") format('woff2'), \n       url(" + __webpack_require__(298) + ") format('woff'), \n       url(" + __webpack_require__(299) + ") format('truetype'), \n       url(" + __webpack_require__(300) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(301) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(301) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(302) + ") format('woff2'), \n       url(" + __webpack_require__(303) + ") format('woff'), \n       url(" + __webpack_require__(304) + ") format('truetype'), \n       url(" + __webpack_require__(305) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n\n\n\n\n\n\n\n/* oswald-200 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(306) + "); /* IE9 Compat Modes */\n  src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),\n       url(" + __webpack_require__(306) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(307) + ") format('woff2'), \n       url(" + __webpack_require__(308) + ") format('woff'), \n       url(" + __webpack_require__(309) + ") format('truetype'), \n       url(" + __webpack_require__(310) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-300 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(311) + "); /* IE9 Compat Modes */\n  src: local('Oswald Light'), local('Oswald-Light'),\n       url(" + __webpack_require__(311) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(312) + ") format('woff2'), \n       url(" + __webpack_require__(313) + ") format('woff'), \n       url(" + __webpack_require__(314) + ") format('truetype'), \n       url(" + __webpack_require__(315) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-regular - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(316) + "); /* IE9 Compat Modes */\n  src: local('Oswald Regular'), local('Oswald-Regular'),\n       url(" + __webpack_require__(316) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(317) + ") format('woff2'), \n       url(" + __webpack_require__(318) + ") format('woff'), \n       url(" + __webpack_require__(319) + ") format('truetype'), \n       url(" + __webpack_require__(320) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-500 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(321) + "); /* IE9 Compat Modes */\n  src: local('Oswald Medium'), local('Oswald-Medium'),\n       url(" + __webpack_require__(321) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(322) + ") format('woff2'), \n       url(" + __webpack_require__(323) + ") format('woff'), \n       url(" + __webpack_require__(324) + ") format('truetype'), \n       url(" + __webpack_require__(325) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-600 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(326) + "); /* IE9 Compat Modes */\n  src: local('Oswald SemiBold'), local('Oswald-SemiBold'),\n       url(" + __webpack_require__(326) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(327) + ") format('woff2'), \n       url(" + __webpack_require__(328) + ") format('woff'), \n       url(" + __webpack_require__(329) + ") format('truetype'), \n       url(" + __webpack_require__(330) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-700 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(331) + "); /* IE9 Compat Modes */\n  src: local('Oswald Bold'), local('Oswald-Bold'),\n       url(" + __webpack_require__(331) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(332) + ") format('woff2'), \n       url(" + __webpack_require__(333) + ") format('woff'), \n       url(" + __webpack_require__(334) + ") format('truetype'), \n       url(" + __webpack_require__(335) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Open Sans';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(232) + "); /* IE9 Compat Modes */\n  src: local('Open Sans'), local('OpenSans'),\n       url(" + __webpack_require__(232) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(233) + ") format('woff2'), \n       url(" + __webpack_require__(234) + ") format('woff'), \n       url(" + __webpack_require__(235) + ") format('truetype'), \n       url(" + __webpack_require__(236) + "#OpenSans) format('svg'); /* Legacy iOS */\n}\n\n/* montserrat-100 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(237) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Thin'), local('Montserrat-Thin'),\n       url(" + __webpack_require__(237) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(238) + ") format('woff2'), \n       url(" + __webpack_require__(239) + ") format('woff'), \n       url(" + __webpack_require__(240) + ") format('truetype'), \n       url(" + __webpack_require__(241) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-200 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(242) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'),\n       url(" + __webpack_require__(242) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(243) + ") format('woff2'), \n       url(" + __webpack_require__(244) + ") format('woff'), \n       url(" + __webpack_require__(245) + ") format('truetype'), \n       url(" + __webpack_require__(246) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-regular - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(247) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Regular'), local('Montserrat-Regular'),\n       url(" + __webpack_require__(247) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(248) + ") format('woff2'), \n       url(" + __webpack_require__(249) + ") format('woff'), \n       url(" + __webpack_require__(250) + ") format('truetype'), \n       url(" + __webpack_require__(251) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-300 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(252) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Light'), local('Montserrat-Light'),\n       url(" + __webpack_require__(252) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(253) + ") format('woff2'), \n       url(" + __webpack_require__(254) + ") format('woff'), \n       url(" + __webpack_require__(255) + ") format('truetype'), \n       url(" + __webpack_require__(256) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-600 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(257) + "); /* IE9 Compat Modes */\n  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),\n       url(" + __webpack_require__(257) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(258) + ") format('woff2'), \n       url(" + __webpack_require__(259) + ") format('woff'), \n       url(" + __webpack_require__(260) + ") format('truetype'), \n       url(" + __webpack_require__(261) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-500 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(262) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Medium'), local('Montserrat-Medium'),\n       url(" + __webpack_require__(262) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(263) + ") format('woff2'), \n       url(" + __webpack_require__(264) + ") format('woff'), \n       url(" + __webpack_require__(265) + ") format('truetype'), \n       url(" + __webpack_require__(266) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-700 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(267) + "); /* IE9 Compat Modes */\n  src: local('Montserrat Bold'), local('Montserrat-Bold'),\n       url(" + __webpack_require__(267) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(268) + ") format('woff2'), \n       url(" + __webpack_require__(269) + ") format('woff'), \n       url(" + __webpack_require__(270) + ") format('truetype'), \n       url(" + __webpack_require__(271) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n/* montserrat-800 - latin */\n@font-face {\n  font-family: 'Montserrat';\n  font-style: normal;\n  font-weight: 800;\n  src: url(" + __webpack_require__(272) + "); /* IE9 Compat Modes */\n  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),\n       url(" + __webpack_require__(272) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(273) + ") format('woff2'), \n       url(" + __webpack_require__(274) + ") format('woff'), \n       url(" + __webpack_require__(275) + ") format('truetype'), \n       url(" + __webpack_require__(276) + "#Montserrat) format('svg'); /* Legacy iOS */\n}\n\n/* roboto-100 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 100;\n  src: url(" + __webpack_require__(277) + "); /* IE9 Compat Modes */\n  src: local('Roboto Thin'), local('Roboto-Thin'),\n       url(" + __webpack_require__(277) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(278) + ") format('woff2'), \n       url(" + __webpack_require__(279) + ") format('woff'), \n       url(" + __webpack_require__(280) + ") format('truetype'), \n       url(" + __webpack_require__(281) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-300 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(282) + "); /* IE9 Compat Modes */\n  src: local('Roboto Light'), local('Roboto-Light'),\n       url(" + __webpack_require__(282) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(283) + ") format('woff2'), \n       url(" + __webpack_require__(284) + ") format('woff'), \n       url(" + __webpack_require__(285) + ") format('truetype'), \n       url(" + __webpack_require__(286) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-regular - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(287) + "); /* IE9 Compat Modes */\n  src: local('Roboto'), local('Roboto-Regular'),\n       url(" + __webpack_require__(287) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(288) + ") format('woff2'), \n       url(" + __webpack_require__(289) + ") format('woff'), \n       url(" + __webpack_require__(290) + ") format('truetype'), \n       url(" + __webpack_require__(291) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-500 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(292) + "); /* IE9 Compat Modes */\n  src: local('Roboto Medium'), local('Roboto-Medium'),\n       url(" + __webpack_require__(292) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(293) + ") format('woff2'), \n       url(" + __webpack_require__(294) + ") format('woff'), \n       url(" + __webpack_require__(295) + ") format('truetype'), \n       url(" + __webpack_require__(296) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-700 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(297) + "); /* IE9 Compat Modes */\n  src: local('Roboto Bold'), local('Roboto-Bold'),\n       url(" + __webpack_require__(297) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(298) + ") format('woff2'), \n       url(" + __webpack_require__(299) + ") format('woff'), \n       url(" + __webpack_require__(300) + ") format('truetype'), \n       url(" + __webpack_require__(301) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n/* roboto-900 - latin */\n@font-face {\n  font-family: 'Roboto';\n  font-style: normal;\n  font-weight: 900;\n  src: url(" + __webpack_require__(302) + "); /* IE9 Compat Modes */\n  src: local('Roboto Black'), local('Roboto-Black'),\n       url(" + __webpack_require__(302) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(303) + ") format('woff2'), \n       url(" + __webpack_require__(304) + ") format('woff'), \n       url(" + __webpack_require__(305) + ") format('truetype'), \n       url(" + __webpack_require__(306) + "#Roboto) format('svg'); /* Legacy iOS */\n}\n\n\n\n\n\n\n\n/* oswald-200 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 200;\n  src: url(" + __webpack_require__(307) + "); /* IE9 Compat Modes */\n  src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'),\n       url(" + __webpack_require__(307) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(308) + ") format('woff2'), \n       url(" + __webpack_require__(309) + ") format('woff'), \n       url(" + __webpack_require__(310) + ") format('truetype'), \n       url(" + __webpack_require__(311) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-300 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 300;\n  src: url(" + __webpack_require__(312) + "); /* IE9 Compat Modes */\n  src: local('Oswald Light'), local('Oswald-Light'),\n       url(" + __webpack_require__(312) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(313) + ") format('woff2'), \n       url(" + __webpack_require__(314) + ") format('woff'), \n       url(" + __webpack_require__(315) + ") format('truetype'), \n       url(" + __webpack_require__(316) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-regular - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + __webpack_require__(317) + "); /* IE9 Compat Modes */\n  src: local('Oswald Regular'), local('Oswald-Regular'),\n       url(" + __webpack_require__(317) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(318) + ") format('woff2'), \n       url(" + __webpack_require__(319) + ") format('woff'), \n       url(" + __webpack_require__(320) + ") format('truetype'), \n       url(" + __webpack_require__(321) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-500 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 500;\n  src: url(" + __webpack_require__(322) + "); /* IE9 Compat Modes */\n  src: local('Oswald Medium'), local('Oswald-Medium'),\n       url(" + __webpack_require__(322) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(323) + ") format('woff2'), \n       url(" + __webpack_require__(324) + ") format('woff'), \n       url(" + __webpack_require__(325) + ") format('truetype'), \n       url(" + __webpack_require__(326) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-600 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 600;\n  src: url(" + __webpack_require__(327) + "); /* IE9 Compat Modes */\n  src: local('Oswald SemiBold'), local('Oswald-SemiBold'),\n       url(" + __webpack_require__(327) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(328) + ") format('woff2'), \n       url(" + __webpack_require__(329) + ") format('woff'), \n       url(" + __webpack_require__(330) + ") format('truetype'), \n       url(" + __webpack_require__(331) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n/* oswald-700 - latin */\n@font-face {\n  font-family: 'Oswald';\n  font-style: normal;\n  font-weight: 700;\n  src: url(" + __webpack_require__(332) + "); /* IE9 Compat Modes */\n  src: local('Oswald Bold'), local('Oswald-Bold'),\n       url(" + __webpack_require__(332) + "?#iefix) format('embedded-opentype'), \n       url(" + __webpack_require__(333) + ") format('woff2'), \n       url(" + __webpack_require__(334) + ") format('woff'), \n       url(" + __webpack_require__(335) + ") format('truetype'), \n       url(" + __webpack_require__(336) + "#Oswald) format('svg'); /* Legacy iOS */\n}\n", ""]);
 
 	// exports
 
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.eot";
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff2";
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.woff";
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.ttf";
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/open-sans-v13-latin-regular.svg";
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.eot";
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff2";
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.woff";
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.ttf";
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-100.svg";
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.eot";
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff2";
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.woff";
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.ttf";
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-200.svg";
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.eot";
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff2";
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.woff";
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.ttf";
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-regular.svg";
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.eot";
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff2";
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.woff";
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.ttf";
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-300.svg";
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.eot";
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff2";
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.woff";
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.ttf";
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-600.svg";
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.eot";
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff2";
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.woff";
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.ttf";
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-500.svg";
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.eot";
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff2";
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.woff";
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.ttf";
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-700.svg";
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.eot";
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff2";
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.woff";
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.ttf";
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/montserrat-v10-latin-800.svg";
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.eot";
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff2";
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.woff";
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.ttf";
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-100.svg";
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.eot";
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff2";
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.woff";
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.ttf";
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-300.svg";
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.eot";
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff2";
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.woff";
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.ttf";
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-regular.svg";
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.eot";
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff2";
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.woff";
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.ttf";
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-500.svg";
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.eot";
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff2";
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.woff";
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.ttf";
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-700.svg";
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.eot";
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff2";
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.woff";
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.ttf";
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/roboto-v15-latin-900.svg";
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.eot";
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.woff2";
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.woff";
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.ttf";
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-200.svg";
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.eot";
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.woff2";
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.woff";
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.ttf";
 
 /***/ }),
-/* 315 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-300.svg";
 
 /***/ }),
-/* 316 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.eot";
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.woff2";
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.woff";
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.ttf";
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-regular.svg";
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.eot";
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.woff2";
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.woff";
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.ttf";
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-500.svg";
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.eot";
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.woff2";
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.woff";
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.ttf";
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-600.svg";
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.eot";
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.woff2";
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.woff";
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.ttf";
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "app/assets/fonts/oswald-v13-latin-700.svg";
