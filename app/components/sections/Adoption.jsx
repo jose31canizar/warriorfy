@@ -13,27 +13,26 @@ class Adoption extends Component {
           </div>
         </div>
         <div className='adoption'>
-          <div className='launch'>
-          <h3>Launch</h3>
-          <p>• Direct Email to 4,000 subscribers</p>
-          <p>• Share with social media following of over 57K Recovery Warriors </p>
-          <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
-          <p>• Promote on The Recovery Warrior Show with 25K monthly plays</p>
-          <p>• Network outreach</p>
-          <p>• Digital advertising</p>
-
-          <h3>Scale</h3>
-        <p>• Lead generation quizzes</p>
-        <p>• Audio advertisements on health-focused podcasts</p>
-        <p>• Affiliate marketing program</p>
-        <p>• Treatment center partnerships</p>
-        <p>• Influencer marketing</p>
-        <p>• PR</p>
-          </div>
-
           <div className='example'>
               <img src={require('../img/Adoption-IG.png')} className={'product-image'}/>
           </div>
+          <div className='launch'>
+            <h3>Launch</h3>
+            <p>• Direct Email to 4,000 subscribers</p>
+            <p>• Share with social media following of over 57K Recovery Warriors </p>
+            <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
+            <p>• Digital advertising</p>
+
+            <h3>Scale</h3>
+              <p>• Lead generation quizzes</p>
+              <p>• Audio advertisements on health-focused podcasts</p>
+              <p>• Affiliate marketing program</p>
+              <p>• Treatment center partnerships</p>
+              <p>• Influencer marketing</p>
+              <p>• PR</p>
+            </div>
+
+
         </div>
       </div>
     )

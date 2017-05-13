@@ -1,9 +1,10 @@
 $menu-bar-icon-color: #bca293;
 $menu-bar-icon-color-hover: #bca293;
-$transition-time: 0.7s;
+$transition-time: 0.35s;
+$icon-time: 0.7s;
+$hover-time: 0.5s;
 $transition-prop: all;
-$transition-easing: ease;
-$g-time: 0.75s;
+$transition-easing: cubic-bezier(.94,.06,.32,.95);
 $right-transition: 28vw;
 $mobile-right-transition: 75vw;
 
@@ -34,13 +35,21 @@ $mobile-right-transition: 75vw;
   }
 }
 
+.clicked {
+  transform: translate3D($right-transition, 0, 0);
+}
+
+.unclicked {
+  transform: translate3D(0vw, 0, 0);
+}
+
 .menu-bar-icon:hover > div {
-  @include css-transition($transition-prop, 1.1s, $transition-easing);
+  @include css-transition($transition-prop, $hover-time, $transition-easing);
   background: $menu-bar-icon-color-hover;
 }
 
 .menu-bar-icon div {
-  @include css-transition($transition-prop, 1.5s, $transition-easing);
+  @include css-transition($transition-prop, $hover-time, $transition-easing);
   width: 30px;
   height: 5px;
   background: $menu-bar-icon-color;
@@ -48,22 +57,22 @@ $mobile-right-transition: 75vw;
 }
 
 .menu-bar-icon:hover > #topBar {
-  @include css-transition($transition-prop, $g-time, $transition-easing);
+  @include css-transition($transition-prop, $hover-time, $transition-easing);
   /*@include css-transition(all, $transition-time, ease-in-out);*/
   /*@include css-transform-rotate-and-translate-down(45deg, 10px);*/
 }
 
 .menu-bar-icon:hover > #bottomBar {
-  @include css-transition($transition-prop, $g-time, $transition-easing);
+  @include css-transition($transition-prop, $hover-time, $transition-easing);
 }
 
 .menu-bar-icon:hover > #middleBar {
-  @include css-transition($transition-prop, $g-time, $transition-easing);
+  @include css-transition($transition-prop, $hover-time, $transition-easing);
   /*@include css-transform-translate-x(-50px);*/
 }
 
 .clicked > #topBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
   @media all and (max-width: 800px) {
     @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
@@ -71,7 +80,7 @@ $mobile-right-transition: 75vw;
 }
 
 .clicked > #bottomBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
   @media all and (max-width: 800px) {
     @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
@@ -79,7 +88,7 @@ $mobile-right-transition: 75vw;
 }
 
 .clicked > #middleBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-squash(0);
   @include css-transform-translate-x(0);
   @media all and (max-width: 800px) {
@@ -89,17 +98,17 @@ $mobile-right-transition: 75vw;
 }
 
 .unclicked > #topBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-down-and-right(0deg, 0px, 0vw);
 }
 
 .unclicked > #bottomBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-up-and-right(0deg, 0px, 0vw);
 }
 
 .unclicked > #middleBar {
-  @include css-transition($transition-prop, $transition-time, $transition-easing);
+  @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-squash(0);
   @include css-transform-translate-x(0vw);
   opacity: 1;
