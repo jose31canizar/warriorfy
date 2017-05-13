@@ -11,7 +11,6 @@ class Adoption extends Component {
           <div className='subtitle-text'>
             <h3>1.) Start with our growing audience</h3>
             <h3>2.) Expand Warriorfy network through ads</h3>
-            <h3>2.) Expand Warriorfy network through ads</h3>
           </div>
         </div>
         <div className='adoption'>
