@@ -30,7 +30,7 @@ $investment-color: white;
     }
 
   p {
-        padding-bottom: 12pt;
+        padding-bottom: 1pt;
       }
 
   h3 {
@@ -56,6 +56,8 @@ $investment-color: white;
     color: #5fc5bb;
     font-size: 1em;
     text-align: right;
+    padding-top: 5pt;
+    padding-bottom: 15pt;
   }
 }
 
@@ -64,10 +66,10 @@ $investment-color: white;
 
 
     .role-title {
-      color: #aa7373;
+      color: #8B8B92;
       font-size: 1em;
       font-style: italic;
-
+      padding-top:7pt;
     }
 }
 

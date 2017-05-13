@@ -16,7 +16,15 @@ class Investment extends Component {
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>Launch tracking app on iOS and Android</p>
+           <p>Launched Rise Up tracking app on iOS</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Feb 2013)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launched Rise Up tracking app on Android</p>
            </div>
            <div className='milestone-date'>
            <p>(Feb 2015)</p>
@@ -24,34 +32,74 @@ class Investment extends Component {
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>Launch tracking app on iOS and Android</p>
+           <p>Forbes featured app as a technology innovating mental health</p>
            </div>
            <div className='milestone-date'>
-           <p>(Feb 2015)</p>
+           <p>(Feb 2016)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>Launch tracking app on iOS and Android</p>
+           <p>Doubled annual revenue to $86K through subscriptions to our treatment directory</p>
            </div>
            <div className='milestone-date'>
-           <p>(Feb 2015)</p>
+           <p>(Dec 2016)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>Launch tracking app on iOS and Android.</p>
+           <p>Sold $5k in subscriptions to Warriorfy pre-launch</p>
            </div>
            <div className='milestone-date'>
-           <p>(Feb 2015)</p>
+           <p>(May 2017)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>Launch tracking app on iOS and Android</p>
+           <p>Launch web-based version of Warriorfy</p>
            </div>
            <div className='milestone-date'>
-           <p>(Feb 2015)</p>
+           <p>(Jun 2017)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Launch mobile version of Warriorfy</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Oct 2017)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>10,000 users ($X revenue)</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Nov 2017)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>Add 1:1 coaching as a service</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Dec 2017)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>100,000 users ($X revenue)</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Jun 2018)</p>
+           </div>
+        </div>
+        <div className='milestone'>
+           <div className='milestone-title'>
+           <p>1,000,000 users ($X revenue)</p>
+           </div>
+           <div className='milestone-date'>
+           <p>(Dec 2018)</p>
            </div>
         </div>
         </div>
@@ -64,7 +112,7 @@ class Investment extends Component {
               <div className='text-block'>
                 <h6>Salaries</h6>
 
-                  <p>Our top priority is to hire key roles for engineering and operations:</p>
+                  <p>Our top priority is to hire for engineering, marketing, and operations:</p>
 
                   <div className='text-block-description'>
                     <div className='roles'>
@@ -75,41 +123,50 @@ class Investment extends Component {
                         <p className='role-title'>• Junior developer</p>
                       </div>
                       <div className='role'>
-                        <p className='role-title'>• Cross-platform mobile developer</p>
+                        <p className='role-title'>• Audio Producer</p>
+                        </div>
+                      <div className='role'>
+                          <p className='role-title'>• Brand Manager and Publicist</p>
+                        </div>
+                      <div className='role'>
+                            <p className='role-title'>• Customer Support</p>
                       </div>
+                      <div className='role'>
+                          <p className='role-title'>• Business Operations</p>
+                    </div>
                     </div>
                   </div>
               </div>
               <div className='text-block'>
                 <h6>Marketing</h6>
-                <p>Creative ad campaigns to build a successful marketing funnel. </p>
+                <p>Our organic traction proves product-market fit. Now it's time to put fuel on the fire with some fun and creative marketing strategies.</p>
                 <div className='text-block-description'>
                   <div className='roles'>
                     <div className='role'>
-                      <p className='role-title'>• Full stack developer</p>
+                      <p className='role-title'>• Lead generation</p>
                     </div>
                     <div className='role'>
-                      <p className='role-title'>• Junior developer</p>
+                      <p className='role-title'>• Affiliates</p>
                     </div>
                     <div className='role'>
-                      <p className='role-title'>• Cross-platform mobile developer</p>
+                      <p className='role-title'>• Press</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className='text-block'>
                 <h6>Legal and Accounting</h6>
-                <p>Necessary legal work for licensing and distribution of audio content and protection of PHI</p>
+                <p>It's a little extra work to play in both healthcare and media, but worth it.</p>
                 <div className='text-block-description'>
                   <div className='roles'>
                     <div className='role'>
-                      <p className='role-title'>• Full stack developer</p>
+                      <p className='role-title'>• HIPAA and HITECH compliance of PHI</p>
                     </div>
                     <div className='role'>
-                      <p className='role-title'>• Junior developer</p>
+                      <p className='role-title'>• Licensing of artwork and audio content</p>
                     </div>
                     <div className='role'>
-                      <p className='role-title'>• Cross-platform mobile developer</p>
+                      <p className='role-title'>• Distribution of revenue share to content creators and coaches</p>
                     </div>
                   </div>
                 </div>
@@ -122,33 +179,23 @@ class Investment extends Component {
                   <div className='text-block-description'>
                       <div className='roles'>
                         <div className='role'>
-                          <p className='role-title'>• Full stack developer</p>
+                          <p className='role-title'>• HXR: Jun 20-21 (Boston)  </p>
                         </div>
                         <div className='role'>
-                          <p className='role-title'>• Junior developer</p>
+                          <p className='role-title'>• Health 2.0: Oct 1-4 (SF)</p>
                         </div>
                         <div className='role'>
-                          <p className='role-title'>• Cross-platform mobile developer</p>
+                          <p className='role-title'>• SxSW: Mar 9-12 (Austin)</p>
+                        </div>
+                        <div className='role'>
+                          <p className='role-title'>• IAEDP: Mar 22-25 (Orlando)</p>
                         </div>
                       </div>
                   </div>
                 </div>
                 <div className='text-block'>
-                  <h6>Overhead</h6>
-                  <p>Office space, software susbscriptions</p>
-                  <div className='text-block-description'>
-                    <div className='roles'>
-                      <div className='role'>
-                        <p className='role-title'>• Full stack developer</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>• Junior developer</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>• Cross-platform mobile developer</p>
-                      </div>
-                    </div>
-                  </div>
+                  <h6>Company Culture</h6>
+                  <p>Office space, employee training, winter work retreat, third party providers</p>
                 </div>
               </div>
             </div>

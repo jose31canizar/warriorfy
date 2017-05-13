@@ -24,8 +24,14 @@ $adoption-bg-color: white;
     }
   }
 
-  .body-subtitle {
-    padding: 0pt;
+  .subtitle-text {
+    padding-top: 0pt;
+    padding-bottom: 40pt;
+
+    h3 {
+        text-align: left;
+    }
+
   }
 
   .adoption {
@@ -42,12 +48,39 @@ $adoption-bg-color: white;
       width: 66.666%;
       height: 100%;
       background: white;
+      h3{
+        text-align: left;
+        padding-bottom:10px;
+      }
+      p{
+        padding-top:5pt;
+      }
+    }
+
+    .scale {
+      h3{
+        text-align: left;
+        padding-top:50px;
+        padding-bottom:10px;
+      }
+      p{
+        padding-top:5pt;
+      }
     }
 
     .example {
       width: 33.333%;
       height: 100%;
       background: white;
+    }
+  }
+
+  .footer-text {
+    width: 50vw;
+    padding-bottom: 20pt;
+
+    @media all and(max-width: $mobile-width) {
+      width: 75vw;
     }
   }
 
