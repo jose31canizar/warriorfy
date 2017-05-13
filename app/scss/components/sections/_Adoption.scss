@@ -40,6 +40,7 @@ $adoption-bg-color: white;
     background: $adoption-bg-color;
     display: flex;
     flex-direction: row;
+    padding-top: 20pt;
 
     @media all and(max-width: 800px) {
       width: 75vw;
@@ -79,8 +80,8 @@ $adoption-bg-color: white;
 
       h3{
         text-align: left;
-        padding-top:30px;
-        padding-bottom:0px;
+        padding-top:20px;
+        padding-bottom:10px;
         @media all and(max-width: 800px) {
         text-align: center;
         }
@@ -107,7 +108,7 @@ $adoption-bg-color: white;
 
   .footer-text {
     width: 50vw;
-    padding-bottom: 20pt;
+    padding:0pt;
 
     @media all and(max-width: $mobile-width) {
       width: 75vw;
