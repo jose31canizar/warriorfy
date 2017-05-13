@@ -51,12 +51,14 @@ $adoption-bg-color: white;
       width: 66.666%;
       height: 100%;
       background: white;
+      padding-left: 30px;
 
       @media all and(max-width: $mobile-width) {
         width: 95%;
       }
       h3{
         text-align: left;
+        padding-top: 10px;
         padding-bottom:10px;
         @media all and(max-width: 800px) {
         text-align: center;
@@ -69,10 +71,19 @@ $adoption-bg-color: white;
     }
 
     .scale {
+        width: 66.666%;
+
+        @media all and(max-width: $mobile-width) {
+          width: 95%;
+        }
+
       h3{
         text-align: left;
-        padding-top:50px;
-        padding-bottom:10px;
+        padding-top:30px;
+        padding-bottom:0px;
+        @media all and(max-width: 800px) {
+        text-align: center;
+        }
       }
       p{
         padding-top:5pt;
