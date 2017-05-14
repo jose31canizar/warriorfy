@@ -15,7 +15,7 @@ class Product extends Component {
                 <h6>Audio Content</h6>
               </div>
               <div className='subtitle-text'>
-                <p>Get inspired by educational expert conversations and personal stories of success.</p>
+                <p>Get inspired by educational conversations and personal stories of success.</p>
               </div>
               <div className='image-block'>
                 <img src={require('../img/product-image-2.png')} className={'product-image'}/>

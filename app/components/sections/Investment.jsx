@@ -200,7 +200,7 @@ class Investment extends Component {
                 <div className='contact-block'>
                   <h6>Contact</h6>
                   <p>Email: jessica@warriorfy.com</p>
-                  <p>Phone: (858)735-5965</p>
+                  <p>Phone: (858) 735-5965</p>
                   <p>Location:</p>
                   <ul>
                   <li>Boulder, CO</li>
