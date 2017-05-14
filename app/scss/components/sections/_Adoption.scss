@@ -58,10 +58,11 @@ $adoption-bg-color: white;
       @media all and(max-width: $mobile-width) {
         width: 95%;
       }
-      h3{
+      h6{
         text-align: left;
         padding-top: 10px;
         padding-bottom:10px;
+        font-size: 1.7em;
         @media all and(max-width: $skinny-mobile-width) {
         text-align: center;
         }
@@ -79,8 +80,9 @@ $adoption-bg-color: white;
           width: 95%;
         }
 
-      h3{
+      h6{
         text-align: left;
+        font-size: 1.7em;
         padding-top:30px;
         padding-bottom:10px;
         @media all and(max-width: $skinny-mobile-width) {

@@ -12,7 +12,8 @@ class BusinessModel extends Component {
           <h3>3.) At 1M users our projected revenue is $9.5M</h3>
         </div>
       <div className='.product-image'>
-      <img src={require('../img/05-Market-Validation-Growth.png')} />
+      <h6>User Growth</h6>
+      <img src={require('../img/user-growth-projected.png')} />
       </div>
       </div>
     )

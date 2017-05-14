@@ -12,7 +12,7 @@ class Investment extends Component {
         <div className='text-block-grid'>
         <div className='text-block-milestone'>
           <div className='header-text-milestone'>
-        <h3>Milestones</h3>
+        <h6>MILESTONES</h6>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
@@ -105,7 +105,7 @@ class Investment extends Component {
         </div>
         <div className='text-block-container'>
           <div className='header-text-money'>
-            <h3>Money Well Spent:</h3>
+            <h6>MONEY WELL SPENT:</h6>
           </div>
           <div className='text-blocks'>
             <div className='text-block-row'>
@@ -198,7 +198,7 @@ class Investment extends Component {
                   <p>Office space, employee training, winter work retreat, third party providers</p>
                 </div>
                 <div className='contact-block'>
-                  <h6>Contact</h6>
+                  <h6>CONTACT</h6>
                   <p>Email: jessica@warriorfy.com</p>
                   <p>Phone: (858) 735-5965</p>
                   <p>Location:</p>

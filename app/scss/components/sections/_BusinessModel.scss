@@ -13,9 +13,13 @@ $model-color: #835757;
   .header {
   width: 100vw;
   }
-  
+
   .product-image {
     width: 70%;
+    h6{
+      font-size: 2.2em;
+      padding-bottom:10pt;
+    }
 
     @media all and(max-width: $mobile-width) {
       width: 100%;

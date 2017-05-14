@@ -19,13 +19,13 @@ class Adoption extends Component {
               <img src={require('../img/Adoption-IG.png')} className={'product-image'}/>
           </div>
           <div className='launch'>
-            <h3>Launch</h3>
+            <h6>LAUNCH</h6>
             <p>• Direct email to 4,000 subscribers</p>
             <p>• Share with social media following of over 57K Recovery Warriors </p>
             <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
             <p>• Network outreach</p>
           <div className='scale'>
-            <h3>Scale</h3>
+            <h6>SCALE</h6>
               <p>• Lead generation quizzes</p>
               <p>• Audio advertisements on health-focused podcasts</p>
               <p>• Affiliate marketing program</p>
