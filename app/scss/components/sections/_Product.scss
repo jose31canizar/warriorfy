@@ -20,10 +20,10 @@ $product-bg-color: #835757;
 
   .product {
     width: 75vw;
-    background: $product-bg-color;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 50px 0px;
 
     @media all and(max-width: $mobile-width) {
       width: 100vw;
@@ -42,69 +42,93 @@ $product-bg-color: #835757;
     .phone:hover {
       @include css-rotate3D(50deg);
       background: #b0a5a5;
+      }
     }
 
 
     .product-series {
       width: 75vw;
-      background: $product-bg-color;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
 
-      @media all and(max-width: $mobile-width) {
-        width: 100vw;
+      @media all and(max-width: $skinny-mobile-width) {
+        flex-direction: column;
+        width: 80%;
+        align-items: center;
       }
 
+      .product-block {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
 
-      .image-1 {
-        width: 33.333%;
-        height: 50%;
-        background: white;
+        @media all and(max-width: $skinny-mobile-width) {
+          align-items: center;
 
-        @media all and(max-width: $mobile-width) {
-          display: flex;
-          align-items: flex-start;
-          width: 100%;
+          img {
+            margin-left: 10%;
+          }
         }
-      }
 
       .title-text {
         padding-top: 0pt;
         padding-bottom: 40pt;
+        padding-left: 10pt;
+
+        @media all and(max-width: $mobile-width) {
+          padding: 30pt;
+          padding-left: 0pt;
+        }
+
+        @media all and(max-width: $skinny-mobile-width) {
+          padding: 10px 0px;
+          text-align: center;
+        }
 
         h6 {
           text-align: center;
           font-size: 3.4em;
+        }
+
       }
-      
-    }
       .subtitle-text {
         padding-top: 0pt;
         padding-bottom: 40pt;
-
-      }
-
-      .image-2 {
-        width: 33.333%;
-        height: 100%;
-        background: white;
+        padding-left: 30pt;
+        padding-right: 50pt;
+        text-align: center;
+        height: 70px;
 
         @media all and(max-width: $mobile-width) {
-          width: 100%;
+          height: 120px;
         }
 
-
-      .image-3 {
-          width: 33.333%;
-          height: 100%;
-          background: white;
-
-          @media all and(max-width: $mobile-width) {
-            width: 100%;
-          }
+        @media all and(max-width: $skinny-mobile-width) {
+          padding: 25px 0px;
+          text-align: center;
+          height: auto;
+        }
       }
+
+
+      .image-block {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @media all and(max-width: $mobile-width) {
+
+        }
+
+        @media all and(max-width: $skinny-mobile-width) {
+          width: 50%;
+        }
+      }
+
     }
+
   }
-}
 }

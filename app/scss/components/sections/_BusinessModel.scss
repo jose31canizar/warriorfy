@@ -27,6 +27,11 @@ $model-color: #835757;
       .subtitle-text {
         padding-top: 0pt;
         padding-bottom: 40pt;
+        @media all and(max-width: $mobile-width) {
+          padding-top: 50pt;
+          padding-left: 50pt;
+          padding-right: 50pt;
+        }
 
         h3 {
             text-align: left;

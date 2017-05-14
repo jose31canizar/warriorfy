@@ -55,7 +55,7 @@ $menu-button-color: #ffffff;
 
 
 
-.menuButton {
+.menu-button {
   @include css-transition(all, 0.5s, ease-in-out);
   border: none;
     margin: 20px 20px;
@@ -72,7 +72,7 @@ $menu-button-color: #ffffff;
     justify-content: flex-start;
     align-items: center;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: $mobile-width) {
 
     }
 
@@ -85,7 +85,7 @@ $menu-button-color: #ffffff;
     text-align: center;
     white-space: nowrap;
 
-    @media all and (max-width: 1200px) {
+    @media all and (max-width: $mobile-width) {
     }
 
   }
@@ -93,7 +93,7 @@ $menu-button-color: #ffffff;
 
 }
 
-.menuButton:hover {
+.menu-button:hover {
   @include css-transition(all, 0.5s, ease-in-out);
   border: 2px solid $menu-button-color;
   border-radius: 10%;

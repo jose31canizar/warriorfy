@@ -65,6 +65,12 @@ $baseline-logo-size: 40px;
       align-items: center;
       padding-top: 0pt;
       flex-direction: column;
+
+      @media all and(max-width: $mobile-width) {
+        width: 75vw;
+      }
+
+
       h3 {
         width: 50vw;
 

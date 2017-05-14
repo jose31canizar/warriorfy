@@ -26,7 +26,7 @@ $investment-color: white;
 .text-block-milestone {
   width: 50%;
 
-  @media all and (max-width: 800px) {
+  @media all and (max-width: $skinny-mobile-width) {
       width: 97%;
         display: flex;
         justify-content: center;

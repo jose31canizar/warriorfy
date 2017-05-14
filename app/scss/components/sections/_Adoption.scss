@@ -20,13 +20,17 @@ $adoption-bg-color: white;
 
     @media all and(max-width: $mobile-width) {
       width: 100vw;
-
     }
   }
 
   .subtitle-text {
     padding-top: 0pt;
     padding-bottom: 40pt;
+    @media all and(max-width: $mobile-width) {
+      padding-left: 20pt;
+      padding-right: 20pt;
+    }
+
 
     h3 {
         text-align: left;
@@ -42,7 +46,7 @@ $adoption-bg-color: white;
     flex-direction: row;
     padding-top: 20pt;
 
-    @media all and(max-width: 800px) {
+    @media all and(max-width: $skinny-mobile-width) {
       width: 75vw;
       justify-content: center;
       flex-direction: column;
@@ -52,7 +56,6 @@ $adoption-bg-color: white;
       width: 66.666%;
       height: 100%;
       background: white;
-      padding-left: 30px;
 
       @media all and(max-width: $mobile-width) {
         width: 95%;
@@ -61,7 +64,7 @@ $adoption-bg-color: white;
         text-align: left;
         padding-top: 10px;
         padding-bottom:10px;
-        @media all and(max-width: 800px) {
+        @media all and(max-width: $skinny-mobile-width) {
         text-align: center;
         }
       }
@@ -82,7 +85,7 @@ $adoption-bg-color: white;
         text-align: left;
         padding-top:20px;
         padding-bottom:10px;
-        @media all and(max-width: 800px) {
+        @media all and(max-width: $skinny-mobile-width) {
         text-align: center;
         }
       }

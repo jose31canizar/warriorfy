@@ -1,7 +1,7 @@
 $live-stream-font-stack: 'Open Sans', Futura, Helvetica, sans-serif;
 $main-container-color: #f7f5f5;
 $live-stream-text-color: #a29393;
-$transition-time: 0.35s;
+$transition-time: 0.25s;
 $transition-prop: transform;
 $transition-easing: cubic-bezier(.94,.06,.32,.95);
 $right-transition: 28vw;
@@ -30,7 +30,7 @@ $mobile-right-transition: 60vw;
   @media all and (max-width: 1200px) {
   @include css-transform-translate-x($right-transition);
   }
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
     @include css-transform-translate-x($mobile-right-transition);
     }
 }

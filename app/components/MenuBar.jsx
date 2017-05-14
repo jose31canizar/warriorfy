@@ -30,7 +30,7 @@ class MenuBar extends React.Component {
     return (
       <div className={this.state.MenuBarStyle}>
           {this.props.sections.map((v, i) => (
-            <SmoothScroll type={'menuButton'} section={self.props.data[i].title}>
+            <SmoothScroll type={'menu-button'} section={self.props.data[i].title}>
             <h2 onClick={this.props.closeMenuBar} key={i}>{self.props.data[i].title}</h2>
           </SmoothScroll>
         ))}

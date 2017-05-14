@@ -12,7 +12,7 @@ $border-width: 2px;
   .container {
     width: 75vw;
 
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       width: 88vw;
       }
   }
@@ -20,7 +20,7 @@ $border-width: 2px;
 
   .arrow-block {
     width: 50%;
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       width: 20%;
       }
   }
@@ -48,13 +48,14 @@ $border-width: 2px;
   .block-row {
     display: inline-flex;
     justify-content: center;
+    align-items: flex-start;
   }
 
   .block {
 
     width: 25%;
 
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       width: 50%;
       }
 
@@ -68,14 +69,14 @@ $border-width: 2px;
       width: 100%;
       transform: scale(0.25);
 
-      @media all and (max-width: 800px) {
+      @media all and (max-width: $skinny-mobile-width) {
         transform: scale(0.5);
         }
     }
 
     p {
       padding-bottom: 5pt;
-      @media all and (max-width: 800px) {
+      @media all and (max-width: $skinny-mobile-width) {
         padding-bottom: 10pt;
         }
     }
@@ -99,7 +100,7 @@ $border-width: 2px;
   .top-labels {
     display: inline-flex;
     justify-content: space-around;
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
         justify-content: space-between;
       }
 
@@ -130,7 +131,7 @@ $border-width: 2px;
     .problem {
       width: $sub-section-width;
 
-      @media all and (max-width: 800px) {
+      @media all and (max-width: $skinny-mobile-width) {
           width: 50%;
         }
       background: transparent;
@@ -162,7 +163,7 @@ $border-width: 2px;
 
     .solution {
       width: $sub-section-width;
-      @media all and (max-width: 800px) {
+      @media all and (max-width: $skinny-mobile-width) {
           width: 50%;
         }
       background: #3d3d41;
@@ -210,7 +211,7 @@ $border-width: 2px;
   .solutions-label {
     border-radius: 4px;
     width: 25%;
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       width: 33.33%;
       }
 
@@ -228,9 +229,16 @@ $border-width: 2px;
   .problems-label {
     border-radius: 4px;
     width: 25%;
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       width: 33.33%;
+
+      h6 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       }
+
+    }
 
     h4 {
       text-align: center;

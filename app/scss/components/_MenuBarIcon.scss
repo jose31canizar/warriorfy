@@ -1,12 +1,12 @@
 $menu-bar-icon-color: #bca293;
 $menu-bar-icon-color-hover: #bca293;
-$transition-time: 0.35s;
+$transition-time: 0.25s;
 $icon-time: 0.7s;
 $hover-time: 0.5s;
 $transition-prop: all;
 $transition-easing: cubic-bezier(.94,.06,.32,.95);
 $right-transition: 28vw;
-$mobile-right-transition: 75vw;
+$mobile-right-transition: 60vw;
 
 @import '../helpers/Transform_Mixins.scss';
 
@@ -37,6 +37,12 @@ $mobile-right-transition: 75vw;
 
 .clicked {
   transform: translate3D($right-transition, 0, 0);
+
+
+  @media all and (max-width: $skinny-mobile-width) {
+    transform: translate3D($mobile-right-transition, 0, 0);
+  }
+
 }
 
 .unclicked {
@@ -74,7 +80,7 @@ $mobile-right-transition: 75vw;
 .clicked > #topBar {
   @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
-  @media all and (max-width: 800px) {
+  @media all and (max-width: $skinny-mobile-width) {
     @include css-transform-rotate-and-translate-down-and-right(45deg, 10px, 0);
   }
 }
@@ -82,7 +88,7 @@ $mobile-right-transition: 75vw;
 .clicked > #bottomBar {
   @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
-  @media all and (max-width: 800px) {
+  @media all and (max-width: $skinny-mobile-width) {
     @include css-transform-rotate-and-translate-up-and-right(-45deg, -10px, 0);
   }
 }
@@ -91,7 +97,7 @@ $mobile-right-transition: 75vw;
   @include css-transition($transition-prop, $icon-time, $transition-easing);
   @include css-transform-squash(0);
   @include css-transform-translate-x(0);
-  @media all and (max-width: 800px) {
+  @media all and (max-width: $skinny-mobile-width) {
     @include css-transform-translate-x(0);
   }
   opacity: 0;

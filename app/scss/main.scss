@@ -18,6 +18,7 @@ $start-button-color: #faa187;
 $global-font-weight: 300;
 
 $mobile-width: 1200px;
+$skinny-mobile-width: 800px;
 
 
 @import './helpers/Animation_Mixins.scss';
@@ -103,7 +104,7 @@ body {
     font-size: 5.135em;
     margin: 0pt;
 
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       font-size: 2.2em;
       }
   }
@@ -116,7 +117,7 @@ body {
     font-size: 3.852em;
     margin: 0pt;
 
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       font-size: 2.1em;
       }
     }
@@ -177,7 +178,7 @@ body {
     font-weight: 200;
     font-size: 1.1em;
 
-    @media all and (max-width: 800px) {
+    @media all and (max-width: $skinny-mobile-width) {
       font-size: 1em;
       }
 
