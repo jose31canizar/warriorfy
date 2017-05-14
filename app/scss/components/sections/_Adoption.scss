@@ -40,10 +40,9 @@ $adoption-bg-color: white;
 
   .adoption {
     width: 75vw;
-    height: 50%;
+
     background: $adoption-bg-color;
     display: flex;
-    flex-direction: row;
     padding-top: 20pt;
 
     @media all and(max-width: $skinny-mobile-width) {
@@ -54,7 +53,6 @@ $adoption-bg-color: white;
 
     .launch {
       width: 66.666%;
-      height: 100%;
       background: white;
 
       @media all and(max-width: $mobile-width) {
@@ -96,12 +94,9 @@ $adoption-bg-color: white;
 
     .example {
       width: 33.333%;
-      height: 50%;
       background: white;
 
       @media all and(max-width: $mobile-width) {
-        display: flex;
-        align-items: flex-start;
         width: 100%;
       }
 
