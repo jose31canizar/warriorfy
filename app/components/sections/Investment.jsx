@@ -206,7 +206,9 @@ class Investment extends Component {
                   <li>Boulder, CO</li>
                   <li>Boston, MA</li>
                   </ul>
+                  <div className='logo-image'>
                   <img src={require('../img/00-Logo.png')} />
+                  </div>
                 </div>
               </div>
             </div>

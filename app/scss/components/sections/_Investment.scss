@@ -21,6 +21,22 @@ $investment-color: white;
     flex-wrap: wrap;
   }
 
+  .logo-image {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+
+    img {
+    width: 100px;
+    height: 100px;
+    }
+
+  }
+
+
 
 
 .text-block-milestone {
