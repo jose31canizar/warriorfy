@@ -10,7 +10,7 @@ class BusinessModel extends Component {
           <h3>1.) Freemium model with 10% conversion from free to paid plan</h3>
           <h3>2.) At 1M users our projected MRR is $1.3M </h3>
         </div>
-      <div className='.product-image'>
+      <div className='product-image'>
          <div className='growth-title'>
           <h6>User Growth</h6>
          </div>

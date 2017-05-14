@@ -35,7 +35,7 @@ $product-bg-color: #835757;
     img {
       width: 100vw;
       @media all and(max-width: $skinny-mobile-width) {
-        width: 75vw;
+        width: 100vw;
       }
     }
 
@@ -139,7 +139,7 @@ $product-bg-color: #835757;
         }
 
         @media all and(max-width: $skinny-mobile-width) {
-          width: 50%;
+          width: 75%;
         }
       }
 
