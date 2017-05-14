@@ -11,6 +11,9 @@ class BusinessModel extends Component {
           <h3>2.) 30% churn equates to a LTV of $315 and allows us to spend up to $15 to acquire a free user</h3>
           <h3>3.) At 1M users our projected revenue is $9.5M</h3>
         </div>
+      <div className='.product-image'>
+      <img src={require('../img/05-Market-Validation-Growth.png')} />
+      </div>
       </div>
     )
   }

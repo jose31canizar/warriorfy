@@ -13,6 +13,15 @@ $model-color: #835757;
   .header {
   width: 100vw;
   }
+  
+  .product-image {
+    width: 70%;
+
+    @media all and(max-width: $mobile-width) {
+      width: 100%;
+      padding: 100px 0px;
+    }
+  }
 
   .model {
     width: 75vw;
