@@ -34,8 +34,6 @@ class Adoption extends Component {
               <p>• PR</p>
               </div>
               </div>
-
-
         </div>
         <div className='footer'>
           <div className='footer-text'>

@@ -12,6 +12,10 @@ $product-bg-color: #835757;
 
   .header {
     width: 75vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .product {
@@ -39,5 +43,53 @@ $product-bg-color: #835757;
       @include css-rotate3D(50deg);
       background: #b0a5a5;
     }
+
+    .product-series {
+      width: 75vw;
+      height: 50%;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20pt;
+
+      @media all and(max-width: 800px) {
+        width: 75vw;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .image-1 {
+        width: 33.333%;
+        height: 50%;
+        background: white;
+
+        @media all and(max-width: $mobile-width) {
+          display: flex;
+          align-items: flex-start;
+          width: 100%;
+        }
+      }
+
+      .image-2 {
+        width: 33.333%;
+        height: 100%;
+        background: white;
+
+        @media all and(max-width: $mobile-width) {
+          width: 100%;
+        }
+
+
+      .image-3 {
+          width: 33.333%;
+          height: 100%;
+          background: white;
+
+          @media all and(max-width: $mobile-width) {
+            width: 100%;
+          }
+      }
+    }
   }
+}
 }
