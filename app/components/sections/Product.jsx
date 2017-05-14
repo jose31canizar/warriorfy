@@ -15,7 +15,7 @@ class Product extends Component {
                 <h6>Audio Content</h6>
               </div>
               <div className='subtitle-text'>
-                <p>Find inspiration through education and personal stories of success</p>
+                <p>Get inspired by educational expert conversations and personal stories of success.</p>
               </div>
               <div className='image-block'>
                 <img src={require('../img/product-image-2.png')} className={'product-image'}/>
@@ -23,10 +23,10 @@ class Product extends Component {
             </div>
             <div className='product-block'>
               <div className='title-text'>
-                <h6>Easy Tracking</h6>
+                <h6>Simple Tracking</h6>
               </div>
               <div className='subtitle-text'>
-              <p>Conveniently log meals and bring self-awareness to emotions, behaviors, and thoughts.</p>
+              <p>Easily log meals and bring self-awareness to emotions, behaviors, and thoughts.</p>
               </div>
               <div className='image-block'>
                 <img src={require('../img/product-image-3.png')} className={'product-image'}/>
@@ -37,7 +37,7 @@ class Product extends Component {
                <h6>Personal Coach</h6>
               </div>
               <div className='subtitle-text'>
-                <p>Increase accountability and reduce shame with 1:1 chat-based support</p>
+                <p>Increase accountability and reduce shame with 1:1 chat-based support.</p>
               </div>
               <div className='image-block'>
                 <img src={require('../img/product-image-4.png')} className={'product-image'}/>
