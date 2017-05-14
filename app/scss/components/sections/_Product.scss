@@ -74,8 +74,9 @@ $product-bg-color: #835757;
 
       .title-text {
         padding-top: 0pt;
-        padding-bottom: 40pt;
+        padding-bottom: 20pt;
         padding-left: 10pt;
+        width: 80%;
 
         @media all and(max-width: $mobile-width) {
           padding: 30pt;
@@ -89,13 +90,13 @@ $product-bg-color: #835757;
 
         h6 {
           text-align: center;
-          font-size: 3.4em;
+          font-size: 2.2em;
         }
 
       }
       .subtitle-text {
         padding-top: 0pt;
-        padding-bottom: 40pt;
+        padding-bottom: 30pt;
         padding-left: 30pt;
         padding-right: 50pt;
         text-align: center;
