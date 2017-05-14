@@ -74,7 +74,7 @@ class Opportunity extends Component {
             </div>
             <div className='solution'>
               <div className='solution-label'>
-                <h4>OVERALL SOLUTION</h4>
+                <h4>OUR SOLUTION</h4>
                 <p>We believe real change happens from the inside out. Warriorfy combines all the tools, motivation, and support one needs to improve their relationship to food, body, and life into one convenient and empowering platform. </p>
                 </div>
             </div>
