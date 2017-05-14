@@ -72,7 +72,7 @@ class Investment extends Component {
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>25,000 users ($84 revenue)</p>
+           <p>25,000 users ($33K MRR)</p>
            </div>
            <div className='milestone-date'>
            <p>(Dec 2017)</p>
@@ -88,7 +88,7 @@ class Investment extends Component {
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>100,000 users ($560K revenue)</p>
+           <p>100,000 users ($130K MRR)</p>
            </div>
            <div className='milestone-date'>
            <p>(Aug 2018)</p>
@@ -96,7 +96,7 @@ class Investment extends Component {
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
-           <p>1,000,000 users ($9.5M revenue)</p>
+           <p>1,000,000 users ($1.3M MRR)</p>
            </div>
            <div className='milestone-date'>
            <p>(Dec 2019)</p>
