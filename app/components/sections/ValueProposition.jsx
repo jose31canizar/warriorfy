@@ -20,7 +20,7 @@ class ValueProposition extends Component {
           </div>
           <div className='footer'>
             <div className='footer-text'>
-              <h4><strong>Warriorfy is the first to combine educational audio content, self-tracking tools, and 1:1 support into one beautifully designed and easy-to-use platform.</strong></h4>
+              <h4>Warriorfy is the first to combine educational audio content, self-tracking tools, and 1:1 support into one beautifully designed and easy-to-use platform.</h4>
             </div>
           </div>
         </div>
