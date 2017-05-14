@@ -19,11 +19,24 @@ $product-bg-color: #835757;
   }
 
   .product {
-    width: 75vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 0px;
+    flex-direction: column;
+
+    h2 {
+      padding-bottom: 50px;
+      width: 75%;
+    }
+
+    img {
+      width: 100vw;
+      @media all and(max-width: $skinny-mobile-width) {
+        width: 75vw;
+      }
+    }
 
     @media all and(max-width: $mobile-width) {
       width: 100vw;

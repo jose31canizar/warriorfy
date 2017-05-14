@@ -24,6 +24,10 @@ class App extends Component {
     this.changeSelection = this.changeSelection.bind(this);
   }
   handleScroll() {
+
+
+    const sections = [0,500,1750,3250,5250,6500,7500,8500,10000,11000,12000,13000];
+
     if(window.scrollY > 500) {
       this.setState((prevState, props) => {
             return {
@@ -38,7 +42,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 0 && window.scrollY < 500) {
+    if(window.scrollY > sections[0] && window.scrollY < sections[1]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : -1
@@ -46,7 +50,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 500 && window.scrollY < 1250) {
+    if(window.scrollY > sections[1] && window.scrollY < sections[2]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 0
@@ -54,7 +58,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 1250 && window.scrollY < 2000) {
+    if(window.scrollY > sections[2] && window.scrollY < sections[3]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 1
@@ -62,7 +66,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 2000 && window.scrollY < 2750) {
+    if(window.scrollY > sections[3] && window.scrollY < sections[4]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 2
@@ -70,7 +74,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 2750 && window.scrollY < 3500) {
+    if(window.scrollY > sections[4] && window.scrollY < sections[5]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 3
@@ -78,7 +82,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 3500 && window.scrollY < 4000) {
+    if(window.scrollY > sections[5] && window.scrollY < sections[6]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 4
@@ -86,7 +90,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 4000 && window.scrollY < 5000) {
+    if(window.scrollY > sections[6] && window.scrollY < sections[7]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 5
@@ -94,7 +98,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 5000 && window.scrollY < 5750) {
+    if(window.scrollY > sections[7] && window.scrollY < sections[8]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 6
@@ -102,7 +106,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 5750 && window.scrollY < 6500) {
+    if(window.scrollY > sections[8] && window.scrollY < sections[9]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 7
@@ -110,7 +114,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 6500 && window.scrollY < 7000) {
+    if(window.scrollY > sections[9] && window.scrollY < sections[10]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 8
@@ -118,7 +122,7 @@ class App extends Component {
           });
     }
 
-    if(window.scrollY > 7000 && window.scrollY < 8250) {
+    if(window.scrollY > sections[10] && window.scrollY < sections[11]) {
       this.setState((prevState, props) => {
             return {
               selectedIndex : 8
