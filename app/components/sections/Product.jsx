@@ -46,7 +46,7 @@ class Product extends Component {
           </div>
 
         <div className='product'>
-            <h2>Curated content designed to inspire and motivate change</h2>
+            <h2>Curated content designed to motivate change</h2>
             <img src={require('../img/Product-Tiles.png')} className={'product-image'}/>
         </div>
     </div>

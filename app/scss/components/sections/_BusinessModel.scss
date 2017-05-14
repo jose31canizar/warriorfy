@@ -25,6 +25,7 @@ $model-color: #835757;
     }
   }
       .subtitle-text {
+        width: 50%;
         padding-top: 0pt;
         padding-bottom: 40pt;
         @media all and(max-width: $mobile-width) {
@@ -35,6 +36,7 @@ $model-color: #835757;
 
         h3 {
             text-align: left;
+            padding-top: 7pt;
         }
   }
 }
