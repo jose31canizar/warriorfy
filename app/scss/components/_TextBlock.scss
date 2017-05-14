@@ -55,6 +55,23 @@ $text-block-background-color: white;
         }
     }
 
+  .contact-block{
+    background: $text-block-background-color;
+    text-align: left;
+    margin-bottom: 10px;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+
+        h6 {
+          text-align: left;
+          padding-bottom: 12pt;
+          font-weight: 400;
+        }
+    }
+
   .text-block-description
   {
     padding-top:8pt;

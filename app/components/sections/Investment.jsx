@@ -197,6 +197,17 @@ class Investment extends Component {
                   <h6>Company Culture</h6>
                   <p>Office space, employee training, winter work retreat, third party providers</p>
                 </div>
+                <div className='contact-block'>
+                  <h6>Contact</h6>
+                  <p>Email: jessica@warriorfy.com</p>
+                  <p>Phone: (858)735-5965</p>
+                  <p>Location:</p>
+                  <ul>
+                  <li>Boulder, CO</li>
+                  <li>Boston, MA</li>
+                  </ul>
+                  <img src={require('../img/00-Logo.png')} />
+                </div>
               </div>
             </div>
           </div>
