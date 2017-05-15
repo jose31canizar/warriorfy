@@ -36,11 +36,12 @@ $section-color: #f1f1f1;
     z-index: 9999;
     width: 70%;
     padding-top: 10pt;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     @media all and(max-width: $skinny-mobile-width) {
-      display: flex;
       justify-content: center;
-      align-items: center;
       flex-direction: column;
     }
 
