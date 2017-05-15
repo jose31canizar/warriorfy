@@ -9,7 +9,7 @@ class Adoption extends Component {
             <h2>Grassroots go-to-market strategy.</h2>
           </div>
           <div className='subtitle-text'>
-            <h3>1.) Start with our existing growing audience</h3>
+            <h3>1.) Start with our existing subcommunity, Recovery Warriors</h3>
             <h3>2.) Expand reach through digital advertising</h3>
             <h3>3.) Strengthen brand through media exposure</h3>
           </div>
