@@ -20,7 +20,7 @@ class Adoption extends Component {
           </div>
           <div className='launch'>
             <h6>LAUNCH</h6>
-            <p>• Direct email to 4,000 subscribers</p>
+            <p>• Direct email to 5,000 subscribers</p>
             <p>• Share with social media following of over 57K Recovery Warriors </p>
             <p>• Promote on Recovery Warriors website with 35K monthly unique visitors </p>
             <p>• Network outreach</p>
