@@ -55,6 +55,8 @@ body {
   overflow: auto;
   overflow-x:hidden;
 
+  @include translate3D();
+
 
   .container {
       width: 100vw;
