@@ -53,7 +53,7 @@ $adoption-bg-color: white;
 
     .launch {
       width: 66.666%;
-      background: white;
+      background: $global-bg-color;
 
       @media all and(max-width: $mobile-width) {
         width: 95%;
@@ -96,7 +96,7 @@ $adoption-bg-color: white;
 
     .example {
       width: 33.333%;
-      background: white;
+      background: $global-bg-color;
 
       @media all and(max-width: $mobile-width) {
         width: 100%;

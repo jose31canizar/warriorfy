@@ -15,6 +15,14 @@ $g-time: 0.4s;
   transform-origin: $o;
 }
 
+@mixin translate3D() {
+  -ms-transform: translate3d(0,0,0); /* IE 9 */
+  -moz-transform: translate3d(0,0,0); /* Safari */
+  -webkit-transform: translate3d(0,0,0); /* Safari */
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
 @mixin css-rotate3D($a) {
   -ms-transform: rotate3d(0,1,0,$a); /* IE 9 */
   -moz-transform: rotate3d(0,1,0,$a); /* Safari */
