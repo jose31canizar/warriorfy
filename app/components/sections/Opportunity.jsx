@@ -22,7 +22,7 @@ class Opportunity extends Component {
           <div className='block-row-container'>
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Misinformed</strong></p>
+                <p><strong>Problem #1: Misinformed</strong></p>
                 <p>Research shows restrictive diets are ineffective at long-term weight management.</p>
               </div>
               <div className='block'>
@@ -36,7 +36,7 @@ class Opportunity extends Component {
 
             <div className='block-row'>
               <div className='block'>
-                <p><strong>Anxious and Depressed</strong></p>
+                <p><strong>Problem #2: Anxious and Depressed</strong></p>
                 <p>Many people turn towards food or away from food in an effort to cope with mood disorders.</p>
               </div>
               <div className='block arrow-block'>
@@ -51,7 +51,7 @@ class Opportunity extends Component {
 
           <div className='block-row'>
             <div className='block'>
-              <p><strong>Inadequately Supported</strong></p>
+              <p><strong>Problem #3: Inadequately Supported</strong></p>
               <p>Failed attempts to control food and weight lead to guilt, shame, disappointment, and isolation.</p>
             </div>
             <div className='block'>

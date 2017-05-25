@@ -8,7 +8,8 @@ class Traction extends Component {
 
           <div className='product-image'>
             <div className='header'>
-              <h2>MoM Platform Growth</h2>
+              <h2>Our Journey Until Now</h2>
+              <h2>Boostrapped MoM Platform Growth</h2>
             </div>
             <img src={require('../img/05-Market-Validation-Growth.png')} />
           </div>
