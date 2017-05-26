@@ -4,7 +4,11 @@ import Label from '../Label.jsx';
 class Opportunity extends Component {
   render() {
     return (
+
       <div className='container'>
+        <div className={'header'}>
+          <h2>Worldwide, 2.3 billion people are overweight or obese and rates of eating disorders are skyrocketing.</h2>
+        </div>
         <Label label='Problems'/>
         <h6><strong>People who struggle with food can be...</strong></h6>
         <div className='block-row'>
@@ -36,10 +40,6 @@ class Opportunity extends Component {
             <p><strong>Support</strong></p>
             <p>We connect people to certified coaches who provide nutritional and emotional chat-based support.</p>
           </div>
-        </div>
-
-        <div className={'header'}>
-          <h2>Worldwide, 2.3 billion people are overweight or obese and rates of eating disorders are skyrocketing.</h2>
         </div>
           <div className='overall'>
             <div className='problem'>
