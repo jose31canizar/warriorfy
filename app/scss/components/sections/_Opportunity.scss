@@ -51,7 +51,7 @@ $border-width: 2px;
   }
 
   .block-row {
-    display: inline-flex;
+    display: block;
     justify-content: center;
     align-items: flex-start;
   }
@@ -64,11 +64,12 @@ $border-width: 2px;
       width: 50%;
       }
 
-    display: flex;
+    display: inline;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
+    padding: 0px 25px;
 
     img {
       width: 100%;
@@ -190,7 +191,7 @@ $border-width: 2px;
 
   p {
     font-family: arial;
-    text-align: left;
+    text-align: center;
   }
 
   h3 {
