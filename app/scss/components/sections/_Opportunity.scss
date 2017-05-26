@@ -17,6 +17,14 @@ $border-width: 2px;
     @media all and (max-width: $skinny-mobile-width) {
       width: 88vw;
       }
+
+    .label {
+      @media all and(max-width: $skinny-mobile-width) {
+        padding: 1vh 15vh 0 0;
+
+      }
+
+    }
   }
 
 

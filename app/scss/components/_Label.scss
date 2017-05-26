@@ -9,6 +9,9 @@ $label-vertical-padding: 5vh;
   padding-top: 15vh;
   background: $global-bg-color;
   padding-bottom: 12vh;
+  @media all and(max-width: $skinny-mobile-width) {
+    width: auto;
+  }
 }
 
 .border {
