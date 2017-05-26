@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import Label from '../Label.jsx';
+import Product from './Product.jsx';
 
 class Opportunity extends Component {
   render() {
     return (
+      <div>
 
       <div className='container'>
         <div className={'header'}>
@@ -56,7 +58,12 @@ class Opportunity extends Component {
             </div>
           </div>
 
+
       </div>
+      <div id="Product">
+        <Product/>
+      </div>
+    </div>
     )
   }
 };
