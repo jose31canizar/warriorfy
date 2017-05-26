@@ -12,94 +12,66 @@ class Investment extends Component {
         <div className='text-block-grid'>
         <div className='text-block-milestone'>
           <div className='header-text-milestone'>
-        <h6>MILESTONES</h6>
+        <h6>Pre-Seed Round</h6>
+        <div className='milestone-date'>
+        <p>Close Date: July 11, 2017</p>
         </div>
-        <div className='milestone'>
-           <div className='milestone-title'>
-           <p>Launched Rise Up tracking app on iOS</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Feb 2013)</p>
-           </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Launched Rise Up tracking app on Android</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Feb 2015)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Forbes featured app as a technology innovating mental health</p>
            </div>
-           <div className='milestone-date'>
-           <p>(Feb 2016)</p>
-           </div>
         </div>
+      <div className='header-text-milestone'>
+      <h6>Seed Round</h6>
+      <div className='milestone-date'>
+      <p>Anticipated Close Date: October 11, 2017</p>
+      </div>
+
+      </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Doubled annual revenue to $86K through subscriptions to our treatment directory</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Dec 2016)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Sold $5k in subscriptions to Warriorfy pre-launch</p>
            </div>
-           <div className='milestone-date'>
-           <p>(May 2017)</p>
-           </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Launch web-based version of Warriorfy</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Jun 2017)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Launch mobile version of Warriorfy</p>
            </div>
-           <div className='milestone-date'>
-           <p>(Oct 2017)</p>
-           </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>25,000 users ($33K MRR)</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Dec 2017)</p>
            </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>Add 1:1 coaching as a service</p>
            </div>
-           <div className='milestone-date'>
-           <p>(Dec 2017)</p>
-           </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>100,000 users ($130K MRR)</p>
            </div>
-           <div className='milestone-date'>
-           <p>(Aug 2018)</p>
-           </div>
         </div>
         <div className='milestone'>
            <div className='milestone-title'>
            <p>1,000,000 users ($1.3M MRR)</p>
-           </div>
-           <div className='milestone-date'>
-           <p>(Dec 2019)</p>
            </div>
         </div>
         </div>

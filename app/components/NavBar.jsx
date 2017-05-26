@@ -1,6 +1,7 @@
 import React from 'react';
 import SmoothScroll from './SmoothScroll';
 
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);

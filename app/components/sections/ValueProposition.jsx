@@ -7,11 +7,10 @@ class ValueProposition extends Component {
       <div className={'container'}>
           <div className={'header'}>
             <div className='header-text'>
-              <h2>Value Proposition Verified</h2>
               <h2>We've reached 750K people who struggle with their relationship to food and body with zero ad spend</h2>
             </div>
             <div className='subtitle-text'>
-              <h4>What we're building doesn't exist yet! Welcome to our blue ocean, uncharted waters at the intersection of four growing markets.</h4>
+              <h4>Our value proposition has been verified. In the process, we've found a blue ocean opportunity, uncharted waters at the intersection of four growing markets.</h4>
             </div>
           </div>
           <div>
