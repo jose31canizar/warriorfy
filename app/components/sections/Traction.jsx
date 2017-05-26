@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Data from '../../data/traction.json';
 
 class Traction extends Component {
   render() {
@@ -15,68 +16,20 @@ class Traction extends Component {
           <div className='text-block-container'>
             <div className='text-blocks'>
               <div className='text-block-row'>
-                <div className='text-block'>
-                  <h6>Tracking App</h6>
-                    <div className='text-block-description'>
-                      <div className='roles'>
-                        <div className='role'>
-                          <p className='role-title'>Downloads: 190 K</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>Sessions: 4 M</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>Countries: 184</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                <div className='text-block'>
-                  <h6>Online Magazine</h6>
-                  <div className='text-block-description'>
-                    <div className='roles'>
-                      <div className='role'>
-                        <p className='role-title'>Unique Users: 550 K</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>Pageviews: 3 M</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>Articles: 684</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='text-block'>
-                  <h6>Podcast</h6>
-                    <div className='text-block-description'>
-                        <div className='roles'>
-                          <div className='role'>
-                            <p className='role-title'>Listens: 530 K</p>
-                          </div>
-                          <div className='role'>
-                            <p className='role-title'>Shows: 111</p>
-                          </div>
-                          <div className='role'>
-                            <p className='role-title'>Experts Interviewed: 69</p>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
+                {Data.map((block,i) => (
                   <div className='text-block'>
-                    <h6>Treatment Directory</h6>
+                    <h6>{block.title}</h6>
                     <div className='text-block-description'>
                       <div className='roles'>
-                        <div className='role'>
-                          <p className='role-title'>Listings: 192</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>Revenue: $110 K</p>
-                        </div>
+                        {block.list.map((item,i) => (
+                          <div className='role'>
+                            <p className='role-title'>{item}</p>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
+                ))}
                 </div>
               </div>
             </div>

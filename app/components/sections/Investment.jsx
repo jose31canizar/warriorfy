@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Data from '../../data/investment.json';
+import ContactBlock from '../ContactBlock.jsx';
 
 class Investment extends Component {
   render() {
@@ -81,108 +83,49 @@ class Investment extends Component {
           </div>
           <div className='text-blocks'>
             <div className='text-block-row'>
-              <div className='text-block'>
-                <h6>Salaries</h6>
-
-                  <p>Our top priority is to hire for engineering, marketing, and operations:</p>
-
-                  <div className='text-block-description'>
-                    <div className='roles'>
-                      <div className='role'>
-                        <p className='role-title'>• Full stack developer</p>
+              {Data.slice(0,3).map((block, i) => (
+                <div className='text-block'>
+                  <h6>{block.title}</h6>
+                    <p>{block.description}</p>
+                    <div className='text-block-list'>
+                      <div className='roles'>
+                      {block.list.map((item, i) => (
+                          <div className='role'>
+                            <p className='role-title'>• {item}</p>
+                          </div>
+                      ))}
                       </div>
-                      <div className='role'>
-                        <p className='role-title'>• Junior developer</p>
-                      </div>
-                      <div className='role'>
-                        <p className='role-title'>• Audio Producer</p>
-                        </div>
-                      <div className='role'>
-                          <p className='role-title'>• Brand Manager and Publicist</p>
-                        </div>
-                      <div className='role'>
-                            <p className='role-title'>• Customer Support</p>
-                      </div>
-                      <div className='role'>
-                          <p className='role-title'>• Business Operations</p>
                     </div>
-                    </div>
-                  </div>
-              </div>
-              <div className='text-block'>
-                <h6>Marketing</h6>
-                <p>We've proven product-market fit. Now it's time to scale with fun and creative marketing strategies.</p>
-                <div className='text-block-description'>
-                  <div className='roles'>
-                    <div className='role'>
-                      <p className='role-title'>• Lead generation</p>
-                    </div>
-                    <div className='role'>
-                      <p className='role-title'>• Affiliates</p>
-                    </div>
-                    <div className='role'>
-                      <p className='role-title'>• Press</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div className='text-block'>
-                <h6>Legal and Accounting</h6>
-                <p>It's a little extra work to play in both healthcare and media, but worth it.</p>
-                <div className='text-block-description'>
-                  <div className='roles'>
-                    <div className='role'>
-                      <p className='role-title'>• HIPAA and HITECH compliance of PHI</p>
-                    </div>
-                    <div className='role'>
-                      <p className='role-title'>• Licensing of artwork and audio content</p>
-                    </div>
-                    <div className='role'>
-                      <p className='role-title'>• Distribution of revenue share to content creators and coaches</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className='text-block-row'>
-              <div className='text-block'>
-                <h6>Business Development</h6>
-                <p>Travel expenses to conferences to build partnerships and brand awareness</p>
-                  <div className='text-block-description'>
-                      <div className='roles'>
-                        <div className='role'>
-                          <p className='role-title'>• HXR: Jun 20-21 (Boston)  </p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>• Health 2.0: Oct 1-4 (SF)</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>• SxSW: Mar 9-12 (Austin)</p>
-                        </div>
-                        <div className='role'>
-                          <p className='role-title'>• IAEDP: Mar 22-25 (Orlando)</p>
+              {Data.slice(3,5).map(function(block, i) {
+                var append;
+                if(i == 1) {
+                  append = <ContactBlock/>;
+                }
+              return (
+                <div>
+                  <div className='text-block'>
+                    <h6>{block.title}</h6>
+                      <p>{block.description}</p>
+                      <div className='text-block-list'>
+                        <div className='roles'>
+                          {block.list.map((item, i) => (
+                              <div className='role'>
+                                <p className='role-title'>• {item}</p>
+                              </div>
+                          ))}
                         </div>
                       </div>
-                  </div>
+                   </div>
+                {append}
                 </div>
-                <div className='text-block'>
-                  <h6>Company Culture</h6>
-                  <p>Office space, employee training, winter work retreat, third party providers</p>
-                </div>
-                <div className='contact-block'>
-                  <h6>CONTACT</h6>
-                  <p>Email: jessica@warriorfy.com</p>
-                  <p>Phone: (858) 735-5965</p>
-                  <p>Location:</p>
-                  <ul>
-                  <li>Boulder, CO</li>
-                  <li>Boston, MA</li>
-                  </ul>
-                  <div className='logo-image'>
-                  <img src={require('../img/00-Logo.png')} />
-                  </div>
-                </div>
-              </div>
+               );
+             })
+             }
+            </div>
             </div>
           </div>
         </div>

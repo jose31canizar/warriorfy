@@ -6,22 +6,11 @@ import Label from '../Label.jsx';
 
 class Team extends Component {
   render() {
-    // const N = TeamData.length;
-    // const teamMembers = Array.apply(null, {length: N}).map(Number.call, Number);
-    // console.log(TeamData);
-
-    // const Row = TeamData.length % 6;
-    // const teamMembers = Array.apply(null, {length: N}).map(Number.call, Number);
-    // console.log(TeamData);
-
-
-
     const topRow = TeamData.slice(0,4);
     const middleRow = TeamData.slice(4,8);
     const bottomRow = TeamData.slice(8,12);
     console.log(topRow);
     console.log(middleRow);
-    // console.log(bottomRow);
 
     return (
       <div>
@@ -29,13 +18,13 @@ class Team extends Component {
           <h2>We build things people need and love to use.</h2>
         </div>
 
-        <div className={'team-members-container'}>
-          <div className={'team-members'}>
-            <div className={'team-members-row'}>
+        <div className='team-members-container'>
+          <div className='team-members'>
+            <div className='team-members-row'>
               {topRow.map((member, i) => (
-                <div className={'team-member'}>
-                  <div className={'profile-pic-container'}>
-                    <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
+                <div className='team-member'>
+                  <div className='profile-pic-container'>
+                    <img src={require('../img/' + member.image + '.png')} className='profile-pic'/>
                   </div>
                   <div className='team-member-text'>
                   <div className='member-name'>
@@ -80,13 +69,13 @@ class Team extends Component {
               ))}
             </div>
 
-            <div className={'team-members-row'}>
+            <div className='team-members-row'>
               {bottomRow.map((member, i) => (
-                <div className={'team-member'}>
-                  <div className={'profile-pic-container'}>
-                    <img src={require('../img/' + member.image + '.png')} className={'profile-pic'}/>
+                <div className='team-member'>
+                  <div className='profile-pic-container'>
+                    <img src={require('../img/' + member.image + '.png')} className='profile-pic'/>
                   </div>
-                  <div className={'team-member-text'}>
+                  <div className='team-member-text'>
                   <div className='member-name'>
                       <h6>
                         {member.name}

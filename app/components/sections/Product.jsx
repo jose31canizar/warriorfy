@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Data from '../../data/product.json';
 
 class Product extends Component {
   render() {
@@ -10,43 +11,23 @@ class Product extends Component {
           </div>
         </div>
           <div className='product-series'>
-            <div className='product-block'>
-              <div className='title-text'>
-                <h6>Audio Content</h6>
+            {Data.map((block, i) => (
+              <div className='product-block'>
+                <div className='title-text'>
+                  <h6>{block.feature}</h6>
+                </div>
+                <div className='subtitle-text'>
+                  <p>{block.description}</p>
+                </div>
+                <div className='image-block'>
+                  <img src={require('../img/product-image-' + (i + 2) + '.png')} className='product-image'/>
+                </div>
               </div>
-              <div className='subtitle-text'>
-                <p>Get inspired by educational conversations and personal stories of success.</p>
-              </div>
-              <div className='image-block'>
-                <img src={require('../img/product-image-2.png')} className={'product-image'}/>
-              </div>
-            </div>
-            <div className='product-block'>
-              <div className='title-text'>
-                <h6>Simple Tracking</h6>
-              </div>
-              <div className='subtitle-text'>
-              <p>Easily log meals and bring self-awareness to emotions, behaviors, and thoughts.</p>
-              </div>
-              <div className='image-block'>
-                <img src={require('../img/product-image-3.png')} className={'product-image'}/>
-              </div>
-            </div>
-            <div className='product-block'>
-              <div className='title-text'>
-               <h6>Personal Coach</h6>
-              </div>
-              <div className='subtitle-text'>
-                <p>Increase accountability and reduce shame with 1:1 chat-based support.</p>
-              </div>
-              <div className='image-block'>
-                <img src={require('../img/product-image-4.png')} className={'product-image'}/>
-              </div>
-            </div>
+            ))}
           </div>
         <div className='product'>
             <h2>Curated content designed to motivate change</h2>
-            <img src={require('../img/Product-Tiles.png')} className={'product-image'}/>
+            <img src={require('../img/Product-Tiles.png')} className='product-image'/>
         </div>
     </div>
     )

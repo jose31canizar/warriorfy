@@ -4,8 +4,8 @@ var SmoothScroll = require('./SmoothScroll.js');
 class Intro extends Component {
   render() {
     return (
-      <div className={'Section'} id={'Intro'}>
-                <img className={'intro-image'} src={require('./img/01-header-v3.jpg')}/>
+      <div className='section' id='Intro'>
+                <img className='intro-image' src={require('./img/01-header-v3.jpg')}/>
 
       </div>
     )

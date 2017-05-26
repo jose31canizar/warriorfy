@@ -34,7 +34,6 @@ class MenuBar extends React.Component {
             <h2 onClick={this.props.closeMenuBar} key={i}>{self.props.data[i].title}</h2>
           </SmoothScroll>
         ))}
-
       </div>
     );
   }

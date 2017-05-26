@@ -10,7 +10,7 @@ import Traction from './sections/Traction.jsx';
 import Investment from './sections/Investment.jsx';
 
 
-class SectionFactory extends Component {
+class SectionHandler extends Component {
   render() {
     var section = '';
     if(this.props.data.title == 'Mission') {
@@ -42,13 +42,12 @@ class SectionFactory extends Component {
 
 
     return (
-
-      <div className={'Section'} id={this.props.id}>
+      <div className='section' id={this.props.id}>
           <div>
-            <div className={'container'}>
-              <div className={'background_image'}>
+            <div className='container'>
+              <div className='background_image'>
               </div>
-              <div className={'container-wrapper'}>
+              <div className='container-wrapper'>
                 {section}
               </div>
             </div>
@@ -60,4 +59,4 @@ class SectionFactory extends Component {
 }
 
 
-export default SectionFactory;
+export default SectionHandler;

@@ -5,12 +5,12 @@ class Label extends Component {
   render() {
     return (
       <div>
-        <div className={'border-container'}>
-          <div className={'border'}>
+        <div className='border-container'>
+          <div className='border'>
           </div>
         </div>
-        <div className={'label'}>
-          <div className={'label-text'}>
+        <div className='label'>
+          <div className='label-text'>
           {this.props.label}
           </div>
         </div>

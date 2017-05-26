@@ -79,11 +79,11 @@ class NavBar extends React.Component {
 
     return (
       <div className={this.state.NavBarStyle}>
-        <div className={'nav-bar'}>
-          <div className={'nav-bar-connector'}></div>
+        <div className='nav-bar'>
+          <div className='nav-bar-connector'/>
 
             <SmoothScroll type={'nav-button nav-warriorfy'} section={''}>
-              <a href={'http://warriorfy.com/'}>
+              <a href='http://warriorfy.com/'>
                 <h5>Warriorfy</h5>
               </a>
             </SmoothScroll>
@@ -91,7 +91,7 @@ class NavBar extends React.Component {
             {navBarButtons}
 
             <SmoothScroll type={'nav-button nav-angel-list'} section={''}>
-              <a href={'http://angel.co/warriorfy'}>
+              <a href='http://angel.co/warriorfy'>
                 <h5>Angel list</h5>
               </a>
             </SmoothScroll>

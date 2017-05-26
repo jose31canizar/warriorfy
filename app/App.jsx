@@ -15,7 +15,7 @@ class App extends Component {
       data: 'loading...',
       open: false,
       MenuBarIconStyle: 'menu-bar-icon',
-      stick: false,
+      stick: true,
       selectedIndex: 0
     };
     this.togglePanel = this.togglePanel.bind(this);
@@ -162,11 +162,14 @@ class App extends Component {
     var self = this;
 
     return (
-      <div className={'wrapper'}>
-          <MenuBar data={this.state.data} sections={this.state.sections} open={this.state.open} closeMenuBar={this.closeMenuBar}/>
-          <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open} stick={this.state.stick} selectedIndex={this.state.selectedIndex} changeSelection={this.changeSelection}/>
-          <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>
-      </div>);
+      <div>
+        <NavBar data={this.state.data} sections={this.state.sections} open={this.state.open} stick={this.state.stick} selectedIndex={this.state.selectedIndex} changeSelection={this.changeSelection}/>
+        <div className='wrapper'>
+            <MenuBar data={this.state.data} sections={this.state.sections} open={this.state.open} closeMenuBar={this.closeMenuBar}/>
+            <MainContainer data={this.state.data} sections={this.state.sections} togglePanel={this.togglePanel} open={this.state.open}/>
+        </div>
+      </div>
+    );
   }
 }
 

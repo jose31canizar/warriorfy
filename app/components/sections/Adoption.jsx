@@ -16,7 +16,7 @@ class Adoption extends Component {
         </div>
         <div className='adoption'>
           <div className='example'>
-              <img src={require('../img/Adoption-IG.png')} className={'product-image'}/>
+              <img src={require('../img/Adoption-IG.png')} className='product-image'/>
           </div>
           <div className='launch'>
             <h6>LAUNCH</h6>

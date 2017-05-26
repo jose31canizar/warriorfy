@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import SectionContainer from './SectionContainer.jsx';
-import SectionFactory from './SectionFactory.jsx';
+import SectionHandler from './SectionHandler.jsx';
 import Label from './Label.jsx';
 import MenuBarIcon from './MenuBarIcon.jsx';
-
 import Intro from './Intro.jsx';
 
 class MainContainer extends Component {
@@ -15,9 +14,9 @@ class MainContainer extends Component {
   }
   componentWillReceiveProps(newProps) {
     if(newProps.open) {
-      this.state.menuBarState = 'MainContainer menu-bar-open';
+      this.state.menuBarState = 'main-container menu-bar-open';
     } else {
-      this.state.menuBarState = 'MainContainer menu-bar-close';
+      this.state.menuBarState = 'main-container menu-bar-close';
     }
   }
   render() {
@@ -32,7 +31,7 @@ class MainContainer extends Component {
             {this.props.sections.map((v, i) => (
               <div>
               <Label label={this.props.data[i].label}/>
-              <SectionFactory id={self.props.data[i].title} key={i} data={self.props.data[i]}/>
+              <SectionHandler id={self.props.data[i].title} key={i} data={self.props.data[i]}/>
               </div>
             ))}
           </SectionContainer>
