@@ -10,7 +10,9 @@ $border-width: 2px;
 #Opportunity {
 
   .container {
-    width: 75vw;
+    display: flex;
+    justify-content: center;
+    display: block;
 
     @media all and (max-width: $skinny-mobile-width) {
       width: 88vw;
@@ -34,6 +36,9 @@ $border-width: 2px;
     h1 {
       text-align: center;
       color: $h1-color;
+      width: 75vw;
+    }
+    h2{
       width: 75vw;
     }
   }
